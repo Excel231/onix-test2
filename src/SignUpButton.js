@@ -1,34 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 
 const firstCallToSignUp = "SIGN UP!";
 const secondCallToSignUp = "NOW!";
 
-export class SignUpButton extends React.Component {
-    constructor(props) {
-      super(props);
+function SignUpButton() {
     
-      this.state = {
-         callForAction: firstCallToSignUp
-      };
+    const [currentText, setCurrentText] = useState(firstCallToSignUp);
 
-      this.handleHover = this.handleHover.bind(this);
+    function handleHover() {
+        setCurrentText(currentText === firstCallToSignUp ? secondCallToSignUp : firstCallToSignUp);
     };
 
-    handleHover() {
-        this.setState({
-            callForAction: this.state.callForAction === firstCallToSignUp ? secondCallToSignUp : firstCallToSignUp
-        });
-    };
-
-    render() {
-        return (
-            <a onMouseEnter = {this.handleHover} 
-                className="sign-up-btn"
-                target="_blank" 
-                href="https://github.com/Excel231" 
-                rel="noreferrer">
-                <strong>{this.state.callForAction}</strong>
-            </a>
-        );
-    };
+    return (
+        <a onMouseEnter = {handleHover}
+           className="sign-up-btn"
+           target="_blank"                 
+           href="https://github.com/Excel231" 
+           rel="noreferrer">
+           <strong>{currentText}</strong>
+        </a>
+    );
 };
+
+export default SignUpButton;
