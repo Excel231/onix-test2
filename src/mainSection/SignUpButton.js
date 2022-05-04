@@ -1,23 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 
-const firstCallToSignUp = "SIGN UP!";
-const secondCallToSignUp = "NOW!";
-
-function SignUpButton() {
-
-    const [currentText, setCurrentText] = useState(firstCallToSignUp);
-
-    function handleHover() {
-        setCurrentText(currentText === firstCallToSignUp ? secondCallToSignUp : firstCallToSignUp);
-    }
+function SignUpButton(props) {
+    const buttonAction = props.buttonAction;
 
     return (
         <a className="sign-up-btn"
-           onMouseEnter = {handleHover}
+           onClick={buttonAction}
            target="_blank"
            href="https://github.com/Excel231"
            rel="noreferrer">
-           <strong>{currentText}</strong>
+           <strong>SIGN UP!</strong>
         </a>
     );
 }

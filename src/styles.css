@@ -44,12 +44,12 @@ p {
 
 /* Classes */
 
-.call-for-sign-up {
+.call-to-sign-up {
     line-height: 7rem;
 }
 
 h1:hover,
-.call-for-sign-up,
+.call-to-sign-up,
 .boxer-link,
 .link-icon {
     color: #DA0037;
