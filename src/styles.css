@@ -65,8 +65,7 @@ h1:hover,
 /* Button */
 
 .sign-up-btn {
-    background: linear-gradient(180deg, #DA0037 30%, #880022 100%);
-    background-color: #DA0037;
+    background: #DA0037 linear-gradient(180deg, #DA0037 30%, #880022 100%);
     border-radius: 10px;
     color: #EDEDED;
     font-size: 20pt;
@@ -75,8 +74,7 @@ h1:hover,
 }
 
 .sign-up-btn:hover {
-    background: linear-gradient(180deg, #880022 10%, #DA0037 100%);
-    background-color: #880022;
+    background: #880022 linear-gradient(180deg, #880022 10%, #DA0037 100%);
 }
 
 /* Font Awesome icons */

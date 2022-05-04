@@ -7,6 +7,6 @@ function Header() {
             <h2>Want to become stronger? Looking for worthy opponents? Our gym is for YOU!</h2>
         </header>
     );
-};
+}
 
 export default Header;
