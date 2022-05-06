@@ -2,14 +2,14 @@ import React, {useState} from "react";
 import BoxerLink from "./BoxerLink";
 import SignUpButton from "./SignUpButton";
 
-const callToSignUp = "SMASH THIS BUTTON RIGHT NOW!";
-const changedText = "WELCOME TO THE CLUB, BUDDY!"
+const SIGN_UP_BUTTON_TEXT = "SMASH THIS BUTTON RIGHT NOW!";
+const SIGN_UP_BUTTON_CHANGED_TEXT = "WELCOME TO THE CLUB, BUDDY!"
 
-function Main() {
-    const [signUpText, setSignUpText] = useState(callToSignUp);
+const Main = () => {
+    const [signUpText, setSignUpText] = useState(SIGN_UP_BUTTON_TEXT);
 
     function changeSignUpText() {
-        setSignUpText(changedText);
+        setSignUpText(SIGN_UP_BUTTON_CHANGED_TEXT);
     }
 
     return (

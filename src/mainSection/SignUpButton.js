@@ -1,6 +1,6 @@
 import React from "react";
 
-function SignUpButton(props) {
+const SignUpButton = (props) => {
     return (
         <a className="sign-up-btn"
            onClick={props.buttonAction}

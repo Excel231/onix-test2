@@ -4,7 +4,7 @@ import Main from "./mainSection/Main";
 import Footer from "./footerSection/Footer";
 import "./styles.css"
 
-function App() {
+const App = () => {
     return (
         <>
             <Header/>

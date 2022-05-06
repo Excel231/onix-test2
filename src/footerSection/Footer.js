@@ -1,13 +1,14 @@
 import React, {useState} from "react";
 import FooterLink from "./FooterLink";
 
-function Footer() {
+const Footer = () => {
     const [linkText, setLinkText] = useState(":");
 
     function changeSignUpText(linkTitle) {
         setLinkText(linkTitle);
     }
-      return (
+
+    return (
         <footer>
             <h3 className="author-name">by Ivan Honcharenko</h3>
             <h3>Also check {linkText}</h3>

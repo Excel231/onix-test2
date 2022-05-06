@@ -3,7 +3,7 @@ import React, {useState} from "react";
 const defaultTextDecoration = "#880022 underline";
 const changedTextDecoration = "none";
 
-function BoxerLink(props) {
+const BoxerLink = (props) => {
     const [currentTextDecoration, setTextDecoration] = useState("none");
 
     function handleHover() {
