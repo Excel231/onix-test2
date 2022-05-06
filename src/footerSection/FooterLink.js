@@ -1,14 +1,14 @@
 import React from "react";
 
-const FooterLink = (props) => {
+const FooterLink = ({onButtonEnter, linkTitle, footerLink, faClasses}) => {
     return (
         <a className="link-icon"
-           onMouseEnter={()=>props.buttonAction(props.linkTitle)}
+           onMouseEnter={() => onButtonEnter(linkTitle)}
            target="_blank"
            rel="noreferrer"
-           title={props.linkTitle}
-           href={props.footerLink}>
-            <i className={props.faClasses}/>
+           title={linkTitle}
+           href={footerLink}>
+            <i className={faClasses}/>
         </a>
     );
 }

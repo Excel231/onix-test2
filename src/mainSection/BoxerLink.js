@@ -1,25 +1,25 @@
 import React, {useState} from "react";
 
-const defaultTextDecoration = "#880022 underline";
-const changedTextDecoration = "none";
+const DEFAULT_TEXT_DECORATION = "#880022 underline";
+const CHANGED_TEXT_DECORATION = "none";
 
-const BoxerLink = (props) => {
+const BoxerLink = ({boxerSite, boxerName}) => {
     const [currentTextDecoration, setTextDecoration] = useState("none");
 
     function handleHover() {
-        setTextDecoration(currentTextDecoration === defaultTextDecoration ?
-            changedTextDecoration :
-            defaultTextDecoration);
+        setTextDecoration(currentTextDecoration === DEFAULT_TEXT_DECORATION ?
+            CHANGED_TEXT_DECORATION :
+            DEFAULT_TEXT_DECORATION);
     }
 
     return (
         <a className="boxer-link"
            onMouseEnter={handleHover}
            onMouseLeave={handleHover}
-           style={{"textDecoration": currentTextDecoration}}
+           style={{textDecoration: currentTextDecoration}}
            target="_blank"
-           href={props.boxerSite}
-           rel="noreferrer">{props.boxerName}
+           href={boxerSite}
+           rel="noreferrer">{boxerName}
         </a>
     );
 }

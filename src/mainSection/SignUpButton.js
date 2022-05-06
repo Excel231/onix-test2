@@ -1,9 +1,9 @@
 import React from "react";
 
-const SignUpButton = (props) => {
+const SignUpButton = ({onButtonClick}) => {
     return (
         <a className="sign-up-btn"
-           onClick={props.buttonAction}
+           onClick={onButtonClick}
            target="_blank"
            href="https://github.com/Excel231"
            rel="noreferrer">

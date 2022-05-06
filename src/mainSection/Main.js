@@ -23,7 +23,7 @@ const Main = () => {
                 , join our community and
             </p>
             <p className="call-to-sign-up"><strong>{signUpText}</strong></p>
-            <SignUpButton buttonAction={changeSignUpText}/>
+            <SignUpButton onButtonClick={changeSignUpText}/>
         </div>
     );
 }
