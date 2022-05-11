@@ -62,6 +62,10 @@ h1:hover,
     color: #880022;
 }
 
+
+.boxer-link-decoration {
+    text-decoration: #880022 underline;
+}
 /* Button */
 
 .sign-up-btn {
