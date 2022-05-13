@@ -14,6 +14,7 @@ const Main = () => {
 
     return (
         <div id="main-text">
+
             <p>Box is one of the most popular sports in the World!</p>
             <p>
                 If you want to become a living legend like {" "}

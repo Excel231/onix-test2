@@ -1,11 +1,11 @@
 import React from "react";
 
-const SignUpButton = ({onButtonClick}) => {
+const SignUpButton = (onButtonClick) => {
     return (
-        <a className="sign-up-btn"
+        <a className="big-red-btn"
+           href={"https://github.com/Excel231/onix-test2"}
            onClick={onButtonClick}
            target="_blank"
-           href="https://github.com/Excel231"
            rel="noreferrer">
            <strong>SIGN UP!</strong>
         </a>

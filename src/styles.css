@@ -37,9 +37,16 @@ h2 {
     padding-top: 20px;
 }
 
+/*Other tags*/
+
 p {
     font-size: 2rem;
     line-height: 20px;
+}
+
+li {
+    line-height: 3rem;
+    list-style-type: none;
 }
 
 /* Classes */
@@ -56,28 +63,26 @@ h1:hover,
     text-decoration: none;
 }
 
-
 .boxer-link:hover,
 .link-icon:hover {
     color: #880022;
 }
 
-
-.boxer-link-decoration {
-    text-decoration: #880022 underline;
-}
 /* Button */
 
-.sign-up-btn {
+.big-red-btn {
     background: #DA0037 linear-gradient(180deg, #DA0037 30%, #880022 100%);
     border-radius: 10px;
     color: #EDEDED;
+    display: inline-block;
+    font-family: 'Oswald', sans-serif;
     font-size: 20pt;
+    margin: 20px 30px 20px 30px;
     padding: 20px 60px;
     text-decoration: none;
 }
 
-.sign-up-btn:hover {
+.big-red-btn:hover {
     background: #880022 linear-gradient(180deg, #880022 10%, #DA0037 100%);
 }
 
@@ -93,4 +98,24 @@ h1:hover,
     p {
         line-height: normal;
     }
+}
+
+/* Biography */
+
+.boxer-list {
+    border: solid 4px #DA0037;
+}
+
+.biography-li {
+    color: #DA0037;
+    display: inline-block;
+    font-size: 2rem;
+    width: 20%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.biography-ul {
+    background: #262323 linear-gradient(to right, #212121, #2c2c2c, #373737, #424242, #4e4e4e);
+    border: solid #DA0037;
 }
