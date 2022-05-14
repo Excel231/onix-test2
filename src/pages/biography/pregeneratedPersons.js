@@ -1,6 +1,5 @@
 import Person from "./Person";
 
-/*This is list of pregenerated persons for biography page.*/
 const pregeneratedPersons = [
 
     /*Zero id is in the first component list with names of parameters.*/

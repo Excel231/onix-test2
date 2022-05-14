@@ -9,7 +9,6 @@ let startFromGreatest = false;
 
 const listOfAllPersons = pregeneratedPersons;
 
-/*The page that contains information about famous boxers.*/
 const BiographyPage = () => {
 
     const [personsOnScreen, setPersonArr] = useState([]);
@@ -27,7 +26,6 @@ const BiographyPage = () => {
         return current;
     }
 
-    /*Function that sorts boxers by chosen parameter.*/
     const sortOnClick = (componentToCompare) => {
         personsOnScreen.sort((firstPerson, secondPerson) => {
             let firstValue = getObjValue(firstPerson, componentToCompare);
@@ -40,14 +38,12 @@ const BiographyPage = () => {
         setPersonArr([...personsOnScreen]);
     }
 
-    /*Function that adds person with all parameters on screen.*/
     const addPerson = () => {
         if (listOfAllPersons.length > 0) {
             setPersonArr([...personsOnScreen, listOfAllPersons.pop()]);
         }
     }
 
-    /*Function that removes person from screen.*/
     const removePerson = () => {
         if (personsOnScreen.length > 0) {
             listOfAllPersons.push(personsOnScreen.pop());
@@ -58,7 +54,6 @@ const BiographyPage = () => {
     return (
         <>
             <h1>Famous boxers you have to know about!</h1>
-            {/*Heading list that shows what parameter is represented in each row.*/}
             <ListOfParameters key={0}
                               fullName={"Full Name"}
                               age={"Age"}
@@ -66,8 +61,7 @@ const BiographyPage = () => {
                               weight={"Weight"}
                               belts={[{beltName: "Belt Name", year: "Year"}]}
                               handleClick={sortOnClick}/>
-
-            {/*Here array of components is created from persons' data*/}
+                              
             {personsOnScreen.map(({id, name, age, birthYear, weight, belts}) => (
                 <ListOfParameters key={id}
                                   fullName={name.fullName}

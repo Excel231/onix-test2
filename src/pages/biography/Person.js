@@ -1,4 +1,3 @@
-/*This method helps to store persons data easier.*/
 const Person = (id, firstName, secondName, age, birthYear, weight, belts) => {
     return {
         id: id,

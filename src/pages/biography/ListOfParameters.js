@@ -1,6 +1,5 @@
 import React from "react";
 
-/*This is component that creates list of all person's parameters.*/
 const ListOfParameters = ({fullName, age, birthYear, weight, belts, handleClick}) => {
 
     /*Custom sort of belts by year value.*/
@@ -19,7 +18,6 @@ const ListOfParameters = ({fullName, age, birthYear, weight, belts, handleClick}
 
     let sortedBelts = bubbleSort([...belts]);
 
-    /*Here the list is returned with all the parameters.*/
     return (
         <ul className={"biography-ul"}>
             <li className={"biography-li"} onClick={() => handleClick("name.fullName")}>{fullName}</li>
