@@ -27,7 +27,8 @@ const BiographyPage = () => {
     }
 
     const sortOnClick = (componentToCompare) => {
-        personsOnScreen.sort((firstPerson, secondPerson) => {
+        const temporaryArray = personsOnScreen;
+        temporaryArray.sort((firstPerson, secondPerson) => {
             let firstValue = getObjValue(firstPerson, componentToCompare);
             let secondValue = getObjValue(secondPerson, componentToCompare);
             if (firstValue > secondValue) return startFromGreatest ? 1 : -1;
@@ -35,7 +36,7 @@ const BiographyPage = () => {
             return 0;
         });
         startFromGreatest = !startFromGreatest;
-        setPersonArr([...personsOnScreen]);
+        setPersonArr([...temporaryArray]);
     }
 
     const addPerson = () => {
