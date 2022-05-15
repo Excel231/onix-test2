@@ -69,15 +69,18 @@ const BiographyPage = () => {
         <>
             <h1>Famous boxers you have to know about!</h1>
             <TitleListOfParameters handleClick={sortOnClick}/>
+
             {personsOnScreen.map(({id, name, age, birthYear, weight, belts}) => (
-                <ListOfParameters key={id}
-                                  id={id}
-                                  fullName={name.fullName}
-                                  age={age}
-                                  birthYear={birthYear}
-                                  weight={weight}
-                                  belts={belts}
-                                  handleClick={deletePropertyOfObj}/>
+                <ListOfParameters
+                    key={id}
+                    id={id}
+                    fullName={name.fullName}
+                    age={age}
+                    birthYear={birthYear}
+                    weight={weight}
+                    belts={belts}
+                    handleClick={deletePropertyOfObj}
+                />
             ))}
 
             <button className={"big-red-btn"} onClick={addPerson}>Add new person</button>
