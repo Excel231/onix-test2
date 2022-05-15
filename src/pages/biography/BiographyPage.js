@@ -40,18 +40,6 @@ const BiographyPage = () => {
         setPersonsArr([...temporaryArray]);
     }
 
-    const deletePropertyOfObj = (propertyToDelete, id) => {
-        let currentObj = {};
-
-        personsOnScreen.forEach((obj) => {
-            if (obj.id === id) {
-                currentObj = obj;
-            }
-        });
-        delete currentObj[propertyToDelete];
-        setPersonsArr([...personsOnScreen])
-    }
-
     const addPerson = () => {
         if (listOfAllPersons.length > 0) {
             setPersonsArr([...personsOnScreen, listOfAllPersons.pop()]);
@@ -79,7 +67,7 @@ const BiographyPage = () => {
                     birthYear={birthYear}
                     weight={weight}
                     belts={belts}
-                    handleClick={deletePropertyOfObj}
+                    handleClick={sortOnClick}
                 />
             ))}
 
@@ -88,6 +76,5 @@ const BiographyPage = () => {
         </>
     )
 }
-
 
 export default BiographyPage;

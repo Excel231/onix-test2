@@ -6,4 +6,5 @@ const App = () => {
         <BiographyPage/>
     );
 }
+
 export default App;
