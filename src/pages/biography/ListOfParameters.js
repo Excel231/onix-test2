@@ -26,7 +26,6 @@ const ListOfParameters = ({fullName, age, birthYear, weight, belts, handleClick}
             <li className={"biography-li"} onClick={() => handleClick("weight")}>{weight}</li>
             {<li className={"biography-li"} onClick={() => handleClick("belts")}>
                 <ul>
-                    {/*Here sorted belts are converted to React components.*/}
                     {sortedBelts.map(({beltName, year}, index) => (
                         <li key={index}>{year} - {beltName}</li>
                     ))}

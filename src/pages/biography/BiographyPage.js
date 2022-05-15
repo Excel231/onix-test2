@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import pregeneratedPersons from "./pregeneratedPersons";
 import ListOfParameters from "./ListOfParameters";
 import "../../styles.css";
+import TitleListOfParameters from "./TitleListOfParameters";
 
 /*Boolean value that shows in which order parameters should be displayed
 (from greatest to lowest or vice versa)*/
@@ -11,7 +12,7 @@ const listOfAllPersons = pregeneratedPersons;
 
 const BiographyPage = () => {
 
-    const [personsOnScreen, setPersonArr] = useState([]);
+    const [personsOnScreen, setPersonsArr] = useState([]);
 
     /*Function that returns requested value of multi-level objects by string path.*/
     const getObjValue = (obj, path) => {
@@ -36,35 +37,29 @@ const BiographyPage = () => {
             return 0;
         });
         startFromGreatest = !startFromGreatest;
-        setPersonArr([...temporaryArray]);
+        setPersonsArr([...temporaryArray]);
     }
 
     const addPerson = () => {
         if (listOfAllPersons.length > 0) {
-            setPersonArr([...personsOnScreen, listOfAllPersons.pop()]);
+            setPersonsArr([...personsOnScreen, listOfAllPersons.pop()]);
         }
     }
 
     const removePerson = () => {
         if (personsOnScreen.length > 0) {
             listOfAllPersons.push(personsOnScreen.pop());
-            setPersonArr([...personsOnScreen]);
+            setPersonsArr([...personsOnScreen]);
         }
     }
 
     return (
         <>
             <h1>Famous boxers you have to know about!</h1>
-            <ListOfParameters key={0}
-                              fullName={"Full Name"}
-                              age={"Age"}
-                              birthYear={"Birth Year"}
-                              weight={"Weight"}
-                              belts={[{beltName: "Belt Name", year: "Year"}]}
-                              handleClick={sortOnClick}/>
-                              
+            <TitleListOfParameters handleClick={sortOnClick}/>
             {personsOnScreen.map(({id, name, age, birthYear, weight, belts}) => (
                 <ListOfParameters key={id}
+                                  id={id}
                                   fullName={name.fullName}
                                   age={age}
                                   birthYear={birthYear}
