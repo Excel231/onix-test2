@@ -3,10 +3,7 @@ import pregeneratedPersons from "./prepared-persons/pregeneratedPersons";
 import ParameterList from "./parameter-lists/ParameterList";
 import "../../styles.css";
 import TitleListOfParameters from "./parameter-lists/TitleParameterList";
-
-/*Boolean value that shows in which order parameters should be displayed
-(from greatest to lowest or vice versa)*/
-let startFromGreatest = false;
+import sortPersons from "./parameter-lists/sortPersons";
 
 const listOfAllPersons = pregeneratedPersons;
 
@@ -14,60 +11,54 @@ const BiographyPage = () => {
 
     const [personsOnScreen, setPersonsArr] = useState([]);
 
-    /*Function that returns requested value of multi-level objects by string path.*/
-    const getObjValue = (obj, path) => {
-        path = path.split(".");
-        let current = obj;
-        while (path.length) {
-            if (typeof current !== "object") {
-                return undefined;
-            }
-            current = current[path.shift()];
-        }
-        return current;
-    }
+    /*Boolean value that shows in which order parameters should be displayed
+    (from greatest to lowest or vice versa)*/
+    const [sortFromGreatest, setSortFromGreatest] = useState(false);
 
     const sortOnClick = (componentToCompare) => {
-        const temporaryArray = personsOnScreen;
-        temporaryArray.sort((firstPerson, secondPerson) => {
-            let firstValue = getObjValue(firstPerson, componentToCompare);
-            let secondValue = getObjValue(secondPerson, componentToCompare);
-            if (firstValue > secondValue) return startFromGreatest ? 1 : -1;
-            if (firstValue < secondValue) return startFromGreatest ? -1 : 1;
-            return 0;
-        });
-        startFromGreatest = !startFromGreatest;
-        setPersonsArr([...temporaryArray]);
+        const sortedPersons = sortPersons([...personsOnScreen], componentToCompare, sortFromGreatest);
+        setSortFromGreatest(!sortFromGreatest);
+        setPersonsArr(sortedPersons);
     }
 
     const addPerson = () => {
         if (listOfAllPersons.length > 0) {
-            setPersonsArr([...personsOnScreen, listOfAllPersons.pop()]);
+            const newPerson = listOfAllPersons[personsOnScreen.length];
+            setPersonsArr([...personsOnScreen, newPerson]);
         }
     }
 
     const removePerson = () => {
         if (personsOnScreen.length > 0) {
-            listOfAllPersons.push(personsOnScreen.pop());
-            setPersonsArr([...personsOnScreen]);
+            setPersonsArr(personsOnScreen.slice(0, -1));
         }
+    }
+
+    const onSaveChanges = (field, value, id) => {
+        const newPersons = personsOnScreen.map((person) => {
+            if (person.id === id) {
+                return {...person, personInfo: {...person.personInfo, [field]: value}}
+            }
+            return person;
+        });
+        setPersonsArr(newPersons);
     }
 
     return (
         <>
             <h1>Famous boxers you have to know about!</h1>
-            <TitleListOfParameters handleClick={sortOnClick}/>
+            <TitleListOfParameters sortOnClick={sortOnClick}/>
 
-            {personsOnScreen.map(({id, name, age, birthYear, weight, belts}) => (
+            {personsOnScreen.map(({id, personInfo: {fullName, age, birthYear, weight, belts}}) => (
                 <ParameterList
                     key={id}
                     id={id}
-                    fullName={name.fullName}
+                    fullName={fullName}
                     age={age}
                     birthYear={birthYear}
                     weight={weight}
                     belts={belts}
-                    handleClick={sortOnClick}
+                    onSaveChanges={onSaveChanges}
                 />
             ))}
 

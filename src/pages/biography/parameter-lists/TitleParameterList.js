@@ -1,17 +1,15 @@
 import React from "react";
-import ParameterList from "./ParameterList";
+import "../../../styles.css";
 
-const TitleParameterList = ({handleClick}) => {
+const TitleParameterList = ({sortOnClick}) => {
     return (
-        <ParameterList
-            key={0}
-            fullName={"Full Name"}
-            age={"Age"}
-            birthYear={"Birth Year"}
-            weight={"Weight"}
-            belts={[{beltName: "Belt Name", year: "Year"}]}
-            handleClick={handleClick}
-        />
+        <ul className="biography-ul">
+            <li className="biography-li" onClick={() => sortOnClick("fullName")}>Full Name</li>
+            <li className="biography-li" onClick={() => sortOnClick("age")}>Age</li>
+            <li className="biography-li" onClick={() => sortOnClick("birthYear")}>Birth Year</li>
+            <li className="biography-li" onClick={() => sortOnClick("weight")}>Weight</li>
+            <li className="biography-li" onClick={() => sortOnClick("belts")}>Year - Belts</li>
+        </ul>
     );
 }
 

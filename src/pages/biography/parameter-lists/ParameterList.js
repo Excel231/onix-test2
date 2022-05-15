@@ -1,36 +1,63 @@
-import React from "react";
+import React, {useState} from "react";
+import bubbleSort from "./bubbleSort";
 
-const ParameterList = ({id, fullName, age, birthYear, weight, belts, handleClick}) => {
+const ParameterList = ({id, fullName, age, birthYear, weight, belts, onSaveChanges}) => {
 
-    /*Custom sort of belts by year value.*/
-    const bubbleSort = (newBelts) => {
-        for (let i = 0; i < newBelts.length - 1; i++) {
-            for (let j = 0; j < newBelts.length - i - 1; j++) {
-                if (newBelts[j + 1].year < newBelts[j].year) {
-                    let temp = newBelts[j + 1].year;
-                    newBelts[j + 1].year = newBelts[j].year;
-                    newBelts[j].year = temp;
-                }
-            }
-        }
-        return newBelts;
+    const [currentEditedField, setCurrentEditedField] = useState(null);
+    const [currentEditedValue, setCurrentEditedValue] = useState(null);
+
+    const onEditClick = (field, value) => {
+        setCurrentEditedField(field);
+        setCurrentEditedValue(value);
     }
 
-    let sortedBelts = typeof belts === "undefined" ? [] : bubbleSort([...belts]);
+    const onFieldChange = (e) => {
+        const value = e.target.value;
+        setCurrentEditedValue(value);
+    }
+
+    const onFieldBlur = () => {
+        onSaveChanges(currentEditedField, currentEditedValue, id);
+        setCurrentEditedField(null);
+        setCurrentEditedValue(null);
+    }
 
     return (
         <ul className={"biography-ul"}>
-            <li className={"biography-li"} onClick={() => handleClick("name.fullName", id)}>{fullName}</li>
-            <li className={"biography-li"} onClick={() => handleClick("age", id)}>{age}</li>
-            <li className={"biography-li"} onClick={() => handleClick("birthYear", id)}>{birthYear}</li>
-            <li className={"biography-li"} onClick={() => handleClick("weight", id)}>{weight}</li>
-            {<li className={"biography-li"} onClick={() => handleClick("belts", id)}>
+            <li className={"biography-li"}>{fullName}</li>
+            <li className={"biography-li"} onClick={() => onEditClick("age", age)}>
+                {currentEditedField === "age" ?
+                    <input value={currentEditedValue}
+                           onChange={onFieldChange}
+                           onBlur={onFieldBlur}
+                    /> : age}
+            </li>
+
+            <li className={"biography-li"} onClick={() => onEditClick("birthYear", birthYear)}>
+                {currentEditedField === "birthYear" ?
+                    <input
+                        value={currentEditedValue}
+                        onChange={onFieldChange}
+                        onBlur={onFieldBlur}
+                    /> : birthYear}
+            </li>
+
+            <li className={"biography-li"} onClick={() => onEditClick("weight", weight)}>
+                {currentEditedField === "weight" ?
+                    <input
+                        value={currentEditedValue}
+                        onChange={onFieldChange}
+                        onBlur={onFieldBlur}
+                    /> : weight}
+            </li>
+
+            <li className={"biography-li"}>
                 <ul>
-                    {sortedBelts.map(({beltName, year}, index) => (
+                    {bubbleSort(belts).map(({beltName, year}, index) => (
                         <li key={index}>{year} - {beltName}</li>
                     ))}
                 </ul>
-            </li>}
+            </li>
         </ul>
     );
 }
