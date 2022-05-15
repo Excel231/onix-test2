@@ -1,9 +1,9 @@
 import React from "react";
-import ListOfParameters from "./ListOfParameters";
+import ParameterList from "./ParameterList";
 
-const TitleListOfParameters = ({handleClick}) => {
+const TitleParameterList = ({handleClick}) => {
     return (
-        <ListOfParameters
+        <ParameterList
             key={0}
             fullName={"Full Name"}
             age={"Age"}
@@ -15,4 +15,4 @@ const TitleListOfParameters = ({handleClick}) => {
     );
 }
 
-export default TitleListOfParameters;
+export default TitleParameterList;

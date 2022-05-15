@@ -1,6 +1,6 @@
 import React from "react";
 
-const ListOfParameters = ({id, fullName, age, birthYear, weight, belts, handleClick}) => {
+const ParameterList = ({id, fullName, age, birthYear, weight, belts, handleClick}) => {
 
     /*Custom sort of belts by year value.*/
     const bubbleSort = (newBelts) => {
@@ -35,4 +35,4 @@ const ListOfParameters = ({id, fullName, age, birthYear, weight, belts, handleCl
     );
 }
 
-export default ListOfParameters;
+export default ParameterList;

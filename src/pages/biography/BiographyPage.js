@@ -1,8 +1,8 @@
 import React, {useState} from "react";
-import pregeneratedPersons from "./pregeneratedPersons";
-import ListOfParameters from "./ListOfParameters";
+import pregeneratedPersons from "./prepared-persons/pregeneratedPersons";
+import ParameterList from "./parameter-lists/ParameterList";
 import "../../styles.css";
-import TitleListOfParameters from "./TitleListOfParameters";
+import TitleListOfParameters from "./parameter-lists/TitleParameterList";
 
 /*Boolean value that shows in which order parameters should be displayed
 (from greatest to lowest or vice versa)*/
@@ -71,7 +71,7 @@ const BiographyPage = () => {
             <TitleListOfParameters handleClick={sortOnClick}/>
 
             {personsOnScreen.map(({id, name, age, birthYear, weight, belts}) => (
-                <ListOfParameters
+                <ParameterList
                     key={id}
                     id={id}
                     fullName={name.fullName}
