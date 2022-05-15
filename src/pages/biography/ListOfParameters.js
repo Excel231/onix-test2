@@ -16,7 +16,7 @@ const ListOfParameters = ({fullName, age, birthYear, weight, belts, handleClick}
         return newBelts;
     }
 
-    let sortedBelts = bubbleSort([...belts]);
+    let sortedBelts = typeof belts === "undefined" ? [] : bubbleSort([...belts]);
 
     return (
         <ul className={"biography-ul"}>
