@@ -1,6 +1,6 @@
 import React from "react";
 
-const ListOfParameters = ({fullName, age, birthYear, weight, belts, handleClick}) => {
+const ListOfParameters = ({id, fullName, age, birthYear, weight, belts, handleClick}) => {
 
     /*Custom sort of belts by year value.*/
     const bubbleSort = (newBelts) => {
@@ -20,11 +20,11 @@ const ListOfParameters = ({fullName, age, birthYear, weight, belts, handleClick}
 
     return (
         <ul className={"biography-ul"}>
-            <li className={"biography-li"} onClick={() => handleClick("name.fullName")}>{fullName}</li>
-            <li className={"biography-li"} onClick={() => handleClick("age")}>{age}</li>
-            <li className={"biography-li"} onClick={() => handleClick("birthYear")}>{birthYear}</li>
-            <li className={"biography-li"} onClick={() => handleClick("weight")}>{weight}</li>
-            {<li className={"biography-li"} onClick={() => handleClick("belts")}>
+            <li className={"biography-li"} onClick={() => handleClick("name.fullName", id)}>{fullName}</li>
+            <li className={"biography-li"} onClick={() => handleClick("age", id)}>{age}</li>
+            <li className={"biography-li"} onClick={() => handleClick("birthYear", id)}>{birthYear}</li>
+            <li className={"biography-li"} onClick={() => handleClick("weight", id)}>{weight}</li>
+            {<li className={"biography-li"} onClick={() => handleClick("belts", id)}>
                 <ul>
                     {sortedBelts.map(({beltName, year}, index) => (
                         <li key={index}>{year} - {beltName}</li>
