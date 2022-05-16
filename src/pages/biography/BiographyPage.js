@@ -3,7 +3,7 @@ import pregeneratedPersons from "./prepared-persons/pregeneratedPersons";
 import ParameterList from "./parameter-lists/ParameterList";
 import "../../styles.css";
 import TitleListOfParameters from "./parameter-lists/TitleParameterList";
-import sortPersons from "./parameter-lists/sortPersons";
+import sortPersons from "./parameter-lists/sorters/sortPersons";
 
 const listOfAllPersons = pregeneratedPersons;
 
