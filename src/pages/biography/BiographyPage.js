@@ -23,14 +23,14 @@ const BiographyPage = () => {
 
     const addPerson = () => {
         if (listOfAllPersons.length > 0) {
-            const newPerson = listOfAllPersons[personsOnScreen.length];
-            setPersonsArr([...personsOnScreen, newPerson]);
+            setPersonsArr([...personsOnScreen, listOfAllPersons.pop()]);
         }
     }
 
     const removePerson = () => {
         if (personsOnScreen.length > 0) {
-            setPersonsArr(personsOnScreen.slice(0, -1));
+            listOfAllPersons.push(personsOnScreen.pop());
+            setPersonsArr([...personsOnScreen]);
         }
     }
 
