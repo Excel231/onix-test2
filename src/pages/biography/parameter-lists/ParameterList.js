@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import bubbleSort from "./sorters/bubbleSort";
+import bubbleSort from "../sorters/bubbleSort";
 
 const ParameterList = ({id, fullName, age, birthYear, weight, belts, onSaveChanges}) => {
 
