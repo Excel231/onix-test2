@@ -22,16 +22,14 @@ const BiographyPage = () => {
     }
 
     const addPerson = () => {
-        if (listOfAllPersons.length > 0) {
-            setPersonsArr([...personsOnScreen, listOfAllPersons.pop()]);
+        if (personsOnScreen.length < listOfAllPersons.length) {
+            const newPerson = listOfAllPersons[personsOnScreen.length];
+            setPersonsArr([...personsOnScreen, newPerson]);
         }
     }
 
     const removePerson = () => {
-        if (personsOnScreen.length > 0) {
-            listOfAllPersons.push(personsOnScreen.pop());
-            setPersonsArr([...personsOnScreen]);
-        }
+        setPersonsArr(personsOnScreen.slice(0, -1));
     }
 
     const onSaveChanges = (field, value, id) => {
