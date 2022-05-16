@@ -33,7 +33,7 @@ const ParameterList = ({id, fullName, age, birthYear, weight, belts, onSaveChang
                                value={currentEditedValue}
                                onChange={onFieldChange}
                                onBlur={onFieldBlur}
-                        /> : age
+                        /> : <p>{age}</p>
                 }
             </li>
 
@@ -45,7 +45,7 @@ const ParameterList = ({id, fullName, age, birthYear, weight, belts, onSaveChang
                                value={currentEditedValue}
                                onChange={onFieldChange}
                                onBlur={onFieldBlur}
-                        /> : birthYear
+                        /> : <p>{birthYear}</p>
                 }
             </li>
 
@@ -57,7 +57,7 @@ const ParameterList = ({id, fullName, age, birthYear, weight, belts, onSaveChang
                                value={currentEditedValue}
                                onChange={onFieldChange}
                                onBlur={onFieldBlur}
-                        /> : weight
+                        /> : <p>{weight}</p>
                 }
             </li>
 
