@@ -28,7 +28,8 @@ const ParameterList = ({id, fullName, age, birthYear, weight, belts, onSaveChang
             <li className={"biography-li"} onClick={() => onEditClick("age", age)}>
                 {
                     currentEditedField === "age" ?
-                        <input autoFocus
+                        <input className="biography-text-input"
+                               autoFocus
                                value={currentEditedValue}
                                onChange={onFieldChange}
                                onBlur={onFieldBlur}
@@ -39,7 +40,8 @@ const ParameterList = ({id, fullName, age, birthYear, weight, belts, onSaveChang
             <li className={"biography-li"} onClick={() => onEditClick("birthYear", birthYear)}>
                 {
                     currentEditedField === "birthYear" ?
-                        <input autoFocus
+                        <input className="biography-text-input"
+                               autoFocus
                                value={currentEditedValue}
                                onChange={onFieldChange}
                                onBlur={onFieldBlur}
@@ -50,7 +52,8 @@ const ParameterList = ({id, fullName, age, birthYear, weight, belts, onSaveChang
             <li className={"biography-li"} onClick={() => onEditClick("weight", weight)}>
                 {
                     currentEditedField === "weight" ?
-                        <input autoFocus
+                        <input className="biography-text-input"
+                               autoFocus
                                value={currentEditedValue}
                                onChange={onFieldChange}
                                onBlur={onFieldBlur}

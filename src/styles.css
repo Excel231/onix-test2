@@ -119,3 +119,12 @@ h1:hover,
     background: #262323 linear-gradient(to right, #212121, #2c2c2c, #373737, #424242, #4e4e4e);
     border: solid #DA0037;
 }
+
+.biography-text-input {
+    background-color: #EDEDED;
+    color: #880022;
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    width: 10rem;
+}
