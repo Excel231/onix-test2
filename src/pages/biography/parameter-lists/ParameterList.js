@@ -28,7 +28,8 @@ const ParameterList = ({id, fullName, age, birthYear, weight, belts, onSaveChang
             <li className={"biography-li"} onClick={() => onEditClick("age", age)}>
                 {
                     currentEditedField === "age" ?
-                        <input value={currentEditedValue}
+                        <input autoFocus
+                               value={currentEditedValue}
                                onChange={onFieldChange}
                                onBlur={onFieldBlur}
                         /> : age
@@ -38,10 +39,10 @@ const ParameterList = ({id, fullName, age, birthYear, weight, belts, onSaveChang
             <li className={"biography-li"} onClick={() => onEditClick("birthYear", birthYear)}>
                 {
                     currentEditedField === "birthYear" ?
-                        <input
-                            value={currentEditedValue}
-                            onChange={onFieldChange}
-                            onBlur={onFieldBlur}
+                        <input autoFocus
+                               value={currentEditedValue}
+                               onChange={onFieldChange}
+                               onBlur={onFieldBlur}
                         /> : birthYear
                 }
             </li>
@@ -49,10 +50,10 @@ const ParameterList = ({id, fullName, age, birthYear, weight, belts, onSaveChang
             <li className={"biography-li"} onClick={() => onEditClick("weight", weight)}>
                 {
                     currentEditedField === "weight" ?
-                        <input
-                            value={currentEditedValue}
-                            onChange={onFieldChange}
-                            onBlur={onFieldBlur}
+                        <input autoFocus
+                               value={currentEditedValue}
+                               onChange={onFieldChange}
+                               onBlur={onFieldBlur}
                         /> : weight
                 }
             </li>
