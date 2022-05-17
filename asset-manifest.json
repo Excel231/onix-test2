@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/onix-test2/static/css/main.d38843f2.css",
-    "main.js": "/onix-test2/static/js/main.3a934590.js",
+    "main.css": "/onix-test2/static/css/main.4c259712.css",
+    "main.js": "/onix-test2/static/js/main.52a7154a.js",
     "static/media/boxer-background.jpg": "/onix-test2/static/media/boxer-background.69a0a2dc4566b11deba7.jpg",
     "index.html": "/onix-test2/index.html",
-    "main.d38843f2.css.map": "/onix-test2/static/css/main.d38843f2.css.map",
-    "main.3a934590.js.map": "/onix-test2/static/js/main.3a934590.js.map"
+    "main.4c259712.css.map": "/onix-test2/static/css/main.4c259712.css.map",
+    "main.52a7154a.js.map": "/onix-test2/static/js/main.52a7154a.js.map"
   },
   "entrypoints": [
-    "static/css/main.d38843f2.css",
-    "static/js/main.3a934590.js"
+    "static/css/main.4c259712.css",
+    "static/js/main.52a7154a.js"
   ]
 }
