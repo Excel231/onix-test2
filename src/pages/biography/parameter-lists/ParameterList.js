@@ -24,7 +24,7 @@ const ParameterList = ({id, fullName, age, birthYear, weight, belts, onSaveChang
 
     return (
         <ul className={"biography-ul"}>
-            <li className={"biography-li"}>{fullName}</li>
+            <li className={"biography-li"}><p>{fullName}</p></li>
             <li className={"biography-li"} onClick={() => onEditClick("age", age)}>
                 {
                     currentEditedField === "age" ?
@@ -65,7 +65,7 @@ const ParameterList = ({id, fullName, age, birthYear, weight, belts, onSaveChang
                 <ul>
                     {
                         bubbleSort(belts).map(({beltName, year}, index) => (
-                            <li key={index}>{year} - {beltName}</li>
+                            <li className={"belt"} key={index}>{year} - {beltName}</li>
                         ))
                     }
                 </ul>

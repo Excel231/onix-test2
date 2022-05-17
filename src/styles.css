@@ -92,14 +92,6 @@ h1:hover,
     margin: 0 5px;
 }
 
-/* Resize */
-
-@media (max-width: 1200px) {
-    p {
-        line-height: normal;
-    }
-}
-
 /* Biography */
 
 .boxer-list {
@@ -127,4 +119,42 @@ h1:hover,
     font-size: 2rem;
     text-align: center;
     width: 10rem;
+}
+
+/* Resize */
+
+@media (max-width: 1200px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 20px;
+        line-height: normal;
+        margin-bottom: 0;
+    }
+
+    ul {
+        padding: 0;
+    }
+
+    .big-red-btn {
+        font-size: 1rem;
+        padding: 15px;
+        margin: 10px;
+    }
+
+    .biography-li {
+        font-size: 20px;
+        width: 25%;
+    }
+
+    .biography-text-input {
+        font-size: 20px;
+        width: 3rem;
+    }
+
+    .belt {
+        display: none;
+    }
 }

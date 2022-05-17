@@ -8,7 +8,7 @@ const TitleParameterList = ({sortOnClick}) => {
             <li className="biography-li" onClick={() => sortOnClick("age")}>Age</li>
             <li className="biography-li" onClick={() => sortOnClick("birthYear")}>Birth Year</li>
             <li className="biography-li" onClick={() => sortOnClick("weight")}>Weight</li>
-            <li className="biography-li" onClick={() => sortOnClick("belts")}>Year - Belts</li>
+            <li className="biography-li belt" onClick={() => sortOnClick("belts")}>Year - Belts</li>
         </ul>
     );
 }

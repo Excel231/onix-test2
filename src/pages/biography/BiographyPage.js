@@ -5,11 +5,13 @@ import "../../styles.css";
 import TitleListOfParameters from "./parameter-lists/TitleParameterList";
 import sortPersons from "./sorters/sortPersons";
 
+const ELEMENTS_TO_DISPLAY = 3;
+
 const listOfAllPersons = pregeneratedPersons;
 
 const BiographyPage = () => {
 
-    const [personsOnScreen, setPersonsArr] = useState([]);
+    const [personsOnScreen, setPersonsArr] = useState(listOfAllPersons.slice(0, ELEMENTS_TO_DISPLAY));
 
     /*Boolean value that shows in which order parameters should be displayed
     (from greatest to lowest or vice versa)*/
