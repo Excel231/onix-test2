@@ -82,7 +82,7 @@ ParameterList.propTypes = {
     age: PropType.number,
     birthYear: PropType.number,
     weight: PropType.number,
-    belts: PropType.object,
+    belts: PropType.array,
     onSaveChanges: PropType.func
 }
 
