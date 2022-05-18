@@ -52,7 +52,8 @@ li {
 /* Classes */
 
 .call-to-sign-up {
-    line-height: 7rem;
+    line-height: 5rem;
+    margin-top: 1rem;
 }
 
 h1:hover,

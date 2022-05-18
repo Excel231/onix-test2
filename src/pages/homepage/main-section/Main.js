@@ -1,11 +1,12 @@
 import React, {useState} from "react";
 import BoxerLink from "./BoxerLink";
-import SignUpButton from "./SignUpButton";
+import SignUpButton from "./buttons/SignUpButton";
+import ButtonToBiographyPage from "./buttons/ButtonToBiographyPage";
 
 const SIGN_UP_BUTTON_TEXT = "SMASH THIS BUTTON RIGHT NOW!";
 const SIGN_UP_BUTTON_CHANGED_TEXT = "WELCOME TO THE CLUB, BUDDY!"
 
-const Main = () => {
+const Main = ({changeCurrentPage}) => {
     const [signUpText, setSignUpText] = useState(SIGN_UP_BUTTON_TEXT);
 
     function changeSignUpText() {
@@ -24,7 +25,9 @@ const Main = () => {
                 , join our community and
             </p>
             <p className="call-to-sign-up"><strong>{signUpText}</strong></p>
-            <SignUpButton onButtonClick={changeSignUpText}/>
+            <SignUpButton changeText={changeSignUpText}/>
+            <br/>
+            <ButtonToBiographyPage changePage={changeCurrentPage}/>
         </div>
     );
 }

@@ -4,11 +4,11 @@ import Main from "./main-section/Main";
 import Footer from "./footer-section/Footer";
 import "../../styles.css"
 
-const Homepage = () => {
+const Homepage = ({changeCurrentPage}) => {
     return (
         <>
             <Header/>
-            <Main/>
+            <Main changeCurrentPage={changeCurrentPage}/>
             <Footer/>
         </>
     );
