@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import bubbleSort from "../sorters/bubbleSort";
+import PropType from "prop-types";
 
 const ParameterList = ({id, fullName, age, birthYear, weight, belts, onSaveChanges}) => {
 
@@ -25,6 +26,7 @@ const ParameterList = ({id, fullName, age, birthYear, weight, belts, onSaveChang
     return (
         <ul className={"biography-ul"}>
             <li className={"biography-li"}><p>{fullName}</p></li>
+
             <li className={"biography-li"} onClick={() => onEditClick("age", age)}>
                 {
                     currentEditedField === "age" ?
@@ -72,6 +74,16 @@ const ParameterList = ({id, fullName, age, birthYear, weight, belts, onSaveChang
             </li>
         </ul>
     );
+}
+
+ParameterList.propTypes = {
+    id: PropType.number,
+    fullName: PropType.string,
+    age: PropType.number,
+    birthYear: PropType.number,
+    weight: PropType.number,
+    belts: PropType.object,
+    onSaveChanges: PropType.func
 }
 
 export default ParameterList;

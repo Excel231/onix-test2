@@ -1,5 +1,7 @@
 import React from "react";
 import "../../../styles.css";
+import PropType from "prop-types";
+import ParameterList from "./ParameterList";
 
 const TitleParameterList = ({sortOnClick}) => {
     return (
@@ -11,6 +13,10 @@ const TitleParameterList = ({sortOnClick}) => {
             <li className="biography-li belt" onClick={() => sortOnClick("belts")}>Year - Belts</li>
         </ul>
     );
+}
+
+ParameterList.propTypes = {
+    sortOnClick: PropType.func
 }
 
 export default TitleParameterList;

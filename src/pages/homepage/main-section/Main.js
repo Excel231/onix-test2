@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import BoxerLink from "./BoxerLink";
 import SignUpButton from "./buttons/SignUpButton";
 import ButtonToBiographyPage from "./buttons/ButtonToBiographyPage";
+import PropType from "prop-types";
 
 const SIGN_UP_BUTTON_TEXT = "SMASH THIS BUTTON RIGHT NOW!";
 const SIGN_UP_BUTTON_CHANGED_TEXT = "WELCOME TO THE CLUB, BUDDY!"
@@ -30,6 +31,10 @@ const Main = ({changeCurrentPage}) => {
             <ButtonToBiographyPage changePage={changeCurrentPage}/>
         </div>
     );
+}
+
+Main.propTypes = {
+    changeCurrentPage: PropType.func
 }
 
 export default Main;

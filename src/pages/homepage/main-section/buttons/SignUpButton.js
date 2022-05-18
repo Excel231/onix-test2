@@ -1,4 +1,5 @@
 import React from "react";
+import PropType from "prop-types";
 
 const SignUpButton = ({changeText}) => {
     return (
@@ -10,6 +11,10 @@ const SignUpButton = ({changeText}) => {
            <strong>SIGN UP!</strong>
         </a>
     );
+}
+
+SignUpButton.propTypes = {
+    changText: PropType.func
 }
 
 export default SignUpButton;

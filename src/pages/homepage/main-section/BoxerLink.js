@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import PropType from "prop-types";
 
 const BoxerLink = ({boxerSite, boxerName}) => {
     const [textIsDecorated, setTextDecoration] = useState(false);
@@ -16,6 +17,11 @@ const BoxerLink = ({boxerSite, boxerName}) => {
            rel="noreferrer">{boxerName}
         </a>
     );
+}
+
+BoxerLink.propTypes = {
+    boxerSite: PropType.string,
+    boxerName: PropType.string
 }
 
 export default BoxerLink;
