@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import bubbleSort from "../sorters/bubbleSort";
 import PropType from "prop-types";
+import ChangeableParameterItem from "./ChangeableParameterItem";
 
 const ParameterList = ({id, fullName, age, birthYear, weight, belts, onSaveChanges}) => {
 
@@ -27,41 +28,35 @@ const ParameterList = ({id, fullName, age, birthYear, weight, belts, onSaveChang
         <ul className={"biography-ul"}>
             <li className={"biography-li"}><p>{fullName}</p></li>
 
-            <li className={"biography-li"} onClick={() => onEditClick("age", age)}>
-                {
-                    currentEditedField === "age" ?
-                        <input className="biography-text-input"
-                               autoFocus
-                               value={currentEditedValue}
-                               onChange={onFieldChange}
-                               onBlur={onFieldBlur}
-                        /> : <p>{age}</p>
-                }
-            </li>
+            <ChangeableParameterItem
+                parameter={age}
+                parameterName={"age"}
+                currentEditedValue={currentEditedValue}
+                currentEditedField={currentEditedField}
+                onFieldBlur={onFieldBlur}
+                onEditClick={onEditClick}
+                onFieldChange={onFieldChange}
+            />
 
-            <li className={"biography-li"} onClick={() => onEditClick("birthYear", birthYear)}>
-                {
-                    currentEditedField === "birthYear" ?
-                        <input className="biography-text-input"
-                               autoFocus
-                               value={currentEditedValue}
-                               onChange={onFieldChange}
-                               onBlur={onFieldBlur}
-                        /> : <p>{birthYear}</p>
-                }
-            </li>
+            <ChangeableParameterItem
+                parameter={birthYear}
+                parameterName={"birthYear"}
+                currentEditedValue={currentEditedValue}
+                currentEditedField={currentEditedField}
+                onFieldBlur={onFieldBlur}
+                onEditClick={onEditClick}
+                onFieldChange={onFieldChange}
+            />
 
-            <li className={"biography-li"} onClick={() => onEditClick("weight", weight)}>
-                {
-                    currentEditedField === "weight" ?
-                        <input className="biography-text-input"
-                               autoFocus
-                               value={currentEditedValue}
-                               onChange={onFieldChange}
-                               onBlur={onFieldBlur}
-                        /> : <p>{weight}</p>
-                }
-            </li>
+            <ChangeableParameterItem
+                parameter={weight}
+                parameterName={"weight"}
+                currentEditedValue={currentEditedValue}
+                currentEditedField={currentEditedField}
+                onFieldBlur={onFieldBlur}
+                onEditClick={onEditClick}
+                onFieldChange={onFieldChange}
+            />
 
             <li className={"biography-li"}>
                 <ul>
