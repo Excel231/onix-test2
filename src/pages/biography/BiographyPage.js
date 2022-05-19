@@ -7,7 +7,7 @@ import sortPersons from "./sorters/sortPersons";
 
 const ELEMENTS_TO_DISPLAY = 3;
 
-const listOfAllPersons = pregeneratedPersons;
+const listOfAllPersons = [...pregeneratedPersons];
 
 const BiographyPage = () => {
 
