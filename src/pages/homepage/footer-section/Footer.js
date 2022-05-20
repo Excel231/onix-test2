@@ -8,13 +8,10 @@ const designLink = "https://www.templatemonsterpreview.com/demo/54034.html?_gl=1
 const shLink = "https://diploma.programming.org.ua/ru/d/zPE9X6BvVKaZDAm93jw7Q12MYRgNGoqr";
 
 class Footer extends React.Component {
+    state = {
+        linkText: ":",
+    };
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            linkText: ":",
-        };
-    }
 
     changeSignUpText = (linkTitle) => {
         this.setState({linkText: linkTitle});

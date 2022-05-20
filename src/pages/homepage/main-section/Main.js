@@ -3,6 +3,7 @@ import BoxerLink from "./BoxerLink";
 import SignUpButton from "./buttons/SignUpButton";
 import ButtonToBiographyPage from "./buttons/ButtonToBiographyPage";
 import PropType from "prop-types";
+import DiscountTimer from "./DiscountTimer";
 
 const SIGN_UP_BUTTON_TEXT = "SMASH THIS BUTTON RIGHT NOW!";
 const SIGN_UP_BUTTON_CHANGED_TEXT = "WELCOME TO THE CLUB, BUDDY!"
@@ -24,6 +25,7 @@ const Main = ({changeCurrentPage}) => {
                 <BoxerLink boxerName="Oleksander Usyk" boxerSite="https://a-usyk.com/en/biography/"/>
                 , join our community now and
             </p>
+            <DiscountTimer/>
             <p className="call-to-sign-up"><strong>{signUpText}</strong></p>
             <SignUpButton changeText={changeSignUpText}/>
             <br/>
