@@ -1,7 +1,7 @@
 import React from "react";
 import "../../../styles.css";
 import PropType from "prop-types";
-import ParameterList from "./ParameterList";
+import ParameterList from "../ParameterList/ParameterList";
 
 class TitleParameterList extends React.Component {
     render() {

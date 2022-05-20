@@ -1,22 +1,18 @@
 import React from "react";
-import pregeneratedPersons from "./prepared-persons/pregeneratedPersons";
-import ParameterList from "./parameter-lists/ParameterList";
+import pregeneratedPersons from "../../сomponents/biographyParameterLists/prepared-persons/pregeneratedPersons";
 import "../../styles.css";
-import TitleListOfParameters from "./parameter-lists/TitleParameterList";
-import sortPersons from "./sorters/sortPersons";
+import sortPersons from "../../helper/sorters/sortPersons";
+import BiographyPageView from "./BiographyPageView";
 
 let listOfAllPersons = [];
 
 class BiographyPage extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            personsOnScreen: [],
-            /*Boolean value that shows in which order parameters should be displayed
-            (from greatest to lowest or vice versa)*/
-            sortFromGreatest: false
-        }
+    state = {
+        personsOnScreen: [],
+        /*Boolean value that shows in which order parameters should be displayed
+        (from greatest to lowest or vice versa)*/
+        sortFromGreatest: false
     }
 
     componentDidMount() {
@@ -53,26 +49,13 @@ class BiographyPage extends React.Component {
 
     render() {
         return (
-            <>
-                <h1>Famous boxers you have to know about!</h1>
-                <TitleListOfParameters sortOnClick={this.sortOnClick}/>
-
-                {this.state.personsOnScreen.map(({id, personInfo: {fullName, age, birthYear, weight, belts}}) => (
-                    <ParameterList
-                        key={id}
-                        id={id}
-                        fullName={fullName}
-                        age={age}
-                        birthYear={birthYear}
-                        weight={weight}
-                        belts={belts}
-                        onSaveChanges={this.onSaveChanges}
-                    />
-                ))}
-
-                <button className={"big-red-btn"} onClick={this.addPerson}>Add new person</button>
-                <button className={"big-red-btn"} onClick={this.removePerson}>Remove last person</button>
-            </>
+            <BiographyPageView
+                personsOnScreen={this.state.personsOnScreen}
+                sortOnClick={this.sortOnClick}
+                addPerson={this.addPerson}
+                removePerson={this.removePerson}
+                onSaveChanges={this.onSaveChanges}
+            />
         )
     }
 }

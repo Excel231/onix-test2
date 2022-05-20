@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "./header-section/Header";
-import Main from "./main-section/Main";
-import Footer from "./footer-section/Footer";
+import Header from "../../сomponents/Header/Header";
+import HomepageMainSection from "../../сomponents/HomepageMainSection/HomepageMainSection";
+import Footer from "../../сomponents/Footer/Footer";
 import "../../styles.css"
 import PropType from "prop-types";
 
@@ -10,7 +10,7 @@ class Homepage extends React.Component {
         return (
             <>
                 <Header/>
-                <Main changeCurrentPage={this.props.changeCurrentPage}/>
+                <HomepageMainSection changeCurrentPage={this.props.changeCurrentPage}/>
                 <Footer/>
             </>
         );

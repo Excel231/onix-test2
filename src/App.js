@@ -1,6 +1,6 @@
 import React from "react";
-import BiographyPage from "./pages/biography/BiographyPage";
-import Homepage from "./pages/homepage/Homepage";
+import BiographyPage from "./pages/Biography/BiographyPage";
+import Homepage from "./pages/Homepage/Homepage";
 
 class App extends React.Component {
     state = {
