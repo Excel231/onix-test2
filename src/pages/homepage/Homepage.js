@@ -5,14 +5,16 @@ import Footer from "./footer-section/Footer";
 import "../../styles.css"
 import PropType from "prop-types";
 
-const Homepage = ({changeCurrentPage}) => {
-    return (
-        <>
-            <Header/>
-            <Main changeCurrentPage={changeCurrentPage}/>
-            <Footer/>
-        </>
-    );
+class Homepage extends React.Component {
+    render() {
+        return (
+            <>
+                <Header/>
+                <Main changeCurrentPage={this.props.changeCurrentPage}/>
+                <Footer/>
+            </>
+        );
+    }
 }
 
 Homepage.propTypes = {

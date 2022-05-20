@@ -1,18 +1,21 @@
-import React, {useState} from "react";
+import React from "react";
 import BiographyPage from "./pages/biography/BiographyPage";
 import Homepage from "./pages/homepage/Homepage";
 
-const App = () => {
+class App extends React.Component {
+    state = {
+        currentPage: <Homepage changeCurrentPage={() => this.setState({currentPage: <BiographyPage/>})}/>
+    }
 
-    const [currentPage, setCurrentPage] = useState(
-        <Homepage changeCurrentPage={() => setCurrentPage(<BiographyPage/>)}/>
-    );
+    render() {
+        return (
+            <>
+                {this.state.currentPage}
+            </>
+        );
+    }
 
-    return (
-        <>
-            {currentPage}
-        </>
-    );
+
 }
 
 export default App;
