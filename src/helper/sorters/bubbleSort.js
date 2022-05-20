@@ -1,15 +1,16 @@
 /*Custom sort of belts by year value.*/
-const bubbleSort = (currentBelts) => {
-    for (let i = 0; i < currentBelts.length - 1; i++) {
-        for (let j = 0; j < currentBelts.length - i - 1; j++) {
-            if (currentBelts[j + 1].year < currentBelts[j].year) {
-                let temp = currentBelts[j + 1].year;
-                currentBelts[j + 1].year = currentBelts[j].year;
-                currentBelts[j].year = temp;
+const bubbleSort = (beltsToSort) => {
+    const sortedBelts = [...beltsToSort];
+    for (let i = 0; i < sortedBelts.length - 1; i++) {
+        for (let j = 0; j < sortedBelts.length - i - 1; j++) {
+            if (sortedBelts[j + 1].year < sortedBelts[j].year) {
+                let temp = sortedBelts[j + 1];
+                sortedBelts[j + 1] = sortedBelts[j];
+                sortedBelts[j] = temp;
             }
         }
     }
-    return currentBelts;
+    return sortedBelts;
 }
 
 export default bubbleSort;
