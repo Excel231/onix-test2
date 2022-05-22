@@ -18,38 +18,34 @@ class ParameterListView extends React.Component {
             onFieldBlur
         } = this.props;
 
-        return(
+        const commonProps = {
+            currentEditedValue: currentEditedValue,
+            currentEditedField: currentEditedField,
+            onFieldBlur: onFieldBlur,
+            onEditClick: onEditClick,
+            onFieldChange: onFieldChange
+        };
+
+        return (
             <ul className={"biography-ul"}>
                 <li className={"biography-li"}><p>{fullName}</p></li>
 
                 <ChangeableParameterItem
                     parameter={age}
                     parameterName={"age"}
-                    currentEditedValue={currentEditedValue}
-                    currentEditedField={currentEditedField}
-                    onFieldBlur={onFieldBlur}
-                    onEditClick={onEditClick}
-                    onFieldChange={onFieldChange}
+                    {...commonProps}
                 />
 
                 <ChangeableParameterItem
                     parameter={birthYear}
                     parameterName={"birthYear"}
-                    currentEditedValue={currentEditedValue}
-                    currentEditedField={currentEditedField}
-                    onFieldBlur={onFieldBlur}
-                    onEditClick={onEditClick}
-                    onFieldChange={onFieldChange}
+                    {...commonProps}
                 />
 
                 <ChangeableParameterItem
                     parameter={weight}
                     parameterName={"weight"}
-                    currentEditedValue={currentEditedValue}
-                    currentEditedField={currentEditedField}
-                    onFieldBlur={onFieldBlur}
-                    onEditClick={onEditClick}
-                    onFieldChange={onFieldChange}
+                    {...commonProps}
                 />
 
                 <li className={"biography-li"}>

@@ -1,14 +1,14 @@
 const createPerson = (id, firstName, secondName, age, birthYear, weight, belts) => {
      return {
-        id: id,
+        id,
         personInfo: {
-            firstName: firstName,
-            secondName: secondName,
+            firstName,
+            secondName,
             fullName: `${firstName} ${secondName}`,
-            age: age,
-            birthYear: birthYear,
-            weight: weight,
-            belts: belts
+            age,
+            birthYear,
+            weight,
+            belts
         }
     }
 }

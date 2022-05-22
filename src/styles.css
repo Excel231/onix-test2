@@ -115,6 +115,7 @@ h1:hover,
 
 .biography-text-input {
     background-color: #EDEDED;
+    border-radius: 20px;
     color: #880022;
     font-family: 'Oswald', sans-serif;
     font-size: 2rem;
