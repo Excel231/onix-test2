@@ -1,6 +1,7 @@
 import TitleListOfParameters from "../../сomponents/biographyParameterLists/TitleParameterList/TitleParameterList";
 import ParameterList from "../../сomponents/biographyParameterLists/ParameterList/ParameterList";
 import React from "react";
+import PropType from "prop-types";
 
 class BiographyPageView extends React.Component {
     render() {
@@ -28,6 +29,14 @@ class BiographyPageView extends React.Component {
             </>
         );
     }
+}
+
+BiographyPageView.propTypes = {
+    personsOnScreen: PropType.array,
+    sortOnClick: PropType.func,
+    addPerson: PropType.func,
+    removePerson: PropType.func,
+    onSaveChanges: PropType.func
 }
 
 export default BiographyPageView;
