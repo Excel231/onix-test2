@@ -7,7 +7,6 @@ import BiographyPageView from "./BiographyPageView";
 let listOfAllPersons = [];
 
 class BiographyPage extends React.Component {
-
     state = {
         personsOnScreen: [],
         /*Boolean value that shows in which order parameters should be displayed
@@ -23,7 +22,13 @@ class BiographyPage extends React.Component {
         const sortedPersons = sortPersons(
             [...this.state.personsOnScreen], componentToCompare, this.state.sortFromGreatest
         );
-        this.setState({sortFromGreatest: !this.state.sortFromGreatest, personsOnScreen: sortedPersons});
+
+        this.setState((state) => {
+            return {
+                sortFromGreatest: !state.sortFromGreatest,
+                personsOnScreen: sortedPersons
+            }
+        });
     }
 
     addPerson = () => {
