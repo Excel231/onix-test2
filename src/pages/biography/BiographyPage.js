@@ -22,7 +22,6 @@ class BiographyPage extends React.Component {
         const sortedPersons = sortPersons(
             [...this.state.personsOnScreen], componentToCompare, this.state.sortFromGreatest
         );
-
         this.setState((state) => {
             return {
                 sortFromGreatest: !state.sortFromGreatest,
@@ -44,12 +43,13 @@ class BiographyPage extends React.Component {
 
     onSaveChanges = (field, value, id) => {
         const newPersons = this.state.personsOnScreen.map((person) => {
-            if (person.id === id) {
-                return {...person, personInfo: {...person.personInfo, [field]: value}}
-            }
-            return person;
+            return person.id === id ? {...person, personInfo: {...person.personInfo, [field]: value}} : person;
         });
         this.setState({personsOnScreen: newPersons});
+    }
+
+    changePersonsOnScreen = (newPersonsArray) => {
+        this.setState({personsOnScreen: newPersonsArray});
     }
 
     render() {
@@ -60,6 +60,7 @@ class BiographyPage extends React.Component {
                 addPerson={this.addPerson}
                 removePerson={this.removePerson}
                 onSaveChanges={this.onSaveChanges}
+                changePersonsOnScreen={this.changePersonsOnScreen}
             />
         )
     }

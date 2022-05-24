@@ -1,29 +1,29 @@
 import TitleListOfParameters from "../../сomponents/biographyParameterLists/TitleParameterList/TitleParameterList";
-import ParameterList from "../../сomponents/biographyParameterLists/ParameterList/ParameterList";
 import React from "react";
 import PropType from "prop-types";
+import DraggableList from "../../сomponents/biographyParameterLists/DraggableList/DraggableList";
 
 class BiographyPageView extends React.Component {
     render() {
-        const {personsOnScreen, sortOnClick, addPerson, removePerson, onSaveChanges} = this.props;
+        const {
+            personsOnScreen,
+            sortOnClick,
+            addPerson,
+            removePerson,
+            onSaveChanges,
+            changePersonsOnScreen
+        } = this.props;
+
         return (
             <>
                 <h1>Famous boxers you have to know about!</h1>
                 <TitleListOfParameters sortOnClick={sortOnClick}/>
 
-                {personsOnScreen.map(({id, personInfo: {fullName, age, birthYear, weight, belts}}) => (
-                    <ParameterList
-                        key={id}
-                        id={id}
-                        fullName={fullName}
-                        age={age}
-                        birthYear={birthYear}
-                        weight={weight}
-                        belts={belts}
-                        onSaveChanges={onSaveChanges}
-                    />
-                ))}
-
+                <DraggableList
+                    personsOnScreen={personsOnScreen}
+                    onSaveChanges={onSaveChanges}
+                    changePersonsOnScreen={changePersonsOnScreen}
+                />
                 <button className={"big-red-btn"} onClick={addPerson}>Add new person</button>
                 <button className={"big-red-btn"} onClick={removePerson}>Remove last person</button>
             </>
