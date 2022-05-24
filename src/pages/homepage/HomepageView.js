@@ -1,11 +1,11 @@
 import React from "react";
-import BoxerLink from "../BoxerLink/BoxerLink";
-import DiscountTimer from "../DiscountTimer/DiscountTimer";
-import SignUpButton from "../buttons/SignUpButton/SignUpButton";
-import LinkToBiographyPage from "../buttons/ButtonToBiographyPage/LinkToBiographyPage";
 import PropType from "prop-types";
+import BoxerLink from "../../сomponents/BoxerLink/BoxerLink";
+import DiscountTimer from "../../сomponents/DiscountTimer/DiscountTimer";
+import SignUpButton from "../../сomponents/buttons/SignUpButton/SignUpButton";
+import LinkToBiographyPage from "../../сomponents/buttons/ButtonToBiographyPage/LinkToBiographyPage";
 
-class HomepageMainSectionView extends React.Component {
+class HomepageView extends React.Component {
     render() {
         const {signUpText, changeSignUpText} = this.props;
         return (
@@ -31,9 +31,9 @@ class HomepageMainSectionView extends React.Component {
     }
 }
 
-HomepageMainSectionView.propTypes = {
+HomepageView.propTypes = {
     signUpText: PropType.string,
     changeSignUpText: PropType.func,
 }
 
-export default HomepageMainSectionView;
+export default HomepageView;
