@@ -2,12 +2,12 @@ import React from "react";
 import BoxerLink from "../BoxerLink/BoxerLink";
 import DiscountTimer from "../DiscountTimer/DiscountTimer";
 import SignUpButton from "../buttons/SignUpButton/SignUpButton";
-import ButtonToBiographyPage from "../buttons/ButtonToBiographyPage/ButtonToBiographyPage";
+import LinkToBiographyPage from "../buttons/ButtonToBiographyPage/LinkToBiographyPage";
 import PropType from "prop-types";
 
 class HomepageMainSectionView extends React.Component {
     render() {
-        const {signUpText, changeSignUpText, changeCurrentPage} = this.props;
+        const {signUpText, changeSignUpText} = this.props;
         return (
             <div id="main-text">
                 <p>Box is one of the most popular sports in the World!</p>
@@ -22,7 +22,7 @@ class HomepageMainSectionView extends React.Component {
                 <p className="call-to-sign-up"><strong>{signUpText}</strong></p>
                 <SignUpButton changeText={changeSignUpText}/>
                 <br/>
-                <ButtonToBiographyPage changePage={changeCurrentPage}/>
+                <LinkToBiographyPage/>
             </div>
         );
     }
@@ -31,7 +31,6 @@ class HomepageMainSectionView extends React.Component {
 HomepageMainSectionView.propTypes = {
     signUpText: PropType.string,
     changeSignUpText: PropType.func,
-    changeCurrentPage: PropType.func
 }
 
 export default HomepageMainSectionView;
