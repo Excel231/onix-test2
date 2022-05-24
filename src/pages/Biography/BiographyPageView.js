@@ -16,7 +16,6 @@ class BiographyPageView extends React.Component {
 
         return (
             <>
-                <h1>Famous boxers you have to know about!</h1>
                 <TitleListOfParameters sortOnClick={sortOnClick}/>
 
                 <DraggableList
@@ -24,8 +23,11 @@ class BiographyPageView extends React.Component {
                     onSaveChanges={onSaveChanges}
                     changePersonsOnScreen={changePersonsOnScreen}
                 />
-                <button className={"big-red-btn"} onClick={addPerson}>Add new person</button>
-                <button className={"big-red-btn"} onClick={removePerson}>Remove last person</button>
+                <div>
+                    <button className={"big-red-btn"} onClick={addPerson}>Add new person</button>
+                    <button className={"big-red-btn"} onClick={removePerson}>Remove last person</button>
+                </div>
+
             </>
         );
     }
