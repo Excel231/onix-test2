@@ -38,35 +38,40 @@ class DraggableList extends React.Component {
     }
 
     handleParameterIsEdited = () => {
-        this.setState({parameterIsEdited: !this.state.parameterIsEdited});
+        this.setState((state) => {
+            return {parameterIsEdited: !state.parameterIsEdited}
+        });
     }
 
     handleKeypress = (e) => {
         if (this.state.parameterIsEdited) return;
         const keyPressed = e.key;
 
-        const indexOfActivePerson = this.props.personsOnScreen.indexOf(this.state.currentActivePerson);
-
         switch (keyPressed) {
             case ("1"):
                 this.setState({activeStyle: DEFAULT_ACTIVE_STYLE + "-white"});
                 break;
+
             case ("2"):
                 this.setState({activeStyle: DEFAULT_ACTIVE_STYLE + "-green"});
                 break;
+
             case ("3"):
                 this.setState({activeStyle: DEFAULT_ACTIVE_STYLE + "-blue"});
                 break;
+
             case("ArrowUp"):
                 this.setState({
                     currentActivePerson: this.props.personsOnScreen[this.getIndexOfActivePerson() - 1]
                 });
                 break;
+
             case("ArrowDown"):
                 this.setState({
                     currentActivePerson: this.props.personsOnScreen[this.getIndexOfActivePerson() + 1]
                 });
                 break;
+
             default:
                 this.setState({activeStyle: DEFAULT_ACTIVE_STYLE});
                 break;
