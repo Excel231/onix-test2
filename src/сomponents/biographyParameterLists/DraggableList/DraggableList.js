@@ -46,6 +46,7 @@ class DraggableList extends React.Component {
         const keyPressed = e.key;
 
         const indexOfActivePerson = this.props.personsOnScreen.indexOf(this.state.currentActivePerson);
+
         switch (keyPressed) {
             case ("1"):
                 this.setState({activeStyle: DEFAULT_ACTIVE_STYLE + "-white"});
@@ -57,15 +58,23 @@ class DraggableList extends React.Component {
                 this.setState({activeStyle: DEFAULT_ACTIVE_STYLE + "-blue"});
                 break;
             case("ArrowUp"):
-                this.setState({currentActivePerson: this.props.personsOnScreen[indexOfActivePerson - 1]})
+                this.setState({
+                    currentActivePerson: this.props.personsOnScreen[this.getIndexOfActivePerson() - 1]
+                });
                 break;
             case("ArrowDown"):
-                this.setState({currentActivePerson: this.props.personsOnScreen[indexOfActivePerson + 1]})
+                this.setState({
+                    currentActivePerson: this.props.personsOnScreen[this.getIndexOfActivePerson() + 1]
+                });
                 break;
             default:
                 this.setState({activeStyle: DEFAULT_ACTIVE_STYLE});
                 break;
         }
+    }
+
+    getIndexOfActivePerson() {
+        return this.props.personsOnScreen.indexOf(this.state.currentActivePerson);
     }
 
     componentDidMount() {
