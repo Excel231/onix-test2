@@ -8,9 +8,10 @@ class ChangeableParameterItem extends React.Component {
             parameterName,
             currentEditedValue,
             currentEditedField,
+            onFieldBlur,
+            onKeyPressed,
             onEditClick,
             onFieldChange,
-            onFieldBlur
         } = this.props
 
         return (
@@ -23,6 +24,7 @@ class ChangeableParameterItem extends React.Component {
                                value={currentEditedValue}
                                onChange={onFieldChange}
                                onBlur={onFieldBlur}
+                               onKeyPress={onKeyPressed}
                         /> : <p>{parameter}</p>
                 }
             </li>

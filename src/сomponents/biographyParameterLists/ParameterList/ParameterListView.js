@@ -16,6 +16,7 @@ class ParameterListView extends React.Component {
             onEditClick,
             onFieldChange,
             onFieldBlur,
+            onKeyPressed,
             listStyle,
         } = this.props;
 
@@ -23,8 +24,9 @@ class ParameterListView extends React.Component {
             currentEditedValue: currentEditedValue,
             currentEditedField: currentEditedField,
             onFieldBlur: onFieldBlur,
+            onKeyPressed: onKeyPressed,
             onEditClick: onEditClick,
-            onFieldChange: onFieldChange,
+            onFieldChange: onFieldChange
         };
 
         return (

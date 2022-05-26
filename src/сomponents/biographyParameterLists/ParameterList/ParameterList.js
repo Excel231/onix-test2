@@ -28,6 +28,12 @@ class ParameterList extends React.Component {
         this.props.handleParameterIsEdited();
     }
 
+    onKeyPressed = (e) => {
+        if (e.key === "Enter") {
+            this.onFieldBlur();
+        }
+    }
+
     render() {
         const {fullName, age, birthYear, weight, belts, isActiveElement, listStyle} = this.props;
         return (
@@ -42,6 +48,7 @@ class ParameterList extends React.Component {
                 onEditClick={this.onEditClick}
                 onFieldChange={this.onFieldChange}
                 onFieldBlur={this.onFieldBlur}
+                onKeyPressed={this.onKeyPressed}
                 isActiveElement={isActiveElement}
                 listStyle={listStyle}
             />
