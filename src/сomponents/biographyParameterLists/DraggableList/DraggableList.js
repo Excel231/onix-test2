@@ -61,14 +61,22 @@ class DraggableList extends React.Component {
                 break;
 
             case("ArrowUp"):
-                this.setState({
-                    currentActivePerson: this.props.personsOnScreen[this.getIndexOfActivePerson() - 1]
+                e.preventDefault();
+                this.setState((state) => {
+                    return {
+                        currentActivePerson:
+                            this.props.personsOnScreen[this.getPersonIndex(state.currentActivePerson) - 1]
+                    }
                 });
                 break;
 
             case("ArrowDown"):
-                this.setState({
-                    currentActivePerson: this.props.personsOnScreen[this.getIndexOfActivePerson() + 1]
+                e.preventDefault();
+                this.setState((state) => {
+                    return {
+                        currentActivePerson:
+                            this.props.personsOnScreen[this.getPersonIndex(state.currentActivePerson) + 1]
+                    }
                 });
                 break;
 
@@ -78,8 +86,8 @@ class DraggableList extends React.Component {
         }
     }
 
-    getIndexOfActivePerson() {
-        return this.props.personsOnScreen.indexOf(this.state.currentActivePerson);
+    getPersonIndex(person) {
+        return this.props.personsOnScreen.indexOf(person);
     }
 
     componentDidMount() {
