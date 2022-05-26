@@ -18,6 +18,7 @@ class ChangeableParameterItem extends React.Component {
                 {
                     currentEditedField === parameterName ?
                         <input className="biography-text-input"
+                               type={"number"}
                                autoFocus
                                value={currentEditedValue}
                                onChange={onFieldChange}
@@ -30,7 +31,7 @@ class ChangeableParameterItem extends React.Component {
 }
 
 ChangeableParameterItem.propTypes = {
-    parameter: PropType.any,
+    parameter: PropType.number,
     parameterName: PropType.string,
     currentEditedValue: PropType.any,
     currentEditedField: PropType.string,

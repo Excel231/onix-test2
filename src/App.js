@@ -14,6 +14,7 @@ class App extends React.Component {
                 <Routes>
                     <Route path="/" element={<Homepage/>}/>
                     <Route path="/biography" element={<BiographyPage/>}/>
+                    <Route path="/onix-test2" element={<Homepage/>}/>
                 </Routes>
                 <Footer/>
             </>

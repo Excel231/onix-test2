@@ -15,7 +15,8 @@ class ParameterListView extends React.Component {
             currentEditedValue,
             onEditClick,
             onFieldChange,
-            onFieldBlur
+            onFieldBlur,
+            listStyle,
         } = this.props;
 
         const commonProps = {
@@ -23,11 +24,11 @@ class ParameterListView extends React.Component {
             currentEditedField: currentEditedField,
             onFieldBlur: onFieldBlur,
             onEditClick: onEditClick,
-            onFieldChange: onFieldChange
+            onFieldChange: onFieldChange,
         };
 
         return (
-            <ul className={"biography-ul"}>
+            <ul className={listStyle}>
                 <li className={"biography-li"}><p>{fullName}</p></li>
 
                 <ChangeableParameterItem

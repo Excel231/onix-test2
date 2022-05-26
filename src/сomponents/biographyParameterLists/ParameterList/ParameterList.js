@@ -13,6 +13,7 @@ class ParameterList extends React.Component {
 
     onEditClick = (field, value) => {
         this.setState({currentEditedField: field, currentEditedValue: value});
+        this.props.handleParameterIsEdited();
     }
 
     onFieldChange = (e) => {
@@ -21,13 +22,14 @@ class ParameterList extends React.Component {
     }
 
     onFieldBlur = () => {
-        this.props.onSaveChanges(this.state.currentEditedField, this.state.currentEditedValue, this.props.id);
+        this.props.onSaveChanges(this.state.currentEditedField, Number(this.state.currentEditedValue), this.props.id);
         this.setState({currentEditedField: null});
         this.setState({currentEditedValue: null});
+        this.props.handleParameterIsEdited();
     }
 
     render() {
-        const {fullName, age, birthYear, weight, belts} = this.props;
+        const {fullName, age, birthYear, weight, belts, isActiveElement, listStyle} = this.props;
         return (
             <ParameterListView
                 fullName={fullName}
@@ -40,6 +42,8 @@ class ParameterList extends React.Component {
                 onEditClick={this.onEditClick}
                 onFieldChange={this.onFieldChange}
                 onFieldBlur={this.onFieldBlur}
+                isActiveElement={isActiveElement}
+                listStyle={listStyle}
             />
         );
     }
