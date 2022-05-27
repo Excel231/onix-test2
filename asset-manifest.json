@@ -1,14 +1,19 @@
 {
-  "files": {
-    "main.css": "/onix-test2/static/css/main.55f90f71.css",
-    "main.js": "/onix-test2/static/js/main.9a7cee28.js",
-    "static/media/boxer-background.jpg": "/onix-test2/static/media/boxer-background.69a0a2dc4566b11deba7.jpg",
-    "index.html": "/onix-test2/index.html",
-    "main.55f90f71.css.map": "/onix-test2/static/css/main.55f90f71.css.map",
-    "main.9a7cee28.js.map": "/onix-test2/static/js/main.9a7cee28.js.map"
-  },
-  "entrypoints": [
-    "static/css/main.55f90f71.css",
-    "static/js/main.9a7cee28.js"
-  ]
+  "main.css": "/onix-test2/static/css/main.bbba24b3.chunk.css",
+  "main.js": "/onix-test2/static/js/main.96172880.chunk.js",
+  "main.js.map": "/onix-test2/static/js/main.96172880.chunk.js.map",
+  "static/js/1.65265b71.chunk.js": "/onix-test2/static/js/1.65265b71.chunk.js",
+  "static/js/1.65265b71.chunk.js.map": "/onix-test2/static/js/1.65265b71.chunk.js.map",
+  "runtime~main.js": "/onix-test2/static/js/runtime~main.24086692.js",
+  "runtime~main.js.map": "/onix-test2/static/js/runtime~main.24086692.js.map",
+  "static/media/styles.css": "/onix-test2/static/media/boxer-background.5405e738.jpg",
+  "static/media/Klirschko.jpg": "/onix-test2/static/media/Klirschko.e4456204.jpg",
+  "static/media/Usyk.jpg": "/onix-test2/static/media/Usyk.98076a76.jpg",
+  "static/media/Tyson.jpg": "/onix-test2/static/media/Tyson.249bcae5.jpg",
+  "static/media/Fury.jpg": "/onix-test2/static/media/Fury.3055604f.jpg",
+  "static/media/Briedis.jpg": "/onix-test2/static/media/Briedis.14288791.jpg",
+  "static/css/main.bbba24b3.chunk.css.map": "/onix-test2/static/css/main.bbba24b3.chunk.css.map",
+  "index.html": "/onix-test2/index.html",
+  "precache-manifest.083b598de15f97e0c5a8fcc67d9f1180.js": "/onix-test2/precache-manifest.083b598de15f97e0c5a8fcc67d9f1180.js",
+  "service-worker.js": "/onix-test2/service-worker.js"
 }
