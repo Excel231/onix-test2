@@ -7,8 +7,8 @@ class ParameterListView extends React.Component {
     render() {
         const {
             fullName,
-            age,
             birthYear,
+            photo,
             weight,
             belts,
             currentEditedField,
@@ -31,13 +31,16 @@ class ParameterListView extends React.Component {
 
         return (
             <ul className={listStyle}>
-                <li className={"biography-li"}><p>{fullName}</p></li>
 
-                <ChangeableParameterItem
-                    parameter={age}
-                    parameterName={"age"}
-                    {...commonProps}
-                />
+                <li className={"biography-li"}>
+                    <img
+                        className={"boxer-photo"} alt={fullName} src={photo}
+                        onLoad={() => console.log(`Photo of ${fullName} has loaded successfully!`)}
+                        onError={() => console.log(`Error occurred with the photo of ${fullName}!`)}
+                    />
+                </li>
+
+                <li className={"biography-li"}><p>{fullName}</p></li>
 
                 <ChangeableParameterItem
                     parameter={birthYear}

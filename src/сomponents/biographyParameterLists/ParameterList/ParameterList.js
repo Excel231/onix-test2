@@ -35,12 +35,12 @@ class ParameterList extends React.Component {
     }
 
     render() {
-        const {fullName, age, birthYear, weight, belts, isActiveElement, listStyle} = this.props;
+        const {fullName, birthYear, photo, weight, belts, isActiveElement, listStyle} = this.props;
         return (
             <ParameterListView
                 fullName={fullName}
-                age={age}
                 birthYear={birthYear}
+                photo={photo}
                 weight={weight}
                 belts={belts}
                 currentEditedField={this.state.currentEditedField}

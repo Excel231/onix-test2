@@ -1,12 +1,18 @@
 import Person from "./createPerson";
+import klitchkoPhoto from "../../../images/boxer-photos/Klirschko.jpg"
+import bryanPhoto from "../../../images/boxer-photos/Bryan.jpg"
+import usikPhoto from "../../../images/boxer-photos/Usyk.jpg"
+import tysonPhoto from "../../../images/boxer-photos/Tyson.jpg"
+import furyPhoto from "../../../images/boxer-photos/Fury.jpg"
+import briedisPhoto from "../../../images/boxer-photos/Briedis.jpg"
 
 const pregeneratedPersons = [
 
     /*Zero id is in the first component list with names of parameters.*/
     Person(1,
         "Vitali",
-        "Klitchko",
-        50,
+        "Klitshko",
+        klitchkoPhoto,
         1971,
         112,
         [
@@ -19,7 +25,7 @@ const pregeneratedPersons = [
     Person(2,
         "Michael",
         "Tyson",
-        55,
+        tysonPhoto,
         1966,
         90,
         [{beltName: "WBC", year: 1987}],
@@ -28,7 +34,7 @@ const pregeneratedPersons = [
     Person(3,
         "Trevor",
         "Bryan",
-        32,
+        bryanPhoto,
         1989,
         90,
         [{beltName:"WBA", year: 2021}]
@@ -37,7 +43,7 @@ const pregeneratedPersons = [
     Person(4,
         "Aleksandr",
         "Usik",
-        35,
+        usikPhoto,
         1987,
         100,
         [{beltName: "WBO", year: 2021},
@@ -50,7 +56,7 @@ const pregeneratedPersons = [
     Person(5,
         "Tyson",
         "Fury",
-        33,
+        furyPhoto,
         1988,
         90,
         [{beltName: "WBO", year: 2016},
@@ -64,7 +70,7 @@ const pregeneratedPersons = [
     Person(6,
         "Mairis",
         "Briedis",
-        37,
+        briedisPhoto,
         1985,
         91,
         [{beltName: "WBO", year: 2019},

@@ -1,11 +1,11 @@
-const createPerson = (id, firstName, secondName, age, birthYear, weight, belts) => {
+const createPerson = (id, firstName, secondName, photo,  birthYear, weight, belts) => {
      return {
         id,
         personInfo: {
             firstName,
             secondName,
             fullName: `${firstName} ${secondName}`,
-            age,
+            photo,
             birthYear,
             weight,
             belts

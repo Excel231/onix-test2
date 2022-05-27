@@ -120,7 +120,7 @@ class DraggableList extends React.Component {
                                 key={person.id}
                                 id={person.id}
                                 fullName={person.personInfo.fullName}
-                                age={person.personInfo.age}
+                                photo={person.personInfo.photo}
                                 birthYear={person.personInfo.birthYear}
                                 weight={person.personInfo.weight}
                                 belts={person.personInfo.belts}
