@@ -8,7 +8,7 @@ class FooterLink extends React.Component {
             <a className="link-icon"
                onMouseEnter={() => onButtonEnter(linkTitle)}
                target="_blank"
-               rel="noreferrer"
+               rel="noopener noreferrer"
                title={linkTitle}
                href={footerLink}>
                 <i className={faClasses}/>

@@ -8,7 +8,7 @@ class BoxerLink extends React.Component {
             <a className={"boxer-link"}
                target="_blank"
                href={boxerSite}
-               rel="noreferrer">{boxerName}
+               rel="noopener noreferrer">{boxerName}
             </a>
         );
     }

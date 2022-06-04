@@ -7,7 +7,7 @@ const SignUpButton = ({changeText}) => {
            href={"https://github.com/Excel231/onix-test2"}
            onClick={changeText}
            target="_blank"
-           rel="noreferrer">
+           rel="noopener noreferrer">
            <strong>SIGN UP!</strong>
         </a>
     );
