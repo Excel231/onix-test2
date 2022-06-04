@@ -1,6 +1,6 @@
-import ParameterList from "../ParameterList/ParameterList";
-import PropType from "prop-types";
 import React from "react";
+import PropType from "prop-types";
+import DraggableListView from "./DraggableListView";
 
 const DEFAULT_INACTIVE_STYLE = "biography-ul";
 
@@ -46,7 +46,6 @@ class DraggableList extends React.Component {
     handleKeypress = (e) => {
         if (this.state.parameterIsEdited) return;
         const keyPressed = e.key;
-
         switch (keyPressed) {
             case ("1"):
                 this.setState({activeStyle: DEFAULT_ACTIVE_STYLE + "-white"});
@@ -105,34 +104,18 @@ class DraggableList extends React.Component {
     render() {
         const {personsOnScreen, onSaveChanges} = this.props;
         return (
-            <>
-                {
-                    personsOnScreen.map((person, index) => (
-                        <div
-                            key={index}
-                            draggable={"true"}
-                            onDragStart={() => this.dragStartHandler(person)}
-                            onDragOver={(e) => this.dragOverHandler(e)}
-                            onDrop={(e) => this.dropHandler(e, person)}
-                            onClick={() => this.handleMouseClick(person)}
-                        >
-                            <ParameterList
-                                key={person.id}
-                                id={person.id}
-                                fullName={person.personInfo.fullName}
-                                photo={person.personInfo.photo}
-                                birthYear={person.personInfo.birthYear}
-                                weight={person.personInfo.weight}
-                                belts={person.personInfo.belts}
-                                onSaveChanges={onSaveChanges}
-                                listStyle={person === this.state.currentActivePerson ?
-                                    this.state.activeStyle : DEFAULT_INACTIVE_STYLE}
-                                handleParameterIsEdited={this.handleParameterIsEdited}
-                            />
-                        </div>
-                    ))
-                }
-            </>
+            <DraggableListView
+                personsOnScreen={personsOnScreen}
+                onSaveChanges={onSaveChanges}
+                inactiveStyle={DEFAULT_INACTIVE_STYLE}
+                activeStyle={this.state.activeStyle}
+                dragStartHandler={this.dragStartHandler}
+                dragOverHandler={this.dragOverHandler}
+                dropHandler={this.dropHandler}
+                handleMouseClick={this.handleMouseClick}
+                currentActivePerson={this.state.currentActivePerson}
+                handleParameterIsEdited={this.state.handleParameterIsEdited}
+            />
         );
     }
 }
