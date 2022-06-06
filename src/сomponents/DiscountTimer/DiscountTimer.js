@@ -2,11 +2,20 @@ import React from "react";
 import "./DiscountTimerView";
 import DiscountTimerView from "./DiscountTimerView";
 
-const DISCOUNT_END_TIME = new Date(2022, 4, new Date().getDate() + 2, 0, 0, 0);
+const CURRENT_TIME = new Date();
+
+const DISCOUNT_END_TIME = new Date(
+    CURRENT_TIME.getFullYear(),
+    CURRENT_TIME.getMonth(),
+    CURRENT_TIME.getDate() + 2,
+    CURRENT_TIME.getHours(),
+    CURRENT_TIME.getMinutes(),
+    CURRENT_TIME.getSeconds()
+);
 
 class DiscountTimer extends React.Component {
     state = {
-        fullDate: new Date()
+        fullDate: CURRENT_TIME
     }
 
     componentDidMount() {
