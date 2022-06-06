@@ -45,13 +45,23 @@ class ParameterListView extends React.Component {
                 <ChangeableParameterItem
                     parameter={birthYear}
                     parameterName={"birthYear"}
-                    {...commonProps}
+                    currentEditedValue={currentEditedValue}
+                    currentEditedField={currentEditedField}
+                    onFieldBlur={onFieldBlur}
+                    onKeyPressed={onKeyPressed}
+                    onEditClick={onEditClick}
+                    onFieldChange={onFieldChange}
                 />
 
                 <ChangeableParameterItem
                     parameter={weight}
                     parameterName={"weight"}
-                    {...commonProps}
+                    currentEditedValue={currentEditedValue}
+                    currentEditedField={currentEditedField}
+                    onFieldBlur={onFieldBlur}
+                    onKeyPressed={onKeyPressed}
+                    onEditClick={onEditClick}
+                    onFieldChange={onFieldChange}
                 />
 
                 <li className={"biography-li"}>
