@@ -2,7 +2,7 @@ import React from "react";
 import "../../styles.css";
 import sortPersons from "../../helper/sorters/sortPersons";
 import BiographyPageView from "./BiographyPageView";
-import pregeneratedPersons from "../../сomponents/biographyParameterLists/prepared-persons/pregeneratedPersons";
+import pregeneratedPersons from "../../сomponents/pregeneratedPersons";
 
 
 class BiographyPage extends React.Component {
