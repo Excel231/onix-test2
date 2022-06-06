@@ -90,15 +90,11 @@ class DraggableList extends React.Component {
     }
 
     componentDidMount() {
-        document.addEventListener("keydown", (e) => {
-            this.handleKeypress(e);
-        });
+        document.addEventListener("keydown", this.handleKeypress);
     }
 
     componentWillUnmount() {
-        document.removeEventListener("keydown", (e) => {
-            this.handleKeypress(e);
-        });
+        document.removeEventListener("keydown", this.handleKeypress);
     }
 
     render() {
