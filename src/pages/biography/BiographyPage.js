@@ -19,13 +19,12 @@ class BiographyPage extends React.Component {
     }
 
     sortOnClick = (componentToCompare) => {
-        const sortedPersons = sortPersons(
-            [...this.state.personsOnScreen], componentToCompare, this.state.sortFromGreatest
-        );
         this.setState((state) => {
             return {
                 sortFromGreatest: !state.sortFromGreatest,
-                personsOnScreen: sortedPersons
+                personsOnScreen: sortPersons(
+                    [...this.state.personsOnScreen], componentToCompare, this.state.sortFromGreatest
+                )
             }
         });
     }
