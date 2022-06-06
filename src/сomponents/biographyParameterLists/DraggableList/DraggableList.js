@@ -2,9 +2,9 @@ import React from "react";
 import PropType from "prop-types";
 import DraggableListView from "./DraggableListView";
 
-const DEFAULT_INACTIVE_STYLE = "biography-ul";
+const DEFAULT_INACTIVE_STYLE = "Biography-ul";
 
-const DEFAULT_ACTIVE_STYLE = "selected-biography-ul";
+const DEFAULT_ACTIVE_STYLE = "selected-Biography-ul";
 
 class DraggableList extends React.Component {
 

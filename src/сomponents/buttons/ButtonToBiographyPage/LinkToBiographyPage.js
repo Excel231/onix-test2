@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 const LinkToBiographyPage = () => {
     return (
-        <Link className="big-red-btn" to={"/biography"}>
+        <Link className="big-red-btn" to={"/Biography"}>
             <strong>Go to biography page!</strong>
         </Link>
     );
