@@ -114,7 +114,7 @@ class DraggableList extends React.Component {
                 dropHandler={this.dropHandler}
                 handleMouseClick={this.handleMouseClick}
                 currentActivePerson={this.state.currentActivePerson}
-                handleParameterIsEdited={this.state.handleParameterIsEdited}
+                handleParameterIsEdited={this.handleParameterIsEdited}
             />
         );
     }
