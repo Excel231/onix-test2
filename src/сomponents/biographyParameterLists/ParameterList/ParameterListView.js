@@ -20,15 +20,6 @@ class ParameterListView extends React.Component {
             listStyle,
         } = this.props;
 
-        const commonProps = {
-            currentEditedValue: currentEditedValue,
-            currentEditedField: currentEditedField,
-            onFieldBlur: onFieldBlur,
-            onKeyPressed: onKeyPressed,
-            onEditClick: onEditClick,
-            onFieldChange: onFieldChange
-        };
-
         return (
             <ul className={listStyle}>
 
