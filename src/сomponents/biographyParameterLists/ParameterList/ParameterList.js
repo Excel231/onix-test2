@@ -23,8 +23,7 @@ class ParameterList extends React.Component {
 
     onFieldBlur = () => {
         this.props.onSaveChanges(this.state.currentEditedField, Number(this.state.currentEditedValue), this.props.id);
-        this.setState({currentEditedField: null});
-        this.setState({currentEditedValue: null});
+        this.setState({currentEditedField: null, currentEditedValue: null});
         this.props.handleParameterIsEdited();
     }
 
