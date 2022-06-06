@@ -1,10 +1,9 @@
 import React from "react";
-import pregeneratedPersons from "../../сomponents/biographyParameterLists/prepared-persons/pregeneratedPersons";
 import "../../styles.css";
 import sortPersons from "../../helper/sorters/sortPersons";
 import BiographyPageView from "./BiographyPageView";
+import pregeneratedPersons from "../../сomponents/biographyParameterLists/prepared-persons/pregeneratedPersons";
 
-let listOfAllPersons = [];
 
 class BiographyPage extends React.Component {
     state = {
@@ -12,10 +11,6 @@ class BiographyPage extends React.Component {
         /*Boolean value that shows in which order parameters should be displayed
         (from greatest to lowest or vice versa)*/
         sortFromGreatest: false
-    }
-
-    componentDidMount() {
-        listOfAllPersons = [...pregeneratedPersons];
     }
 
     sortOnClick = (componentToCompare) => {
@@ -30,8 +25,8 @@ class BiographyPage extends React.Component {
     }
 
     addPerson = () => {
-        if (this.state.personsOnScreen.length < listOfAllPersons.length) {
-            const newPerson = listOfAllPersons[this.state.personsOnScreen.length];
+        if (this.state.personsOnScreen.length < pregeneratedPersons.length) {
+            const newPerson = pregeneratedPersons[this.state.personsOnScreen.length];
             this.setState({personsOnScreen: [...this.state.personsOnScreen, newPerson]});
         }
     }

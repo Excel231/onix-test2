@@ -1,5 +1,5 @@
 import React from "react";
-import BiographyPage from "./pages/Biography/BiographyPage";
+import BiographyPage from "./pages/BiographyPage/BiographyPage";
 import Homepage from "./pages/Homepage/Homepage";
 import {Route} from "react-router-dom";
 import {Routes} from "react-router";
