@@ -1,5 +1,5 @@
 import React from "react";
-import dateToTime from "./dateToTime";
+import dateToTime from "../../helper/dateToTime";
 import PropType from "prop-types";
 
 class DiscountTimerView extends React.Component {
