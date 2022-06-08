@@ -2,24 +2,21 @@ import React from "react";
 import dateToTime from "../../helper/dateToTime";
 import PropType from "prop-types";
 
-class DiscountTimerView extends React.Component {
-    render() {
-        const {discountEndTime, currentTime} = this.props;
-        return (
-            <div>
-                <p>
-                    <strong>get 20% off.</strong>
-                </p>
-                <p>
-                    {
-                        discountEndTime <= currentTime ?
+const DiscountTimerView = ({discountEndTime, currentTime}) => {
+    return (
+        <div>
+            <p>
+                <strong>get 20% off.</strong>
+            </p>
+            <p>
+                {
+                    discountEndTime <= currentTime ?
                         ("The sale is finished!") :
                         ("The discount will end in: " + dateToTime(discountEndTime, currentTime))
-                    }
-                </p>
-            </div>
-        );
-    }
+                }
+            </p>
+        </div>
+    );
 }
 
 DiscountTimerView.propTypes = {

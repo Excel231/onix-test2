@@ -1,35 +1,34 @@
 import React from "react";
 import PropType from "prop-types";
 
-class ChangeableParameterItem extends React.Component {
-    render() {
-        const {
-            parameter,
-            parameterName,
-            currentEditedValue,
-            currentEditedField,
-            onFieldBlur,
-            onKeyPressed,
-            onEditClick,
-            onFieldChange,
-        } = this.props
-
-        return (
-            <li className={"biography-li"} onClick={() => onEditClick(parameterName, parameter)}>
-                {
-                    currentEditedField === parameterName ?
-                        <input className="biography-text-input"
-                               type={"number"}
-                               autoFocus
-                               value={currentEditedValue}
-                               onChange={onFieldChange}
-                               onBlur={onFieldBlur}
-                               onKeyPress={onKeyPressed}
-                        /> : <p>{parameter}</p>
-                }
-            </li>
-        );
+const ChangeableParameterItem = (
+    {
+        parameter,
+        parameterName,
+        currentEditedValue,
+        currentEditedField,
+        onFieldBlur,
+        onKeyPressed,
+        onEditClick,
+        onFieldChange,
     }
+) => {
+
+    return (
+        <li className={"biography-li"} onClick={() => onEditClick(parameterName, parameter)}>
+            {
+                currentEditedField === parameterName ?
+                    <input className="biography-text-input"
+                           type={"number"}
+                           autoFocus
+                           value={currentEditedValue}
+                           onChange={onFieldChange}
+                           onBlur={onFieldBlur}
+                           onKeyPress={onKeyPressed}
+                    /> : <p>{parameter}</p>
+            }
+        </li>
+    );
 }
 
 ChangeableParameterItem.propTypes = {

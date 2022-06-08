@@ -1,4 +1,6 @@
 import React from "react";
+import PropType from "prop-types";
+import BigRedAnchorButton from "../BigRedAnchorButton/BigRedAnchorButton";
 
 const BigRedButton = ({children, onClick}) => {
     return (
@@ -10,5 +12,11 @@ const BigRedButton = ({children, onClick}) => {
         </button>
     );
 }
+
+BigRedAnchorButton.propTypes = {
+    children: PropType.any,
+    onClick: PropType.func
+}
+
 
 export default BigRedButton;

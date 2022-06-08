@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import "./FooterView";
 import FooterView from "./FooterView";
 
@@ -8,26 +8,23 @@ const designLink = "https://www.templatemonsterpreview.com/demo/54034.html?_gl=1
     "1629-639630604.1648831629";
 const shLink = "https://diploma.programming.org.ua/ru/d/zPE9X6BvVKaZDAm93jw7Q12MYRgNGoqr";
 
-class Footer extends React.Component {
-    state = {
-        linkText: ":",
-    };
+const Footer = () => {
 
-    changeSignUpText = (linkTitle) => {
-        this.setState({linkText: linkTitle});
+    const [linkText, setLinkText] = useState(":");
+
+    const changeSignUpText = (linkTitle) => {
+        setLinkText(linkTitle);
     }
 
-    render() {
-        return (
-            <FooterView
-                gitHubLink={gitHubLink}
-                designLink={designLink}
-                shLink={shLink}
-                linkText={this.state.linkText}
-                changeSignUpText={this.changeSignUpText}
-            />
-        );
-    }
+    return (
+        <FooterView
+            gitHubLink={gitHubLink}
+            designLink={designLink}
+            shLink={shLink}
+            linkText={linkText}
+            changeSignUpText={changeSignUpText}
+        />
+    );
 }
 
 export default Footer;

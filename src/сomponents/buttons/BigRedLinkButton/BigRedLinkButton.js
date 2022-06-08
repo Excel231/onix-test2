@@ -1,5 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import BigRedAnchorButton from "../BigRedAnchorButton/BigRedAnchorButton";
+import PropType from "prop-types";
 
 const BigRedLinkButton = ({children}) => {
     return (
@@ -7,6 +9,10 @@ const BigRedLinkButton = ({children}) => {
             {children}
         </Link>
     );
+}
+
+BigRedAnchorButton.propTypes = {
+    children: PropType.any
 }
 
 export default BigRedLinkButton;

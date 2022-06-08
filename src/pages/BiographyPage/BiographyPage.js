@@ -1,63 +1,55 @@
-import React from "react";
+import React, {useState} from "react";
 import "../../styles.css";
 import sortPersons from "../../helper/sorters/sortPersons";
 import BiographyPageView from "./BiographyPageView";
 import pregeneratedPersons from "../../сomponents/pregeneratedPersons";
 
 
-class BiographyPage extends React.Component {
-    state = {
-        personsOnScreen: [],
-        /*Boolean value that shows in which order parameters should be displayed
-        (from greatest to lowest or vice versa)*/
-        sortFromGreatest: false
+const BiographyPage = () => {
+    const [personsOnScreen, setPersonsOnScreen] = useState([]);
+    /*Boolean value that shows in which order parameters should be displayed
+    (from greatest to lowest or vice versa)*/
+    const [sortFromGreatest, setSortFromGreatest] = useState(false);
+
+    const sortOnClick = (componentToCompare) => {
+        setSortFromGreatest(!sortFromGreatest);
+        setPersonsOnScreen(sortPersons(
+            [...personsOnScreen], componentToCompare, sortFromGreatest
+        ));
     }
 
-    sortOnClick = (componentToCompare) => {
-        this.setState((state) => {
-            return {
-                sortFromGreatest: !state.sortFromGreatest,
-                personsOnScreen: sortPersons(
-                    [...this.state.personsOnScreen], componentToCompare, this.state.sortFromGreatest
-                )
-            }
-        });
-    }
-
-    addPerson = () => {
-        if (this.state.personsOnScreen.length < pregeneratedPersons.length) {
-            const newPerson = pregeneratedPersons[this.state.personsOnScreen.length];
-            this.setState({personsOnScreen: [...this.state.personsOnScreen, newPerson]});
+    const addPerson = () => {
+        if (personsOnScreen.length < pregeneratedPersons.length) {
+            const newPerson = pregeneratedPersons[personsOnScreen.length];
+            setPersonsOnScreen([...personsOnScreen, newPerson]);
         }
     }
 
-    removePerson = () => {
-        this.setState({personsOnScreen: this.state.personsOnScreen.slice(0, -1)});
+    const removePerson = () => {
+        setPersonsOnScreen(personsOnScreen.slice(0, -1));
     }
 
-    onSaveChanges = (field, value, id) => {
-        const newPersons = this.state.personsOnScreen.map((person) => {
+    const onSaveChanges = (field, value, id) => {
+        const newPersons = personsOnScreen.map((person) => {
             return person.id === id ? {...person, personInfo: {...person.personInfo, [field]: value}} : person;
         });
-        this.setState({personsOnScreen: newPersons});
+        setPersonsOnScreen(newPersons);
     }
 
-    changePersonsOnScreen = (newPersonsArray) => {
-        this.setState({personsOnScreen: newPersonsArray});
+    const changePersonsOnScreen = (newPersonsArray) => {
+        setPersonsOnScreen(newPersonsArray);
     }
 
-    render() {
-        return (
-            <BiographyPageView
-                personsOnScreen={this.state.personsOnScreen}
-                sortOnClick={this.sortOnClick}
-                addPerson={this.addPerson}
-                removePerson={this.removePerson}
-                onSaveChanges={this.onSaveChanges}
-                changePersonsOnScreen={this.changePersonsOnScreen}
-            />
-        )
-    }
+    return (
+        <BiographyPageView
+            personsOnScreen={personsOnScreen}
+            sortOnClick={sortOnClick}
+            addPerson={addPerson}
+            removePerson={removePerson}
+            onSaveChanges={onSaveChanges}
+            changePersonsOnScreen={changePersonsOnScreen}
+        />
+    )
 }
 
 export default BiographyPage;

@@ -6,20 +6,18 @@ import {Routes} from "react-router";
 import Footer from "./сomponents/Footer/Footer";
 import Header from "./сomponents/Header/Header";
 
-class App extends React.Component {
-    render() {
-        return (
-            <>
-                <Header/>
-                <Routes>
-                    <Route path="/" element={<Homepage/>}/>
-                    <Route path="/biography" element={<BiographyPage/>}/>
-                    <Route path="/onix-test2" element={<Homepage/>}/>
-                </Routes>
-                <Footer/>
-            </>
-        );
-    }
+const App = () => {
+    return (
+        <>
+            <Header/>
+            <Routes>
+                <Route path="/" element={<Homepage/>}/>
+                <Route path="/biography" element={<BiographyPage/>}/>
+                <Route path="/onix-test2" element={<Homepage/>}/>
+            </Routes>
+            <Footer/>
+        </>
+    );
 }
 
 export default App;
