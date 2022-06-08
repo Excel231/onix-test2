@@ -2,6 +2,7 @@ import TitleListOfParameters from "../../сomponents/biographyParameterLists/Tit
 import React from "react";
 import PropType from "prop-types";
 import DraggableList from "../../сomponents/biographyParameterLists/DraggableList/DraggableList";
+import BigRedButton from "../../сomponents/buttons/BigRedButton/BigRedButton";
 
 class BiographyPageView extends React.Component {
     render() {
@@ -24,8 +25,8 @@ class BiographyPageView extends React.Component {
                     changePersonsOnScreen={changePersonsOnScreen}
                 />
                 <div>
-                    <button className={"big-red-btn"} onClick={addPerson}>Add new person</button>
-                    <button className={"big-red-btn"} onClick={removePerson}>Remove last person</button>
+                    <BigRedButton onClick={addPerson}>Add new person</BigRedButton>
+                    <BigRedButton onClick={removePerson}>Remove last person</BigRedButton>
                 </div>
 
             </>

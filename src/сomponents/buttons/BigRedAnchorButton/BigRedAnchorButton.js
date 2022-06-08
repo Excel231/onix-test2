@@ -1,7 +1,7 @@
 import React from "react";
 import PropType from "prop-types";
 
-const SignUpButton = ({changeText}) => {
+const BigRedAnchorButton = ({changeText}) => {
     return (
         <a className="big-red-btn"
            href={"https://github.com/Excel231/onix-test2"}
@@ -13,8 +13,8 @@ const SignUpButton = ({changeText}) => {
     );
 }
 
-SignUpButton.propTypes = {
+BigRedAnchorButton.propTypes = {
     changText: PropType.func
 }
 
-export default SignUpButton;
+export default BigRedAnchorButton;

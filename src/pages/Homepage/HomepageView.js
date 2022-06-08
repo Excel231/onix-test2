@@ -2,8 +2,8 @@ import React from "react";
 import PropType from "prop-types";
 import BoxerLink from "../../сomponents/BoxerLink/BoxerLink";
 import DiscountTimer from "../../сomponents/DiscountTimer/DiscountTimer";
-import SignUpButton from "../../сomponents/buttons/SignUpButton/SignUpButton";
-import LinkToBiographyPage from "../../сomponents/buttons/ButtonToBiographyPage/LinkToBiographyPage";
+import BigRedAnchorButton from "../../сomponents/buttons/BigRedAnchorButton/BigRedAnchorButton";
+import BigRedLinkButton from "../../сomponents/buttons/BigRedLinkButton/BigRedLinkButton";
 
 class HomepageView extends React.Component {
     render() {
@@ -22,9 +22,9 @@ class HomepageView extends React.Component {
                     </p>
                     <DiscountTimer/>
                     <p className="call-to-sign-up"><strong>{signUpText}</strong></p>
-                    <SignUpButton changeText={changeSignUpText}/>
+                    <BigRedAnchorButton changeText={changeSignUpText}/>
                     <br/>
-                    <LinkToBiographyPage/>
+                    <BigRedLinkButton><strong>Go to biography page!</strong></BigRedLinkButton>
                 </div>
             </>
         );

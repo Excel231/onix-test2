@@ -1,12 +1,12 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-const LinkToBiographyPage = () => {
+const BigRedLinkButton = ({children}) => {
     return (
         <Link className="big-red-btn" to={"/biography"}>
-            <strong>Go to biography page!</strong>
+            {children}
         </Link>
     );
 }
 
-export default LinkToBiographyPage;
+export default BigRedLinkButton;
