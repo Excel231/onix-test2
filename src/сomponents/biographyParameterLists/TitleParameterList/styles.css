@@ -1,0 +1,26 @@
+.biography-ul {
+    background: #262323 linear-gradient(to right, #212121, #2c2c2c, #373737, #424242, #4e4e4e);
+    border: solid #DA0037;
+    border-radius: 30px;
+    line-height: 0;
+}
+
+.biography-li {
+    color: #DA0037;
+    display: inline-block;
+    font-size: 2rem;
+    text-align: center;
+    vertical-align: middle;
+    width: 20%;
+}
+
+@media (max-width: 1200px) {
+    .belt {
+        display: none;
+    }
+
+    .biography-li {
+        font-size: 22px;
+        width: 25%;
+    }
+}

@@ -1,6 +1,7 @@
+import DraggableListView from "./DraggableListView";
 import React from "react";
 import PropType from "prop-types";
-import DraggableListView from "./DraggableListView";
+import "./styles.css";
 
 const DEFAULT_INACTIVE_STYLE = "biography-ul";
 

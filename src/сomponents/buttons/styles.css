@@ -1,0 +1,23 @@
+.big-red-btn {
+    background: #DA0037 linear-gradient(180deg, #DA0037 30%, #880022 100%);
+    border-radius: 10px;
+    color: #EDEDED;
+    display: inline-block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20pt;
+    margin: 20px 30px 20px 30px;
+    padding: 20px 60px;
+    text-decoration: none;
+}
+
+.big-red-btn:hover {
+    background: #880022 linear-gradient(180deg, #880022 10%, #DA0037 100%);
+}
+
+@media (max-width: 1200px) {
+    .big-red-btn {
+        font-size: 1rem;
+        padding: 15px;
+        margin: 10px;
+    }
+}

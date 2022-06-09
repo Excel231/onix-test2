@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import "../../styles.css";
 import sortPersons from "../../helper/sorters/sortPersons";
 import BiographyPageView from "./BiographyPageView";
-import pregeneratedPersons from "../../сomponents/pregeneratedPersons";
+import pregeneratedPersons from "../../helper/pregenerated-persons/pregeneratedPersons";
 
 
 const BiographyPage = () => {

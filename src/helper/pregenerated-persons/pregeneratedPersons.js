@@ -1,10 +1,10 @@
-import Person from "../helper/person-creator/createPerson";
-import klitchkoPhoto from "../images/boxer-photos/Klirschko.jpg"
-import bryanPhoto from "../images/boxer-photos/Bryan.jpg"
-import usikPhoto from "../images/boxer-photos/Usyk.jpg"
-import tysonPhoto from "../images/boxer-photos/Tyson.jpg"
-import furyPhoto from "../images/boxer-photos/Fury.jpg"
-import briedisPhoto from "../images/boxer-photos/Briedis.jpg"
+import Person from "../person-creator/createPerson";
+import klitchkoPhoto from "../../images/boxer-photos/Klirschko.jpg"
+import bryanPhoto from "../../images/boxer-photos/Bryan.jpg"
+import usikPhoto from "../../images/boxer-photos/Usyk.jpg"
+import tysonPhoto from "../../images/boxer-photos/Tyson.jpg"
+import furyPhoto from "../../images/boxer-photos/Fury.jpg"
+import briedisPhoto from "../../images/boxer-photos/Briedis.jpg"
 
 const pregeneratedPersons = [
 

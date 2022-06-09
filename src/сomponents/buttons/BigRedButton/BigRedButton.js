@@ -1,6 +1,8 @@
+import BigRedAnchorButton from "../BigRedAnchorButton/BigRedAnchorButton";
 import React from "react";
 import PropType from "prop-types";
-import BigRedAnchorButton from "../BigRedAnchorButton/BigRedAnchorButton";
+import "../styles.css";
+
 
 const BigRedButton = ({children, onClick}) => {
     return (

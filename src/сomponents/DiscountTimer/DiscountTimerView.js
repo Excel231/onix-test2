@@ -1,5 +1,5 @@
 import React from "react";
-import dateToTime from "../../helper/dateToTime";
+import dateToTime from "../../helper/date-to-time/dateToTime";
 import PropType from "prop-types";
 
 const DiscountTimerView = ({discountEndTime, currentTime}) => {

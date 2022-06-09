@@ -1,0 +1,9 @@
+.link-icon {
+    color: #DA0037;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.link-icon:hover {
+    color: #880022;
+}

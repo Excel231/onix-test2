@@ -8,17 +8,6 @@ body {
     text-align: center;
 }
 
-/* Sections */
-
-header {
-    padding-top: 2rem;
-}
-
-footer {
-    float: right;
-    margin: 0 5% 2rem 0;
-}
-
 /* Headings */
 
 h1 {
@@ -45,111 +34,9 @@ li {
     list-style-type: none;
 }
 
-/* Classes */
-
-.call-to-sign-up {
-    line-height: 5rem;
-    margin-top: 1rem;
-}
-
-h1:hover,
-.call-to-sign-up,
-.boxer-link,
-.link-icon {
+h1:hover {
     color: #DA0037;
     text-decoration: none;
-}
-
-.boxer-link:hover,
-.link-icon:hover {
-    color: #880022;
-}
-
-/*Button*/
-
-.big-red-btn {
-    background: #DA0037 linear-gradient(180deg, #DA0037 30%, #880022 100%);
-    border-radius: 10px;
-    color: #EDEDED;
-    display: inline-block;
-    font-family: 'Oswald', sans-serif;
-    font-size: 20pt;
-    margin: 20px 30px 20px 30px;
-    padding: 20px 60px;
-    text-decoration: none;
-}
-
-.big-red-btn:hover {
-    background: #880022 linear-gradient(180deg, #880022 10%, #DA0037 100%);
-}
-
-/* Font Awesome icons */
-
-.link-icon {
-    margin: 0 5px;
-}
-
-/* BiographyPage */
-
-.boxer-list {
-    border: solid 4px #DA0037;
-}
-
-.boxer-photo {
-    border: solid 4px #DA0037;
-    border-radius: 50%;
-    display: inline-block;
-    margin: 10px;
-    text-align: center;
-    vertical-align: auto;
-    width: 70%;
-}
-
-.biography-li {
-    color: #DA0037;
-    display: inline-block;
-    font-size: 2rem;
-    width: 20%;
-    text-align: center;
-    vertical-align: middle;
-}
-
-.biography-ul {
-    background: #262323 linear-gradient(to right, #212121, #2c2c2c, #373737, #424242, #4e4e4e);
-    border: solid #DA0037;
-    border-radius: 30px;
-    line-height: 0;
-}
-
-.selected-biography-ul,
-.selected-biography-ul-white,
-.selected-biography-ul-green,
-.selected-biography-ul-blue {
-    background: #262323 linear-gradient(to left, #212121, #2c2c2c, #373737, #424242, #4e4e4e);
-    border: solid 5px #880022;
-    border-radius: 30px;
-}
-
-.selected-biography-ul-white {
-    border-color: #EDEDED;
-}
-
-.selected-biography-ul-green {
-    border-color: #008000;
-}
-
-.selected-biography-ul-blue {
-    border-color: #000045;
-}
-
-.biography-text-input {
-    background-color: #EDEDED;
-    border-radius: 20px;
-    color: #880022;
-    font-family: 'Oswald', sans-serif;
-    font-size: 2rem;
-    text-align: center;
-    width: 10rem;
 }
 
 /* Resize */
@@ -175,30 +62,5 @@ h1:hover,
 
     ul {
         padding: 0;
-    }
-
-    .call-to-sign-up {
-        font-size: 1.5rem;
-        line-height: 40px;
-    }
-
-    .big-red-btn {
-        font-size: 1rem;
-        padding: 15px;
-        margin: 10px;
-    }
-
-    .biography-li {
-        font-size: 22px;
-        width: 25%;
-    }
-
-    .biography-text-input {
-        font-size: 20px;
-        width: 3rem;
-    }
-
-    .belt {
-        display: none;
     }
 }

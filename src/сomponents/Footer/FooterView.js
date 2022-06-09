@@ -1,11 +1,12 @@
-import FooterLink from "../FooterLink/FooterLink";
 import React from "react";
+import FooterLink from "../FooterLink/FooterLink";
 import PropType from "prop-types";
+import "./styles.css";
 
 const FooterView = ({gitHubLink, designLink, shLink, linkText, changeSignUpText}) => {
     return (
         <footer>
-            <h3 className="author-name">by Ivan Honcharenko</h3>
+            <h3>by Ivan Honcharenko</h3>
             <h3>Also check {linkText}</h3>
             <FooterLink
                 onButtonEnter={changeSignUpText}

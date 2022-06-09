@@ -2,6 +2,7 @@ import React from "react";
 import "../../../styles.css";
 import PropType from "prop-types";
 import ParameterList from "../ParameterList/ParameterList";
+import "./styles.css";
 
 const TitleParameterList = ({sortOnClick}) => {
     return (

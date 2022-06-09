@@ -1,7 +1,8 @@
-import React from "react";
-import ChangeableParameterItem from "../../ChangeableParameterItem/ChangeableParameterItem";
 import bubbleSort from "../../../helper/sorters/bubbleSort";
+import ChangeableParameterItem from "../../ChangeableParameterItem/ChangeableParameterItem";
+import React from "react";
 import * as PropType from "prop-types";
+import "./styles.css";
 
 const ParameterListView = (
     {

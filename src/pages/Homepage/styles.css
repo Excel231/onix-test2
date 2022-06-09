@@ -1,0 +1,21 @@
+.call-to-sign-up {
+    color: #DA0037;
+    text-decoration: none;
+    line-height: 5rem;
+    margin-top: 1rem;
+}
+
+.main-text {
+    font-size: 2rem;
+}
+
+@media (max-width: 1200px) {
+    .call-to-sign-up {
+        font-size: 1.5rem;
+        line-height: 40px;
+    }
+
+    .main-text {
+        font-size: 1.5rem;
+    }
+}

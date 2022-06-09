@@ -1,0 +1,25 @@
+.biography-li {
+    color: #DA0037;
+    display: inline-block;
+    font-size: 2rem;
+    text-align: center;
+    vertical-align: middle;
+    width: 20%;
+}
+
+.biography-text-input {
+    background-color: #EDEDED;
+    border-radius: 20px;
+    color: #880022;
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    width: 10rem;
+}
+
+@media (max-width: 1200px) {
+    .biography-text-input {
+        font-size: 20px;
+        width: 3rem;
+    }
+}
