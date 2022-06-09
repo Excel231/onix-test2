@@ -2,7 +2,7 @@ import React from "react";
 import PropType from "prop-types";
 import "../styles.css";
 
-const BigRedAnchorButton = ({changeText}) => {
+const BigRedAnchorButton = ({children, changeText}) => {
     return (
         <a
             className="big-red-btn"
@@ -11,7 +11,7 @@ const BigRedAnchorButton = ({changeText}) => {
             target="_blank"
             rel="noopener noreferrer"
         >
-            <strong>SIGN UP!</strong>
+            {children}
         </a>
     );
 }

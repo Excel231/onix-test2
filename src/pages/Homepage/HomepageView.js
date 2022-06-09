@@ -27,9 +27,13 @@ const HomepageView = ({signUpText, changeSignUpText}) => {
                 </p>
                 <DiscountTimer/>
                 <p className="call-to-sign-up"><strong>{signUpText}</strong></p>
-                <BigRedAnchorButton changeText={changeSignUpText}/>
+                <BigRedAnchorButton changeText={changeSignUpText}>
+                    <strong>SIGN UP!</strong>
+                </BigRedAnchorButton>
                 <br/>
-                <BigRedLinkButton><strong>Go to biography page!</strong></BigRedLinkButton>
+                <BigRedLinkButton>
+                    <strong>Go to biography page!</strong>
+                </BigRedLinkButton>
             </div>
         </>
     );
