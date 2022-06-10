@@ -1,6 +1,7 @@
 import BoxerLink from "../../сomponents/BoxerLink/BoxerLink";
 import BigRedAnchorButton from "../../сomponents/buttons/BigRedAnchorButton/BigRedAnchorButton";
 import BigRedLinkButton from "../../сomponents/buttons/BigRedLinkButton/BigRedLinkButton";
+import Comments from "../../сomponents/CommentsSection/CommentsSection";
 import DiscountTimer from "../../сomponents/DiscountTimer/DiscountTimer";
 import React from "react";
 import PropType from "prop-types";
@@ -34,6 +35,7 @@ const HomepageView = ({signUpText, changeSignUpText}) => {
                 <BigRedLinkButton>
                     <strong>Go to biography page!</strong>
                 </BigRedLinkButton>
+                <Comments/>
             </div>
         </>
     );

@@ -1,0 +1,17 @@
+.section-title {
+    font-family: 'Permanent Marker', sans-serif, sans-serif;
+}
+
+.section-title:hover {
+    color: #DA0037;
+}
+
+#comment-container {
+    background: #454545 linear-gradient(180deg, #222222 30%, #242424 100%);
+    border: 10px solid #DA0037;
+    border-left: none;
+    border-right: none;
+    font-size: 1.5rem;
+    margin-top: 20vh;
+    padding-top: 3vh;
+}
