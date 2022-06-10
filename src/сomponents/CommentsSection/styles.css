@@ -6,8 +6,8 @@
     color: #DA0037;
 }
 
-#comment-container {
-    background: #454545 linear-gradient(180deg, #222222 30%, #242424 100%);
+#commentContainer {
+    background: linear-gradient(180deg, #1f1f1f, #404040);
     border: 10px solid #DA0037;
     border-left: none;
     border-right: none;

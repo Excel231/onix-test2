@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from "react";
 import CommentsSectionView from "./CommentsSectionView";
 
-
 const CommentsSection = () => {
 
     const [comments, setComments] = useState([]);
@@ -14,7 +13,7 @@ const CommentsSection = () => {
             .then((data) => {
                 setComments(data);
             })
-    }, [])
+    }, []);
 
     return (
         <CommentsSectionView comments={comments}/>
