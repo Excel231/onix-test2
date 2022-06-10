@@ -1,10 +1,11 @@
 import React from "react";
 import Comment from "../Comment/Comment"
 import "./styles.css";
+import PropType from "prop-types";
 
 const CommentsSectionView = ({comments}) => {
     return (
-        <div id={"comment-container"}>
+        <div id={"commentContainer"}>
             <h2 className={"section-title"}>Comments from famous people</h2>
             {comments.map(({id, fullName, photoName, text}) => {
                 return (
@@ -19,6 +20,10 @@ const CommentsSectionView = ({comments}) => {
             })}
         </div>
     )
+}
+
+CommentsSectionView.propTypes = {
+    comments: PropType.array
 }
 
 export default CommentsSectionView;

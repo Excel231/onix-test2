@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles.css";
+import PropType from "prop-types";
 
 const Comment = ({fullName, photoName, text, styleType}) => {
     return (
@@ -17,6 +18,13 @@ const Comment = ({fullName, photoName, text, styleType}) => {
             </li>
         </ul>
     )
+}
+
+Comment.propTypes = {
+    fullName: PropType.string,
+    photoName: PropType.string,
+    text: PropType.string,
+    styleType: PropType.string
 }
 
 export default Comment;
