@@ -9,12 +9,8 @@ const CommentsSection = () => {
 
     useEffect(() => {
         fetch(COMMENTS_API_LINK)
-            .then((res) => {
-                return res.json();
-            })
-            .then((data) => {
-                setComments(data);
-            })
+            .then(res => res.json())
+            .then(data => setComments(data))
     }, []);
 
     return (
