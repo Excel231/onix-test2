@@ -5,6 +5,8 @@
     display: flex;
     margin: 50px 40px;
     line-height: 0;
+    padding: 30px 20px;
+    width: 75%;
 }
 
 .comment-preview {
@@ -38,14 +40,15 @@
 }
 
 .left-aligned {
-    background: #262323 linear-gradient(to right, #212121, #2c2c2c, #373737, #424242, #4e4e4e);
+    background: #262323 linear-gradient(to left, #212121, #2c2c2c, #373737, #424242, #4e4e4e);
     display: flex;
     flex-direction: row-reverse;
     text-align: left;
+    margin-left: auto;
 }
 
 .right-aligned {
-    background: #262323 linear-gradient(to left, #212121, #2c2c2c, #373737, #424242, #4e4e4e);
+    background: #262323 linear-gradient(to right, #212121, #2c2c2c, #373737, #424242, #4e4e4e);
     display: flex;
     text-align: right;
 }
