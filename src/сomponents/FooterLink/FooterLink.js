@@ -1,27 +1,29 @@
-import React from "react";
-import PropType from "prop-types";
-import "./styles.css";
+import React from 'react';
+import PropType from 'prop-types';
+import './styles.css';
 
-const FooterLink = ({onButtonEnter, linkTitle, footerLink, faClasses}) => {
-    return (
-        <a
-            className="link-icon"
-            onMouseEnter={() => onButtonEnter(linkTitle)}
-            target="_blank"
-            rel="noopener noreferrer"
-            title={linkTitle}
-            href={footerLink}
-        >
-            <i className={faClasses}/>
-        </a>
-    );
+function FooterLink({
+  onButtonEnter, linkTitle, footerLink, faClasses 
+}) {
+  return (
+    <a
+      className="link-icon"
+      onMouseEnter={() => onButtonEnter(linkTitle)}
+      target="_blank"
+      rel="noopener noreferrer"
+      title={linkTitle}
+      href={footerLink}
+    >
+      <i className={faClasses} />
+    </a>
+  );
 }
 
 FooterLink.propTypes = {
-    onButtonEnter: PropType.func,
-    linkTitle: PropType.string,
-    footerLink: PropType.string,
-    faClasses: PropType.string
-}
+  onButtonEnter: PropType.func,
+  linkTitle: PropType.string,
+  footerLink: PropType.string,
+  faClasses: PropType.string
+};
 
 export default FooterLink;
