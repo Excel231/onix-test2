@@ -48,21 +48,7 @@ function DraggableListView({
 }
 
 DraggableListView.propTypes = {
-  personsOnScreen: PropType.arrayOf(PropType.shape({
-    id: PropType.number.isRequired,
-    personInfo: PropType.arrayOf(PropType.shape({
-      firstName: PropType.string.isRequired,
-      secondName: PropType.string.isRequired,
-      fullName: PropType.string.isRequired,
-      photo: PropType.string.isRequired,
-      birthYear: PropType.number.isRequired,
-      weight: PropType.number.isRequired,
-      belts: PropType.arrayOf(PropType.shape({
-        beltName: PropType.string.isRequired,
-        beltYear: PropType.number.isRequired
-      })).isRequired,
-    })).isRequired,
-  })).isRequired,
+  personsOnScreen: PropType.arrayOf(PropType.shape({})).isRequired,
   onSaveChanges: PropType.func.isRequired,
   inactiveStyle: PropType.string.isRequired,
   activeStyle: PropType.string.isRequired,
