@@ -79,10 +79,7 @@ ParameterListView.propTypes = {
   birthYear: PropType.number.isRequired,
   photo: PropType.element,
   weight: PropType.number.isRequired,
-  belts: PropType.arrayOf(PropType.shape({
-    beltName: PropType.string.isRequired,
-    beltYear: PropType.number.isRequired
-  })),
+  belts: PropType.arrayOf(PropType.shape({})).isRequired,
   currentEditedField: PropType.string,
   currentEditedValue: PropType.number,
   onEditClick: PropType.func.isRequired,
@@ -93,7 +90,6 @@ ParameterListView.propTypes = {
 };
 
 ParameterListView.defaultProps = {
-  belts: undefined,
   currentEditedField: null,
   currentEditedValue: null,
   photo: PropType.element

@@ -64,10 +64,7 @@ ParameterList.propTypes = {
   photo: PropType.element.isRequired,
   birthYear: PropType.number.isRequired,
   weight: PropType.number.isRequired,
-  belts: PropType.arrayOf(PropType.shape({
-    beltName: PropType.string.isRequired,
-    beltYear: PropType.number.isRequired
-  })).isRequired,
+  belts: PropType.arrayOf(PropType.shape({})).isRequired,
   onSaveChanges: PropType.func.isRequired,
   listStyle: PropType.string.isRequired,
   handleParameterIsEdited: PropType.func.isRequired,
