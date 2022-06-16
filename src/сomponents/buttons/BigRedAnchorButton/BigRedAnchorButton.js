@@ -17,7 +17,8 @@ function BigRedAnchorButton({ children, changeText }) {
 }
 
 BigRedAnchorButton.propTypes = {
-  changText: PropType.func
+  children: PropType.node.isRequired,
+  changeText: PropType.func.isRequired
 };
 
 export default BigRedAnchorButton;

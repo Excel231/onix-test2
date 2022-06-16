@@ -11,7 +11,7 @@ function ParameterList({
   belts,
   onSaveChanges,
   listStyle,
-  handleParameterIsEdited
+  handleParameterIsEdited,
 }) {
   const [currentEditedField, setCurrentEditedField] = useState(null);
   const [currentEditedValue, setCurrentEditedValue] = useState(null);
@@ -59,13 +59,18 @@ function ParameterList({
 }
 
 ParameterList.propTypes = {
-  id: PropType.number,
-  fullName: PropType.string,
-  age: PropType.number,
-  birthYear: PropType.number,
-  weight: PropType.number,
-  belts: PropType.array,
-  onSaveChanges: PropType.func
+  id: PropType.number.isRequired,
+  fullName: PropType.string.isRequired,
+  photo: PropType.element.isRequired,
+  birthYear: PropType.number.isRequired,
+  weight: PropType.number.isRequired,
+  belts: PropType.arrayOf(PropType.shape({
+    beltName: PropType.string.isRequired,
+    beltYear: PropType.number.isRequired
+  })).isRequired,
+  onSaveChanges: PropType.func.isRequired,
+  listStyle: PropType.string.isRequired,
+  handleParameterIsEdited: PropType.func.isRequired,
 };
 
 export default ParameterList;

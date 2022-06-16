@@ -8,12 +8,28 @@ const DEFAULT_INACTIVE_STYLE = 'biography-ul';
 const DEFAULT_ACTIVE_STYLE = 'selected-biography-ul';
 
 class DraggableList extends React.Component {
-  state = {
-    currentDraggedPerson: null,
-    currentActivePerson: null,
-    activeStyle: DEFAULT_ACTIVE_STYLE,
-    parameterIsEdited: false
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentDraggedPerson: null,
+      currentActivePerson: null,
+      activeStyle: DEFAULT_ACTIVE_STYLE,
+      parameterIsEdited: false
+    };
+  }
+
+  componentDidMount() {
+    document.addEventListener('keydown', this.handleKeypress);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.handleKeypress);
+  }
+
+  getPersonIndex(person) {
+    const { personsOnScreen } = this.props;
+    return personsOnScreen.indexOf(person);
+  }
 
   dragStartHandler = (person) => {
     this.setState({ currentDraggedPerson: person });
@@ -25,12 +41,15 @@ class DraggableList extends React.Component {
 
   dropHandler = (e, personToDropOn) => {
     e.preventDefault();
-    const newArr = this.props.personsOnScreen.map((currentPerson) => {
-      if (currentPerson.id === personToDropOn.id) return this.state.currentDraggedPerson;
-      if (currentPerson.id === this.state.currentDraggedPerson.id) return personToDropOn;
+    const { personsOnScreen } = this.props;
+    const newArr = personsOnScreen.map((currentPerson) => {
+      const { currentDraggedPerson } = this.state;
+      if (currentPerson.id === personToDropOn.id) return currentDraggedPerson;
+      if (currentPerson.id === currentDraggedPerson.id) return personToDropOn;
       return currentPerson;
     });
-    this.props.changePersonsOnScreen(newArr);
+    const { changePersonsOnScreen } = this.props;
+    changePersonsOnScreen(newArr);
   };
 
   handleMouseClick = (person) => {
@@ -44,7 +63,9 @@ class DraggableList extends React.Component {
   };
 
   handleKeypress = (e) => {
-    if (this.state.parameterIsEdited) return;
+    const { parameterIsEdited } = this.state;
+    const { personsOnScreen } = this.props;
+    if (parameterIsEdited) return;
     const keyPressed = e.key;
     switch (keyPressed) {
       case ('1'):
@@ -64,7 +85,7 @@ class DraggableList extends React.Component {
         this.setState((state) => {
           return {
             currentActivePerson:
-                            this.props.personsOnScreen[this.getPersonIndex(state.currentActivePerson) - 1]
+                personsOnScreen[this.getPersonIndex(state.currentActivePerson) - 1]
           };
         });
         break;
@@ -74,7 +95,7 @@ class DraggableList extends React.Component {
         this.setState((state) => {
           return {
             currentActivePerson:
-                            this.props.personsOnScreen[this.getPersonIndex(state.currentActivePerson) + 1]
+                personsOnScreen[this.getPersonIndex(state.currentActivePerson) + 1]
           };
         });
         break;
@@ -85,31 +106,20 @@ class DraggableList extends React.Component {
     }
   };
 
-  getPersonIndex(person) {
-    return this.props.personsOnScreen.indexOf(person);
-  }
-
-  componentDidMount() {
-    document.addEventListener('keydown', this.handleKeypress);
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('keydown', this.handleKeypress);
-  }
-
   render() {
     const { personsOnScreen, onSaveChanges } = this.props;
+    const { activeStyle, currentActivePerson } = this.state;
     return (
       <DraggableListView
         personsOnScreen={personsOnScreen}
         onSaveChanges={onSaveChanges}
         inactiveStyle={DEFAULT_INACTIVE_STYLE}
-        activeStyle={this.state.activeStyle}
+        activeStyle={activeStyle}
         dragStartHandler={this.dragStartHandler}
         dragOverHandler={this.dragOverHandler}
         dropHandler={this.dropHandler}
         handleMouseClick={this.handleMouseClick}
-        currentActivePerson={this.state.currentActivePerson}
+        currentActivePerson={currentActivePerson}
         handleParameterIsEdited={this.handleParameterIsEdited}
       />
     );
@@ -117,9 +127,23 @@ class DraggableList extends React.Component {
 }
 
 DraggableList.propTypes = {
-  personsOnScreen: PropType.array,
-  onSaveChanges: PropType.func,
-  changePersonsOnScreen: PropType.func
+  personsOnScreen: PropType.arrayOf(PropType.shape({
+    id: PropType.number.isRequired,
+    personInfo: PropType.arrayOf(PropType.shape({
+      firstName: PropType.string.isRequired,
+      secondName: PropType.string.isRequired,
+      fullName: PropType.string.isRequired,
+      photo: PropType.string.isRequired,
+      birthYear: PropType.number.isRequired,
+      weight: PropType.number.isRequired,
+      belts: PropType.arrayOf(PropType.shape({
+        beltName: PropType.string.isRequired,
+        beltYear: PropType.number.isRequired
+      })).isRequired,
+    })).isRequired,
+  })).isRequired,
+  onSaveChanges: PropType.func.isRequired,
+  changePersonsOnScreen: PropType.func.isRequired
 };
 
 export default DraggableList;

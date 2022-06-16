@@ -17,7 +17,8 @@ function TitleParameterList({ sortOnClick }) {
 }
 
 ParameterList.propTypes = {
-  sortOnClick: PropType.func
+  sortOnClick: PropType.func.isRequired,
+
 };
 
 export default TitleParameterList;

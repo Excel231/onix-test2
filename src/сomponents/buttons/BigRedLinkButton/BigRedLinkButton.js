@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropType from 'prop-types';
-import BigRedAnchorButton from '../BigRedAnchorButton/BigRedAnchorButton';
 import '../styles.css';
 
 function BigRedLinkButton({ children }) {
@@ -10,13 +9,13 @@ function BigRedLinkButton({ children }) {
       className="big-red-btn"
       to="/biography"
     >
-      {children}
+      { children }
     </Link>
   );
 }
 
-BigRedAnchorButton.propTypes = {
-  children: PropType.any
+BigRedLinkButton.propTypes = {
+  children: PropType.node.isRequired
 };
 
 export default BigRedLinkButton;

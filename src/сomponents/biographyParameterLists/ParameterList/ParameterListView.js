@@ -58,16 +58,16 @@ function ParameterListView({
       <li className="biography-li">
         <ul>
           {
-                        bubbleSort(belts).map(({ beltName, year }) => (
-                          <li className="belt" key={beltName + year}>
-                            {year}
-                            {' '}
-                            - 
-                            {' '}
-                            {beltName}
-                          </li>
-                        ))
-                    }
+              bubbleSort(belts).map(({ beltName, year }) => (
+                <li className="belt" key={beltName + year}>
+                  {year}
+                  {' '}
+                  -
+                  {' '}
+                  {beltName}
+                </li>
+              ))
+          }
         </ul>
       </li>
     </ul>
@@ -75,16 +75,28 @@ function ParameterListView({
 }
 
 ParameterListView.propTypes = {
-  fullName: PropType.string,
-  age: PropType.number,
-  birthYear: PropType.number,
-  weight: PropType.number,
-  belts: PropType.array,
-  currentEditedField: PropType.any,
-  currentEditedValue: PropType.any,
-  onEditClick: PropType.func,
-  onFieldChange: PropType.func,
-  onFieldBlur: PropType.func
+  fullName: PropType.string.isRequired,
+  birthYear: PropType.number.isRequired,
+  photo: PropType.element,
+  weight: PropType.number.isRequired,
+  belts: PropType.arrayOf(PropType.shape({
+    beltName: PropType.string.isRequired,
+    beltYear: PropType.number.isRequired
+  })),
+  currentEditedField: PropType.string,
+  currentEditedValue: PropType.number,
+  onEditClick: PropType.func.isRequired,
+  onFieldChange: PropType.func.isRequired,
+  onFieldBlur: PropType.func.isRequired,
+  onKeyPressed: PropType.func.isRequired,
+  listStyle: PropType.string.isRequired,
+};
+
+ParameterListView.defaultProps = {
+  belts: undefined,
+  currentEditedField: null,
+  currentEditedValue: null,
+  photo: PropType.element
 };
 
 export default ParameterListView;

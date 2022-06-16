@@ -47,8 +47,8 @@ function HomepageView({ signUpText, changeSignUpText }) {
 }
 
 HomepageView.propTypes = {
-  signUpText: PropType.string,
-  changeSignUpText: PropType.func,
+  signUpText: PropType.string.isRequired,
+  changeSignUpText: PropType.func.isRequired,
 };
 
 export default HomepageView;

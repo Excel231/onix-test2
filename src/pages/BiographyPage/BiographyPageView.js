@@ -4,14 +4,16 @@ import TitleListOfParameters from '../../сomponents/biographyParameterLists/Tit
 import DraggableList from '../../сomponents/biographyParameterLists/DraggableList/DraggableList';
 import BigRedButton from '../../сomponents/buttons/BigRedButton/BigRedButton';
 
-function BiographyPageView({
-  personsOnScreen,
-  sortOnClick,
-  addPerson,
-  removePerson,
-  onSaveChanges,
-  changePersonsOnScreen
-}) {
+function BiographyPageView(
+  {
+    personsOnScreen,
+    sortOnClick,
+    addPerson,
+    removePerson,
+    onSaveChanges,
+    changePersonsOnScreen
+  }
+) {
   return (
     <>
       <TitleListOfParameters sortOnClick={sortOnClick} />
@@ -31,11 +33,16 @@ function BiographyPageView({
 }
 
 BiographyPageView.propTypes = {
-  personsOnScreen: PropType.array,
-  sortOnClick: PropType.func,
-  addPerson: PropType.func,
-  removePerson: PropType.func,
-  onSaveChanges: PropType.func
+  personsOnScreen: PropType.arrayOf(PropType.shape({})).isRequired,
+  sortOnClick: PropType.func.isRequired,
+  addPerson: PropType.func.isRequired,
+  removePerson: PropType.func.isRequired,
+  onSaveChanges: PropType.func.isRequired,
+  changePersonsOnScreen: PropType.func.isRequired
+};
+
+BiographyPageView.defaulProps = {
+  personsOnScreen: null
 };
 
 export default BiographyPageView;

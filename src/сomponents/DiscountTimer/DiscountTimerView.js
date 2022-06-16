@@ -20,8 +20,8 @@ function DiscountTimerView({ discountEndTime, currentTime }) {
 }
 
 DiscountTimerView.propTypes = {
-  discountTimeEnd: PropType.object,
-  currentTime: PropType.object
+  discountTimeEnd: PropType.object.isRequired,
+  currentTime: PropType.object.isRequired
 };
 
 export default DiscountTimerView;

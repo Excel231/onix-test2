@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../../styles.css';
 import sortPersons from '../../helper/sorters/sortPersons';
 import BiographyPageView from './BiographyPageView';
-import pregeneratedPersons from '../../helper/pregenerated-persons/pregeneratedPersons';
+import pregeneratedPersons from '../../helper/boxers-creation/pregenerated-persons/pregeneratedPersons';
 
 function BiographyPage() {
   const [personsOnScreen, setPersonsOnScreen] = useState([]);

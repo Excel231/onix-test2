@@ -16,8 +16,8 @@ function BoxerLink({ boxerSite, boxerName }) {
 }
 
 BoxerLink.propTypes = {
-  boxerSite: PropType.string,
-  boxerName: PropType.string
+  boxerSite: PropType.string.isRequired,
+  boxerName: PropType.string.isRequired
 };
 
 export default BoxerLink;

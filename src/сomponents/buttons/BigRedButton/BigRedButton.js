@@ -1,11 +1,11 @@
 import React from 'react';
 import PropType from 'prop-types';
-import BigRedAnchorButton from '../BigRedAnchorButton/BigRedAnchorButton';
 import '../styles.css';
 
 function BigRedButton({ children, onClick }) {
   return (
     <button
+      type="button"
       className="big-red-btn"
       onClick={onClick}
     >
@@ -14,9 +14,9 @@ function BigRedButton({ children, onClick }) {
   );
 }
 
-BigRedAnchorButton.propTypes = {
-  children: PropType.any,
-  onClick: PropType.func
+BigRedButton.propTypes = {
+  children: PropType.node.isRequired,
+  onClick: PropType.func.isRequired
 };
 
 export default BigRedButton;
