@@ -3,20 +3,15 @@ import { Route } from 'react-router-dom';
 import { Routes } from 'react-router';
 import BiographyPage from './pages/BiographyPage/BiographyPage';
 import Homepage from './pages/Homepage/Homepage';
-import Footer from './сomponents/Footer/Footer';
-import Header from './сomponents/Header/Header';
+import withLayout from './HOC/withLayout/withLayout';
 
 function App() {
   return (
-    <>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/biography" element={<BiographyPage />} />
-        <Route path="/onix-test2" element={<Homepage />} />
-      </Routes>
-      <Footer />
-    </>
+    <Routes>
+      <Route path="/" element={withLayout(<Homepage />)} />
+      <Route path="/biography" element={withLayout(<BiographyPage />)} />
+      <Route path="/onix-test2" element={withLayout(<Homepage />)} />
+    </Routes>
   );
 }
 
