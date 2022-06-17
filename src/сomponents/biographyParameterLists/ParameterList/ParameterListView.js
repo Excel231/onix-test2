@@ -60,7 +60,11 @@ function ParameterListView({
       <li className="biography-li">
         <ul>
           {
-              bubbleSort(belts).map(({ beltName, year }) => (
+            bubbleSort(belts)
+              .map(({
+                beltName,
+                year
+              }) => (
                 <li className="belt" key={beltName + year}>
                   {year}
                   {' '}

@@ -8,7 +8,10 @@ function CommentsSectionView({ comments }) {
     <div className="comment-container">
       <h2 className="section-title">Comments from famous people</h2>
       {comments.map(({
-        id, fullName, photoName, text 
+        id,
+        fullName,
+        photoName,
+        text
       }) => {
         return (
           <Comment
@@ -25,12 +28,7 @@ function CommentsSectionView({ comments }) {
 }
 
 CommentsSectionView.propTypes = {
-  comments: PropType.arrayOf(PropType.shape({
-    fullName: PropType.string.isRequired,
-    photoName: PropType.string.isRequired,
-    text: PropType.string.isRequired,
-    id: PropType.node.isRequired
-  })).isRequired
+  comments: PropType.arrayOf(PropType.shape({})).isRequired
 };
 
 export default CommentsSectionView;
