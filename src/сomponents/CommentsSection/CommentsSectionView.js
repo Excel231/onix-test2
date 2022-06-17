@@ -5,7 +5,7 @@ import './styles.css';
 
 function CommentsSectionView({ comments }) {
   return (
-    <div id="commentContainer">
+    <div className="comment-container">
       <h2 className="section-title">Comments from famous people</h2>
       {comments.map(({
         id, fullName, photoName, text 
