@@ -14,6 +14,7 @@ function ChangeableParameterItem({
 }) {
   return (
     <li
+      aria-hidden="true"
       className="biography-li"
       onClick={() => onEditClick(parameterName, parameter)}
     >
@@ -26,10 +27,10 @@ function ChangeableParameterItem({
             value={currentEditedValue}
             onChange={onFieldChange}
             onBlur={onFieldBlur}
-            onKeyPress={onKeyPressed}
+            onKeyDown={onKeyPressed}
           />
         ) : <p>{parameter}</p>
-            }
+      }
     </li>
   );
 }
@@ -37,7 +38,9 @@ function ChangeableParameterItem({
 ChangeableParameterItem.propTypes = {
   parameter: PropType.number.isRequired,
   parameterName: PropType.string.isRequired,
-  currentEditedValue: PropType.number,
+  currentEditedValue: PropType.oneOfType(
+    [PropType.number, PropType.string]
+  ),
   currentEditedField: PropType.string,
   onEditClick: PropType.func.isRequired,
   onFieldChange: PropType.func.isRequired,

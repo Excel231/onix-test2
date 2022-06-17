@@ -1,0 +1,10 @@
+.boxer-parameter-btn {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: #DA0037;
+    font-size: 2rem;
+    display: inline-block;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    vertical-align: middle;
+}

@@ -38,11 +38,11 @@ function FooterView({
 }
 
 FooterView.propTypes = {
-  gitHubLink: PropType.string,
-  designLink: PropType.string,
-  shLink: PropType.string,
-  linkText: PropType.string,
-  changeSignUpText: PropType.func
+  gitHubLink: PropType.string.isRequired,
+  designLink: PropType.string.isRequired,
+  shLink: PropType.string.isRequired,
+  linkText: PropType.string.isRequired,
+  changeSignUpText: PropType.func.isRequired
 };
 
 export default FooterView;

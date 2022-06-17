@@ -61,7 +61,7 @@ function ParameterList({
 ParameterList.propTypes = {
   id: PropType.number.isRequired,
   fullName: PropType.string.isRequired,
-  photo: PropType.element.isRequired,
+  photo: PropType.string.isRequired,
   birthYear: PropType.number.isRequired,
   weight: PropType.number.isRequired,
   belts: PropType.arrayOf(PropType.shape({})).isRequired,

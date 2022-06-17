@@ -26,7 +26,9 @@ function ParameterListView({
           className="boxer-photo"
           alt={fullName}
           src={photo}
+          /* eslint-disable-next-line no-console */
           onLoad={() => console.log(`Photo of ${fullName} has loaded successfully!`)}
+          /* eslint-disable-next-line no-console */
           onError={() => console.log(`Error occurred with the photo of ${fullName}!`)}
         />
       </li>
@@ -77,11 +79,13 @@ function ParameterListView({
 ParameterListView.propTypes = {
   fullName: PropType.string.isRequired,
   birthYear: PropType.number.isRequired,
-  photo: PropType.element,
+  photo: PropType.string.isRequired,
   weight: PropType.number.isRequired,
   belts: PropType.arrayOf(PropType.shape({})).isRequired,
   currentEditedField: PropType.string,
-  currentEditedValue: PropType.number,
+  currentEditedValue: PropType.oneOfType(
+    [PropType.number, PropType.string]
+  ),
   onEditClick: PropType.func.isRequired,
   onFieldChange: PropType.func.isRequired,
   onFieldBlur: PropType.func.isRequired,
@@ -92,7 +96,6 @@ ParameterListView.propTypes = {
 ParameterListView.defaultProps = {
   currentEditedField: null,
   currentEditedValue: null,
-  photo: PropType.element
 };
 
 export default ParameterListView;

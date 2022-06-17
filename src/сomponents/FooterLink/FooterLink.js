@@ -20,10 +20,10 @@ function FooterLink({
 }
 
 FooterLink.propTypes = {
-  onButtonEnter: PropType.func,
-  linkTitle: PropType.string,
-  footerLink: PropType.string,
-  faClasses: PropType.string
+  onButtonEnter: PropType.func.isRequired,
+  linkTitle: PropType.string.isRequired,
+  footerLink: PropType.string.isRequired,
+  faClasses: PropType.string.isRequired
 };
 
 export default FooterLink;

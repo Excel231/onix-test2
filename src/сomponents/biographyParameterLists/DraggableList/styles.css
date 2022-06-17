@@ -1,8 +1,17 @@
+.biography-ul,
+.selected-biography-ul,
+.selected-biography-ul-white,
+.selected-biography-ul-green,
+.selected-biography-ul-blue {
+    border-radius: 30px;
+    line-height: 0;
+    margin: 1rem;
+}
+
+
 .biography-ul {
     background: #262323 linear-gradient(to right, #212121, #2c2c2c, #373737, #424242, #4e4e4e);
     border: solid #DA0037;
-    border-radius: 30px;
-    line-height: 0;
 }
 
 .selected-biography-ul,
@@ -11,7 +20,6 @@
 .selected-biography-ul-blue {
     background: #262323 linear-gradient(to left, #212121, #2c2c2c, #373737, #424242, #4e4e4e);
     border: solid 5px #880022;
-    border-radius: 30px;
 }
 
 .selected-biography-ul-white {

@@ -56,7 +56,7 @@ DraggableListView.propTypes = {
   dragOverHandler: PropType.func.isRequired,
   dropHandler: PropType.func.isRequired,
   handleMouseClick: PropType.func.isRequired,
-  currentActivePerson: PropType.element,
+  currentActivePerson: PropType.shape({}),
   handleParameterIsEdited: PropType.func.isRequired
 };
 

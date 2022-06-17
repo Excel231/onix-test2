@@ -15,14 +15,14 @@ const DISCOUNT_END_TIME = new Date(
 function DiscountTimer() {
   const [fullDate, setFullDate] = useState(CURRENT_TIME);
 
+  const onSecondPass = () => {
+    setFullDate(new Date());
+  };
+
   useEffect(() => {
     const discountTimer = setInterval(() => onSecondPass(), 1000);
     return () => clearInterval(discountTimer);
   }, []);
-
-  const onSecondPass = () => {
-    setFullDate(new Date());
-  };
 
   return (
     <DiscountTimerView
