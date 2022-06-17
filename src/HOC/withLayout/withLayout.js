@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../../сomponents/Header/Header';
 import Footer from '../../сomponents/Footer/Footer';
 
-function withLayout(WrappedComponent) {
+const withLayout = (WrappedComponent) => {
   return class extends React.Component {
     render() {
       return (
@@ -15,6 +15,6 @@ function withLayout(WrappedComponent) {
       );
     }
   };
-}
+};
 
 export default withLayout;

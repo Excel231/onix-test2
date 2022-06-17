@@ -3,6 +3,7 @@ import '../../styles.css';
 import sortPersons from '../../helper/sorters/sortPersons';
 import BiographyPageView from './BiographyPageView';
 import pregeneratedPersons from '../../helper/boxers-creation/pregenerated-persons/pregeneratedPersons';
+import withLayout from '../../HOC/withLayout/withLayout';
 
 function BiographyPage() {
   const [personsOnScreen, setPersonsOnScreen] = useState([]);
@@ -49,4 +50,4 @@ function BiographyPage() {
   );
 }
 
-export default BiographyPage;
+export default withLayout(BiographyPage);

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../../styles.css';
 import HomepageView from './HomepageView';
+import withLayout from '../../HOC/withLayout/withLayout';
 
 const SIGN_UP_BUTTON_TEXT = 'SMASH THIS BUTTON RIGHT NOW!';
 const SIGN_UP_BUTTON_CHANGED_TEXT = 'WELCOME TO THE CLUB, BUDDY!';
@@ -20,4 +21,4 @@ function Homepage() {
   );
 }
 
-export default Homepage;
+export default withLayout(Homepage);
