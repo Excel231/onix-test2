@@ -12,7 +12,7 @@ function BiographyPage() {
   const [sortFromGreatest, setSortFromGreatest] = useState(false);
 
   const sortOnClick = (componentToCompare) => {
-    setSortFromGreatest(!sortFromGreatest);
+    setSortFromGreatest((prevSortFromGreatest) => !prevSortFromGreatest);
     setPersonsOnScreen(sortPersons([...personsOnScreen], componentToCompare, sortFromGreatest));
   };
 
