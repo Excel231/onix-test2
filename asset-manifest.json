@@ -1,23 +1,23 @@
 {
-  "main.css": "/onix-test2/static/css/main.e8bf62bd.chunk.css",
-  "main.js": "/onix-test2/static/js/main.7c496f76.chunk.js",
-  "main.js.map": "/onix-test2/static/js/main.7c496f76.chunk.js.map",
-  "static/js/1.3983e965.chunk.js": "/onix-test2/static/js/1.3983e965.chunk.js",
-  "static/js/1.3983e965.chunk.js.map": "/onix-test2/static/js/1.3983e965.chunk.js.map",
-  "runtime~main.js": "/onix-test2/static/js/runtime~main.24086692.js",
-  "runtime~main.js.map": "/onix-test2/static/js/runtime~main.24086692.js.map",
-  "static/media/styles.css": "/onix-test2/static/media/boxer-background.27b2858a.jpg",
-  "static/media/Klirschko.jpg": "/onix-test2/static/media/Klirschko.e4456204.jpg",
-  "static/media/Usyk.jpg": "/onix-test2/static/media/Usyk.98076a76.jpg",
-  "static/media/Tyson.jpg": "/onix-test2/static/media/Tyson.249bcae5.jpg",
-  "static/media/Fury.jpg": "/onix-test2/static/media/Fury.3055604f.jpg",
-  "static/media/Briedis.jpg": "/onix-test2/static/media/Briedis.14288791.jpg",
-  "static/media/arnold.jpg": "/onix-test2/static/media/arnold.e1bd085b.jpg",
-  "static/media/dwayne.jpg": "/onix-test2/static/media/dwayne.bcd0adeb.jpg",
-  "static/media/jax.jpg": "/onix-test2/static/media/jax.a2733f17.jpg",
-  "static/media/khalimov.jpg": "/onix-test2/static/media/khalimov.b37adfa8.jpg",
-  "static/css/main.e8bf62bd.chunk.css.map": "/onix-test2/static/css/main.e8bf62bd.chunk.css.map",
-  "index.html": "/onix-test2/index.html",
-  "precache-manifest.35c916e13bbb4a29235259d23f6bedd9.js": "/onix-test2/precache-manifest.35c916e13bbb4a29235259d23f6bedd9.js",
-  "service-worker.js": "/onix-test2/service-worker.js"
+  "files": {
+    "main.css": "/onix-test2/static/css/main.f40c9941.css",
+    "main.js": "/onix-test2/static/js/main.26bde32f.js",
+    "static/media/Usyk.jpg": "/onix-test2/static/media/Usyk.bd5d1af27be356ef0c01.jpg",
+    "static/media/Tyson.jpg": "/onix-test2/static/media/Tyson.19f1a22bce3afeea47de.jpg",
+    "static/media/Fury.jpg": "/onix-test2/static/media/Fury.cfccdfb277e17216e97c.jpg",
+    "static/media/Klirschko.jpg": "/onix-test2/static/media/Klirschko.9369405f3cfe69b32f0c.jpg",
+    "static/media/arnold.jpg": "/onix-test2/static/media/arnold.50af6220ed85a3c86db4.jpg",
+    "static/media/boxer-background.jpg": "/onix-test2/static/media/boxer-background.a7ffb9004ede876ee829.jpg",
+    "static/media/Briedis.jpg": "/onix-test2/static/media/Briedis.b575ba6022a541f1dba4.jpg",
+    "static/media/jax.jpg": "/onix-test2/static/media/jax.a91984dc397893071273.jpg",
+    "static/media/dwayne.jpg": "/onix-test2/static/media/dwayne.ac27654e523000071a48.jpg",
+    "static/media/khalimov.jpg": "/onix-test2/static/media/khalimov.1fa1da027be787e5801f.jpg",
+    "index.html": "/onix-test2/index.html",
+    "main.f40c9941.css.map": "/onix-test2/static/css/main.f40c9941.css.map",
+    "main.26bde32f.js.map": "/onix-test2/static/js/main.26bde32f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f40c9941.css",
+    "static/js/main.26bde32f.js"
+  ]
 }
