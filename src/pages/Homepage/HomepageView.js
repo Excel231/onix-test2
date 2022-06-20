@@ -5,16 +5,19 @@ import BigRedAnchorButton from '../../сomponents/buttons/BigRedAnchorButton/Big
 import BigRedLinkButton from '../../сomponents/buttons/BigRedLinkButton/BigRedLinkButton';
 import Comments from '../../сomponents/CommentsSection/CommentsSection';
 import DiscountTimer from '../../сomponents/DiscountTimer/DiscountTimer';
-import './styles.css';
+import './styles.scss';
 
-function HomepageView({ signUpText, changeSignUpText }) {
+function HomepageView({
+  signUpText,
+  changeSignUpText
+}) {
   return (
-    <div id="homepage-main-section">
+    <div>
       <h2>Want to become stronger? Looking for worthy opponents? Our gym is for YOU!</h2>
-      <div>
+      <div id="homepage-main-section">
         <p className="main-text">Box is one of the most popular sports in the World!</p>
         <p className="main-text">
-          If you want to become a living legend like 
+          If you want to become a living legend like
           {' '}
           <BoxerLink
             boxerName="Vitali Klitchko"
@@ -38,8 +41,8 @@ function HomepageView({ signUpText, changeSignUpText }) {
         <BigRedLinkButton>
           <strong>Go to biography page!</strong>
         </BigRedLinkButton>
-        <Comments />
       </div>
+      <Comments />
     </div>
   );
 }

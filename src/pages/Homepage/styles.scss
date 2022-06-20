@@ -2,6 +2,10 @@
     background: url(../../images/background/boxer-background.jpg) no-repeat;
     background-size: auto;
     border-top: 1px solid #2a2a2a;
+    padding-bottom: 15vh;
+    @media (max-width: 1200px) {
+        background-size: cover;
+    }
 }
 
 .call-to-sign-up {
