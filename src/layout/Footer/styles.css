@@ -1,0 +1,16 @@
+footer {
+    background: #454545 linear-gradient(180deg, #222222 30%, #242424 100%);
+    padding: 40px;
+    text-align: right;
+}
+
+.footer-text {
+    margin-top: 0;
+    padding-top: 10px;
+}
+
+.footer-info-menu {
+    display: inline-flex;
+    flex-flow: column;
+    text-align: center;
+}

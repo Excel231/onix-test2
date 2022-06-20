@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from '../../сomponents/Header/Header';
-import Footer from '../../сomponents/Footer/Footer';
+import Header from '../../layout/Header/Header';
+import Footer from '../../layout/Footer/Footer';
 
 const withLayout = (WrappedComponent) => {
   return class extends React.Component {

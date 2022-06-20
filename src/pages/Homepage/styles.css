@@ -1,3 +1,9 @@
+#homepage-main-section {
+    background: url(../../images/background/boxer-background.jpg) no-repeat;
+    background-size: auto;
+    border-top: 1px solid #2a2a2a;
+}
+
 .call-to-sign-up {
     color: #DA0037;
     text-decoration: none;
@@ -10,6 +16,11 @@
 }
 
 @media (max-width: 1200px) {
+    .homepage-main-section {
+        background-position: right center;
+        background-size: cover;
+    }
+
     .call-to-sign-up {
         font-size: 1.5rem;
         line-height: 40px;

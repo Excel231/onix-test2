@@ -1,8 +1,5 @@
 body {
-    background-color: #191919;
-    background-image: url(images/background/boxer-background.jpg);
-    background-repeat: no-repeat;
-    background-size: auto;
+    background: linear-gradient(180deg, #1A1A1AF2, #000000);
     color: #EDEDED;
     font-family: 'Oswald', sans-serif;
     text-align: center;
@@ -14,7 +11,7 @@ body {
 h1 {
     display: inline-block;
     font-family: 'Permanent Marker', sans-serif;
-    font-size: 7rem;
+    font-size: 3rem;
     margin: 0;
 }
 
@@ -43,9 +40,6 @@ h1:hover {
 /* Resize */
 
 @media (max-width: 1200px) {
-    h1 {
-        font-size: 3.5rem;
-    }
 
     h2 {
         display: none;

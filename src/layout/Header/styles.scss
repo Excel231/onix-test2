@@ -1,0 +1,33 @@
+#header {
+    background: #1f1f1f;
+    border-bottom: 10px solid #DA0037;;
+    display: inline-flex;
+    position: sticky;
+    top: 0;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 1;
+}
+
+.logo {
+    color: #EDEDED;
+    text-decoration: none;
+    margin-left: 3%;
+    &:hover {
+        color: #DA0037;
+    }
+}
+
+.logo-text {
+    font-size: 3rem;
+    @media (max-width: 1200px) {
+        display: none;
+    }
+}
+
+.logo-img {
+    height: 3rem;
+    width: 3rem;
+    padding: 10px;
+    transform: rotate(270deg);
+}
