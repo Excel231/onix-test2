@@ -1,0 +1,29 @@
+#homepage-main-section {
+  background: url(../../../images/background/boxer-background.jpg) no-repeat;
+  background-size: auto;
+  border-top: 1px solid #2a2a2a;
+  padding-bottom: 15vh;
+  @media (max-width: 1200px) {
+    background-size: cover;
+  }
+}
+
+.call-to-sign-up {
+  color: #DA0037;
+  text-decoration: none;
+  line-height: 5rem;
+  margin-top: 1rem;
+  @media (max-width: 1200px) {
+    font-size: 1.5rem;
+    line-height: 40px;
+  }
+}
+
+.main-text {
+  font-size: 2rem;
+  @media (max-width: 1200px) {
+    font-size: 1.5rem;
+  }
+}
+
+

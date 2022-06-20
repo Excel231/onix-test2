@@ -1,7 +1,7 @@
 import React from 'react';
 import PropType from 'prop-types';
-import Comment from '../Comment/Comment';
-import './styles.css';
+import Comment from '../../../сomponents/Comment/Comment';
+import '../sass/CommentsSection.scss';
 
 function CommentsSectionView({ comments }) {
   return (
