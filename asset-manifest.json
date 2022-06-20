@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/onix-test2/static/css/main.0419fd6f.css",
-    "main.js": "/onix-test2/static/js/main.e732baa1.js",
+    "main.css": "/onix-test2/static/css/main.eb96e28d.css",
+    "main.js": "/onix-test2/static/js/main.d257580e.js",
     "static/media/Usyk.jpg": "/onix-test2/static/media/Usyk.bd5d1af27be356ef0c01.jpg",
     "static/media/Tyson.jpg": "/onix-test2/static/media/Tyson.19f1a22bce3afeea47de.jpg",
     "static/media/Fury.jpg": "/onix-test2/static/media/Fury.cfccdfb277e17216e97c.jpg",
@@ -13,11 +13,11 @@
     "static/media/dwayne.jpg": "/onix-test2/static/media/dwayne.ac27654e523000071a48.jpg",
     "static/media/khalimov.jpg": "/onix-test2/static/media/khalimov.1fa1da027be787e5801f.jpg",
     "index.html": "/onix-test2/index.html",
-    "main.0419fd6f.css.map": "/onix-test2/static/css/main.0419fd6f.css.map",
-    "main.e732baa1.js.map": "/onix-test2/static/js/main.e732baa1.js.map"
+    "main.eb96e28d.css.map": "/onix-test2/static/css/main.eb96e28d.css.map",
+    "main.d257580e.js.map": "/onix-test2/static/js/main.d257580e.js.map"
   },
   "entrypoints": [
-    "static/css/main.0419fd6f.css",
-    "static/js/main.e732baa1.js"
+    "static/css/main.eb96e28d.css",
+    "static/js/main.d257580e.js"
   ]
 }
