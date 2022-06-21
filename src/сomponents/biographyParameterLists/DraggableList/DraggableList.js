@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropType from 'prop-types';
 import DraggableListView from './DraggableListView';
 import './styles.css';
@@ -7,123 +7,98 @@ const DEFAULT_INACTIVE_STYLE = 'biography-ul';
 
 const DEFAULT_ACTIVE_STYLE = 'selected-biography-ul';
 
-class DraggableList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentDraggedPerson: null,
-      currentActivePerson: null,
-      activeStyle: DEFAULT_ACTIVE_STYLE,
-      parameterIsEdited: false
-    };
-  }
+function DraggableList({
+  personsOnScreen,
+  changePersonsOnScreen,
+  onSaveChanges
+}) {
+  const [currentDraggedPerson, setCurrentDraggedPerson] = useState(null);
+  const [currentActivePerson, setCurrentActivePerson] = useState(null);
+  const [activeStyle, setActiveStyle] = useState(DEFAULT_ACTIVE_STYLE);
+  const [parameterIsEdited, setParameterIsEdited] = useState(false);
 
-  componentDidMount() {
-    document.addEventListener('keydown', this.handleKeypress);
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('keydown', this.handleKeypress);
-  }
-
-  getPersonIndex(person) {
-    const { personsOnScreen } = this.props;
+  const getPersonIndex = (person) => {
     return personsOnScreen.indexOf(person);
-  }
-
-  dragStartHandler = (person) => {
-    this.setState({ currentDraggedPerson: person });
   };
 
-  dragOverHandler = (e) => {
+  const dragStartHandler = (person) => {
+    setCurrentDraggedPerson(person);
+  };
+
+  const dragOverHandler = (e) => {
     e.preventDefault();
   };
 
-  dropHandler = (e, personToDropOn) => {
+  const dropHandler = (e, personToDropOn) => {
     e.preventDefault();
-    const { personsOnScreen } = this.props;
     const newArr = personsOnScreen.map((currentPerson) => {
-      const { currentDraggedPerson } = this.state;
       if (currentPerson.id === personToDropOn.id) return currentDraggedPerson;
       if (currentPerson.id === currentDraggedPerson.id) return personToDropOn;
       return currentPerson;
     });
-    const { changePersonsOnScreen } = this.props;
     changePersonsOnScreen(newArr);
   };
 
-  handleMouseClick = (person) => {
-    this.setState({ currentActivePerson: person });
+  const handleMouseClick = (person) => {
+    setCurrentActivePerson(person);
   };
 
-  handleParameterIsEdited = () => {
-    this.setState((state) => {
-      return { parameterIsEdited: !state.parameterIsEdited };
-    });
+  const handleParameterIsEdited = () => {
+    setParameterIsEdited((prevState) => !prevState);
   };
 
-  handleKeypress = (e) => {
-    const { parameterIsEdited } = this.state;
-    const { personsOnScreen } = this.props;
+  const handleKeypress = (e) => {
     if (parameterIsEdited) return;
     const keyPressed = e.key;
     switch (keyPressed) {
       case ('1'):
-        this.setState({ activeStyle: `${DEFAULT_ACTIVE_STYLE}-white` });
+        setActiveStyle(`${DEFAULT_ACTIVE_STYLE}-white`);
         break;
 
       case ('2'):
-        this.setState({ activeStyle: `${DEFAULT_ACTIVE_STYLE}-green` });
+        setActiveStyle(`${DEFAULT_ACTIVE_STYLE}-green`);
         break;
 
       case ('3'):
-        this.setState({ activeStyle: `${DEFAULT_ACTIVE_STYLE}-blue` });
+        setActiveStyle(`${DEFAULT_ACTIVE_STYLE}-blue`);
         break;
 
       case ('ArrowUp'):
         e.preventDefault();
-        this.setState((state) => {
-          return {
-            currentActivePerson:
-                personsOnScreen[this.getPersonIndex(state.currentActivePerson) - 1]
-          };
-        });
+        setCurrentActivePerson((prevState) => personsOnScreen[getPersonIndex(prevState) - 1]);
         break;
 
       case ('ArrowDown'):
         e.preventDefault();
-        this.setState((state) => {
-          return {
-            currentActivePerson:
-                personsOnScreen[this.getPersonIndex(state.currentActivePerson) + 1]
-          };
-        });
+        setCurrentActivePerson((prevState) => personsOnScreen[getPersonIndex(prevState) + 1]);
         break;
 
       default:
-        this.setState({ activeStyle: DEFAULT_ACTIVE_STYLE });
+        setActiveStyle(DEFAULT_ACTIVE_STYLE);
         break;
     }
   };
 
-  render() {
-    const { personsOnScreen, onSaveChanges } = this.props;
-    const { activeStyle, currentActivePerson } = this.state;
-    return (
-      <DraggableListView
-        personsOnScreen={personsOnScreen}
-        onSaveChanges={onSaveChanges}
-        inactiveStyle={DEFAULT_INACTIVE_STYLE}
-        activeStyle={activeStyle}
-        dragStartHandler={this.dragStartHandler}
-        dragOverHandler={this.dragOverHandler}
-        dropHandler={this.dropHandler}
-        handleMouseClick={this.handleMouseClick}
-        currentActivePerson={currentActivePerson}
-        handleParameterIsEdited={this.handleParameterIsEdited}
-      />
-    );
-  }
+  useEffect(() => {
+    const keyPress = (e) => handleKeypress(e);
+    document.addEventListener('keydown', keyPress);
+    return () => document.removeEventListener('keydown', keyPress);
+  }, [personsOnScreen]);
+
+  return (
+    <DraggableListView
+      personsOnScreen={personsOnScreen}
+      onSaveChanges={onSaveChanges}
+      inactiveStyle={DEFAULT_INACTIVE_STYLE}
+      activeStyle={activeStyle}
+      dragStartHandler={dragStartHandler}
+      dragOverHandler={dragOverHandler}
+      dropHandler={dropHandler}
+      handleMouseOver={handleMouseClick}
+      currentActivePerson={currentActivePerson}
+      handleParameterIsEdited={handleParameterIsEdited}
+    />
+  );
 }
 
 DraggableList.propTypes = {
