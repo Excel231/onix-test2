@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/onix-test2/static/css/main.eb96e28d.css",
-    "main.js": "/onix-test2/static/js/main.d257580e.js",
+    "main.css": "/onix-test2/static/css/main.5eb84957.css",
+    "main.js": "/onix-test2/static/js/main.764ac309.js",
     "static/media/Usyk.jpg": "/onix-test2/static/media/Usyk.bd5d1af27be356ef0c01.jpg",
     "static/media/Tyson.jpg": "/onix-test2/static/media/Tyson.19f1a22bce3afeea47de.jpg",
     "static/media/Fury.jpg": "/onix-test2/static/media/Fury.cfccdfb277e17216e97c.jpg",
-    "static/media/Klirschko.jpg": "/onix-test2/static/media/Klirschko.9369405f3cfe69b32f0c.jpg",
+    "static/media/Klitschko.jpg": "/onix-test2/static/media/Klitschko.9369405f3cfe69b32f0c.jpg",
     "static/media/arnold.jpg": "/onix-test2/static/media/arnold.50af6220ed85a3c86db4.jpg",
     "static/media/boxer-background.jpg": "/onix-test2/static/media/boxer-background.a7ffb9004ede876ee829.jpg",
     "static/media/Briedis.jpg": "/onix-test2/static/media/Briedis.b575ba6022a541f1dba4.jpg",
@@ -13,11 +13,11 @@
     "static/media/dwayne.jpg": "/onix-test2/static/media/dwayne.ac27654e523000071a48.jpg",
     "static/media/khalimov.jpg": "/onix-test2/static/media/khalimov.1fa1da027be787e5801f.jpg",
     "index.html": "/onix-test2/index.html",
-    "main.eb96e28d.css.map": "/onix-test2/static/css/main.eb96e28d.css.map",
-    "main.d257580e.js.map": "/onix-test2/static/js/main.d257580e.js.map"
+    "main.5eb84957.css.map": "/onix-test2/static/css/main.5eb84957.css.map",
+    "main.764ac309.js.map": "/onix-test2/static/js/main.764ac309.js.map"
   },
   "entrypoints": [
-    "static/css/main.eb96e28d.css",
-    "static/js/main.d257580e.js"
+    "static/css/main.5eb84957.css",
+    "static/js/main.764ac309.js"
   ]
 }
