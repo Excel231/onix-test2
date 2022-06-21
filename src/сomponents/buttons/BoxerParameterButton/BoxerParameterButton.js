@@ -2,7 +2,7 @@ import React from 'react';
 import PropType from 'prop-types';
 import './styles.css';
 
-function BoxerParameterButton({ children, handleClick }) {
+const BoxerParameterButton = ({ children, handleClick }) => {
   return (
     <button
       className="boxer-parameter-btn"
@@ -12,7 +12,7 @@ function BoxerParameterButton({ children, handleClick }) {
       {children}
     </button>
   );
-}
+};
 
 BoxerParameterButton.propTypes = {
   children: PropType.string.isRequired,

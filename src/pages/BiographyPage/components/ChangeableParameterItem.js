@@ -1,8 +1,8 @@
 import React from 'react';
 import PropType from 'prop-types';
-import './styles.css';
+import '../sass/ChangeableParameterItem.scss';
 
-function ChangeableParameterItem({
+const ChangeableParameterItem = ({
   parameter,
   parameterName,
   currentEditedValue,
@@ -11,7 +11,7 @@ function ChangeableParameterItem({
   onKeyPressed,
   onEditClick,
   onFieldChange,
-}) {
+}) => {
   return (
     <li
       aria-hidden="true"
@@ -33,7 +33,7 @@ function ChangeableParameterItem({
       }
     </li>
   );
-}
+};
 
 ChangeableParameterItem.propTypes = {
   parameter: PropType.number.isRequired,

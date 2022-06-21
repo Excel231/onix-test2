@@ -2,7 +2,7 @@ import React from 'react';
 import PropType from 'prop-types';
 import '../styles.scss';
 
-function BigRedAnchorButton({ children, changeText }) {
+const BigRedAnchorButton = ({ children, changeText }) => {
   return (
     <a
       className="big-red-btn"
@@ -14,7 +14,7 @@ function BigRedAnchorButton({ children, changeText }) {
       {children}
     </a>
   );
-}
+};
 
 BigRedAnchorButton.propTypes = {
   children: PropType.node.isRequired,

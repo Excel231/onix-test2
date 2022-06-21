@@ -2,7 +2,7 @@ import React from 'react';
 import PropType from 'prop-types';
 import ParameterList from '../ParameterList/ParameterList';
 
-function DraggableListView({
+const DraggableListView = ({
   personsOnScreen,
   onSaveChanges,
   inactiveStyle,
@@ -13,7 +13,7 @@ function DraggableListView({
   handleMouseOver,
   currentActivePerson,
   handleParameterIsEdited
-}) {
+}) => {
   return (
     <>
       {
@@ -45,7 +45,7 @@ function DraggableListView({
       }
     </>
   );
-}
+};
 
 DraggableListView.propTypes = {
   personsOnScreen: PropType.arrayOf(PropType.shape({})).isRequired,

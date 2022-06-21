@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import icon from '../../images/icon/icon.png';
 import NavBar from '../NavBar/NavBar';
 
-function Header() {
+const Header = () => {
   return (
     <header id="header">
       <Link to="/" className="logo">
@@ -14,6 +14,6 @@ function Header() {
       <NavBar />
     </header>
   );
-}
+};
 
 export default Header;

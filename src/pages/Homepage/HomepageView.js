@@ -4,17 +4,17 @@ import CommentsSection from './components/CommentsSection';
 import './sass/HomepageMainSection.scss';
 import HomepageMainSection from './components/HomepageMainSection';
 
-function HomepageView({
+const HomepageView = ({
   signUpText,
   changeSignUpText
-}) {
+}) => {
   return (
     <div>
       <HomepageMainSection signUpText={signUpText} changeSignUpText={changeSignUpText} />
       <CommentsSection />
     </div>
   );
-}
+};
 
 HomepageView.propTypes = {
   signUpText: PropType.string.isRequired,

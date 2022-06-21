@@ -12,7 +12,7 @@ const DISCOUNT_END_TIME = new Date(
   CURRENT_TIME.getSeconds()
 );
 
-function DiscountTimer() {
+const DiscountTimer = () => {
   const [fullDate, setFullDate] = useState(CURRENT_TIME);
 
   const onSecondPass = () => {
@@ -30,6 +30,6 @@ function DiscountTimer() {
       currentTime={fullDate}
     />
   );
-}
+};
 
 export default DiscountTimer;

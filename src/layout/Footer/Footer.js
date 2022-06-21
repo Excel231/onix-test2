@@ -7,7 +7,7 @@ const DESIGN_LINK = 'https://www.templatemonsterpreview.com/demo/54034.html?_gl=
     + '1629-639630604.1648831629';
 const SH_LINK = 'https://diploma.programming.org.ua/ru/d/zPE9X6BvVKaZDAm93jw7Q12MYRgNGoqr';
 
-function Footer() {
+const Footer = () => {
   const [linkText, setLinkText] = useState(':');
 
   const changeSignUpText = (linkTitle) => {
@@ -23,6 +23,6 @@ function Footer() {
       changeSignUpText={changeSignUpText}
     />
   );
-}
+};
 
 export default Footer;

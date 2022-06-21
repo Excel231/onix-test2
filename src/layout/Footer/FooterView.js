@@ -3,13 +3,13 @@ import PropType from 'prop-types';
 import FooterLink from '../FooterLink/FooterLink';
 import './styles.css';
 
-function FooterView({
+const FooterView = ({
   gitHubLink,
   designLink,
   shLink,
   linkText,
   changeSignUpText
-}) {
+}) => {
   return (
     <footer id="footer-section">
       <div className="footer-info-menu">
@@ -42,7 +42,7 @@ function FooterView({
       </div>
     </footer>
   );
-}
+};
 
 FooterView.propTypes = {
   gitHubLink: PropType.string.isRequired,

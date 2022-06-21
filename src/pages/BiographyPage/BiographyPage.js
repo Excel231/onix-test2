@@ -4,7 +4,9 @@ import sortPersons from '../../helper/sorters/sortPersons';
 import BiographyPageView from './BiographyPageView';
 import withLayout from '../../HOC/withLayout/withLayout';
 
-function BiographyPage() {
+const LINK_TO_BOXER_API = 'https://62a1ede4cd2e8da9b0fec808.mockapi.io/api/comments/boxers  ';
+
+const BiographyPage = () => {
   const [allPersons, setAllPersons] = useState([]);
   const [personsOnScreen, setPersonsOnScreen] = useState([]);
   /* Boolean value that shows in which order parameters should be displayed
@@ -39,7 +41,7 @@ function BiographyPage() {
   };
 
   useEffect(() => {
-    fetch('https://62a1ede4cd2e8da9b0fec808.mockapi.io/api/comments/boxers')
+    fetch(LINK_TO_BOXER_API)
       .then((res) => res.json())
       .then((data) => setAllPersons(data));
   }, []);
@@ -54,6 +56,6 @@ function BiographyPage() {
       changePersonsOnScreen={changePersonsOnScreen}
     />
   );
-}
+};
 
 export default withLayout(BiographyPage);

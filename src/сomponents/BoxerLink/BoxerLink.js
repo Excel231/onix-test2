@@ -2,7 +2,7 @@ import React from 'react';
 import PropType from 'prop-types';
 import './styles.css';
 
-function BoxerLink({ boxerSite, boxerName }) {
+const BoxerLink = ({ boxerSite, boxerName }) => {
   return (
     <a
       className="boxer-link"
@@ -13,7 +13,7 @@ function BoxerLink({ boxerSite, boxerName }) {
       {boxerName}
     </a>
   );
-}
+};
 
 BoxerLink.propTypes = {
   boxerSite: PropType.string.isRequired,

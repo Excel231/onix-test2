@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import PropType from 'prop-types';
 import DraggableListView from './DraggableListView';
-import './styles.css';
+import './DraggableList.css';
 
 const DEFAULT_INACTIVE_STYLE = 'biography-ul';
 
 const DEFAULT_ACTIVE_STYLE = 'selected-biography-ul';
 
-function DraggableList({
+const DraggableList = ({
   personsOnScreen,
   changePersonsOnScreen,
   onSaveChanges
-}) {
+}) => {
   const [currentDraggedPerson, setCurrentDraggedPerson] = useState(null);
   const [currentActivePerson, setCurrentActivePerson] = useState(null);
   const [activeStyle, setActiveStyle] = useState(DEFAULT_ACTIVE_STYLE);
@@ -39,7 +39,7 @@ function DraggableList({
     changePersonsOnScreen(newArr);
   };
 
-  const handleMouseClick = (person) => {
+  const handleMouseOver = (person) => {
     setCurrentActivePerson(person);
   };
 
@@ -94,12 +94,12 @@ function DraggableList({
       dragStartHandler={dragStartHandler}
       dragOverHandler={dragOverHandler}
       dropHandler={dropHandler}
-      handleMouseOver={handleMouseClick}
+      handleMouseOver={handleMouseOver}
       currentActivePerson={currentActivePerson}
       handleParameterIsEdited={handleParameterIsEdited}
     />
   );
-}
+};
 
 DraggableList.propTypes = {
   personsOnScreen: PropType.arrayOf(PropType.shape({})).isRequired,

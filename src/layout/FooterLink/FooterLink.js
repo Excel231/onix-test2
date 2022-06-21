@@ -2,9 +2,9 @@ import React from 'react';
 import PropType from 'prop-types';
 import './styles.css';
 
-function FooterLink({
+const FooterLink = ({
   onButtonEnter, linkTitle, footerLink, faClasses 
-}) {
+}) => {
   return (
     <a
       className="link-icon"
@@ -17,7 +17,7 @@ function FooterLink({
       <i className={faClasses} />
     </a>
   );
-}
+};
 
 FooterLink.propTypes = {
   onButtonEnter: PropType.func.isRequired,

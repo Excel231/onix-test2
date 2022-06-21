@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import PropType from 'prop-types';
 import '../styles.scss';
 
-function BigRedLinkButton({ children }) {
+const BigRedLinkButton = ({ children }) => {
   return (
     <Link
       className="big-red-btn"
@@ -12,7 +12,7 @@ function BigRedLinkButton({ children }) {
       { children }
     </Link>
   );
-}
+};
 
 BigRedLinkButton.propTypes = {
   children: PropType.node.isRequired

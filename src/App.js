@@ -4,7 +4,7 @@ import { Routes } from 'react-router';
 import Homepage from './pages/Homepage/Homepage';
 import BiographyPage from './pages/BiographyPage/BiographyPage';
 
-function App() {
+const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Homepage />} />
@@ -12,6 +12,6 @@ function App() {
       <Route path="/biography" element={<BiographyPage />} />
     </Routes>
   );
-}
+};
 
 export default App;

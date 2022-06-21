@@ -1,10 +1,10 @@
 import React from 'react';
 import '../../../styles.scss';
 import PropType from 'prop-types';
-import './styles.scss';
+import './TitleParameterList.scss';
 import BoxerParameterButton from '../../buttons/BoxerParameterButton/BoxerParameterButton';
 
-function TitleParameterList({ sortOnClick }) {
+const TitleParameterList = ({ sortOnClick }) => {
   return (
     <ul className="biography-ul">
       <li className="biography-li">
@@ -34,7 +34,7 @@ function TitleParameterList({ sortOnClick }) {
       </li>
     </ul>
   );
-}
+};
 
 TitleParameterList.propTypes = {
   sortOnClick: PropType.func.isRequired,

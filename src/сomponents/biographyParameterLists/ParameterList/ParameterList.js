@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropType from 'prop-types';
 import ParameterListView from './ParameterListView';
 
-function ParameterList({
+const ParameterList = ({
   id,
   fullName,
   photo,
@@ -12,7 +12,7 @@ function ParameterList({
   onSaveChanges,
   listStyle,
   handleParameterIsEdited,
-}) {
+}) => {
   const [currentEditedField, setCurrentEditedField] = useState(null);
   const [currentEditedValue, setCurrentEditedValue] = useState(null);
 
@@ -56,7 +56,7 @@ function ParameterList({
       listStyle={listStyle}
     />
   );
-}
+};
 
 ParameterList.propTypes = {
   id: PropType.oneOfType(

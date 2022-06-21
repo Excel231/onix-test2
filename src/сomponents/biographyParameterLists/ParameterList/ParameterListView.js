@@ -1,11 +1,11 @@
 import React from 'react';
 import * as PropType from 'prop-types';
 import bubbleSort from '../../../helper/sorters/bubbleSort';
-import ChangeableParameterItem from '../../ChangeableParameterItem/ChangeableParameterItem';
-import './styles.css';
+import ChangeableParameterItem from '../../../pages/BiographyPage/components/ChangeableParameterItem';
+import './ParameterList.scss';
 import biographyMapping from '../../../helper/biography-creation/biographyMapping';
 
-function ParameterListView({
+const ParameterListView = ({
   fullName,
   birthYear,
   photo,
@@ -18,7 +18,7 @@ function ParameterListView({
   onFieldBlur,
   onKeyPressed,
   listStyle,
-}) {
+}) => {
   return (
     <ul className={listStyle}>
 
@@ -79,7 +79,7 @@ function ParameterListView({
       </li>
     </ul>
   );
-}
+};
 
 ParameterListView.propTypes = {
   fullName: PropType.string.isRequired,

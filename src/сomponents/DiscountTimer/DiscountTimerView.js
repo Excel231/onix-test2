@@ -2,7 +2,7 @@ import React from 'react';
 import PropType from 'prop-types';
 import dateToTime from '../../helper/date-to-time/dateToTime';
 
-function DiscountTimerView({ discountEndTime, currentTime }) {
+const DiscountTimerView = ({ discountEndTime, currentTime }) => {
   return (
     <div>
       <p>
@@ -17,7 +17,7 @@ function DiscountTimerView({ discountEndTime, currentTime }) {
       </p>
     </div>
   );
-}
+};
 
 DiscountTimerView.propTypes = {
   discountEndTime: PropType.instanceOf(Date).isRequired,

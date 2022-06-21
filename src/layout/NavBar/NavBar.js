@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-scroll';
 import './styles.scss';
+import ToggleSwitch from '../../сomponents/buttons/ToggleSwitch/ToggleSwitch';
 
-function NavBar() {
+const NavBar = () => {
   return (
     <nav className="nav-bar">
       <Link className="nav-link" to="homepage-main-section" spy smooth offset={-150} duration={500}>
@@ -14,8 +15,9 @@ function NavBar() {
       <Link className="nav-link" to="footer-section" spy smooth duration={500}>
         Contacts
       </Link>
+      <ToggleSwitch />
     </nav>
   );
-}
+};
 
 export default NavBar;

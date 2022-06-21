@@ -4,16 +4,14 @@ import TitleListOfParameters from '../../сomponents/biographyParameterLists/Tit
 import DraggableList from '../../сomponents/biographyParameterLists/DraggableList/DraggableList';
 import BigRedButton from '../../сomponents/buttons/BigRedButton/BigRedButton';
 
-function BiographyPageView(
-  {
-    personsOnScreen,
-    sortOnClick,
-    addPerson,
-    removePerson,
-    onSaveChanges,
-    changePersonsOnScreen
-  }
-) {
+const BiographyPageView = ({
+  personsOnScreen,
+  sortOnClick,
+  addPerson,
+  removePerson,
+  onSaveChanges,
+  changePersonsOnScreen
+}) => {
   return (
     <>
       <TitleListOfParameters sortOnClick={sortOnClick} />
@@ -30,7 +28,7 @@ function BiographyPageView(
 
     </>
   );
-}
+};
 
 BiographyPageView.propTypes = {
   personsOnScreen: PropType.arrayOf(PropType.shape({})).isRequired,

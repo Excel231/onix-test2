@@ -2,7 +2,7 @@ import React from 'react';
 import PropType from 'prop-types';
 import '../styles.scss';
 
-function BigRedButton({ children, onClick }) {
+const BigRedButton = ({ children, onClick }) => {
   return (
     <button
       type="button"
@@ -12,7 +12,7 @@ function BigRedButton({ children, onClick }) {
       {children}
     </button>
   );
-}
+};
 
 BigRedButton.propTypes = {
   children: PropType.node.isRequired,

@@ -6,7 +6,7 @@ import BigRedAnchorButton from '../../../сomponents/buttons/BigRedAnchorButton/
 import BigRedLinkButton from '../../../сomponents/buttons/BigRedLinkButton/BigRedLinkButton';
 import '../sass/HomepageMainSection.scss';
 
-function HomepageMainSection({ signUpText, changeSignUpText }) {
+const HomepageMainSection = ({ signUpText, changeSignUpText }) => {
   return (
     <div id="homepage-main-section">
       <h2 className="homepage-heading">Want to become stronger? Looking for worthy opponents? Our gym is for YOU!</h2>
@@ -43,7 +43,7 @@ function HomepageMainSection({ signUpText, changeSignUpText }) {
       </BigRedLinkButton>
     </div>
   );
-}
+};
 
 HomepageMainSection.propTypes = {
   signUpText: PropType.string.isRequired,

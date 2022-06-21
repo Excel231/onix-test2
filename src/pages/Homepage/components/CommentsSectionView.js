@@ -1,9 +1,9 @@
 import React from 'react';
 import PropType from 'prop-types';
-import Comment from '../../../сomponents/Comment/Comment';
+import Comment from './Comment';
 import '../sass/CommentsSection.scss';
 
-function CommentsSectionView({ comments }) {
+const CommentsSectionView = ({ comments }) => {
   return (
     <div id="comment-section">
       <h2 className="section-title">Comments from famous people</h2>
@@ -25,7 +25,7 @@ function CommentsSectionView({ comments }) {
       })}
     </div>
   );
-}
+};
 
 CommentsSectionView.propTypes = {
   comments: PropType.arrayOf(PropType.shape({})).isRequired

@@ -3,7 +3,7 @@ import CommentsSectionView from './CommentsSectionView';
 
 const COMMENTS_API_LINK = 'https://62a1ede4cd2e8da9b0fec808.mockapi.io/api/comments/comments';
 
-function CommentsSection() {
+const CommentsSection = () => {
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
@@ -15,6 +15,6 @@ function CommentsSection() {
   return (
     <CommentsSectionView comments={comments} />
   );
-}
+};
 
 export default CommentsSection;

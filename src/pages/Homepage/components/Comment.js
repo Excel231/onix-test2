@@ -1,11 +1,11 @@
 import React from 'react';
-import './styles.scss';
+import '../sass/Comment.scss';
 import PropType from 'prop-types';
-import commentsMapping from '../../helper/commnets-creation/commentsMapping';
+import commentsMapping from '../../../helper/commnets-creation/commentsMapping';
 
-function Comment({
+const Comment = ({
   fullName, photoName, text, styleType
-}) {
+}) => {
   return (
     <ul className={`comment-list ${styleType}`}>
       <li className="comment-preview">
@@ -21,7 +21,7 @@ function Comment({
       </li>
     </ul>
   );
-}
+};
 
 Comment.propTypes = {
   fullName: PropType.string.isRequired,
