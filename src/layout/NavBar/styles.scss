@@ -1,15 +1,17 @@
 .nav-bar {
   margin: auto 2%;
-}
 
-.nav-link {
-  color: #EDEDED;
-  font-size: 2rem;
-  margin: 0 2vh;
-  &:hover {
-    color: #DA0037;
-  }
-  @media (max-width: 1200px) {
-    font-size: 1.5rem;
+  .nav-link {
+    color: #EDEDED;
+    font-size: 2rem;
+    margin: 0 2vh;
+
+    &:hover {
+      color: #DA0037;
+    }
+
+    @media (max-width: 1200px) {
+      font-size: 1.2rem;
+    }
   }
 }

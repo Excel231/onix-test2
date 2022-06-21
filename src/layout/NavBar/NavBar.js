@@ -11,6 +11,9 @@ function NavBar() {
       <Link className="nav-link" to="comment-section" spy smooth offset={-50} duration={500}>
         Comments
       </Link>
+      <Link className="nav-link" to="footer-section" spy smooth duration={500}>
+        Contacts
+      </Link>
     </nav>
   );
 }

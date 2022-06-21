@@ -11,7 +11,7 @@ function FooterView({
   changeSignUpText
 }) {
   return (
-    <footer>
+    <footer id="footer-section">
       <div className="footer-info-menu">
         <h3 className="footer-text">by Ivan Honcharenko</h3>
         <h3 className="footer-text">

@@ -10,7 +10,7 @@ function DraggableListView({
   dragStartHandler,
   dragOverHandler,
   dropHandler,
-  handleMouseClick,
+  handleMouseOver,
   currentActivePerson,
   handleParameterIsEdited
 }) {
@@ -24,7 +24,7 @@ function DraggableListView({
             onDragStart={() => dragStartHandler(person)}
             onDragOver={(e) => dragOverHandler(e)}
             onDrop={(e) => dropHandler(e, person)}
-            onMouseEnter={() => handleMouseClick(person)}
+            onMouseEnter={() => handleMouseOver(person)}
           >
             <ParameterList
               id={person.id}
@@ -55,7 +55,7 @@ DraggableListView.propTypes = {
   dragStartHandler: PropType.func.isRequired,
   dragOverHandler: PropType.func.isRequired,
   dropHandler: PropType.func.isRequired,
-  handleMouseClick: PropType.func.isRequired,
+  handleMouseOver: PropType.func.isRequired,
   currentActivePerson: PropType.shape({}),
   handleParameterIsEdited: PropType.func.isRequired
 };

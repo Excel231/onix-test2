@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(180deg, #1A1A1AF2, #000000);
+    background: #454545 linear-gradient(180deg, #222222 30%, #242424 100%);
     color: #EDEDED;
     font-family: 'Oswald', sans-serif;
     text-align: center;
@@ -13,11 +13,11 @@ h1 {
     font-family: 'Permanent Marker', sans-serif;
     font-size: 3rem;
     margin: 0;
-}
 
-h2 {
-    font-size: 3rem;
-    padding-top: 20px;
+    &:hover {
+        color: #DA0037;
+        text-decoration: none;
+    }
 }
 
 /*Other tags*/
@@ -32,19 +32,9 @@ li {
     list-style-type: none;
 }
 
-h1:hover {
-    color: #DA0037;
-    text-decoration: none;
-}
-
 /* Resize */
 
 @media (max-width: 1200px) {
-
-    h2 {
-        display: none;
-    }
-
     h3 {
         font-size: 1rem;
     }

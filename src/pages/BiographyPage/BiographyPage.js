@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import '../../styles.css';
+import '../../styles.scss';
 import sortPersons from '../../helper/sorters/sortPersons';
 import BiographyPageView from './BiographyPageView';
 import pregeneratedPersons from '../../helper/boxers-creation/pregenerated-persons/pregeneratedPersons';
 import withLayout from '../../HOC/withLayout/withLayout';
 
 function BiographyPage() {
-  const [personsOnScreen, setPersonsOnScreen] = useState([]);
+  const [personsOnScreen, setPersonsOnScreen] = useState([pregeneratedPersons[0]]);
   /* Boolean value that shows in which order parameters should be displayed
     (from greatest to lowest or vice versa) */
   const [sortFromGreatest, setSortFromGreatest] = useState(false);

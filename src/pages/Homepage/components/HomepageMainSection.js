@@ -9,7 +9,7 @@ import '../sass/HomepageMainSection.scss';
 function HomepageMainSection({ signUpText, changeSignUpText }) {
   return (
     <div id="homepage-main-section">
-      <h2>Want to become stronger? Looking for worthy opponents? Our gym is for YOU!</h2>
+      <h2 className="homepage-heading">Want to become stronger? Looking for worthy opponents? Our gym is for YOU!</h2>
       <p className="main-text">Box is one of the most popular sports in the World!</p>
       <p className="main-text">
         If you want to become a living legend like

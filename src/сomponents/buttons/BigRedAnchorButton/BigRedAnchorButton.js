@@ -1,6 +1,6 @@
 import React from 'react';
 import PropType from 'prop-types';
-import '../styles.css';
+import '../styles.scss';
 
 function BigRedAnchorButton({ children, changeText }) {
   return (

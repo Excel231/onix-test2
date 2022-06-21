@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../styles.css';
+import '../../styles.scss';
 import HomepageView from './HomepageView';
 import withLayout from '../../HOC/withLayout/withLayout';
 
