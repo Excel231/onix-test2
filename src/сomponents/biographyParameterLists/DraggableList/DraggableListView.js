@@ -28,11 +28,11 @@ function DraggableListView({
           >
             <ParameterList
               id={person.id}
-              fullName={person.personInfo.fullName}
-              photo={person.personInfo.photo}
-              birthYear={person.personInfo.birthYear}
-              weight={person.personInfo.weight}
-              belts={person.personInfo.belts}
+              fullName={`${person.firstName} ${person.secondName}`}
+              photo={person.photo}
+              birthYear={person.birthYear}
+              weight={person.weight}
+              belts={person.belts}
               onSaveChanges={onSaveChanges}
               listStyle={
               person === currentActivePerson

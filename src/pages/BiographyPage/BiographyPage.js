@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../../styles.scss';
 import sortPersons from '../../helper/sorters/sortPersons';
 import BiographyPageView from './BiographyPageView';
-import pregeneratedPersons from '../../helper/boxers-creation/pregenerated-persons/pregeneratedPersons';
 import withLayout from '../../HOC/withLayout/withLayout';
 
 function BiographyPage() {
-  const [personsOnScreen, setPersonsOnScreen] = useState([pregeneratedPersons[0]]);
+  const [allPersons, setAllPersons] = useState([]);
+  const [personsOnScreen, setPersonsOnScreen] = useState([]);
   /* Boolean value that shows in which order parameters should be displayed
     (from greatest to lowest or vice versa) */
   const [sortFromGreatest, setSortFromGreatest] = useState(false);
@@ -17,8 +17,8 @@ function BiographyPage() {
   };
 
   const addPerson = () => {
-    if (personsOnScreen.length < pregeneratedPersons.length) {
-      const newPerson = pregeneratedPersons[personsOnScreen.length];
+    if (personsOnScreen.length < allPersons.length) {
+      const newPerson = allPersons[personsOnScreen.length];
       setPersonsOnScreen([...personsOnScreen, newPerson]);
     }
   };
@@ -37,6 +37,12 @@ function BiographyPage() {
   const changePersonsOnScreen = (newPersonsArray) => {
     setPersonsOnScreen(newPersonsArray);
   };
+
+  useEffect(() => {
+    fetch('https://62a1ede4cd2e8da9b0fec808.mockapi.io/api/comments/boxers')
+      .then((res) => res.json())
+      .then((data) => setAllPersons(data));
+  }, []);
 
   return (
     <BiographyPageView

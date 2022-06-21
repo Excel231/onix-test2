@@ -59,7 +59,9 @@ function ParameterList({
 }
 
 ParameterList.propTypes = {
-  id: PropType.number.isRequired,
+  id: PropType.oneOfType(
+    [PropType.number, PropType.string]
+  ).isRequired,
   fullName: PropType.string.isRequired,
   photo: PropType.string.isRequired,
   birthYear: PropType.number.isRequired,

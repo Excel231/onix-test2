@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.scss';
 import PropType from 'prop-types';
-import imageMapping from '../../helper/commnets-creation/imageMapping';
+import commentsMapping from '../../helper/commnets-creation/commentsMapping';
 
 function Comment({
   fullName, photoName, text, styleType
@@ -11,7 +11,7 @@ function Comment({
       <li className="comment-preview">
         <img
           className="comment-photo"
-          src={imageMapping[photoName]}
+          src={commentsMapping[photoName]}
           alt={fullName}
         />
         <h3 className="comment-name">{fullName}</h3>

@@ -3,6 +3,7 @@ import * as PropType from 'prop-types';
 import bubbleSort from '../../../helper/sorters/bubbleSort';
 import ChangeableParameterItem from '../../ChangeableParameterItem/ChangeableParameterItem';
 import './styles.css';
+import biographyMapping from '../../../helper/biography-creation/biographyMapping';
 
 function ParameterListView({
   fullName,
@@ -25,7 +26,7 @@ function ParameterListView({
         <img
           className="boxer-photo"
           alt={fullName}
-          src={photo}
+          src={biographyMapping[photo]}
           /* eslint-disable-next-line no-console */
           onLoad={() => console.log(`Photo of ${fullName} has loaded successfully!`)}
           /* eslint-disable-next-line no-console */
