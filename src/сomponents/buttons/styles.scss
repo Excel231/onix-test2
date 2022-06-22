@@ -1,7 +1,9 @@
+@import "src/constants/constants";
+
 .big-red-btn {
-  background: #DA0037 linear-gradient(180deg, #DA0037 30%, #880022 100%);
+  background: linear-gradient(180deg, $RED_COLOR 30%, $DARK_RED_COLOR 100%);
   border-radius: 10px;
-  color: #EDEDED;
+  color: $WHITE_COLOR;
   display: inline-block;
   font-family: 'Oswald', sans-serif;
   font-size: 20pt;

@@ -1,0 +1,18 @@
+/*Default Fonts*/
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Permanent+Marker&display=swap');
+
+$SANS_SERIF_FONT: 'Oswald', 'sans-serif';
+$HANDWRITING_FONT: 'Permanent Marker', 'cursive';
+
+/*Default colors*/
+
+$RED_COLOR: #DA0037;
+$DARK_RED_COLOR: #880022;
+$WHITE_COLOR: #EDEDED;
+$DARK_GRAY_COLOR: #1f1f1f;
+
+$DARK_LINEAR_GRADIENT_COLOR: #262323 linear-gradient(to right, #212121, #2c2c2c, #373737, #424242, #4e4e4e);
+$REVERSED_DARK_LINEAR_GRADIENT_COLOR: linear-gradient(to left, #212121, #2c2c2c, #373737, #424242, #4e4e4e);
+
+$BACKGROUND_DARK_LINEAR_GRADIENT_COLOR: #454545 linear-gradient(180deg, #222222 30%, #242424 100%);
