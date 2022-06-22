@@ -28,11 +28,11 @@ const DraggableListView = ({
           >
             <ParameterList
               id={person.id}
-              fullName={`${person.firstName} ${person.secondName}`}
-              photo={person.photo}
-              birthYear={person.birthYear}
-              weight={person.weight}
-              belts={person.belts}
+              fullName={`${person.personInfo.firstName} ${person.personInfo.secondName}`}
+              photo={person.personInfo.photo}
+              birthYear={person.personInfo.birthYear}
+              weight={person.personInfo.weight}
+              belts={person.personInfo.belts}
               onSaveChanges={onSaveChanges}
               listStyle={
               person === currentActivePerson
@@ -48,7 +48,12 @@ const DraggableListView = ({
 };
 
 DraggableListView.propTypes = {
-  personsOnScreen: PropType.arrayOf(PropType.shape({})).isRequired,
+  personsOnScreen: PropType.arrayOf(PropType.shape({
+    personInfo: PropType.shape({
+      firstName: PropType.string.isRequired,
+      secondName: PropType.string.isRequired
+    }).isRequired,
+  })).isRequired,
   onSaveChanges: PropType.func.isRequired,
   inactiveStyle: PropType.string.isRequired,
   activeStyle: PropType.string.isRequired,

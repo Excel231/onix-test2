@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-scroll';
 import './styles.scss';
-import ToggleSwitch from '../../сomponents/buttons/ToggleSwitch/ToggleSwitch';
+import DarkModeToggle from '../DarkModeToggle/DarkModeToggle';
 
 const NavBar = () => {
   return (
@@ -15,7 +15,7 @@ const NavBar = () => {
       <Link className="nav-link" to="footer-section" spy smooth duration={500}>
         Contacts
       </Link>
-      <ToggleSwitch />
+      <DarkModeToggle />
     </nav>
   );
 };
