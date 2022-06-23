@@ -3,16 +3,28 @@
 #footer-section {
     background: $primary-light-gray;
     padding: 40px;
-    text-align: right;
-}
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: flex-end;
 
-.footer-text {
-    margin-top: 0;
-    padding-top: 10px;
-}
+    @media (max-width: $max-width-change) {
+        align-items: center;
+    }
 
-.footer-info-menu {
-    display: inline-flex;
-    flex-flow: column;
-    text-align: center;
+    .footer-info-menu {
+        display: flex;
+        flex-flow: column;
+        justify-content: flex-end;
+
+        @media (max-width: $max-width-change) {
+            justify-content: center;
+        }
+
+        .footer-text {
+            margin-top: 0;
+            padding-top: 10px;
+        }
+
+    }
 }

@@ -1,3 +1,8 @@
+/* Homepage */
+
+export const SIGN_UP_BUTTON_TEXT = 'SMASH THIS BUTTON RIGHT NOW!';
+export const SIGN_UP_BUTTON_CHANGED_TEXT = 'WELCOME TO THE CLUB, BUDDY!';
+
 /* HomepageMainSection */
 
 export const BOXER_NAME_1 = 'Vitali Klitchko';
