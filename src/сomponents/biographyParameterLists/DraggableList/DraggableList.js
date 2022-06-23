@@ -2,10 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropType from 'prop-types';
 import DraggableListView from './DraggableListView';
 import './DraggableList.scss';
-
-const DEFAULT_INACTIVE_STYLE = 'biography-ul';
-
-const DEFAULT_ACTIVE_STYLE = 'selected-biography-ul';
+import { DEFAULT_INACTIVE_STYLE, DEFAULT_ACTIVE_STYLE } from '../../../constants/constants';
 
 const DraggableList = ({
   personsOnScreen,

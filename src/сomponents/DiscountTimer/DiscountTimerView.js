@@ -1,8 +1,11 @@
 import React from 'react';
 import PropType from 'prop-types';
-import dateToTime from '../../helper/date-to-time/dateToTime';
+import dateToTime from '../../helper/dateToTime';
 
-const DiscountTimerView = ({ discountEndTime, currentTime }) => {
+const DiscountTimerView = ({
+  discountEndTime,
+  currentTime
+}) => {
   return (
     <div>
       <p>
@@ -10,10 +13,10 @@ const DiscountTimerView = ({ discountEndTime, currentTime }) => {
       </p>
       <p>
         {
-                    discountEndTime <= currentTime
-                      ? ('The sale is finished!')
-                      : (`The discount will end in: ${dateToTime(discountEndTime, currentTime)}`)
-                }
+          discountEndTime <= currentTime
+            ? ('The sale is finished!')
+            : (`The discount will end in: ${dateToTime(discountEndTime, currentTime)}`)
+        }
       </p>
     </div>
   );

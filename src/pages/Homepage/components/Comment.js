@@ -1,7 +1,7 @@
 import React from 'react';
 import '../sass/Comment.scss';
 import PropType from 'prop-types';
-import commentsMapping from '../../../helper/commnets-creation/commentsMapping';
+import commentsMapping from '../../../helper/commentsMapping';
 
 const Comment = ({
   fullName, photoName, text, styleType

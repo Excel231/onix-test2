@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../../styles.scss';
-import sortPersons from '../../helper/sorters/sortPersons';
+import sortPersons from '../../helper/sortPersons';
 import BiographyPageView from './BiographyPageView';
 import withLayout from '../../HOC/withLayout/withLayout';
 

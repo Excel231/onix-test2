@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 import { Routes } from 'react-router';
 import Homepage from './pages/Homepage/Homepage';
 import BiographyPage from './pages/BiographyPage/BiographyPage';
-import ThemeColorProvider from './сomponents/ThemeColorProvider/ThemeColorProvider';
+import ThemeColorProvider from './layout/ThemeColorProvider/ThemeColorProvider';
 
 const App = () => {
   return (

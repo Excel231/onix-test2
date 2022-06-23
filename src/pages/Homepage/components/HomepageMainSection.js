@@ -5,6 +5,9 @@ import DiscountTimer from '../../../сomponents/DiscountTimer/DiscountTimer';
 import BigRedAnchorButton from '../../../сomponents/buttons/BigRedAnchorButton/BigRedAnchorButton';
 import BigRedLinkButton from '../../../сomponents/buttons/BigRedLinkButton/BigRedLinkButton';
 import '../sass/HomepageMainSection.scss';
+import {
+  BOXER_NAME_1, BOXER_LINK_1, BOXER_NAME_2, BOXER_LINK_2 
+} from '../../../constants/constants';
 
 const HomepageMainSection = ({ signUpText, changeSignUpText }) => {
   return (
@@ -15,15 +18,13 @@ const HomepageMainSection = ({ signUpText, changeSignUpText }) => {
         If you want to become a living legend like
         {' '}
         <BoxerLink
-          boxerName="Vitali Klitchko"
-          boxerSite="https://kyiv.klichko.org/en/biography/"
+          boxerName={BOXER_NAME_1}
+          boxerSite={BOXER_LINK_1}
         />
-        {' '}
-        or
-        {' '}
+        {' or '}
         <BoxerLink
-          boxerName="Oleksander Usyk"
-          boxerSite="https://a-usyk.com/en/biography/"
+          boxerName={BOXER_NAME_2}
+          boxerSite={BOXER_LINK_2}
         />
         , join our community now and
       </p>

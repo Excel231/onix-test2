@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import CommentsSectionView from './CommentsSectionView';
-
-const COMMENTS_API_LINK = 'https://62a1ede4cd2e8da9b0fec808.mockapi.io/api/comments/comments';
+import { COMMENTS_API_LINK } from '../../../constants/constants';
 
 const CommentsSection = () => {
   const [comments, setComments] = useState([]);

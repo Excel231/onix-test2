@@ -1,9 +1,9 @@
 import React from 'react';
 import * as PropType from 'prop-types';
-import bubbleSort from '../../../helper/sorters/bubbleSort';
+import bubbleSort from '../../../helper/bubbleSort';
 import ChangeableParameterItem from '../../../pages/BiographyPage/components/ChangeableParameterItem';
 import './ParameterList.scss';
-import biographyMapping from '../../../helper/biography-creation/biographyMapping';
+import biographyMapping from '../../../helper/biographyMapping';
 
 const ParameterListView = ({
   fullName,
@@ -62,16 +62,9 @@ const ParameterListView = ({
         <ul>
           {
             bubbleSort(belts)
-              .map(({
-                beltName,
-                year
-              }) => (
+              .map(({ beltName, year }) => (
                 <li className="belt" key={beltName + year}>
-                  {year}
-                  {' '}
-                  -
-                  {' '}
-                  {beltName}
+                  {`${year} - ${beltName}`}
                 </li>
               ))
           }
