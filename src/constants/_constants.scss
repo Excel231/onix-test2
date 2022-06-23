@@ -1,0 +1,39 @@
+/* Default Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Permanent+Marker&display=swap');
+
+$font-sans-serif: 'Oswald', 'sans-serif';
+$font-handwriting: 'Permanent Marker', 'cursive';
+
+/* Number constants */
+
+$max-width-change: 1024px;
+
+/* Primary colors */
+
+$primary-red: #DA0037;
+$primary-dark-red: #880022;
+$primary-white: #EDEDED;
+$primary-dark-gray: #1f1f1f;
+$primary-light-gray: #343434;
+
+/* Primary gradient colors */
+
+$primary-gradient-dark: #262323 linear-gradient(to right, #212121, #2c2c2c, #373737, #424242, #4e4e4e);
+$primary-gradient-dark-reversed: linear-gradient(to left, #212121, #2c2c2c, #373737, #424242, #4e4e4e);
+$primary-gradient-light-gray: linear-gradient(180deg, #3b3b3b 30%, #242424 100%);
+$primary-gradient-background-gray: linear-gradient(180deg, #222222 30%, #242424 100%);
+
+/* Light theme mixins */
+
+@mixin light-theme {
+  background: $primary-dark-gray;
+  color: $primary-white;
+}
+
+/* Dark theme mixins */
+
+@mixin dark-theme {
+  background: $primary-white;
+  color: $primary-dark-gray;
+}

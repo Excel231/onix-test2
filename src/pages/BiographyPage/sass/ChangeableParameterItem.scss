@@ -1,23 +1,25 @@
+@import "../../../constants/constants";
+
 .biography-li {
-    color: #DA0037;
+    color: $primary-red;
     display: inline-block;
     font-size: 2rem;
     text-align: center;
     vertical-align: middle;
     width: 20%;
-}
 
-.biography-text-input {
-    background-color: #EDEDED;
-    border-radius: 20px;
-    color: #880022;
-    font-family: 'Oswald', sans-serif;
-    font-size: 2rem;
-    text-align: center;
-    width: 5rem;
+    .biography-text-input {
+        background-color: $primary-white;
+        border-radius: 20px;
+        color: $primary-dark-red;
+        font-family: $font-sans-serif;
+        font-size: 2rem;
+        text-align: center;
+        width: 5rem;
 
-    @media (max-width: 1200px) {
-        font-size: 20px;
-        width: 3rem;
+        @media (max-width: $max-width-change) {
+            font-size: 20px;
+            width: 3rem;
+        }
     }
 }

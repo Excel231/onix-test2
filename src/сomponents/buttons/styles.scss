@@ -1,9 +1,9 @@
-@import "src/constants/constants";
+@import "../../constants/constants";
 
-.big-red-btn {
-  background: linear-gradient(180deg, $RED_COLOR 30%, $DARK_RED_COLOR 100%);
+@mixin big-red-button {
+  background: linear-gradient(180deg, $primary-red 30%, $primary-dark-red 100%);
   border-radius: 10px;
-  color: $WHITE_COLOR;
+  color: $primary-white;
   display: inline-block;
   font-family: 'Oswald', sans-serif;
   font-size: 20pt;
@@ -12,7 +12,7 @@
   text-decoration: none;
 
   &:hover {
-    background: #880022 linear-gradient(180deg, #880022 10%, #DA0037 100%);
+    background: $primary-dark-red linear-gradient(180deg, $primary-dark-red 10%, $primary-red 100%);
   }
 
   @media (max-width: 1200px) {
@@ -20,4 +20,8 @@
     padding: 15px;
     margin: 10px;
   }
+}
+
+.big-red-btn {
+  @include big-red-button;
 }

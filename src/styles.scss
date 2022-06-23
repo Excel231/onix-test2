@@ -1,28 +1,28 @@
-@import "src/constants/constants";
+@import "constants/constants";
 
 body {
-  background: $BACKGROUND_DARK_LINEAR_GRADIENT_COLOR;
-  color: $WHITE_COLOR;
-  font-family: $SANS_SERIF_FONT;
+  background: $primary-light-gray;
+  color: $primary-white;
+  font-family: $font-sans-serif;
   text-align: center;
   margin: 0;
 }
 
 h1 {
   display: inline-block;
-  font-family: $HANDWRITING_FONT;
+  font-family: $font-handwriting;
   font-size: 3rem;
   margin: 0;
 
   &:hover {
-    color: $RED_COLOR;
+    color: $primary-red;
     text-decoration: none;
   }
 }
 
 
 h3 {
-  @media (max-width: 1200px) {
+  @media (max-width: $max-width-change) {
     font-size: 1rem;
   }
 }
@@ -31,7 +31,7 @@ p {
   font-size: 2rem;
   line-height: 20px;
 
-  @media (max-width: 1200px) {
+  @media (max-width: $max-width-change) {
     font-size: 1.25rem;
     line-height: normal;
     margin: 0;
@@ -39,7 +39,7 @@ p {
 }
 
 ul {
-    @media (max-width: 1200px) {
+    @media (max-width: $max-width-change) {
         padding: 0;
     }
 }

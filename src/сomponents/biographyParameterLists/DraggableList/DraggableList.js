@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropType from 'prop-types';
 import DraggableListView from './DraggableListView';
-import './DraggableList.css';
+import './DraggableList.scss';
 
 const DEFAULT_INACTIVE_STYLE = 'biography-ul';
 

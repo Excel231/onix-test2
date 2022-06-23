@@ -1,46 +1,39 @@
-@import "src/constants/constants";
+@import "../../../constants/constants";
 
 .toggle {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   width: 62px;
   height: 32px;
   display: inline-flex;
   position: relative;
   border-radius: 50px;
-  overflow: hidden;
-  outline: none;
-  border: none;
   cursor: pointer;
-  background-color: $WHITE_COLOR;
-  transition: background-color ease 0.3s;
+  background-color: $primary-white;
+  transition: background-color ease 0.5s;
   margin: 0;
-}
 
-.toggle:before {
-  background: $RED_COLOR;
-  box-shadow: 0 1px 2px $DARK_GRAY_COLOR;
-  content: "";
-  color: #fff;
-  display: inline-flex;
-  position: relative;
-  border-radius: 50%;
-  text-indent: -22px;
-  left: 2px;
-  top: 2px;
-  text-shadow: -1px -1px $DARK_GRAY_COLOR;
-  transition: all cubic-bezier(0.3, 1.5, 0.7, 1) 0.3s;
-  height: 28px;
-  width: 28px;
-  white-space: nowrap;
-  z-index: 2;
-}
+  &:before {
+    background: $primary-red;
+    content: "";
+    color: $primary-white;
+    display: inline-flex;
+    position: relative;
+    border-radius: 50%;
+    text-indent: -22px;
+    left: 2px;
+    top: 2px;
+    transition: 0.5s;
+    height: 28px;
+    width: 28px;
+    white-space: nowrap;
+    z-index: 2;
+  }
 
-.toggle:checked {
-  background-color: $DARK_GRAY_COLOR;
-}
+  &:checked {
+    background-color: $primary-dark-gray;
+  }
 
-.toggle:checked:before {
-  left: 32px;
+  &:checked:before {
+    left: 32px;
+  }
 }

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useCallback } from 'react';
 import PropType from 'prop-types';
 
 export const ThemeColorContext = React.createContext({});
@@ -15,11 +15,10 @@ export const getThemeColorChangeContext = () => {
 const ThemeColorProvider = ({ children }) => {
   const [darkThemeOn, setDarkThemeOn] = useState(false);
 
-  // eslint-disable-next-line react/jsx-no-constructed-context-values
-  const changeTheme = () => {
+  const changeTheme = useCallback(() => {
     setDarkThemeOn((previousTheme) => !previousTheme);
-  };
-  
+  }, []);
+
   return (
     <ThemeColorChangeContext.Provider value={changeTheme}>
       <ThemeColorContext.Provider value={darkThemeOn}>

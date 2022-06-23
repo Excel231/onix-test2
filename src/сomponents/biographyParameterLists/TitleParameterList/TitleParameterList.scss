@@ -1,24 +1,26 @@
+@import "../../../constants/constants";
+
 .biography-ul {
-  background: #262323 linear-gradient(to right, #212121, #2c2c2c, #373737, #424242, #4e4e4e);
-  border: solid #DA0037;
+  background: $primary-gradient-background-gray;
+  border: solid $primary-red;
   border-radius: 30px;
   line-height: 0;
 
   .biography-li {
-    color: #DA0037;
+    color: $primary-red;
     display: inline-block;
     text-align: center;
     vertical-align: middle;
     width: 20%;
 
-    @media (max-width: 1200px) {
+    @media (max-width: $max-width-change) {
       font-size: 22px;
       width: 25%;
     }
   }
 
   .belt {
-    @media (max-width: 1200px) {
+    @media (max-width: $max-width-change) {
       display: none;
     }
   }

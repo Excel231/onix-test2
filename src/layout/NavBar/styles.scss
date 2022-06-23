@@ -1,16 +1,19 @@
+@import "../../constants/constants";
+
 .nav-bar {
   margin: auto 2%;
 
   .nav-link {
-    color: #EDEDED;
+    color: $primary-white;
     font-size: 2rem;
     margin: 0 2vh;
+    cursor: pointer;
 
     &:hover {
-      color: #DA0037;
+      color: $primary-red;
     }
 
-    @media (max-width: 1200px) {
+    @media (max-width: $max-width-change) {
       font-size: 1.2rem;
     }
   }

@@ -1,16 +1,18 @@
-.section-title {
-    font-family: 'Permanent Marker', sans-serif, sans-serif;
-}
-
-.section-title:hover {
-    color: #DA0037;
-}
+@import "../../../constants/constants";
 
 #comment-section {
-    background: linear-gradient(180deg, #1f1f1f, #404040);
-    border: 10px solid #DA0037;
-    border-left: none;
-    border-right: none;
-    font-size: 1.5rem;
-    padding-top: 3vh;
+  background: $primary-gradient-background-gray;
+  border: 10px solid $primary-dark-red;
+  border-left: none;
+  border-right: none;
+  font-size: 1.5rem;
+  padding-top: 3%;
+
+  .section-title {
+    font-family: $font-handwriting;
+
+    &:hover {
+      color: $primary-red;
+    }
+  }
 }

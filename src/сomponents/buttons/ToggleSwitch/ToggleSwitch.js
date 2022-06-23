@@ -4,7 +4,7 @@ import PropType from 'prop-types';
 
 const ToggleSwitch = ({ handleClick }) => {
   return (
-    <input onClick={() => handleClick()} className="toggle" type="checkbox" />
+    <input onClick={handleClick} className="toggle" type="checkbox" />
   );
 };
 

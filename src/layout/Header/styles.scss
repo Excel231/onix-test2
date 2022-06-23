@@ -1,6 +1,8 @@
+@import "../../constants/constants";
+
 #header {
-    background: #1f1f1f;
-    border-bottom: 10px solid #DA0037;;
+    background: $primary-dark-gray;
+    border-bottom: 10px solid $primary-red;;
     display: inline-flex;
     position: sticky;
     top: 0;
@@ -9,19 +11,20 @@
     z-index: 1;
 
     .logo {
-        color: #EDEDED;
+        color: $primary-white;
         text-decoration: none;
         margin-left: 3%;
+        cursor: pointer;
 
         &:hover {
-            color: #DA0037;
+            color: $primary-red;
         }
     }
 
     .logo-text {
         font-size: 3rem;
 
-        @media (max-width: 1200px) {
+        @media (max-width: $max-width-change) {
             display: none;
         }
     }

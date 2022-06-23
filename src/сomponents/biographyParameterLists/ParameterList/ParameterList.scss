@@ -1,5 +1,7 @@
+@import "../../../constants/constants";
+
 .boxer-photo {
-  border: solid 4px #DA0037;
+  border: solid 4px $primary-red;
   border-radius: 50%;
   display: inline-block;
   margin: 10px;
@@ -7,27 +9,27 @@
   vertical-align: auto;
   width: 70%;
 
-    @media (max-width: 1200px) {
+    @media (max-width: $max-width-change) {
         border: solid 2px;
         width: 60%;
     }
 }
 
 .biography-li {
-  color: #DA0037;
+  color: $primary-red;
   display: inline-block;
   font-size: 2rem;
   text-align: center;
   width: 20%;
 
-  @media (max-width: 1200px) {
+  @media (max-width: $max-width-change) {
       font-size: 22px;
       width: 25%;
   }
 }
 
 .belt {
-  @media (max-width: 1200px) {
+  @media (max-width: $max-width-change) {
     display: none;
   }
 }

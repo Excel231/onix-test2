@@ -1,5 +1,7 @@
-footer {
-    background: #242424;
+@import "../../constants/constants";
+
+#footer-section {
+    background: $primary-light-gray;
     padding: 40px;
     text-align: right;
 }
