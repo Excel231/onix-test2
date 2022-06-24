@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropType from 'prop-types';
-import '../styles.scss';
+import '../Buttons.scss';
 
 const BigRedLinkButton = ({ children }) => {
   return (

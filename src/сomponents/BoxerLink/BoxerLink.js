@@ -1,6 +1,6 @@
 import React from 'react';
 import PropType from 'prop-types';
-import './styles.scss';
+import './BoxerLink.scss';
 
 const BoxerLink = ({ boxerSite, boxerName }) => {
   return (

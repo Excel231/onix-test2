@@ -28,6 +28,8 @@ export const COMMENTS_API_LINK = 'https://62a1ede4cd2e8da9b0fec808.mockapi.io/ap
 
 /* DraggableList */
 
+export const LINK_TO_BOXER_API = 'https://62a1ede4cd2e8da9b0fec808.mockapi.io/api/comments/boxers';
+
 export const DEFAULT_INACTIVE_STYLE = 'biography-ul';
 export const DEFAULT_ACTIVE_STYLE = 'selected-biography-ul';
 

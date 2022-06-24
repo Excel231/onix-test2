@@ -1,12 +1,12 @@
 @import "../../constants/constants";
 
 #footer-section {
-    background: $primary-light-gray;
-    padding: 40px;
+    border-top: 10px solid $primary-red;
     display: flex;
     align-items: flex-end;
     flex-direction: column;
     justify-content: flex-end;
+    padding: 40px;
 
     @media (max-width: $max-width-change) {
         align-items: center;

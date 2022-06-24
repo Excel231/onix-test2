@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import CommentsSectionView from './CommentsSectionView';
 import { COMMENTS_API_LINK } from '../../../constants/constants';
+import { getThemeColorContext } from '../../../layout/ThemeColorProvider/ThemeColorProvider';
 
 const CommentsSection = () => {
   const [comments, setComments] = useState([]);
+
+  const darkThemeOn = getThemeColorContext();
 
   useEffect(() => {
     fetch(COMMENTS_API_LINK)
@@ -12,7 +15,7 @@ const CommentsSection = () => {
   }, []);
 
   return (
-    <CommentsSectionView comments={comments} />
+    <CommentsSectionView darkThemeOn={darkThemeOn} comments={comments} />
   );
 };
 

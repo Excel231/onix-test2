@@ -1,8 +1,8 @@
 @import "../../../constants/constants";
 
 #comment-section {
-  background: $primary-gradient-background-gray;
-  border: 10px solid $primary-dark-red;
+  border-top: 10px solid $primary-red;
+  border-bottom: 1px solid $primary-red;
   border-left: none;
   border-right: none;
   font-size: 1.5rem;
@@ -15,4 +15,12 @@
       color: $primary-red;
     }
   }
+}
+
+.dark-theme-comments {
+  @include dark-theme;
+}
+
+.light-theme-comments {
+  @include light-theme;
 }

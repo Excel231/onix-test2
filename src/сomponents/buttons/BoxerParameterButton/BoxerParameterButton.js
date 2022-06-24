@@ -1,6 +1,6 @@
 import React from 'react';
 import PropType from 'prop-types';
-import './styles.scss';
+import './BoxerParameterButton.scss';
 
 const BoxerParameterButton = ({ children, handleClick }) => {
   return (

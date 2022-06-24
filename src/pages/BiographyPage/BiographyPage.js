@@ -3,8 +3,7 @@ import '../../styles.scss';
 import sortPersons from '../../helper/sortPersons';
 import BiographyPageView from './BiographyPageView';
 import withLayout from '../../HOC/withLayout/withLayout';
-
-const LINK_TO_BOXER_API = 'https://62a1ede4cd2e8da9b0fec808.mockapi.io/api/comments/boxers  ';
+import { LINK_TO_BOXER_API } from '../../constants/constants';
 
 const BiographyPage = () => {
   const [allPersons, setAllPersons] = useState([]);

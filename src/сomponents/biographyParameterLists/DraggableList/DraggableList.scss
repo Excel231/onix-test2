@@ -1,4 +1,4 @@
-@import "src/constants/constants";
+@import "../../../constants/constants";
 
 @mixin default-ul {
     border-radius: 30px;
@@ -6,9 +6,9 @@
     margin: 1rem;
 }
 
-@mixin selected-ul {
+@mixin selected-ul($border-color) {
     background: $primary-gradient-dark-reversed;
-    border: solid 5px $primary-dark-red;
+    border: solid 5px $border-color;
 }
 
 .biography-ul {
@@ -19,20 +19,20 @@
 
 .selected-biography-ul {
     @include default-ul;
-    @include selected-ul;
+    @include selected-ul($primary-dark-red);
 }
 
 .selected-biography-ul-white {
-    @extend .selected-biography-ul;
-    border-color: $primary-white;
+    @include default-ul;
+    @include selected-ul($primary-white);
 }
 
 .selected-biography-ul-green {
-    @extend .selected-biography-ul;
-    border-color: #008000;
+    @include default-ul;
+    @include selected-ul(#008000);
 }
 
 .selected-biography-ul-blue {
-    @extend .selected-biography-ul;
-    border-color: #000045;
+    @include default-ul;
+    @include selected-ul(#000045);
 }

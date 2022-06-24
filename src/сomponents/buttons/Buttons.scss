@@ -3,7 +3,7 @@
 @mixin big-red-button {
   background: linear-gradient(180deg, $primary-red 30%, $primary-dark-red 100%);
   border-radius: 10px;
-  color: $primary-white;
+  color: inherit;
   display: inline-block;
   font-family: 'Oswald', sans-serif;
   font-size: 20pt;

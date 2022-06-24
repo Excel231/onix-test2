@@ -13,7 +13,7 @@ const BiographyPageView = ({
   changePersonsOnScreen
 }) => {
   return (
-    <>
+    <div>
       <TitleListOfParameters sortOnClick={sortOnClick} />
 
       <DraggableList
@@ -25,8 +25,7 @@ const BiographyPageView = ({
         <BigRedButton onClick={addPerson}>Add new person</BigRedButton>
         <BigRedButton onClick={removePerson}>Remove last person</BigRedButton>
       </div>
-
-    </>
+    </div>
   );
 };
 

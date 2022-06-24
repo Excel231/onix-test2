@@ -1,17 +1,18 @@
 import React from 'react';
 import PropType from 'prop-types';
 import FooterLink from '../FooterLink/FooterLink';
-import './styles.scss';
+import './Footer.scss';
 
 const FooterView = ({
   gitHubLink,
   designLink,
   shLink,
   linkText,
-  changeSignUpText
+  changeSignUpText,
+  darkThemeOn
 }) => {
   return (
-    <footer id="footer-section">
+    <footer id="footer-section" className={darkThemeOn ? 'dark-theme' : 'light-theme'}>
       <div className="footer-info-menu">
         <h3 className="footer-text">by Ivan Honcharenko</h3>
         <h3 className="footer-text">
@@ -49,7 +50,8 @@ FooterView.propTypes = {
   designLink: PropType.string.isRequired,
   shLink: PropType.string.isRequired,
   linkText: PropType.string.isRequired,
-  changeSignUpText: PropType.func.isRequired
+  changeSignUpText: PropType.func.isRequired,
+  darkThemeOn: PropType.bool.isRequired
 };
 
 export default FooterView;

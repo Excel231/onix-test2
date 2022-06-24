@@ -1,7 +1,6 @@
 import React from 'react';
 import PropType from 'prop-types';
 import CommentsSection from './components/CommentsSection';
-import './sass/HomepageMainSection.scss';
 import HomepageMainSection from './components/HomepageMainSection';
 
 const HomepageView = ({
@@ -9,7 +8,7 @@ const HomepageView = ({
   changeSignUpText
 }) => {
   return (
-    <div>
+    <div className="homepage">
       <HomepageMainSection signUpText={signUpText} changeSignUpText={changeSignUpText} />
       <CommentsSection />
     </div>

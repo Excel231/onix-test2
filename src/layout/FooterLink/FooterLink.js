@@ -1,6 +1,6 @@
 import React from 'react';
 import PropType from 'prop-types';
-import './styles.scss';
+import './FooterLink.scss';
 
 const FooterLink = ({
   onButtonEnter, linkTitle, footerLink, faClasses 

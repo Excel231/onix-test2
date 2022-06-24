@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-scroll';
-import './styles.scss';
+import './NavBar.scss';
 import DarkModeToggle from '../DarkModeToggle/DarkModeToggle';
 
 const NavBar = () => {

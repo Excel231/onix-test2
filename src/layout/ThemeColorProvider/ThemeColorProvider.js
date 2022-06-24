@@ -13,7 +13,7 @@ export const getThemeColorChangeContext = () => {
 };
 
 const ThemeColorProvider = ({ children }) => {
-  const [darkThemeOn, setDarkThemeOn] = useState(false);
+  const [darkThemeOn, setDarkThemeOn] = useState(true);
 
   const changeTheme = useCallback(() => {
     setDarkThemeOn((previousTheme) => !previousTheme);
