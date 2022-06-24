@@ -3,12 +3,13 @@ import PropType from 'prop-types';
 import './FooterLink.scss';
 
 const FooterLink = ({
-  onButtonEnter, linkTitle, footerLink, faClasses 
+  onMouseEnter, linkTitle, footerLink, faClasses
 }) => {
   return (
     <a
       className="link-icon"
-      onMouseEnter={() => onButtonEnter(linkTitle)}
+      onMouseEnter={() => onMouseEnter(linkTitle)}
+      onMouseLeave={() => onMouseEnter(':')}
       target="_blank"
       rel="noopener noreferrer"
       title={linkTitle}
@@ -20,7 +21,7 @@ const FooterLink = ({
 };
 
 FooterLink.propTypes = {
-  onButtonEnter: PropType.func.isRequired,
+  onMouseEnter: PropType.func.isRequired,
   linkTitle: PropType.string.isRequired,
   footerLink: PropType.string.isRequired,
   faClasses: PropType.string.isRequired

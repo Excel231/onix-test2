@@ -22,19 +22,19 @@ const FooterView = ({
         </h3>
         <div>
           <FooterLink
-            onButtonEnter={changeSignUpText}
+            onMouseEnter={changeSignUpText}
             linkTitle="GitHub"
             footerLink={gitHubLink}
             faClasses="fa-brands fa-github fa-2xl"
           />
           <FooterLink
-            onButtonEnter={changeSignUpText}
+            onMouseEnter={changeSignUpText}
             linkTitle="Design"
             footerLink={designLink}
             faClasses="fa-solid fa-object-group fa-2xl"
           />
           <FooterLink
-            onButtonEnter={changeSignUpText}
+            onMouseEnter={changeSignUpText}
             linkTitle="SH++"
             footerLink={shLink}
             faClasses="fa-solid fa-school fa-2xl"
