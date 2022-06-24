@@ -10,7 +10,7 @@ const DraggableListView = ({
   dragStartHandler,
   dragOverHandler,
   dropHandler,
-  handleMouseOver,
+  handleMouseClick,
   currentActivePerson,
   handleParameterIsEdited
 }) => {
@@ -19,12 +19,13 @@ const DraggableListView = ({
       {
         personsOnScreen.map((person) => (
           <div
+            aria-hidden="true"
             key={person.id}
             draggable="true"
             onDragStart={() => dragStartHandler(person)}
             onDragOver={(e) => dragOverHandler(e)}
             onDrop={(e) => dropHandler(e, person)}
-            onMouseEnter={() => handleMouseOver(person)}
+            onClick={() => handleMouseClick(person)}
           >
             <ParameterList
               id={person.id}
@@ -60,7 +61,7 @@ DraggableListView.propTypes = {
   dragStartHandler: PropType.func.isRequired,
   dragOverHandler: PropType.func.isRequired,
   dropHandler: PropType.func.isRequired,
-  handleMouseOver: PropType.func.isRequired,
+  handleMouseClick: PropType.func.isRequired,
   currentActivePerson: PropType.shape({}),
   handleParameterIsEdited: PropType.func.isRequired
 };

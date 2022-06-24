@@ -36,7 +36,7 @@ const DraggableList = ({
     changePersonsOnScreen(newArr);
   };
 
-  const handleMouseOver = (person) => {
+  const handleMouseClick = (person) => {
     setCurrentActivePerson(person);
   };
 
@@ -91,7 +91,7 @@ const DraggableList = ({
       dragStartHandler={dragStartHandler}
       dragOverHandler={dragOverHandler}
       dropHandler={dropHandler}
-      handleMouseOver={handleMouseOver}
+      handleMouseClick={handleMouseClick}
       currentActivePerson={currentActivePerson}
       handleParameterIsEdited={handleParameterIsEdited}
     />
