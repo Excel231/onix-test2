@@ -4,7 +4,6 @@ import sortPersons from '../../helper/sortPersons';
 import BiographyPageView from './BiographyPageView';
 import withLayout from '../../HOC/withLayout/withLayout';
 import { LINK_TO_BOXER_API } from '../../constants/constants';
-import { getThemeColorContext } from '../../layout/ThemeColorProvider/ThemeColorProvider';
 
 const BiographyPage = () => {
   const [allPersons, setAllPersons] = useState([]);
@@ -12,8 +11,6 @@ const BiographyPage = () => {
   /* Boolean value that shows in which order parameters should be displayed
     (from greatest to lowest or vice versa) */
   const [sortFromGreatest, setSortFromGreatest] = useState(false);
-
-  const darkThemeOn = getThemeColorContext();
 
   const sortOnClick = (componentToCompare) => {
     setSortFromGreatest((prevSortFromGreatest) => !prevSortFromGreatest);
@@ -50,7 +47,6 @@ const BiographyPage = () => {
 
   return (
     <BiographyPageView
-      darkThemeOn={darkThemeOn}
       personsOnScreen={personsOnScreen}
       sortOnClick={sortOnClick}
       addPerson={addPerson}

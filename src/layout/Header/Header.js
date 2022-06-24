@@ -4,8 +4,8 @@ import { getThemeColorContext } from '../ThemeColorProvider/ThemeColorProvider';
 import HeaderView from './HeaderView';
 
 const Header = () => {
-  const darkThemeOn = getThemeColorContext();
-  
+  const darkThemeOn = getThemeColorContext() ?? true;
+
   return (
     <HeaderView darkThemeOn={darkThemeOn} />
   );

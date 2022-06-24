@@ -9,10 +9,9 @@ const FooterView = ({
   shLink,
   linkText,
   changeSignUpText,
-  darkThemeOn
 }) => {
   return (
-    <footer id="footer-section" className={darkThemeOn ? 'dark-theme' : 'light-theme'}>
+    <footer id="footer-section">
       <div className="footer-info-menu">
         <h3 className="footer-text">by Ivan Honcharenko</h3>
         <h3 className="footer-text">
@@ -50,8 +49,7 @@ FooterView.propTypes = {
   designLink: PropType.string.isRequired,
   shLink: PropType.string.isRequired,
   linkText: PropType.string.isRequired,
-  changeSignUpText: PropType.func.isRequired,
-  darkThemeOn: PropType.bool.isRequired
+  changeSignUpText: PropType.func.isRequired
 };
 
 export default FooterView;

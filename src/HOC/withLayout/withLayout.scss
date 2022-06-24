@@ -1,7 +1,17 @@
+@import "../../constants/constants";
+
 .wrapper {
   min-height: 100vh;
   margin: 0;
 
   display: grid;
   grid-template-rows: auto 1fr auto;
+}
+
+.light-theme {
+  @include light-theme;
+}
+
+.dark-theme {
+  @include dark-theme;
 }

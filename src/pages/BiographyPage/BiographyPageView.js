@@ -6,7 +6,6 @@ import BigRedButton from '../../сomponents/buttons/BigRedButton/BigRedButton';
 import './BiographyPage.scss';
 
 const BiographyPageView = ({
-  darkThemeOn,
   personsOnScreen,
   sortOnClick,
   addPerson,
@@ -15,7 +14,7 @@ const BiographyPageView = ({
   changePersonsOnScreen
 }) => {
   return (
-    <div className={`biography-section ${darkThemeOn ? 'dark-theme' : 'light-theme'}`}>
+    <div className="biography-section">
       <TitleListOfParameters sortOnClick={sortOnClick} />
 
       <DraggableList
@@ -32,7 +31,6 @@ const BiographyPageView = ({
 };
 
 BiographyPageView.propTypes = {
-  darkThemeOn: PropType.bool.isRequired,
   personsOnScreen: PropType.arrayOf(PropType.shape({})).isRequired,
   sortOnClick: PropType.func.isRequired,
   addPerson: PropType.func.isRequired,

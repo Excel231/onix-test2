@@ -7,7 +7,7 @@ import NavBar from '../NavBar/NavBar';
 const HeaderView = ({ darkThemeOn }) => {
   return (
     <header id="header" className={darkThemeOn ? 'dark-theme' : 'light-theme'}>
-      <Link to="/" className="logo">
+      <Link to="/" className={`logo ${darkThemeOn ? 'dark-theme' : 'light-theme'}`}>
         <h1 className="logo-text">Knock Out!</h1>
         <img className="logo-img" src={icon} alt="Boxing glove" />
       </Link>

@@ -11,11 +11,11 @@ import {
 import { getThemeColorContext } from '../../../layout/ThemeColorProvider/ThemeColorProvider';
 
 const HomepageMainSection = ({ signUpText, changeSignUpText }) => {
-  const darkThemeOn = getThemeColorContext();
+  const darkThemeOn = getThemeColorContext() ?? true;
 
   return (
     <div
-      id="homepage-main-section" 
+      id="homepage-main-section"
       className={darkThemeOn ? 'homepage-dark-theme' : 'homepage-light-theme'}
     >
       <h2 className="homepage-heading">Want to become stronger? Looking for worthy opponents? Our gym is for YOU!</h2>

@@ -6,7 +6,7 @@ import { getThemeColorContext } from '../../../layout/ThemeColorProvider/ThemeCo
 const CommentsSection = () => {
   const [comments, setComments] = useState([]);
 
-  const darkThemeOn = getThemeColorContext();
+  const darkThemeOn = getThemeColorContext() ?? true;
 
   useEffect(() => {
     fetch(COMMENTS_API_LINK)
