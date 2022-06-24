@@ -6,14 +6,27 @@ import DarkModeToggle from '../DarkModeToggle/DarkModeToggle';
 const NavBar = () => {
   return (
     <nav className="nav-bar">
-      <Link className="nav-link" to="homepage-main-section" spy smooth offset={-150} duration={500}>
+      <Link
+        activeClass="active-link"
+        className="nav-link"
+        to="homepage-main-section"
+        spy
+        smooth
+        offset={-150}
+        duration={400}
+      >
         About
       </Link>
-      <Link className="nav-link" to="comment-section" spy smooth offset={-50} duration={500}>
+      <Link
+        activeClass="active-link"
+        className="nav-link"
+        to="comment-section"
+        spy
+        smooth
+        offset={-50}
+        duration={400}
+      >
         Comments
-      </Link>
-      <Link className="nav-link" to="footer-section" spy smooth duration={500}>
-        Contacts
       </Link>
       <DarkModeToggle />
     </nav>

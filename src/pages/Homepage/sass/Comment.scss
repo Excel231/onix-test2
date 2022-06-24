@@ -68,6 +68,8 @@
   @media (max-width: $max-width-change) {
     flex-direction: column;
     text-align: center;
+    margin-right: 10%;
+    margin-left: 10%;
   }
 }
 
@@ -79,6 +81,8 @@
 
   @media (max-width: $max-width-change) {
     text-align: center;
+    margin-right: 10%;
+    margin-left: 10%;
   }
 }
 

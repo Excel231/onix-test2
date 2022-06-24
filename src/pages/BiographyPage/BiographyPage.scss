@@ -1,0 +1,15 @@
+@import "../../constants/constants";
+
+.biography-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.light-theme {
+  @include light-theme;
+}
+
+.dark-theme {
+  @include dark-theme;
+}

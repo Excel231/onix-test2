@@ -3,8 +3,10 @@ import PropType from 'prop-types';
 import TitleListOfParameters from '../../сomponents/biographyParameterLists/TitleParameterList/TitleParameterList';
 import DraggableList from '../../сomponents/biographyParameterLists/DraggableList/DraggableList';
 import BigRedButton from '../../сomponents/buttons/BigRedButton/BigRedButton';
+import './BiographyPage.scss';
 
 const BiographyPageView = ({
+  darkThemeOn,
   personsOnScreen,
   sortOnClick,
   addPerson,
@@ -13,7 +15,7 @@ const BiographyPageView = ({
   changePersonsOnScreen
 }) => {
   return (
-    <div>
+    <div className={`biography-section ${darkThemeOn ? 'dark-theme' : 'light-theme'}`}>
       <TitleListOfParameters sortOnClick={sortOnClick} />
 
       <DraggableList
@@ -30,6 +32,7 @@ const BiographyPageView = ({
 };
 
 BiographyPageView.propTypes = {
+  darkThemeOn: PropType.bool.isRequired,
   personsOnScreen: PropType.arrayOf(PropType.shape({})).isRequired,
   sortOnClick: PropType.func.isRequired,
   addPerson: PropType.func.isRequired,
