@@ -45,7 +45,7 @@ const DraggableList = ({
   };
 
   const handleKeypress = (e) => {
-    if (parameterIsEdited) return;
+    if (!parameterIsEdited) return;
     const keyPressed = e.key;
     switch (keyPressed) {
       case ('1'):
