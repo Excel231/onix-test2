@@ -14,7 +14,7 @@ $max-width-change: 1024px;
 $primary-red: #DA0037;
 $primary-dark-red: #880022;
 $primary-white: #EDEDED;
-$primary-dark-gray: #111111;
+$primary-dark-gray: #212121;
 $primary-light-gray: #343434;
 
 /* Primary gradient colors */
@@ -65,4 +65,34 @@ $primary-gradient-background-gray: linear-gradient(180deg, #3a3a3a 30%, #484848 
 @mixin dark-theme-image {
   background-image: url(../images/background/boxer-background.jpg);
   @include boxer-background-image;
+}
+
+/* Text input */
+
+@mixin text-input() {
+  background-color: $primary-white;
+  border-radius: 20px;
+  color: $primary-dark-red;
+  font-family: $font-sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  width: 5rem;
+
+  @media (max-width: $max-width-change) {
+    font-size: 20px;
+  }
+}
+
+/* Unordered lists */
+
+@mixin default-ul() {
+  border: solid $primary-red;
+  border-radius: 30px;
+  line-height: 0;
+  margin: 1rem;
+}
+
+@mixin selected-ul($border-color) {
+  background: $primary-gradient-dark-reversed;
+  border: solid 5px $border-color;
 }

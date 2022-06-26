@@ -9,27 +9,27 @@ const TitleParameterList = ({ sortOnClick }) => {
     <ul className="biography-ul">
       <li className="biography-li">
         <BoxerParameterButton handleClick={() => {}}>
-          Photo
+          <h3>Photo</h3>
         </BoxerParameterButton>
       </li>
       <li className="biography-li">
         <BoxerParameterButton handleClick={() => sortOnClick('fullName')}>
-          Full Name
+          <h3>Full Name</h3>
         </BoxerParameterButton>
       </li>
       <li className="biography-li">
         <BoxerParameterButton handleClick={() => sortOnClick('birthYear')}>
-          Birth Year
+          <h3>Birth Year</h3>
         </BoxerParameterButton>
       </li>
       <li className="biography-li">
         <BoxerParameterButton handleClick={() => sortOnClick('weight')}>
-          Weight
+          <h3>Weight</h3>
         </BoxerParameterButton>
       </li>
       <li className="biography-li belt">
         <BoxerParameterButton handleClick={() => sortOnClick('belts')}>
-          Year - Belts
+          <h3>Year - Belts</h3>
         </BoxerParameterButton>
       </li>
     </ul>

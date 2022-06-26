@@ -3,7 +3,7 @@ import * as PropType from 'prop-types';
 import bubbleSort from '../../../helper/bubbleSort';
 import ChangeableParameterItem from '../../../pages/BiographyPage/components/ChangeableParameterItem';
 import './ParameterList.scss';
-import biographyMapping from '../../../helper/biographyMapping';
+import BiographyImage from '../../BiographyImage/BiographyImage';
 
 const ParameterListView = ({
   fullName,
@@ -23,18 +23,19 @@ const ParameterListView = ({
     <ul className={listStyle}>
 
       <li className="biography-li">
-        <img
-          className="boxer-photo"
-          alt={fullName}
-          src={biographyMapping[photo]}
-          /* eslint-disable-next-line no-console */
-          onLoad={() => console.log(`Photo of ${fullName} has loaded successfully!`)}
-          /* eslint-disable-next-line no-console */
-          onError={() => console.log(`Error occurred with the photo of ${fullName}!`)}
-        />
+        <BiographyImage fullName={fullName} photo={photo} />
       </li>
 
-      <li className="biography-li"><p>{fullName}</p></li>
+      <ChangeableParameterItem
+        parameter={fullName}
+        parameterName="fullName"
+        currentEditedValue={currentEditedValue}
+        currentEditedField={currentEditedField}
+        onFieldBlur={onFieldBlur}
+        onKeyPressed={onKeyPressed}
+        onEditClick={onEditClick}
+        onFieldChange={onFieldChange}
+      />
 
       <ChangeableParameterItem
         parameter={birthYear}
@@ -75,20 +76,18 @@ const ParameterListView = ({
 };
 
 ParameterListView.propTypes = {
-  fullName: PropType.string.isRequired,
-  birthYear: PropType.number.isRequired,
-  photo: PropType.string.isRequired,
-  weight: PropType.number.isRequired,
+  fullName: PropType.node.isRequired,
+  birthYear: PropType.node.isRequired,
+  photo: PropType.node.isRequired,
+  weight: PropType.node.isRequired,
   belts: PropType.arrayOf(PropType.shape({})).isRequired,
-  currentEditedField: PropType.string,
-  currentEditedValue: PropType.oneOfType(
-    [PropType.number, PropType.string]
-  ),
+  currentEditedField: PropType.node,
+  currentEditedValue: PropType.node,
   onEditClick: PropType.func.isRequired,
   onFieldChange: PropType.func.isRequired,
   onFieldBlur: PropType.func.isRequired,
   onKeyPressed: PropType.func.isRequired,
-  listStyle: PropType.string.isRequired,
+  listStyle: PropType.node.isRequired,
 };
 
 ParameterListView.defaultProps = {

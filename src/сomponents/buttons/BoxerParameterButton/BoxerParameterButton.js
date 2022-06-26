@@ -15,7 +15,7 @@ const BoxerParameterButton = ({ children, handleClick }) => {
 };
 
 BoxerParameterButton.propTypes = {
-  children: PropType.string.isRequired,
+  children: PropType.node.isRequired,
   handleClick: PropType.func.isRequired
 };
 

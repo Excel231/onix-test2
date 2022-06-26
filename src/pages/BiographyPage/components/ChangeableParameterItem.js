@@ -22,7 +22,6 @@ const ChangeableParameterItem = ({
         currentEditedField === parameterName ? (
           <input
             className="biography-text-input"
-            type="number"
             autoFocus
             value={currentEditedValue}
             onChange={onFieldChange}
@@ -36,12 +35,10 @@ const ChangeableParameterItem = ({
 };
 
 ChangeableParameterItem.propTypes = {
-  parameter: PropType.number.isRequired,
-  parameterName: PropType.string.isRequired,
-  currentEditedValue: PropType.oneOfType(
-    [PropType.number, PropType.string]
-  ),
-  currentEditedField: PropType.string,
+  parameter: PropType.node.isRequired,
+  parameterName: PropType.node.isRequired,
+  currentEditedValue: PropType.node,
+  currentEditedField: PropType.node,
   onEditClick: PropType.func.isRequired,
   onFieldChange: PropType.func.isRequired,
   onFieldBlur: PropType.func.isRequired,

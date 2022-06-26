@@ -1,38 +1,26 @@
 @import "../../../constants/constants";
 
-@mixin default-ul {
-    border-radius: 30px;
-    line-height: 0;
-    margin: 1rem;
-}
-
-@mixin selected-ul($border-color) {
-    background: $primary-gradient-dark-reversed;
-    border: solid 5px $border-color;
-}
-
 .biography-ul {
-    @include default-ul;
+    @include default-ul();
     background: $primary-gradient-dark;
-    border: solid $primary-red;
 }
 
 .selected-biography-ul {
-    @include default-ul;
+    @include default-ul();
     @include selected-ul($primary-dark-red);
 }
 
 .selected-biography-ul-white {
-    @include default-ul;
+    @include default-ul();
     @include selected-ul($primary-white);
 }
 
 .selected-biography-ul-green {
-    @include default-ul;
+    @include default-ul();
     @include selected-ul(#008000);
 }
 
 .selected-biography-ul-blue {
-    @include default-ul;
+    @include default-ul();
     @include selected-ul(#000045);
 }

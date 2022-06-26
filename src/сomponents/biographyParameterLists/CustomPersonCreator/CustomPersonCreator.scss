@@ -1,0 +1,35 @@
+@import "../../../constants/constants";
+
+.custom-person-section {
+  border-top: 10px solid $primary-red;
+
+  form {
+    @include default-ul();
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+
+      li {
+        color: $primary-red;
+        display: inline-block;
+        font-size: 2rem;
+        text-align: center;
+        width: 20%;
+        margin-top: auto;
+        margin-bottom: auto;
+
+        @media (max-width: $max-width-change) {
+          font-size: 22px;
+          width: 25%;
+        }
+
+        input {
+          @include text-input();
+          width: 80%;
+        }
+      }
+    }
+  }
+}

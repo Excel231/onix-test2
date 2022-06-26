@@ -23,6 +23,10 @@ const BiographyPage = () => {
       setPersonsOnScreen([...personsOnScreen, newPerson]);
     }
   };
+  
+  const addCustomPerson = (customPerson) => {
+    setAllPersons((prevState) => [...prevState, customPerson]);
+  };
 
   const removePerson = () => {
     setPersonsOnScreen(personsOnScreen.slice(0, -1));
@@ -48,8 +52,10 @@ const BiographyPage = () => {
   return (
     <BiographyPageView
       personsOnScreen={personsOnScreen}
+      emptyIdValue={allPersons.length + 1}
       sortOnClick={sortOnClick}
       addPerson={addPerson}
+      addCustomPerson={addCustomPerson}
       removePerson={removePerson}
       onSaveChanges={onSaveChanges}
       changePersonsOnScreen={changePersonsOnScreen}

@@ -1,0 +1,11 @@
+@import "../Buttons";
+
+.big-red-input-btn {
+  @include big-red-button;
+  max-width: 100%;
+}
+
+.input-container {
+  margin-left: auto;
+  margin-right: auto;
+}

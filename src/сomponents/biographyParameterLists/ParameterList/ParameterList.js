@@ -28,7 +28,7 @@ const ParameterList = ({
   };
 
   const onFieldBlur = () => {
-    onSaveChanges(currentEditedField, Number(currentEditedValue), id);
+    onSaveChanges(currentEditedField, currentEditedValue, id);
     setCurrentEditedField(null);
     setCurrentEditedValue(null);
     handleParameterIsEdited();
@@ -59,16 +59,14 @@ const ParameterList = ({
 };
 
 ParameterList.propTypes = {
-  id: PropType.oneOfType(
-    [PropType.number, PropType.string]
-  ).isRequired,
-  fullName: PropType.string.isRequired,
-  photo: PropType.string.isRequired,
-  birthYear: PropType.number.isRequired,
-  weight: PropType.number.isRequired,
+  id: PropType.node.isRequired,
+  fullName: PropType.node.isRequired,
+  photo: PropType.node.isRequired,
+  birthYear: PropType.node.isRequired,
+  weight: PropType.node.isRequired,
   belts: PropType.arrayOf(PropType.shape({})).isRequired,
   onSaveChanges: PropType.func.isRequired,
-  listStyle: PropType.string.isRequired,
+  listStyle: PropType.node.isRequired,
   handleParameterIsEdited: PropType.func.isRequired,
 };
 

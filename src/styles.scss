@@ -1,5 +1,9 @@
 @import "constants/constants";
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   background: $primary-light-gray;
   color: $primary-white;
