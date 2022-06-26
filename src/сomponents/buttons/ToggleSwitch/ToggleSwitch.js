@@ -2,14 +2,15 @@ import React from 'react';
 import './ToggleSwitch.scss';
 import PropType from 'prop-types';
 
-const ToggleSwitch = ({ handleClick }) => {
+const ToggleSwitch = ({ handleClick, toggleStyle }) => {
   return (
-    <input onClick={handleClick} className="toggle" type="checkbox" />
+    <input onClick={handleClick} className={toggleStyle} type="checkbox" />
   );
 };
 
 ToggleSwitch.propTypes = {
-  handleClick: PropType.func.isRequired
+  handleClick: PropType.func.isRequired,
+  toggleStyle: PropType.string.isRequired
 };
 
 export default ToggleSwitch;

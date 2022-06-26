@@ -1,14 +1,12 @@
 @import "../../../constants/constants";
 
-.toggle {
+@mixin toggle() {
   appearance: none;
   width: 62px;
   height: 32px;
   display: inline-flex;
-  position: relative;
   border-radius: 50px;
   cursor: pointer;
-  background-color: $primary-white;
   transition: background-color ease 0.5s;
   margin: 0;
 
@@ -18,7 +16,6 @@
     display: inline-flex;
     position: relative;
     border-radius: 50%;
-    text-indent: -22px;
     left: 2px;
     top: 2px;
     transition: 0.5s;
@@ -27,12 +24,18 @@
     white-space: nowrap;
     z-index: 2;
   }
+}
 
-  &:checked {
-    background-color: $primary-dark-gray;
-  }
+.toggle-off {
+  @include toggle;
+  background-color: $primary-white;
+}
 
-  &:checked:before {
+.toggle-on {
+  @include toggle;
+  background-color: $primary-dark-gray;
+
+  &:before {
     left: 32px;
   }
 }
