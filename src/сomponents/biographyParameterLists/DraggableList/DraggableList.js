@@ -45,7 +45,6 @@ const DraggableList = ({
   };
 
   const handleKeypress = (e) => {
-    if (!parameterIsEdited) return;
     const keyPressed = e.key;
     switch (keyPressed) {
       case ('1'):
@@ -76,11 +75,14 @@ const DraggableList = ({
     }
   };
 
+  const keyPress = (e) => {
+    if (!parameterIsEdited) handleKeypress(e);
+  };
+
   useEffect(() => {
-    const keyPress = (e) => handleKeypress(e);
     document.addEventListener('keydown', keyPress);
     return () => document.removeEventListener('keydown', keyPress);
-  }, [personsOnScreen]);
+  }, [personsOnScreen, parameterIsEdited]);
 
   return (
     <DraggableListView
