@@ -4,7 +4,7 @@ import PropType from 'prop-types';
 const CustomPersonParameter = ({ children, setParameter }) => {
   return (
     <li>
-      <h3>{children}</h3>
+      <label htmlFor="parameter"><h3>{children}</h3></label>
       <input type="text" onChange={(e) => setParameter(e.target.value)} />
     </li>
   );

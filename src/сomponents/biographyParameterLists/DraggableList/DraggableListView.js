@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropType from 'prop-types';
+import Aos from 'aos';
 import ParameterList from '../ParameterList/ParameterList';
 
 const DraggableListView = ({
@@ -14,11 +15,15 @@ const DraggableListView = ({
   currentActivePerson,
   handleParameterIsEdited
 }) => {
+  useEffect(() => {
+    Aos.init();
+  }, []);
   return (
     <>
       {
         personsOnScreen.map((person) => (
           <div
+            data-aos="fade-right"
             aria-hidden="true"
             key={person.id}
             draggable="true"
