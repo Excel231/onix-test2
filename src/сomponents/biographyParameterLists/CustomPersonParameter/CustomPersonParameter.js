@@ -12,7 +12,7 @@ const CustomPersonParameter = ({ children, setParameter }) => {
 
 CustomPersonParameter.propTypes = {
   children: PropType.node.isRequired,
-  setParameter: PropType.node.isRequired
+  setParameter: PropType.func.isRequired
 };
 
 export default CustomPersonParameter;

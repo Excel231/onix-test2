@@ -10,7 +10,8 @@ const CustomPersonCreatorView = ({
   customPerson,
   setFullName,
   setWeight,
-  setBirthYear
+  setBirthYear,
+  setBelt
 }) => {
   return (
     <div className="custom-person-section">
@@ -22,6 +23,7 @@ const CustomPersonCreatorView = ({
           <CustomPersonParameter setParameter={setFullName}>Full Name</CustomPersonParameter>
           <CustomPersonParameter setParameter={setBirthYear}>Birth Year</CustomPersonParameter>
           <CustomPersonParameter setParameter={setWeight}>Weight</CustomPersonParameter>
+          <CustomPersonParameter setParameter={setBelt}>Belt</CustomPersonParameter>
         </ul>
       </form>
       <BigRedSubmitButton onClick={() => addCustomPerson(customPerson)}>
@@ -37,6 +39,7 @@ CustomPersonCreatorView.propTypes = {
   setFullName: PropType.func.isRequired,
   setWeight: PropType.func.isRequired,
   setBirthYear: PropType.func.isRequired,
+  setBelt: PropType.func.isRequired
 };
 
 export default CustomPersonCreatorView;

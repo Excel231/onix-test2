@@ -14,10 +14,6 @@ const CustomPersonCreator = ({ addCustomPerson, emptyIdValue }) => {
     }
   };
 
-  const setPhoto = (photo) => {
-    customPerson.personInfo.photo = photo;
-  };
-
   const setFullName = (fullName) => {
     customPerson.personInfo.fullName = fullName;
   };
@@ -29,15 +25,22 @@ const CustomPersonCreator = ({ addCustomPerson, emptyIdValue }) => {
   const setWeight = (weight) => {
     customPerson.personInfo.weight = weight;
   };
-  
+
+  const setBelt = (beltString) => {
+    const beltName = beltString.match(/[A-Z]/gi).join('');
+    const year = beltString.match(/\d/gi).join('');
+    customPerson.personInfo.belts[0] = { beltName, year };
+    console.log(customPerson.personInfo.belts);
+  };
+
   return (
     <CustomPersonCreatorView
       addCustomPerson={addCustomPerson}
       customPerson={customPerson}
-      setPhoto={setPhoto}
       setFullName={setFullName}
       setBirthYear={setBirthYear}
       setWeight={setWeight}
+      setBelt={setBelt}
     />
   );
 };
