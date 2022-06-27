@@ -43,10 +43,17 @@ const BiographyPage = () => {
     setPersonsOnScreen(newPersonsArray);
   };
 
+  const setDefaultPersonsOnScreen = (persons) => {
+    setPersonsOnScreen(persons.slice(0, 3));
+  };
+
   useEffect(() => {
     fetch(LINK_TO_BOXER_API)
       .then((res) => res.json())
-      .then((data) => setAllPersons(data));
+      .then((data) => {
+        setAllPersons(data);
+        setDefaultPersonsOnScreen(data);
+      });
   }, []);
 
   return (

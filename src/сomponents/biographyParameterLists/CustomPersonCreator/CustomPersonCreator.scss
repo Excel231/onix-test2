@@ -3,6 +3,11 @@
 .custom-person-section {
   border-top: 10px solid $primary-red;
 
+  h2 {
+    font-size: 3rem;
+    font-family: $font-handwriting;
+  }
+
   form {
     @include default-ul();
 

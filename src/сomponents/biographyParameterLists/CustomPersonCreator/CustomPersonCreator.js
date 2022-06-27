@@ -27,10 +27,13 @@ const CustomPersonCreator = ({ addCustomPerson, emptyIdValue }) => {
   };
 
   const setBelt = (beltString) => {
-    const beltName = beltString.match(/[A-Z]/gi).join('');
-    const year = beltString.match(/\d/gi).join('');
+    if (beltString === null) return;
+    let beltName = beltString.match(/[A-Z]/gi);
+    let year = beltString.match(/\d/gi);
+
+    beltName = beltName === null ? '' : beltName.join('');
+    year = year === null ? '' : year.join('');
     customPerson.personInfo.belts[0] = { beltName, year };
-    console.log(customPerson.personInfo.belts);
   };
 
   return (

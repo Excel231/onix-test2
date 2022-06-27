@@ -15,6 +15,9 @@ const CustomPersonCreatorView = ({
 }) => {
   return (
     <div className="custom-person-section">
+      <h2>
+        <em>Add someone else to the list!</em>
+      </h2>
       <form>
         <ul>
           <li>
