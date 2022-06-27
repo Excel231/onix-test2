@@ -24,11 +24,15 @@ $primary-gradient-dark-reversed: linear-gradient(to left, #212121, #2c2c2c, #373
 $primary-gradient-light-gray: linear-gradient(to left, #484848 30%, #505050 100%);
 $primary-gradient-background-gray: linear-gradient(180deg, #3a3a3a 30%, #484848 100%);
 
+/* Red Border*/
+
+$red-border: solid 10px $primary-red;;
+
 /* Common styles */
 
-@mixin boxer-background-image {
+@mixin boxer-background-image() {
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: cover;
   border-top: 1px solid $primary-red;
   padding-bottom: 15vh;
 
@@ -39,18 +43,18 @@ $primary-gradient-background-gray: linear-gradient(180deg, #3a3a3a 30%, #484848 
 
 /* Light theme mixins */
 
-@mixin light-theme {
+@mixin light-theme() {
   background: $primary-gradient-background-gray;
   color: $primary-dark-gray;
 }
 
-@mixin light-theme-image {
+@mixin light-theme-image() {
   @include boxer-background-image;
   background-image: linear-gradient(rgba(224, 224, 224, 0.15), rgba(218, 218, 218, 0.1)),
   url(../images/background/boxer-background.jpg);
 }
 
-@mixin light-theme-comment {
+@mixin light-theme-comment() {
   background: $primary-gradient-light-gray;
   color: $primary-dark-gray;
 }

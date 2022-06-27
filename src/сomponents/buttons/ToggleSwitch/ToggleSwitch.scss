@@ -7,7 +7,6 @@
   display: inline-flex;
   border-radius: 50px;
   cursor: pointer;
-  transition: background-color ease 0.5s;
   margin: 0;
 
   &:before {
@@ -18,7 +17,6 @@
     border-radius: 50%;
     left: 2px;
     top: 2px;
-    transition: 0.5s;
     height: 28px;
     width: 28px;
     white-space: nowrap;

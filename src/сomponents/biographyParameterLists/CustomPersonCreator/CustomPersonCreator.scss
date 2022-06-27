@@ -1,7 +1,7 @@
 @import "../../../constants/constants";
 
 .custom-person-section {
-  border-top: 10px solid $primary-red;
+  border-top: $red-border;
 
   h2 {
     font-size: 3rem;

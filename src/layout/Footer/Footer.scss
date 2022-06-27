@@ -1,7 +1,7 @@
 @import "../../constants/constants";
 
 #footer-section {
-    border-top: 10px solid $primary-red;
+    border-top: $red-border;
     display: flex;
     align-items: flex-end;
     flex-direction: column;
