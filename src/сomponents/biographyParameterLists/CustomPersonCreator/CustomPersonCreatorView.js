@@ -3,6 +3,7 @@ import PropType from 'prop-types';
 import BigRedSubmitButton from '../../buttons/BigRedSubmitButton/BigRedSubmitButton';
 import './CustomPersonCreator.scss';
 import BiographyImage from '../../BiographyImage/BiographyImage';
+import CustomPersonParameter from '../CustomPersonParameter/CustomPersonParameter';
 
 const CustomPersonCreatorView = ({
   addCustomPerson,
@@ -18,22 +19,9 @@ const CustomPersonCreatorView = ({
           <li>
             <BiographyImage fullName="Default Image" photo="defaultImage" />
           </li>
-          <li>
-            <div>
-              <h3>Full Name</h3>
-              <input type="text" onChange={(e) => setFullName(e.target.value)} />
-            </div>
-          </li>
-          <li>
-            <div>
-              <h3>Birth Year</h3>
-              <input type="text" onChange={(e) => setBirthYear(e.target.value)} />
-            </div>
-          </li>
-          <li>
-            <h3>Weight</h3>
-            <input type="text" onChange={(e) => setWeight(e.target.value)} />
-          </li>
+          <CustomPersonParameter setParameter={setFullName}>Full Name</CustomPersonParameter>
+          <CustomPersonParameter setParameter={setBirthYear}>Birth Year</CustomPersonParameter>
+          <CustomPersonParameter setParameter={setWeight}>Weight</CustomPersonParameter>
         </ul>
       </form>
       <BigRedSubmitButton onClick={() => addCustomPerson(customPerson)}>

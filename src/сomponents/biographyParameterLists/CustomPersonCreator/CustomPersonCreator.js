@@ -29,7 +29,7 @@ const CustomPersonCreator = ({ addCustomPerson, emptyIdValue }) => {
   const setWeight = (weight) => {
     customPerson.personInfo.weight = weight;
   };
-
+  
   return (
     <CustomPersonCreatorView
       addCustomPerson={addCustomPerson}
