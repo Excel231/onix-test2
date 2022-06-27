@@ -1,0 +1,36 @@
+@import "../../constants/constants";
+
+.side-bar-wrapper {
+  display: inline-block;
+}
+
+.side-bar {
+  border-top: $red-border;
+  border-right: $red-border;
+  text-align: left;
+  position: fixed;
+  width: 20%;
+  height: 100%;
+  margin: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.side-bar-hidden {
+  visibility: hidden;
+}
+
+.side-bar-link {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.dark-theme {
+  @include dark-theme();
+}
+
+.light-theme {
+  @include dark-theme();
+}

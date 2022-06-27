@@ -3,7 +3,6 @@ import PropType from 'prop-types';
 import BoxerLink from '../../../сomponents/BoxerLink/BoxerLink';
 import DiscountTimer from '../../../сomponents/DiscountTimer/DiscountTimer';
 import BigRedAnchorButton from '../../../сomponents/buttons/BigRedAnchorButton/BigRedAnchorButton';
-import BigRedLinkButton from '../../../сomponents/buttons/BigRedLinkButton/BigRedLinkButton';
 import '../sass/HomepageMainSection.scss';
 import {
   BOXER_NAME_1, BOXER_LINK_1, BOXER_NAME_2, BOXER_LINK_2 
@@ -42,12 +41,6 @@ const HomepageMainSection = ({ signUpText, changeSignUpText }) => {
       <BigRedAnchorButton changeText={changeSignUpText}>
         <strong>SIGN UP!</strong>
       </BigRedAnchorButton>
-
-      <br />
-
-      <BigRedLinkButton>
-        <strong>Go to biography page!</strong>
-      </BigRedLinkButton>
     </div>
   );
 };
