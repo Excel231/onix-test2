@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import PropType from 'prop-types';
 import Aos from 'aos';
-import ParameterList from '../ParameterList/ParameterList';
+import ParameterList from './ParameterList';
 
 const DraggableListView = ({
   personsOnScreen,

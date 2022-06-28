@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropType from 'prop-types';
 import DraggableListView from './DraggableListView';
-import './DraggableList.scss';
+import '../sass/DraggableList.scss';
 import { DEFAULT_INACTIVE_STYLE, DEFAULT_ACTIVE_STYLE } from '../../../constants/constants';
 
 const DraggableList = ({

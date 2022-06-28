@@ -1,10 +1,10 @@
 import React from 'react';
 import PropType from 'prop-types';
-import TitleListOfParameters from '../../сomponents/biographyParameterLists/TitleParameterList/TitleParameterList';
-import DraggableList from '../../сomponents/biographyParameterLists/DraggableList/DraggableList';
+import TitleListOfParameters from './components/TitleParameterList';
+import DraggableList from './components/DraggableList';
 import BigRedButton from '../../сomponents/buttons/BigRedButton/BigRedButton';
 import './BiographyPage.scss';
-import CustomPersonCreator from '../../сomponents/biographyParameterLists/CustomPersonCreator/CustomPersonCreator';
+import CustomPersonCreator from './components/CustomPersonCreator';
 
 const BiographyPageView = ({
   personsOnScreen,

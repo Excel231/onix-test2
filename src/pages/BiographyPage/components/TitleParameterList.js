@@ -1,8 +1,8 @@
 import React from 'react';
 import '../../../styles.scss';
 import PropType from 'prop-types';
-import './TitleParameterList.scss';
-import BoxerParameterButton from '../../buttons/BoxerParameterButton/BoxerParameterButton';
+import '../sass/TitleParameterList.scss';
+import BoxerParameterButton from '../../../сomponents/buttons/BoxerParameterButton/BoxerParameterButton';
 
 const TitleParameterList = ({ sortOnClick }) => {
   return (

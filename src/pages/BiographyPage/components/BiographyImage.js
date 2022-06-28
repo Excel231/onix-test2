@@ -1,7 +1,7 @@
 import React from 'react';
 import PropType from 'prop-types';
-import biographyMapping from '../../helper/biographyMapping';
-import './BiographyImage.scss';
+import biographyMapping from '../../../helper/biographyMapping';
+import '../sass/BiographyImage.scss';
 
 const BiographyImage = ({ fullName, photo }) => {
   return (

@@ -1,9 +1,9 @@
 import React from 'react';
 import PropType from 'prop-types';
-import BigRedSubmitButton from '../../buttons/BigRedSubmitButton/BigRedSubmitButton';
-import './CustomPersonCreator.scss';
-import BiographyImage from '../../BiographyImage/BiographyImage';
-import CustomPersonParameter from '../CustomPersonParameter/CustomPersonParameter';
+import BigRedSubmitButton from '../../../сomponents/buttons/BigRedSubmitButton/BigRedSubmitButton';
+import '../sass/CustomPersonCreator.scss';
+import BiographyImage from './BiographyImage';
+import CustomPersonParameter from './CustomPersonParameter';
 
 const CustomPersonCreatorView = ({
   addCustomPerson,

@@ -1,9 +1,9 @@
 import React from 'react';
 import * as PropType from 'prop-types';
 import bubbleSort from '../../../helper/bubbleSort';
-import ChangeableParameterItem from '../../../pages/BiographyPage/components/ChangeableParameterItem';
-import './ParameterList.scss';
-import BiographyImage from '../../BiographyImage/BiographyImage';
+import ChangeableParameterItem from './ChangeableParameterItem';
+import '../sass/ParameterList.scss';
+import BiographyImage from './BiographyImage';
 
 const ParameterListView = ({
   fullName,
