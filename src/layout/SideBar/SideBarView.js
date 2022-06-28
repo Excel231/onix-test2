@@ -1,31 +1,32 @@
 import React from 'react';
 import PropType from 'prop-types';
-import './SideBar.scss';
+import { Link } from 'react-router-dom';
 import pagesToDisplayList from '../../helper/pagesToDisplayList';
-import SmallRedLinkButton from '../../сomponents/buttons/SmallRedLinkButton/SmallRedLinkButton';
+import './SideBar.scss';
 
 const SideBarView = ({
   darkThemeOn,
   sideBarDisplayed
 }) => {
   return (
-    <ul className={
-      `side-bar ${darkThemeOn ? 'dark-theme' : 'light-theme'} 
-    ${sideBarDisplayed ? 'side-bar' : 'side-bar-hidden'}`
-    }
+    <ul
+      className={
+        `${darkThemeOn ? 'dark-theme' : 'light-theme'} 
+         ${sideBarDisplayed ? 'side-bar-visible' : 'side-bar-hidden'}`
+      }
     >
-      <div className="side-bar-link">
-        {pagesToDisplayList.map(({
-          name,
-          path
-        }) => {
-          return (
-            <li key={path}>
-              <SmallRedLinkButton path={path}>{name}</SmallRedLinkButton>
+      {pagesToDisplayList.map(({
+        name,
+        path
+      }) => {
+        return (
+          <Link key={path} to={path} className="page-link">
+            <li>
+              <h3>{name}</h3>
             </li>
-          );
-        })}
-      </div>
+          </Link>
+        );
+      })}
     </ul>
   );
 };

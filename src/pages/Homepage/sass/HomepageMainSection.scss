@@ -30,13 +30,13 @@
 }
 
 .homepage-light-theme {
-  @include light-theme;
-  @include light-theme-image;
+  @include light-theme();
+  @include light-theme-image();
 }
 
 .homepage-dark-theme {
-  @include dark-theme;
-  @include dark-theme-image;
+  @include dark-theme();
+  @include dark-theme-image();
 }
 
 

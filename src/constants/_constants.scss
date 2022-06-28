@@ -21,7 +21,7 @@ $primary-light-gray: #343434;
 
 $primary-gradient-dark: #262323 linear-gradient(to right, #212121, #2c2c2c, #373737, #424242, #4e4e4e);
 $primary-gradient-dark-reversed: linear-gradient(to left, #212121, #2c2c2c, #373737, #424242, #4e4e4e);
-$primary-gradient-light-gray: linear-gradient(to left, #484848 30%, #505050 100%);
+$primary-gradient-light-gray: linear-gradient(to left, #818181 30%, #6b6b6b 100%);
 $primary-gradient-background-gray: linear-gradient(180deg, #3a3a3a 30%, #484848 100%);
 
 /* Red Border*/
@@ -44,7 +44,7 @@ $red-border: solid 10px $primary-red;;
 /* Light theme mixins */
 
 @mixin light-theme() {
-  background: $primary-gradient-background-gray;
+  background: $primary-light-gray;
   color: $primary-dark-gray;
 }
 
@@ -61,12 +61,12 @@ $red-border: solid 10px $primary-red;;
 
 /* Dark theme mixins */
 
-@mixin dark-theme {
+@mixin dark-theme() {
   background: $primary-dark-gray;
   color: $primary-white;
 }
 
-@mixin dark-theme-image {
+@mixin dark-theme-image() {
   background-image: url(../images/background/boxer-background.jpg);
   @include boxer-background-image;
 }

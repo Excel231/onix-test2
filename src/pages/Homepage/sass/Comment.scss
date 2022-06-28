@@ -87,5 +87,5 @@
 }
 
 .light-theme-comment {
-  @include light-theme-comment
+  @include light-theme-comment()
 }

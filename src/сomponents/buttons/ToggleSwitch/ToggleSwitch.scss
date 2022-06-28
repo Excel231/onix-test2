@@ -25,12 +25,12 @@
 }
 
 .toggle-off {
-  @include toggle;
+  @include toggle();
   background-color: $primary-white;
 }
 
 .toggle-on {
-  @include toggle;
+  @include toggle();
   background-color: $primary-dark-gray;
 
   &:before {

@@ -1,7 +1,7 @@
 @import "../Buttons";
 
 .big-red-input-btn {
-  @include big-red-button;
+  @include big-red-button();
   max-width: 100%;
 }
 

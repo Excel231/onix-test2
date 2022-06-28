@@ -7,9 +7,9 @@
 }
 
 .light-theme {
-  @include light-theme;
+  @include light-theme();
 }
 
 .dark-theme {
-  @include dark-theme;
+  @include dark-theme();
 }

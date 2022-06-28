@@ -1,6 +1,6 @@
 @import "../../constants/constants";
 
-@mixin big-red-button {
+@mixin big-red-button() {
   background: linear-gradient(180deg, $primary-red 30%, $primary-dark-red 100%);
   border-radius: 10px;
   border: none;
@@ -24,5 +24,5 @@
 }
 
 .big-red-btn {
-  @include big-red-button;
+  @include big-red-button();
 }

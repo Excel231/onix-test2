@@ -11,7 +11,7 @@ const HeaderView = ({ darkThemeOn }) => {
     <header id="header" className={darkThemeOn ? 'dark-theme' : 'light-theme'}>
       <div className="logo">
         <SideBar darkThemeOn={darkThemeOn} />
-        <Link to="/" className={`link ${darkThemeOn ? 'dark-theme' : 'light-theme'}`}>
+        <Link to="/" className="homepage-link">
           <h1 className="logo-text">Knock Out!</h1>
           <img className="logo-img" src={icon} alt="Boxing glove" />
         </Link>
