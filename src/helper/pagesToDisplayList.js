@@ -6,6 +6,10 @@ const pagesToDisplayList = [
   {
     name: 'Biography Page',
     path: '/biography'
+  },
+  {
+    name: 'Shop',
+    path: '/shop'
   }
 ];
 
