@@ -11,10 +11,15 @@ const SideBar = ({ darkThemeOn }) => {
     setSideBarDisplayed((prevState) => !prevState);
   };
 
+  const hideSideBar = () => {
+    setSideBarDisplayed(false);
+  };
+
   return (
-    <div className="side-bar-wrapper">
+    <div className="side-bar-wrapper" onMouseLeave={hideSideBar}>
       <HamburgerButton handleClick={toggleSideBar} />
       <SideBarView
+        hideSideBar={hideSideBar}
         darkThemeOn={darkThemeOn}
         sideBarDisplayed={sideBarDisplayed}
         toggleSideBar={toggleSideBar}
