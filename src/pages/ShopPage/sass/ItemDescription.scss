@@ -1,0 +1,10 @@
+@import "../../../constants/constants";
+
+.item-description {
+  font-size: 1.3rem;
+  line-height: normal;
+
+  @media (max-width: $max-width-change) {
+    font-size: 1rem;
+  }
+}

@@ -8,7 +8,7 @@ const HomepageView = ({
   changeSignUpText
 }) => {
   return (
-    <div className="homepage">
+    <div>
       <HomepageMainSection signUpText={signUpText} changeSignUpText={changeSignUpText} />
       <CommentsSection />
     </div>

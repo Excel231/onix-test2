@@ -7,18 +7,13 @@ const DiscountTimerView = ({
   currentTime
 }) => {
   return (
-    <div>
-      <p>
-        <strong>get 20% off.</strong>
-      </p>
-      <p>
-        {
-          discountEndTime <= currentTime
-            ? ('The sale is finished!')
-            : (`The discount will end in: ${dateToTime(discountEndTime, currentTime)}`)
-        }
-      </p>
-    </div>
+    <p>
+      {
+        discountEndTime <= currentTime
+          ? ('The sale is finished!')
+          : (`The discount will end in: ${dateToTime(discountEndTime, currentTime)}`)
+      }
+    </p>
   );
 };
 

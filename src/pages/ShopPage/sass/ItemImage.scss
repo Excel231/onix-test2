@@ -1,0 +1,26 @@
+@import "../../../constants/constants";
+
+.photo-wrapper {
+  background-color: white;
+  border: $red-border;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  width: 65%;
+  height: 40vh;
+
+  @media (max-width: $max-width-change) {
+    height: fit-content;
+  }
+
+  .item-photo {
+    width: 75%;
+
+    @media (max-width: $max-width-change) {
+      width: 80%;
+    }
+  }
+}
+

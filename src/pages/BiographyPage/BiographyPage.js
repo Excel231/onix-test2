@@ -3,7 +3,7 @@ import '../../styles.scss';
 import sortPersons from '../../helper/sortPersons';
 import BiographyPageView from './BiographyPageView';
 import withLayout from '../../HOC/withLayout/withLayout';
-import { LINK_TO_BOXER_API } from '../../constants/constants';
+import { BOXER_API_LINK } from '../../constants/constants';
 
 const BiographyPage = () => {
   const [allPersons, setAllPersons] = useState([]);
@@ -48,7 +48,7 @@ const BiographyPage = () => {
   };
 
   useEffect(() => {
-    fetch(LINK_TO_BOXER_API)
+    fetch(BOXER_API_LINK)
       .then((res) => res.json())
       .then((data) => {
         setAllPersons(data);

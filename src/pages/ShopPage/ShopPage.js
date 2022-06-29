@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import withLayout from '../../HOC/withLayout/withLayout';
+import ShopPageView from './ShopPageView';
+import { ITEMS_API_LINK } from '../../constants/constants';
 
 const ShopPage = () => {
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    fetch(ITEMS_API_LINK)
+      .then((res) => res.json())
+      .then((data) => {
+        setItems(data);
+      });
+  }, []);
+
   return (
-    <div>
-      <h1>111</h1>
-    </div>
+    <ShopPageView items={items} />
   );
 };
 

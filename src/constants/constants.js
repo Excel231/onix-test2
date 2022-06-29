@@ -22,13 +22,17 @@ export const DISCOUNT_END_TIME = new Date(
   CURRENT_TIME.getSeconds()
 );
 
-/* CommentsSection */
+/* CommentsSection API */
 
 export const COMMENTS_API_LINK = 'https://62a1ede4cd2e8da9b0fec808.mockapi.io/api/comments/comments';
 
-/* DraggableList */
+/* DraggableList API */
 
-export const LINK_TO_BOXER_API = 'https://62a1ede4cd2e8da9b0fec808.mockapi.io/api/comments/boxers';
+export const BOXER_API_LINK = 'https://62a1ede4cd2e8da9b0fec808.mockapi.io/api/comments/boxers';
+
+/* ShopPage API */
+
+export const ITEMS_API_LINK = 'https://62a1ede4cd2e8da9b0fec808.mockapi.io/api/comments/products';
 
 export const DEFAULT_INACTIVE_STYLE = 'biography-ul';
 export const DEFAULT_ACTIVE_STYLE = 'selected-biography-ul';

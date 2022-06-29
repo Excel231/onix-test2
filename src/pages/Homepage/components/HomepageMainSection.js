@@ -32,11 +32,12 @@ const HomepageMainSection = ({ signUpText, changeSignUpText }) => {
           boxerSite={BOXER_LINK_2}
         />
         , join our community now and
+        <br />
       </p>
 
       <DiscountTimer />
 
-      <p className="call-to-sign-up"><strong>{signUpText}</strong></p>
+      <p className="call-to-sign-up"><em><strong>{signUpText}</strong></em></p>
 
       <BigRedAnchorButton changeText={changeSignUpText}>
         <strong>SIGN UP!</strong>

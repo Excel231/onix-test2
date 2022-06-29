@@ -1,0 +1,7 @@
+@import "../../constants/constants";
+
+.cards-deck {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}

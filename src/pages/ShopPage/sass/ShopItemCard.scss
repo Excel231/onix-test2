@@ -1,0 +1,25 @@
+@import "../../../constants/constants";
+
+.card-wrapper {
+  border-radius: 30px;
+  border: $red-border;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  margin: 2%;
+  width: 25%;
+
+  @media (max-width: $max-width-change) {
+    width: 70%;
+  }
+}
+
+.dark-theme {
+  @include dark-theme();
+}
+
+.light-theme {
+  @include light-theme();
+}
