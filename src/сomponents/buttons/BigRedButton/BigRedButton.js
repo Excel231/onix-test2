@@ -1,7 +1,6 @@
 import React from 'react';
 import PropType from 'prop-types';
 import '../Buttons.scss';
-import './BigRedButton.scss';
 
 const BigRedButton = ({ children, onClick }) => {
   return (

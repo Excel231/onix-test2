@@ -16,7 +16,7 @@ export const CURRENT_TIME = new Date();
 export const DISCOUNT_END_TIME = new Date(
   CURRENT_TIME.getFullYear(),
   CURRENT_TIME.getMonth(),
-  CURRENT_TIME.getDate() + 2,
+  CURRENT_TIME.getDate() + 1,
   CURRENT_TIME.getHours(),
   CURRENT_TIME.getMinutes(),
   CURRENT_TIME.getSeconds()

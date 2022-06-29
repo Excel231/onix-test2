@@ -11,7 +11,7 @@ const ItemPurchase = ({
   const priceText = isOnDiscount
     ? (
       <h2>
-        <s className="crossed-text">{discountPrice}</s>
+        <s className="crossed-text">{price}</s>
         <br />
         <span className="discount-price">
           {`${discountPrice}$`}

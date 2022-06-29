@@ -1,7 +1,6 @@
 import React from 'react';
 import PropType from 'prop-types';
 import BoxerLink from '../../../сomponents/BoxerLink/BoxerLink';
-import DiscountTimer from '../../../сomponents/DiscountTimer/DiscountTimer';
 import BigRedAnchorButton from '../../../сomponents/buttons/BigRedAnchorButton/BigRedAnchorButton';
 import '../sass/HomepageMainSection.scss';
 import {
@@ -34,9 +33,6 @@ const HomepageMainSection = ({ signUpText, changeSignUpText }) => {
         , join our community now and
         <br />
       </p>
-
-      <DiscountTimer />
-
       <p className="call-to-sign-up"><em><strong>{signUpText}</strong></em></p>
 
       <BigRedAnchorButton changeText={changeSignUpText}>
