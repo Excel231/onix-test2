@@ -3,13 +3,30 @@ import PropType from 'prop-types';
 import BigRedButton from '../../../сomponents/buttons/BigRedButton/BigRedButton';
 import '../sass/ItemPurchase.scss';
 
-const ItemPurchase = ({ price, isOnDiscount, discountPrice }) => {
-  return (
-    <div className="price-section">
+const ItemPurchase = ({
+  price,
+  isOnDiscount,
+  discountPrice
+}) => {
+  const priceText = isOnDiscount
+    ? (
       <h2>
-        {isOnDiscount ? discountPrice : price}
+        <s className="crossed-text">{discountPrice}</s>
+        <br />
+        <span className="discount-price">
+          {`${discountPrice}$`}
+        </span>
+      </h2>
+    ) : (
+      <h2>
+        {price}
         $
       </h2>
+    );
+  console.log(priceText);
+  return (
+    <div className="price-section">
+      {priceText}
       {/* eslint-disable-next-line no-console */}
       <BigRedButton onClick={() => console.log('Item added to cart!')}>Add to cart!</BigRedButton>
     </div>
