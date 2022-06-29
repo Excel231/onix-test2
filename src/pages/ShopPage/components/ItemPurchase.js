@@ -23,7 +23,6 @@ const ItemPurchase = ({
         $
       </h2>
     );
-  console.log(priceText);
   return (
     <div className="price-section">
       {priceText}
