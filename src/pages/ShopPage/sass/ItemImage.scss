@@ -8,7 +8,6 @@
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  width: 80%;
   height: 40%;
 
   @media (max-width: $max-width-change) {
@@ -16,7 +15,7 @@
   }
 
   .item-photo {
-    width: 75%;
+    width: 150px;
 
     @media (max-width: $max-width-change) {
       width: 80%;

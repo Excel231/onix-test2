@@ -15,7 +15,10 @@ const ShopPage = () => {
   }, []);
 
   return (
-    <ShopPageView items={items} />
+    <ShopPageView
+      normalPriceItems={items.filter((item) => !item.isOnDiscount)}
+      discountItems={items.filter((item) => item.isOnDiscount)}
+    />
   );
 };
 

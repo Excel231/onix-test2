@@ -9,14 +9,14 @@
   font-family: 'Oswald', sans-serif;
   font-size: 20pt;
   margin: 20px 30px;
-  padding: 20px 60px;
+  padding: 2vh 8vh;
   text-decoration: none;
 
   &:hover {
     background: $primary-dark-red linear-gradient(180deg, $primary-dark-red 10%, $primary-red 100%);
   }
 
-  @media (max-width: 1200px) {
+  @media (max-width: $max-width-change) {
     font-size: 1rem;
     padding: 15px;
     margin: 10px;
