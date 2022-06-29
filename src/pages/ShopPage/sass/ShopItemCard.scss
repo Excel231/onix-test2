@@ -12,6 +12,10 @@
   width: 25%;
 
   @media (max-width: $max-width-change) {
+    width: 40%;
+  }
+  
+  @media (max-width: $max-width-change-2) {
     width: 70%;
   }
 }
