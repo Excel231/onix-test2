@@ -1,6 +1,6 @@
 import React from 'react';
 import ToggleSwitch from '../../сomponents/buttons/ToggleSwitch/ToggleSwitch';
-import { getThemeColorChangeContext, getThemeColorContext } from '../ThemeColorProvider/ThemeColorProvider';
+import { getThemeColorChangeContext, getThemeColorContext } from '../../context/ThemeColorProvider/ThemeColorProvider';
 
 const DarkModeToggle = () => {
   const changeTheme = getThemeColorChangeContext();

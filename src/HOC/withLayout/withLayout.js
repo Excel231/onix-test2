@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../../layout/Header/Header';
 import Footer from '../../layout/Footer/Footer';
 import './withLayout.scss';
-import { getThemeColorContext } from '../../layout/ThemeColorProvider/ThemeColorProvider';
+import { getThemeColorContext } from '../../context/ThemeColorProvider/ThemeColorProvider';
 
 const withLayout = (WrappedComponent) => {
   return () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import './Header.scss';
-import { getThemeColorContext } from '../ThemeColorProvider/ThemeColorProvider';
+import { getThemeColorContext } from '../../context/ThemeColorProvider/ThemeColorProvider';
 import HeaderView from './HeaderView';
 
 const Header = () => {

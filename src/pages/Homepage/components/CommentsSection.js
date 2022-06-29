@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import CommentsSectionView from './CommentsSectionView';
 import { COMMENTS_API_LINK } from '../../../constants/constants';
-import { getThemeColorContext } from '../../../layout/ThemeColorProvider/ThemeColorProvider';
+import { getThemeColorContext } from '../../../context/ThemeColorProvider/ThemeColorProvider';
 
 const CommentsSection = () => {
   const [comments, setComments] = useState([]);

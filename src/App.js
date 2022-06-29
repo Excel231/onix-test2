@@ -3,7 +3,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import { Routes } from 'react-router';
 import Homepage from './pages/Homepage/Homepage';
 import BiographyPage from './pages/BiographyPage/BiographyPage';
-import ThemeColorProvider from './layout/ThemeColorProvider/ThemeColorProvider';
+import ThemeColorProvider from './context/ThemeColorProvider/ThemeColorProvider';
 import ShopPage from './pages/ShopPage/ShopPage';
 import ErrorPage from './pages/Error/ErrorPage';
 

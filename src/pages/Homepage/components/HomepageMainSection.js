@@ -7,7 +7,7 @@ import '../sass/HomepageMainSection.scss';
 import {
   BOXER_NAME_1, BOXER_LINK_1, BOXER_NAME_2, BOXER_LINK_2 
 } from '../../../constants/constants';
-import { getThemeColorContext } from '../../../layout/ThemeColorProvider/ThemeColorProvider';
+import { getThemeColorContext } from '../../../context/ThemeColorProvider/ThemeColorProvider';
 
 const HomepageMainSection = ({ signUpText, changeSignUpText }) => {
   const darkThemeOn = getThemeColorContext() ?? true;
