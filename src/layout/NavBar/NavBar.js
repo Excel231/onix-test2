@@ -1,33 +1,17 @@
 import React from 'react';
-import { Link } from 'react-scroll';
 import './NavBar.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import DarkModeToggle from '../DarkModeToggle/DarkModeToggle';
+import { getShoppingCartContext } from '../../context/ShoppingCartProvider/ShoppingCartProvider';
 
 const NavBar = () => {
+  const shoppingCartItems = getShoppingCartContext() ?? [];
   return (
     <nav className="nav-bar">
-      <Link
-        activeClass="active-link"
-        className="nav-link"
-        to="homepage-main-section"
-        spy
-        smooth
-        offset={-150}
-        duration={400}
-      >
-        About
-      </Link>
-      <Link
-        activeClass="active-link"
-        className="nav-link"
-        to="comment-section"
-        spy
-        smooth
-        offset={-50}
-        duration={400}
-      >
-        Comments
-      </Link>
+      <button type="button" onClick={() => console.log(shoppingCartItems)}>
+        <FontAwesomeIcon icon={faShoppingCart} className="fa-2xl" />
+      </button>
       <DarkModeToggle />
     </nav>
   );

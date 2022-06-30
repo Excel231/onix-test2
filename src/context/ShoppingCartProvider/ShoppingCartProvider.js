@@ -18,7 +18,7 @@ const ShoppingCartProvider = ({ children }) => {
   const changeShoppingCart = useCallback((item, addToCart) => {
     if (!item) return;
     if (addToCart) {
-      setShoppingCart((prevState) => [item, [...prevState]]);
+      setShoppingCart((prevState) => [...prevState, item]);
     } else {
       const posOfItemToDelete = shoppingCart.indexOf(item);
       if (posOfItemToDelete === -1) return;
