@@ -10,7 +10,7 @@ const ShopPageView = ({
 }) => {
   return (
     <>
-      <div>
+      <div className="discount-section">
         <h1>Offer Of The Day!</h1>
         <DiscountTimer />
         <div className="cards-deck">

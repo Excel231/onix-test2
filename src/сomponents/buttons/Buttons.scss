@@ -6,10 +6,11 @@
   border: none;
   color: inherit;
   display: inline-block;
+  cursor: pointer;
   font-family: 'Oswald', sans-serif;
-  font-size: 20pt;
+  font-size: 1.3rem;
   margin: 20px 30px;
-  padding: 2vh 8vh;
+  padding: 2vh 4vh;
   text-decoration: none;
 
   &:hover {

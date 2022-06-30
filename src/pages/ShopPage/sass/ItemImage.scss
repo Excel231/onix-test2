@@ -8,17 +8,17 @@
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  height: 40%;
+  height: 350px;
 
   @media (max-width: $max-width-change) {
     height: fit-content;
   }
 
   .item-photo {
-    width: 150px;
+    height: 300px;
 
     @media (max-width: $max-width-change) {
-      width: 80%;
+      height: 150px;
     }
   }
 }
