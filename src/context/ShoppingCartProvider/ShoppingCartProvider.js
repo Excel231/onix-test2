@@ -15,16 +15,10 @@ export const getShoppingCartChangeContext = () => {
 const ShoppingCartProvider = ({ children }) => {
   const [shoppingCart, setShoppingCart] = useState([]);
 
-  const changeShoppingCart = useCallback((item, addToCart) => {
-    if (!item) return;
-    if (addToCart) {
-      setShoppingCart((prevState) => [...prevState, item]);
-    } else {
-      const posOfItemToDelete = shoppingCart.indexOf(item);
-      if (posOfItemToDelete === -1) return;
-      setShoppingCart((prevState) => prevState.splice(posOfItemToDelete, 1));
-    }
-  }, []);
+  const changeShoppingCart = useCallback((item) => {
+    if (!item || shoppingCart.indexOf(item) !== -1) return;
+    setShoppingCart((prevState) => [...prevState, item]);
+  }, [shoppingCart]);
 
   return (
     <ShoppingCartChangeContext.Provider value={changeShoppingCart}>

@@ -4,17 +4,11 @@
   background-color: $primary-red;
   border-radius: 10px;
   border: 0;
+  cursor: pointer;
   padding: 5px 10px;
   margin: 20px;
 
   &:hover {
     background-color: $primary-dark-red;
-  }
-
-  div {
-    width: 6vh;
-    height: 5px;
-    background-color: black;
-    margin: 6px 0;
   }
 }

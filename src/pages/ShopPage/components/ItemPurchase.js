@@ -25,7 +25,7 @@ const ItemPurchase = ({
   return (
     <div className="price-section">
       {priceText}
-      <BigRedButton onClick={() => changeShoppingCart(item, true)}>Add to cart!</BigRedButton>
+      <BigRedButton onClick={() => changeShoppingCart(item)}>Add to cart!</BigRedButton>
     </div>
   );
 };

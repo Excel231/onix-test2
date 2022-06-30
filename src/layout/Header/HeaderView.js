@@ -16,7 +16,7 @@ const HeaderView = ({ darkThemeOn }) => {
           <img className="logo-img" src={icon} alt="Boxing glove" />
         </Link>
       </div>
-      <NavBar />
+      <NavBar darkThemeOn={darkThemeOn} />
     </header>
   );
 };

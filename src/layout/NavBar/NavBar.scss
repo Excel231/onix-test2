@@ -1,24 +1,59 @@
 @import "../../constants/constants";
 
 .nav-bar {
+  display: inline-block;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: auto 2%;
-  z-index: 50;
+  height: 100%;
+  z-index: 5;
 
-  .nav-link {
-    font-size: 2rem;
-    margin: 0 2vh;
+  .cart-btn {
+    background: none;
+    border: none;
+    color: inherit;
     cursor: pointer;
+    font: inherit;
+    margin-right: 25px;
+    padding: 0;
+    height: 100%;
 
     &:hover {
       color: $primary-red;
     }
+  }
 
-    @media (max-width: $max-width-change) {
-      font-size: 1.2rem;
+  .cart-list {
+    color: inherit;
+    border-top: $red-border;
+    border-left: $red-border;
+    border-bottom: $red-border;
+    border-bottom-left-radius: 40px;
+    position: absolute;
+    width: 25%;
+    height: fit-content;
+    margin: 0;
+    right: 0;
+    z-index: 5;
+
+    .cart-list-item {
+      border-top: 2px solid $primary-red;
+      border-bottom: 2px solid $primary-red;
+      font-size: 1.5rem;
+      margin: 10px;
     }
+  }
+
+  .cart-list-hidden {
+    display: none;
   }
 }
 
-.active-link {
-  color: $primary-red;
+.dark-theme {
+  @include dark-theme();
+}
+
+.light-theme {
+  @include dark-theme();
 }

@@ -1,20 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './NavBar.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-import DarkModeToggle from '../DarkModeToggle/DarkModeToggle';
+import PropType from 'prop-types';
 import { getShoppingCartContext } from '../../context/ShoppingCartProvider/ShoppingCartProvider';
+import NavBarView from './NavBarView';
 
-const NavBar = () => {
+const NavBar = ({ darkThemeOn }) => {
+  const [cartListDisplayed, setCartListDisplayed] = useState(false);
+
   const shoppingCartItems = getShoppingCartContext() ?? [];
+
+  const toggleCartList = () => {
+    setCartListDisplayed((prevState) => !prevState);
+  };
+
+  const hideCartList = () => {
+    setCartListDisplayed(false);
+  };
+
   return (
-    <nav className="nav-bar">
-      <button type="button" onClick={() => console.log(shoppingCartItems)}>
-        <FontAwesomeIcon icon={faShoppingCart} className="fa-2xl" />
-      </button>
-      <DarkModeToggle />
-    </nav>
+    <NavBarView
+      darkThemeOn={darkThemeOn}
+      cartListDisplayed={cartListDisplayed}
+      shoppingCartItems={shoppingCartItems}
+      toggleCartList={toggleCartList}
+      hideCartList={hideCartList}
+    />
   );
+};
+
+NavBar.propTypes = {
+  darkThemeOn: PropType.bool.isRequired
 };
 
 export default NavBar;
