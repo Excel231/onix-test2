@@ -16,6 +16,7 @@ const ShoppingCartProvider = ({ children }) => {
   const [shoppingCart, setShoppingCart] = useState([]);
 
   const changeShoppingCart = useCallback((item, addToCart) => {
+    if (!item) return;
     if (addToCart) {
       setShoppingCart((prevState) => [item, [...prevState]]);
     } else {
