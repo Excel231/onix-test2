@@ -1,11 +1,5 @@
 @import "../../constants/constants";
 
-.cards-deck {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-}
-
 .discount-section {
   border-bottom: $red-border;
 }
