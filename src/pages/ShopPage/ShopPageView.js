@@ -1,8 +1,8 @@
 import React from 'react';
 import PropType from 'prop-types';
-import ShopItemCard from './components/ShopItemCard';
 import './ShopPage.scss';
 import DiscountTimer from '../../сomponents/DiscountTimer/DiscountTimer';
+import ItemList from './components/ItemList';
 
 const ShopPageView = ({
   normalPriceItems,
@@ -13,21 +13,9 @@ const ShopPageView = ({
       <div className="discount-section">
         <h1>Offer Of The Day!</h1>
         <DiscountTimer />
-        <div className="cards-deck">
-          {discountItems.map((item) => {
-            return (
-              <ShopItemCard key={item.id} item={item} />
-            );
-          })}
-        </div>
+        <ItemList items={discountItems} />
       </div>
-      <div className="cards-deck">
-        {normalPriceItems.map((item) => {
-          return (
-            <ShopItemCard key={item.id} item={item} />
-          );
-        })}
-      </div>
+      <ItemList items={normalPriceItems} />
     </>
   );
 };
