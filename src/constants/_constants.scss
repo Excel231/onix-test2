@@ -16,7 +16,7 @@ $primary-red: #DA0037;
 $primary-dark-red: #880022;
 $primary-white: #EDEDED;
 $primary-dark-gray: #212121;
-$primary-light-gray: #343434;
+$primary-light-gray: #484848;
 
 /* Primary gradient colors */
 
@@ -53,7 +53,7 @@ $dark-gray-border: solid 10px $primary-dark-gray;
 
 @mixin light-theme-image() {
   @include boxer-background-image();
-  background-image: linear-gradient(rgba(224, 224, 224, 0.15), rgba(218, 218, 218, 0.1)),
+  background-image: linear-gradient(rgba(246, 246, 246, 0.15), rgba(234, 234, 234, 0.1)),
   url(../images/background/boxer-background.jpg);
   background-position: center;
 }
