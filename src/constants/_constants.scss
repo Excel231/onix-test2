@@ -48,11 +48,11 @@ $dark-gray-border: solid 10px $primary-dark-gray;
 
 @mixin light-theme() {
   background: $primary-light-gray;
-  color: $primary-dark-gray;
+  color: black;
 }
 
 @mixin light-theme-image() {
-  @include boxer-background-image;
+  @include boxer-background-image();
   background-image: linear-gradient(rgba(224, 224, 224, 0.15), rgba(218, 218, 218, 0.1)),
   url(../images/background/boxer-background.jpg);
   background-position: center;
