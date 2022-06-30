@@ -3,7 +3,7 @@ import PropType from 'prop-types';
 import './FooterLink.scss';
 
 const FooterLink = ({
-  onMouseEnter, linkTitle, footerLink, faClasses
+  onMouseEnter, linkTitle, footerLink, faIcon
 }) => {
   return (
     <a
@@ -15,7 +15,7 @@ const FooterLink = ({
       title={linkTitle}
       href={footerLink}
     >
-      <i className={faClasses} />
+      {faIcon}
     </a>
   );
 };
@@ -24,7 +24,7 @@ FooterLink.propTypes = {
   onMouseEnter: PropType.func.isRequired,
   linkTitle: PropType.string.isRequired,
   footerLink: PropType.string.isRequired,
-  faClasses: PropType.string.isRequired
+  faIcon: PropType.element.isRequired
 };
 
 export default FooterLink;

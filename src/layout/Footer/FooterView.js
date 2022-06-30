@@ -1,5 +1,8 @@
 import React from 'react';
 import PropType from 'prop-types';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faObjectGroup, faSchool } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import FooterLink from '../FooterLink/FooterLink';
 import './Footer.scss';
 
@@ -24,19 +27,19 @@ const FooterView = ({
             onMouseEnter={changeSignUpText}
             linkTitle="GitHub"
             footerLink={gitHubLink}
-            faClasses="fa-brands fa-github fa-2xl"
+            faIcon={<FontAwesomeIcon icon={faGithub} className="fa-2xl" />}
           />
           <FooterLink
             onMouseEnter={changeSignUpText}
             linkTitle="Design"
             footerLink={designLink}
-            faClasses="fa-solid fa-object-group fa-2xl"
+            faIcon={<FontAwesomeIcon icon={faObjectGroup} className="fa-2xl" />}
           />
           <FooterLink
             onMouseEnter={changeSignUpText}
             linkTitle="SH++"
             footerLink={shLink}
-            faClasses="fa-solid fa-school fa-2xl"
+            faIcon={<FontAwesomeIcon icon={faSchool} className="fa-2xl" />}
           />
         </div>
       </div>
