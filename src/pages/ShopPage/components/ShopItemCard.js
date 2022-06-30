@@ -6,15 +6,12 @@ import ItemDescription from './ItemDescription';
 import '../sass/ShopItemCard.scss';
 import ItemPurchase from './ItemPurchase';
 
-const ShopItemCard = ({ item }) => {
+const ShopItemCard = ({ item, changeShoppingCart }) => {
   const {
     firmName,
     name,
     description,
-    price,
     weight,
-    isOnDiscount,
-    discountPrice,
     image
   } = item;
 
@@ -26,7 +23,10 @@ const ShopItemCard = ({ item }) => {
     <div data-aos="zoom-in" className="card-wrapper">
       <ItemImage image={image} name={name} />
       <ItemDescription firmName={firmName} name={name} description={description} weight={weight} />
-      <ItemPurchase price={price} isOnDiscount={isOnDiscount} discountPrice={discountPrice} />
+      <ItemPurchase
+        item={item}
+        changeShoppingCart={changeShoppingCart}
+      />
     </div>
   );
 };
@@ -42,7 +42,8 @@ ShopItemCard.propTypes = {
     isOnDiscount: PropType.bool.isRequired,
     discountPrice: PropType.node.isRequired,
     image: PropType.node.isRequired
-  }).isRequired
+  }).isRequired,
+  changeShoppingCart: PropType.func.isRequired
 };
 
 export default ShopItemCard;

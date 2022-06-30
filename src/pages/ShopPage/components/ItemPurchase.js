@@ -4,38 +4,45 @@ import BigRedButton from '../../../сomponents/buttons/BigRedButton/BigRedButton
 import '../sass/ItemPurchase.scss';
 
 const ItemPurchase = ({
-  price,
-  isOnDiscount,
-  discountPrice
+  item,
+  changeShoppingCart
 }) => {
-  const priceText = isOnDiscount
+  const priceText = item.isOnDiscount
     ? (
       <h2>
-        <s className="crossed-text">{price}</s>
+        <s className="crossed-text">{item.price}</s>
         <br />
         <span className="discount-price">
-          {`${discountPrice}$`}
+          {`${item.discountPrice}$`}
         </span>
       </h2>
     ) : (
       <h2>
-        {price}
+        {item.price}
         $
       </h2>
     );
   return (
     <div className="price-section">
       {priceText}
-      {/* eslint-disable-next-line no-console */}
-      <BigRedButton onClick={() => console.log('Item added to cart!')}>Add to cart!</BigRedButton>
+      <BigRedButton onClick={() => changeShoppingCart(item, true)}>Add to cart!</BigRedButton>
     </div>
   );
 };
 
 ItemPurchase.propTypes = {
-  price: PropType.node.isRequired,
-  isOnDiscount: PropType.bool.isRequired,
-  discountPrice: PropType.node.isRequired
+  item: PropType.shape({
+    id: PropType.node.isRequired,
+    firmName: PropType.node.isRequired,
+    name: PropType.node.isRequired,
+    description: PropType.node.isRequired,
+    price: PropType.node.isRequired,
+    weight: PropType.node.isRequired,
+    isOnDiscount: PropType.bool.isRequired,
+    discountPrice: PropType.node.isRequired,
+    image: PropType.node.isRequired
+  }).isRequired,
+  changeShoppingCart: PropType.func.isRequired
 };
 
 export default ItemPurchase;

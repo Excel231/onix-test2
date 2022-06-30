@@ -6,19 +6,22 @@ import BiographyPage from './pages/BiographyPage/BiographyPage';
 import ThemeColorProvider from './context/ThemeColorProvider/ThemeColorProvider';
 import ShopPage from './pages/ShopPage/ShopPage';
 import ErrorPage from './pages/Error/ErrorPage';
+import ShoppingCartProvider from './context/ShoppingCartProvider/ShoppingCartProvider';
 
 const App = () => {
   return (
     <BrowserRouter>
-      <ThemeColorProvider>
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/onix-test2" element={<Homepage />} />
-          <Route path="/biography" element={<BiographyPage />} />
-          <Route path="/shop" element={<ShopPage />} />
-          <Route path="/*" element={<ErrorPage />} />
-        </Routes>
-      </ThemeColorProvider>
+      <ShoppingCartProvider>
+        <ThemeColorProvider>
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/onix-test2" element={<Homepage />} />
+            <Route path="/biography" element={<BiographyPage />} />
+            <Route path="/shop" element={<ShopPage />} />
+            <Route path="/*" element={<ErrorPage />} />
+          </Routes>
+        </ThemeColorProvider>
+      </ShoppingCartProvider>
     </BrowserRouter>
   );
 };
