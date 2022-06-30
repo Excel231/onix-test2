@@ -10,7 +10,7 @@ const NavBarView = ({
   darkThemeOn, cartListDisplayed, shoppingCartItems, toggleCartList, hideCartList
 }) => {
   return (
-    <nav className="nav-bar">
+    <nav className="nav-bar" onMouseLeave={() => hideCartList()}>
       <button className="cart-btn" type="button" onClick={() => toggleCartList()}>
         <FontAwesomeIcon icon={faShoppingCart} className="fa-2xl" />
       </button>
@@ -20,7 +20,6 @@ const NavBarView = ({
         ${darkThemeOn ? 'dark-theme' : 'light-theme'}
         ${cartListDisplayed ? 'cart-list' : 'cart-list-hidden'}`
       }
-        onMouseLeave={() => hideCartList()}
       >
         {shoppingCartItems.map((item) => {
           return (
