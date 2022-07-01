@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import './NavBar.scss';
 import PropType from 'prop-types';
-import { getShoppingCartContext } from '../../context/ShoppingCartProvider/ShoppingCartProvider';
+import { useShoppingCartContext } from '../../context/ShoppingCartProvider';
 import NavBarView from './NavBarView';
 
 const NavBar = ({ darkThemeOn }) => {
   const [cartListDisplayed, setCartListDisplayed] = useState(false);
 
-  const shoppingCartItems = getShoppingCartContext() ?? [];
+  const shoppingCartItems = useShoppingCartContext() ?? [];
 
   const toggleCartList = () => {
     setCartListDisplayed((prevState) => !prevState);

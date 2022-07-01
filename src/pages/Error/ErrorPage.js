@@ -1,5 +1,5 @@
 import React from 'react';
-import withLayout from '../../HOC/withLayout/withLayout';
+import withLayout from '../../HOC/withLayout';
 import './ErrorPage.scss';
 
 const ErrorPage = () => {

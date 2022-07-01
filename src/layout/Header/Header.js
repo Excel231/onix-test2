@@ -1,10 +1,10 @@
 import React from 'react';
 import './Header.scss';
-import { getThemeColorContext } from '../../context/ThemeColorProvider/ThemeColorProvider';
+import { useThemeColorContext } from '../../context/ThemeColorProvider';
 import HeaderView from './HeaderView';
 
 const Header = () => {
-  const darkThemeOn = getThemeColorContext() ?? true;
+  const darkThemeOn = useThemeColorContext() ?? true;
 
   return (
     <HeaderView darkThemeOn={darkThemeOn} />

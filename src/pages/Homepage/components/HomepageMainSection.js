@@ -6,10 +6,10 @@ import '../sass/HomepageMainSection.scss';
 import {
   BOXER_NAME_1, BOXER_LINK_1, BOXER_NAME_2, BOXER_LINK_2 
 } from '../../../constants/constants';
-import { getThemeColorContext } from '../../../context/ThemeColorProvider/ThemeColorProvider';
+import { useThemeColorContext } from '../../../context/ThemeColorProvider';
 
 const HomepageMainSection = ({ signUpText, changeSignUpText }) => {
-  const darkThemeOn = getThemeColorContext() ?? true;
+  const darkThemeOn = useThemeColorContext() ?? true;
 
   return (
     <div

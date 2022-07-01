@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import withLayout from '../../HOC/withLayout/withLayout';
+import withLayout from '../../HOC/withLayout';
 import ShopPageView from './ShopPageView';
 import { ITEMS_API_LINK } from '../../constants/constants';
 

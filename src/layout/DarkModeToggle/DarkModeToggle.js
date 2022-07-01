@@ -1,10 +1,10 @@
 import React from 'react';
 import ToggleSwitch from '../../сomponents/buttons/ToggleSwitch/ToggleSwitch';
-import { getThemeColorChangeContext, getThemeColorContext } from '../../context/ThemeColorProvider/ThemeColorProvider';
+import { useThemeColorChangeContext, useThemeColorContext } from '../../context/ThemeColorProvider';
 
 const DarkModeToggle = () => {
-  const changeTheme = getThemeColorChangeContext();
-  const toggleStyle = getThemeColorContext() ?? true ? 'toggle-off' : 'toggle-on';
+  const changeTheme = useThemeColorChangeContext();
+  const toggleStyle = useThemeColorContext() ?? true ? 'toggle-off' : 'toggle-on';
 
   return (
     <ToggleSwitch handleClick={changeTheme} toggleStyle={toggleStyle} />

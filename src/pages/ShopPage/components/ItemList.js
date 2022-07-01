@@ -2,10 +2,10 @@ import React from 'react';
 import PropType from 'prop-types';
 import ShopItemCard from './ShopItemCard';
 import '../sass/ItemList.scss';
-import { getShoppingCartChangeContext } from '../../../context/ShoppingCartProvider/ShoppingCartProvider';
+import { useShoppingCartChangeContext } from '../../../context/ShoppingCartProvider';
 
 const ItemList = ({ items }) => {
-  const changeShoppingCart = getShoppingCartChangeContext();
+  const changeShoppingCart = useShoppingCartChangeContext();
   return (
     <div className="cards-deck">
       {items.map((item) => {
