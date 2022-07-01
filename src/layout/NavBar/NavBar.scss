@@ -1,10 +1,6 @@
 @import "../../constants/constants";
 
 .nav-bar {
-  display: inline-block;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin: auto 2%;
   height: 100%;
   z-index: 5;
@@ -38,7 +34,6 @@
     z-index: 5;
 
     .cart-list-item {
-      border-top: 2px solid $primary-red;
       border-bottom: 2px solid $primary-red;
       font-size: 1.5rem;
       margin: 10px;

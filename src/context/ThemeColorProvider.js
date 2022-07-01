@@ -5,13 +5,9 @@ import PropType from 'prop-types';
 
 const ThemeColorContext = React.createContext({});
 
-export const useThemeColorContext = () => {
-  return useContext(ThemeColorContext).darkThemeOn;
-};
+export const useThemeColorContext = () => useContext(ThemeColorContext).darkThemeOn;
 
-export const useThemeColorChangeContext = () => {
-  return useContext(ThemeColorContext).changeTheme;
-};
+export const useThemeColorChangeContext = () => useContext(ThemeColorContext).changeTheme;
 
 const ThemeColorProvider = ({ children }) => {
   const [darkThemeOn, setDarkThemeOn] = useState(true);
