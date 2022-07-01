@@ -6,7 +6,7 @@
   border-bottom: $red-border;
   border-bottom-right-radius: 40px;
   position: absolute;
-  width: 25%;
+  width: fit-content;
   height: fit-content;
   margin: 0;
   left: 0;
@@ -14,11 +14,12 @@
 
   .page-link {
     text-decoration: none;
+    padding: 0 20vh;
 
     li {
       background-color: $primary-red;
-      color: $primary-white;
       border-radius: 20px;
+      color: $primary-white;
       margin-left: auto;
       margin-right: auto;
       width: 75%;
