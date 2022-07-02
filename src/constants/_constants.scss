@@ -1,9 +1,9 @@
 /* Default Fonts */
 
-@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Permanent+Marker&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald&family=Permanent+Marker&display=swap");
 
-$font-sans-serif: 'Oswald', 'sans-serif';
-$font-handwriting: 'Permanent Marker', 'cursive';
+$font-sans-serif: "Oswald", "sans-serif";
+$font-handwriting: "Permanent Marker", "cursive";
 
 /* Number constants */
 
@@ -12,9 +12,9 @@ $max-width-change-2: 768px;
 
 /* Primary colors */
 
-$primary-red: #DA0037;
-$primary-dark-red: #880022;
-$primary-white: #EDEDED;
+$primary-red: #da0037;
+$primary-dark-red: #802;
+$primary-white: #ededed;
 $primary-dark-gray: #212121;
 $primary-light-gray: #484848;
 
@@ -25,7 +25,7 @@ $primary-gradient-dark-reversed: linear-gradient(to left, #212121, #2c2c2c, #373
 $primary-gradient-light-gray: linear-gradient(to left, #818181 30%, #6b6b6b 100%);
 $primary-gradient-background-gray: linear-gradient(180deg, #3a3a3a 30%, #484848 100%);
 
-/* Borders*/
+/* Borders */
 
 $red-border: solid 10px $primary-red;
 $white-border: solid 10px $primary-white;
@@ -52,9 +52,11 @@ $dark-gray-border: solid 10px $primary-dark-gray;
 }
 
 @mixin light-theme-image() {
-  @include boxer-background-image();
-  background-image: linear-gradient(rgba(246, 246, 246, 0.15), rgba(234, 234, 234, 0.1)),
-  url(../images/background/boxer-background.jpg);
+  @include boxer-background-image;
+
+  background-image:
+    linear-gradient(rgba(245 245 245 15%), rgba(235 235 235 10%)),
+    url("../images/background/boxer-background.jpg");
   background-position: center;
 }
 
@@ -71,8 +73,9 @@ $dark-gray-border: solid 10px $primary-dark-gray;
 }
 
 @mixin dark-theme-image() {
-  background-image: url(../images/background/boxer-background.jpg);
+  background-image: url("../images/background/boxer-background.jpg");
   background-position: center;
+
   @include boxer-background-image;
 }
 

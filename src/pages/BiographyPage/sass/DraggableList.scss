@@ -1,26 +1,27 @@
 @import "../../../constants/constants";
 
 .biography-ul {
-    @include default-ul();
-    background: $primary-gradient-dark;
+  @include default-ul;
+
+  background: $primary-gradient-dark;
 }
 
 .selected-biography-ul {
-    @include default-ul();
-    @include selected-ul($primary-dark-red);
+  @include default-ul;
+  @include selected-ul($primary-dark-red);
 }
 
 .selected-biography-ul-white {
-    @include default-ul();
-    @include selected-ul($primary-white);
+  @include default-ul;
+  @include selected-ul($primary-white);
 }
 
 .selected-biography-ul-green {
-    @include default-ul();
-    @include selected-ul(#008000);
+  @include default-ul;
+  @include selected-ul(#008000);
 }
 
 .selected-biography-ul-blue {
-    @include default-ul();
-    @include selected-ul(#000045);
+  @include default-ul;
+  @include selected-ul(#000045);
 }

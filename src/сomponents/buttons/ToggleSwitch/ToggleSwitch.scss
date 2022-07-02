@@ -10,7 +10,7 @@
   transition: background-color ease 0.5s;
   margin: 0;
 
-  &:before {
+  &::before {
     background: $primary-red;
     content: "";
     display: inline-flex;
@@ -27,15 +27,17 @@
 }
 
 .toggle-off {
-  @include toggle();
+  @include toggle;
+
   background-color: $primary-white;
 }
 
 .toggle-on {
-  @include toggle();
+  @include toggle;
+
   background-color: $primary-dark-gray;
 
-  &:before {
+  &::before {
     left: 32px;
   }
 }

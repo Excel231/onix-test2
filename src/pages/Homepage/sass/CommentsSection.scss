@@ -18,9 +18,9 @@
 }
 
 .dark-theme-comments {
-  @include dark-theme();
+  @include dark-theme;
 }
 
 .light-theme-comments {
-  @include light-theme();
+  @include light-theme;
 }

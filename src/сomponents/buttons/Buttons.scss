@@ -7,7 +7,7 @@
   color: inherit;
   display: inline-block;
   cursor: pointer;
-  font-family: 'Oswald', sans-serif;
+  font-family: $font-sans-serif;
   font-size: 1.3rem;
   margin: 20px 30px;
   padding: 2vh 4vh;
@@ -25,5 +25,5 @@
 }
 
 .big-red-btn {
-  @include big-red-button();
+  @include big-red-button;
 }

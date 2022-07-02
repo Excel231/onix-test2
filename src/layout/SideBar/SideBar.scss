@@ -36,18 +36,19 @@
 }
 
 .side-bar-visible {
-  @include side-bar();
+  @include side-bar;
 }
 
 .side-bar-hidden {
-  @include side-bar();
   visibility: hidden;
+
+  @include side-bar;
 }
 
 .dark-theme {
-  @include dark-theme();
+  @include dark-theme;
 }
 
 .light-theme {
-  @include dark-theme();
+  @include dark-theme;
 }

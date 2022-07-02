@@ -9,7 +9,7 @@
   }
 
   form {
-    @include default-ul();
+    @include default-ul;
 
     ul {
       display: flex;
@@ -31,7 +31,8 @@
         }
 
         input {
-          @include text-input();
+          @include text-input;
+
           width: 80%;
         }
       }

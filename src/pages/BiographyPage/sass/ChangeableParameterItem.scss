@@ -1,13 +1,13 @@
 @import "../../../constants/constants";
 
 .biography-li {
-    color: $primary-red;
-    display: inline-block;
-    font-size: 2rem;
-    text-align: center;
-    vertical-align: middle;
+  color: $primary-red;
+  display: inline-block;
+  font-size: 2rem;
+  text-align: center;
+  vertical-align: middle;
 
-    .biography-text-input {
-       @include text-input();
-    }
+  .biography-text-input {
+    @include text-input;
+  }
 }
