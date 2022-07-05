@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import i18next from 'i18next';
+import axios from 'axios';
 import CommentsSectionView from './CommentsSectionView';
 import { COMMENTS_API_LINK_ENG, COMMENTS_API_LINK_RUS } from '../../../constants/constants';
 import { useThemeColorContext } from '../../../context/ThemeColorProvider';
@@ -24,9 +25,12 @@ const CommentsSection = () => {
   };
 
   const getCommentSection = () => {
-    fetch(getCommentSectionAPI(localStorage.getItem('lng') ?? i18next.language))
-      .then((res) => res.json())
-      .then((data) => setComments(data));
+    const api = axios.create({
+      baseURL: getCommentSectionAPI(localStorage.getItem('lng') ?? i18next.language)
+    });
+    api.get('/').then((res) => {
+      setComments(res.data);
+    });
   };
 
   useEffect(() => {

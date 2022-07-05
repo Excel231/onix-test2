@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../../styles.scss';
+import axios from 'axios';
 import sortPersons from '../../helper/sortPersons';
 import BiographyPageView from './BiographyPageView';
 import withLayout from '../../HOC/withLayout';
@@ -48,12 +49,13 @@ const BiographyPage = () => {
   };
 
   useEffect(() => {
-    fetch(BOXER_API_LINK)
-      .then((res) => res.json())
-      .then((data) => {
-        setAllPersons(data);
-        setDefaultPersonsOnScreen(data);
-      });
+    const api = axios.create({
+      baseURL: BOXER_API_LINK
+    });
+    api.get('/').then((res) => {
+      setAllPersons(res.data);
+      setDefaultPersonsOnScreen(res.data);
+    });
   }, []);
 
   return (
