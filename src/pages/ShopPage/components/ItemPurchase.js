@@ -1,5 +1,6 @@
 import React from 'react';
 import PropType from 'prop-types';
+import { useTranslation } from 'react-i18next';
 import BigRedButton from '../../../сomponents/buttons/BigRedButton/BigRedButton';
 import '../sass/ItemPurchase.scss';
 
@@ -18,14 +19,14 @@ const ItemPurchase = ({
       </h2>
     ) : (
       <h2>
-        {item.price}
-        $
+        {`${item.price}$`}
       </h2>
     );
+  const { t } = useTranslation();
   return (
     <div className="price-section">
       {priceText}
-      <BigRedButton onClick={() => changeShoppingCart(item)}>Add to cart!</BigRedButton>
+      <BigRedButton onClick={() => changeShoppingCart(item)}>{t('addToCartButton')}</BigRedButton>
     </div>
   );
 };

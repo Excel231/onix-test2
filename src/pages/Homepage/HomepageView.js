@@ -4,20 +4,23 @@ import CommentsSection from './components/CommentsSection';
 import HomepageMainSection from './components/HomepageMainSection';
 
 const HomepageView = ({
-  signUpText,
-  changeSignUpText
+  signUpButtonWasPressed,
+  changeSignUpButtonWasPressed
 }) => {
   return (
     <div>
-      <HomepageMainSection signUpText={signUpText} changeSignUpText={changeSignUpText} />
+      <HomepageMainSection
+        signUpButtonWasPressed={signUpButtonWasPressed}
+        changeSignUpButtonWasPressed={changeSignUpButtonWasPressed}
+      />
       <CommentsSection />
     </div>
   );
 };
 
 HomepageView.propTypes = {
-  signUpText: PropType.string.isRequired,
-  changeSignUpText: PropType.func.isRequired,
+  signUpButtonWasPressed: PropType.bool.isRequired,
+  changeSignUpButtonWasPressed: PropType.func.isRequired,
 };
 
 export default HomepageView;

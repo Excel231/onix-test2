@@ -1,5 +1,6 @@
 import React from 'react';
 import PropType from 'prop-types';
+import { useTranslation } from 'react-i18next';
 import BigRedSubmitButton from '../../../сomponents/buttons/BigRedSubmitButton/BigRedSubmitButton';
 import '../sass/CustomPersonCreator.scss';
 import BiographyImage from './BiographyImage';
@@ -13,24 +14,25 @@ const CustomPersonCreatorView = ({
   setBirthYear,
   setBelt
 }) => {
+  const { t } = useTranslation();
   return (
     <div className="custom-person-section">
       <h2>
-        <em>Add someone else to the list!</em>
+        <em>{t('callToAddCustomPerson')}</em>
       </h2>
       <form>
         <ul>
           <li>
             <BiographyImage fullName="Default Image" photo="defaultImage" />
           </li>
-          <CustomPersonParameter setParameter={setFullName}>Full Name</CustomPersonParameter>
-          <CustomPersonParameter setParameter={setBirthYear}>Birth Year</CustomPersonParameter>
-          <CustomPersonParameter setParameter={setWeight}>Weight</CustomPersonParameter>
-          <CustomPersonParameter setParameter={setBelt}>Belt</CustomPersonParameter>
+          <CustomPersonParameter setParameter={setFullName}>{t('fullName')}</CustomPersonParameter>
+          <CustomPersonParameter setParameter={setBirthYear}>{t('birthYear')}</CustomPersonParameter>
+          <CustomPersonParameter setParameter={setWeight}>{t('weight')}</CustomPersonParameter>
+          <CustomPersonParameter setParameter={setBelt}>{t('belt')}</CustomPersonParameter>
         </ul>
       </form>
       <BigRedSubmitButton onClick={() => addCustomPerson(customPerson)}>
-        Add custom person
+        {t('addCustomPersonButton')}
       </BigRedSubmitButton>
     </div>
   );

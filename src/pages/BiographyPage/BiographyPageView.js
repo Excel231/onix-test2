@@ -1,5 +1,6 @@
 import React from 'react';
 import PropType from 'prop-types';
+import { useTranslation } from 'react-i18next';
 import TitleListOfParameters from './components/TitleParameterList';
 import DraggableList from './components/DraggableList';
 import BigRedButton from '../../сomponents/buttons/BigRedButton/BigRedButton';
@@ -16,6 +17,7 @@ const BiographyPageView = ({
   onSaveChanges,
   changePersonsOnScreen
 }) => {
+  const { t } = useTranslation();
   return (
     <div className="biography-section">
       <TitleListOfParameters sortOnClick={sortOnClick} />
@@ -26,8 +28,8 @@ const BiographyPageView = ({
         changePersonsOnScreen={changePersonsOnScreen}
       />
       <div>
-        <BigRedButton onClick={addPerson}>Add new person</BigRedButton>
-        <BigRedButton onClick={removePerson}>Remove last person</BigRedButton>
+        <BigRedButton onClick={addPerson}>{t('addPersonButton')}</BigRedButton>
+        <BigRedButton onClick={removePerson}>{t('removePersonButton')}</BigRedButton>
       </div>
       <CustomPersonCreator addCustomPerson={addCustomPerson} emptyIdValue={emptyIdValue} />
     </div>

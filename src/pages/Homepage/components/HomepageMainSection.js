@@ -1,50 +1,59 @@
 import React from 'react';
 import PropType from 'prop-types';
+import { useTranslation } from 'react-i18next';
 import BoxerLink from '../../../сomponents/BoxerLink/BoxerLink';
 import BigRedAnchorButton from '../../../сomponents/buttons/BigRedAnchorButton/BigRedAnchorButton';
 import '../sass/HomepageMainSection.scss';
-import {
-  BOXER_NAME_1, BOXER_LINK_1, BOXER_NAME_2, BOXER_LINK_2 
-} from '../../../constants/constants';
+import { BOXER_LINK_1, BOXER_LINK_2 } from '../../../constants/constants';
 import { useThemeColorContext } from '../../../context/ThemeColorProvider';
 
-const HomepageMainSection = ({ signUpText, changeSignUpText }) => {
+const HomepageMainSection = ({
+  signUpButtonWasPressed,
+  changeSignUpButtonWasPressed
+}) => {
   const darkThemeOn = useThemeColorContext() ?? true;
+
+  const { t } = useTranslation();
 
   return (
     <div
       id="homepage-main-section"
       className={darkThemeOn ? 'homepage-dark-theme' : 'homepage-light-theme'}
     >
-      <h2 className="homepage-heading">Want to become stronger? Looking for worthy opponents? Our gym is for YOU!</h2>
-      <p className="main-text">Box is one of the most popular sports in the World!</p>
+      <h2 className="homepage-heading">{t('mainHeading')}</h2>
+      <p className="main-text">{t('boxInfo')}</p>
       <p className="main-text">
-        If you want to become a living legend like
-        {' '}
+        {t('mainText1')}
         <BoxerLink
-          boxerName={BOXER_NAME_1}
+          boxerName={t('boxerName1')}
           boxerSite={BOXER_LINK_1}
         />
-        {' or '}
+        {t('mainText2')}
         <BoxerLink
-          boxerName={BOXER_NAME_2}
+          boxerName={t('boxerName2')}
           boxerSite={BOXER_LINK_2}
         />
-        , join our community now and
+        {t('mainText3')}
         <br />
       </p>
-      <p className="call-to-sign-up"><em><strong>{signUpText}</strong></em></p>
+      <p className="call-to-sign-up">
+        <em>
+          <strong>
+            {signUpButtonWasPressed ? t('signUpButtonChangedText') : t('signUpButtonText')}
+          </strong>
+        </em>
+      </p>
 
-      <BigRedAnchorButton changeText={changeSignUpText}>
-        <strong>SIGN UP!</strong>
+      <BigRedAnchorButton changeText={changeSignUpButtonWasPressed}>
+        <strong>{t('signUpText')}</strong>
       </BigRedAnchorButton>
     </div>
   );
 };
 
 HomepageMainSection.propTypes = {
-  signUpText: PropType.string.isRequired,
-  changeSignUpText: PropType.func.isRequired,
+  signUpButtonWasPressed: PropType.bool.isRequired,
+  changeSignUpButtonWasPressed: PropType.func.isRequired
 };
 
 export default HomepageMainSection;

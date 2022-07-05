@@ -1,14 +1,14 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import withLayout from '../../HOC/withLayout';
 import './ErrorPage.scss';
 
 const ErrorPage = () => {
+  const { t } = useTranslation();
   return (
     <div className="error-page-main-section">
       <h1 className="error-msg">
-        Page is not found
-        <br />
-        404
+        {t('pageNotFound')}
       </h1>
     </div>
   );

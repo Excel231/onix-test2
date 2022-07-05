@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import PropType from 'prop-types';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faObjectGroup, faSchool } from '@fortawesome/free-solid-svg-icons';
@@ -13,14 +14,14 @@ const FooterView = ({
   linkText,
   changeSignUpText,
 }) => {
+  const { t } = useTranslation();
+
   return (
     <footer id="footer-section">
       <div className="footer-info-menu">
-        <h3 className="footer-text">by Ivan Honcharenko</h3>
+        <h3 className="footer-text">{t('authorName')}</h3>
         <h3 className="footer-text">
-          Also check
-          {' '}
-          {linkText}
+          {`${t('alsoCheck')} ${linkText}`}
         </h3>
         <div>
           <FooterLink
@@ -31,13 +32,13 @@ const FooterView = ({
           />
           <FooterLink
             onMouseEnter={changeSignUpText}
-            linkTitle="Design"
+            linkTitle={t('design')}
             footerLink={designLink}
             faIcon={<FontAwesomeIcon icon={faObjectGroup} className="fa-2xl" />}
           />
           <FooterLink
             onMouseEnter={changeSignUpText}
-            linkTitle="SH++"
+            linkTitle={t('sh')}
             footerLink={shLink}
             faIcon={<FontAwesomeIcon icon={faSchool} className="fa-2xl" />}
           />

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropType from 'prop-types';
+import { useTranslation } from 'react-i18next';
 import Comment from './Comment';
 import '../sass/CommentsSection.scss';
 
@@ -7,9 +8,11 @@ const CommentsSectionView = ({
   darkThemeOn,
   comments
 }) => {
+  const { t } = useTranslation();
+
   return (
     <div id="comment-section" className={darkThemeOn ? 'dark-theme-comments' : 'light-theme-comments'}>
-      <h2 className="section-title">Comments from famous people</h2>
+      <h2 className="section-title">{t('commentsHeading')}</h2>
       {comments.map(({
         id,
         fullName,

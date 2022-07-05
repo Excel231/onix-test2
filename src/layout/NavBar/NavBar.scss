@@ -20,30 +20,6 @@
     }
   }
 
-  .cart-list {
-    color: inherit;
-    border-top: $red-border;
-    border-left: $red-border;
-    border-bottom: $red-border;
-    border-bottom-left-radius: 40px;
-    position: absolute;
-    width: fit-content;
-    height: fit-content;
-    margin: 0;
-    right: 0;
-    z-index: 5;
-
-    .cart-list-item {
-      border-bottom: 2px solid $primary-red;
-      font-size: 1.5rem;
-      margin: 10px;
-
-      @media (max-width: $max-width-change) {
-        font-size: 1rem;
-      }
-    }
-  }
-
   .cart-list-hidden {
     display: none;
   }

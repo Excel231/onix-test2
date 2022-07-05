@@ -7,6 +7,7 @@ import ThemeColorProvider from './context/ThemeColorProvider';
 import ShopPage from './pages/ShopPage/ShopPage';
 import ErrorPage from './pages/Error/ErrorPage';
 import ShoppingCartProvider from './context/ShoppingCartProvider';
+import './i18n';
 
 const App = () => {
   return (

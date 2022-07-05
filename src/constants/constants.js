@@ -1,14 +1,7 @@
-/* Homepage */
-
-export const SIGN_UP_BUTTON_TEXT = 'SMASH THIS BUTTON RIGHT NOW!';
-export const SIGN_UP_BUTTON_CHANGED_TEXT = 'WELCOME TO THE CLUB, BUDDY!';
-
 /* HomepageMainSection */
 
-export const BOXER_NAME_1 = 'Vitali Klitchko';
 export const BOXER_LINK_1 = 'https://kyiv.klichko.org/en/biography/';
 
-export const BOXER_NAME_2 = 'Oleksander Usyk';
 export const BOXER_LINK_2 = 'https://a-usyk.com/en/biography/';
 
 /* DiscountTimer */
@@ -24,7 +17,9 @@ export const DISCOUNT_END_TIME = new Date(
 
 /* CommentsSection API */
 
-export const COMMENTS_API_LINK = 'https://62a1ede4cd2e8da9b0fec808.mockapi.io/api/comments/comments';
+export const COMMENTS_API_LINK_ENG = 'https://62a1ede4cd2e8da9b0fec808.mockapi.io/api/comments/comments';
+
+export const COMMENTS_API_LINK_RUS = 'https://62a1ede4cd2e8da9b0fec808.mockapi.io/api/comments/commentsRus';
 
 /* DraggableList API */
 

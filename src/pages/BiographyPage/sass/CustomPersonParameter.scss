@@ -1,0 +1,9 @@
+@import "../../../constants/constants";
+
+.parameter {
+  font-size: 2rem;
+
+  @media (max-width: $max-width-change) {
+    font-size: 1rem;
+  }
+}

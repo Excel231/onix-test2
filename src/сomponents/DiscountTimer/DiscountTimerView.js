@@ -1,17 +1,19 @@
 import React from 'react';
 import PropType from 'prop-types';
+import { useTranslation } from 'react-i18next';
 import dateToTime from '../../helper/dateToTime';
 
 const DiscountTimerView = ({
   discountEndTime,
   currentTime
 }) => {
+  const { t } = useTranslation();
   return (
     <p>
       {
         discountEndTime <= currentTime
-          ? ('The sale is finished!')
-          : (`The discount will end in: ${dateToTime(discountEndTime, currentTime)}`)
+          ? t('discountFinished')
+          : t(`${t('discountText')} ${dateToTime(discountEndTime, currentTime)}`)
       }
     </p>
   );
