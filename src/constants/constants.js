@@ -5,13 +5,14 @@ export const BOXER_LINK_1 = 'https://kyiv.klichko.org/en/biography/';
 export const BOXER_LINK_2 = 'https://a-usyk.com/en/biography/';
 
 /* DiscountTimer */
+
 export const CURRENT_TIME = new Date();
 export const DISCOUNT_END_TIME = new Date(
   CURRENT_TIME.getFullYear(),
   CURRENT_TIME.getMonth(),
-  CURRENT_TIME.getDate() + 1,
+  CURRENT_TIME.getDate(),
   CURRENT_TIME.getHours(),
-  CURRENT_TIME.getMinutes(),
+  CURRENT_TIME.getMinutes() + 1,
   CURRENT_TIME.getSeconds()
 );
 

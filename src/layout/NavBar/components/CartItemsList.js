@@ -8,7 +8,7 @@ const CartItemsList = ({ darkThemeOn, cartListDisplayed, shoppingCartItems }) =>
       className={
         `cart-list 
         ${darkThemeOn ? 'dark-theme' : 'light-theme'}
-        ${cartListDisplayed ? 'cart-list' : 'cart-list-hidden'}`
+        ${cartListDisplayed && shoppingCartItems.length !== 0 ? 'cart-list' : 'cart-list-hidden'}`
       }
     >
       {shoppingCartItems.map((item) => {

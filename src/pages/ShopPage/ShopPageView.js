@@ -7,14 +7,15 @@ import ItemList from './components/ItemList';
 
 const ShopPageView = ({
   normalPriceItems,
-  discountItems
+  discountItems,
+  finishSale
 }) => {
   const { t } = useTranslation();
   return (
     <>
       <div className="discount-section">
         <h1>{t('dayOffer')}</h1>
-        <DiscountTimer />
+        <DiscountTimer finishSale={finishSale} />
         <ItemList items={discountItems} />
       </div>
       <ItemList items={normalPriceItems} />
@@ -24,7 +25,8 @@ const ShopPageView = ({
 
 ShopPageView.propTypes = {
   normalPriceItems: PropType.arrayOf(PropType.shape({})).isRequired,
-  discountItems: PropType.arrayOf(PropType.shape({})).isRequired
+  discountItems: PropType.arrayOf(PropType.shape({})).isRequired,
+  finishSale: PropType.func.isRequired
 };
 
 export default ShopPageView;
