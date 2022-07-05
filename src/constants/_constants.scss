@@ -55,7 +55,7 @@ $dark-gray-border: solid 10px $primary-dark-gray;
   @include boxer-background-image;
 
   background-image:
-    linear-gradient(rgba(245 245 15%), rgba(235 235 10%)),
+    linear-gradient(hsla(0, 0%, 96%, 0.15), hsla(0, 0%, 92%, 0.1)),
     url("../images/background/boxer-background.jpg");
   background-position: center;
 }
