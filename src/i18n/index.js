@@ -12,12 +12,18 @@ const resources = {
   ukr
 };
 
+const detection = {
+  caches: ['localStorage', 'cookie'],
+  order: ['localStorage', 'cookie']
+};
+
 i18next
   .use(initReactI18next)
   .use(LanguageDetector)
   .init({
     resources,
-    fallbackLng: 'en'
+    fallbackLng: 'en',
+    detection
   });
 
 export default i18next;
