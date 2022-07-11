@@ -16,7 +16,7 @@ const NavBarView = ({
   return (
     <nav className="nav-bar" onMouseLeave={() => hideCartList()}>
       <LanguageChangePanel />
-      <div className="cart-section">
+      <div>
         <CartButton toggleCartList={toggleCartList} />
         <CartItemsList
           darkThemeOn={darkThemeOn}

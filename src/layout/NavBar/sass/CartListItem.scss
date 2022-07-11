@@ -2,9 +2,8 @@
 
 .cart-list {
   color: inherit;
-  border-top: $red-border;
-  border-left: $red-border;
-  border-bottom: $red-border;
+  border: $red-border;
+  border-right: none;
   border-bottom-left-radius: 40px;
   position: absolute;
   width: fit-content;

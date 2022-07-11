@@ -37,7 +37,7 @@ const biographyPage = {
   yearAndBelts: 'Рід - Пояс',
   belt: 'Пояс',
 
-  addPersonButton: 'ДОдати нового боксера',
+  addPersonButton: 'Додати нового боксера',
   removePersonButton: 'Прибрати останнього боксера',
   addCustomPersonButton: 'Додати власного боксера',
 

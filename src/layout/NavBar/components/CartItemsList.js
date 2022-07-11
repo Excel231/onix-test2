@@ -6,9 +6,11 @@ const CartItemsList = ({ darkThemeOn, cartListDisplayed, shoppingCartItems }) =>
   return (
     <ul
       className={
-        `cart-list 
-        ${darkThemeOn ? 'dark-theme' : 'light-theme'}
-        ${cartListDisplayed && shoppingCartItems.length !== 0 ? 'cart-list' : 'cart-list-hidden'}`
+        `cart-list ${
+          darkThemeOn ? 'dark-theme' : 'light-theme'
+        } ${
+          cartListDisplayed && shoppingCartItems.length !== 0 ? 'cart-list' : 'cart-list-hidden'
+        }`
       }
     >
       {shoppingCartItems.map((item) => {
