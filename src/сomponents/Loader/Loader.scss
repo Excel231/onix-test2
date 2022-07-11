@@ -1,16 +1,11 @@
 @import "../../constants/constants";
 
 .lds-hourglass {
-  display: inline-flex;
 
   &:after {
     content: "";
     display: block;
     border-radius: 50%;
-    width: 0;
-    height: 0;
-    margin: 8px;
-    box-sizing: border-box;
     border: 25px solid;
     border-color: $primary-light-gray transparent $primary-red transparent;
     animation: lds-hourglass 1.2s infinite;
