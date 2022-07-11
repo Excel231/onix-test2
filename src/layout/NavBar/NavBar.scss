@@ -2,28 +2,9 @@
 
 .nav-bar {
   display: flex;
-  margin: auto 2%;
+  margin: 0 2%;
   align-items: center;
   z-index: 5;
-
-  .cart-btn {
-    background: none;
-    border: none;
-    color: inherit;
-    cursor: pointer;
-    font: inherit;
-    margin-right: 25px;
-    padding: 0;
-    height: 100%;
-
-    &:hover {
-      color: $primary-red;
-    }
-  }
-
-  .cart-list-hidden {
-    display: none;
-  }
 }
 
 .dark-theme {

@@ -16,12 +16,14 @@ const NavBarView = ({
   return (
     <nav className="nav-bar" onMouseLeave={() => hideCartList()}>
       <LanguageChangePanel />
-      <CartButton toggleCartList={toggleCartList} />
-      <CartItemsList
-        darkThemeOn={darkThemeOn}
-        cartListDisplayed={cartListDisplayed}
-        shoppingCartItems={shoppingCartItems}
-      />
+      <div className="cart-section">
+        <CartButton toggleCartList={toggleCartList} />
+        <CartItemsList
+          darkThemeOn={darkThemeOn}
+          cartListDisplayed={cartListDisplayed}
+          shoppingCartItems={shoppingCartItems}
+        />
+      </div>
       <DarkModeToggle />
     </nav>
   );
