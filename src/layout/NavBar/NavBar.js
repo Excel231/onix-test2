@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
-import './NavBar.scss';
+import React, { useEffect, useState } from 'react';
 import PropType from 'prop-types';
 import { useShoppingCartContext } from '../../context/ShoppingCartProvider';
 import NavBarView from './NavBarView';
+import './NavBar.scss';
+import store from '../../store/store';
 
 const NavBar = ({ darkThemeOn }) => {
   const [cartListDisplayed, setCartListDisplayed] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const shoppingCartItems = useShoppingCartContext() ?? [];
 
@@ -17,6 +19,17 @@ const NavBar = ({ darkThemeOn }) => {
     setCartListDisplayed(false);
   };
 
+  useEffect(() => {
+    const subscription = () => {
+      setLoading(store.getState().commentsReducer.loading);
+      console.log(123);
+    };
+
+    store.subscribe(() => {
+      subscription();
+    });
+  }, []);
+
   return (
     <NavBarView
       darkThemeOn={darkThemeOn}
@@ -24,6 +37,7 @@ const NavBar = ({ darkThemeOn }) => {
       shoppingCartItems={shoppingCartItems}
       toggleCartList={toggleCartList}
       hideCartList={hideCartList}
+      displayLoader={loading}
     />
   );
 };

@@ -1,10 +1,15 @@
 import React from 'react';
 import './Loader.scss';
+import PropType from 'prop-types';
 
-const Loader = () => {
+const Loader = ({ displayLoader }) => {
   return (
-    <div className="lds-hourglass" />
+    <div className={displayLoader ? 'lds-hourglass' : ''} />
   );
+};
+
+Loader.propTypes = {
+  displayLoader: PropType.bool.isRequired
 };
 
 export default Loader;

@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { COMMENTS_API_LINK_ENG, COMMENTS_API_LINK_RUS, COMMENTS_API_LINK_UKR } from '../../../constants/constants';
 import { useThemeColorContext } from '../../../context/ThemeColorProvider';
 import CommentsSectionView from './CommentsSectionView';
-import setCommentsArr from '../../../store/comments/commentsActions';
+import { setComments, loadingComments, stopLoadingComments } from '../../../store/comments/commentsActions';
 
 const CommentsSection = () => {
   const darkThemeOn = useThemeColorContext() ?? true;
@@ -28,10 +28,12 @@ const CommentsSection = () => {
   };
 
   const getCommentSection = () => {
+    dispatch(loadingComments());
     axios.get(getCommentSectionAPI(localStorage.getItem('lng') ?? i18next.language))
       .then((res) => {
-        dispatch(setCommentsArr(res.data));
-      });
+        dispatch(setComments(res.data));
+      })
+      .then(() => dispatch(stopLoadingComments()));
   };
 
   useEffect(() => {

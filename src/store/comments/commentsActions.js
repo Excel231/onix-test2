@@ -1,5 +1,5 @@
-import SET_COMMENTS from './commentsTypes';
+import { SET_COMMENTS, LOADING_COMMENTS } from './commentsTypes';
 
-const setComments = (commentsArr) => ({ type: SET_COMMENTS, commentsArr });
-
-export default setComments;
+export const setComments = (commentsArr) => ({ type: SET_COMMENTS, commentsArr });
+export const loadingComments = () => ({ type: LOADING_COMMENTS, load: true });
+export const stopLoadingComments = () => ({ type: LOADING_COMMENTS, load: false });

@@ -8,6 +8,7 @@ const LanguageChangeButton = ({ children }) => {
     localStorage.setItem('lng', children.toLowerCase());
     i18n.changeLanguage(children.toLowerCase());
   };
+
   return (
     <button
       type="button"
