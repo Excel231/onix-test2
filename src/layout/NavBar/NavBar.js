@@ -20,13 +20,9 @@ const NavBar = ({ darkThemeOn }) => {
   };
 
   useEffect(() => {
-    const subscription = () => {
+    return store.subscribe(() => {
       setLoading(store.getState().commentsReducer.loading);
-      console.log(123);
-    };
-
-    store.subscribe(() => {
-      subscription();
+      console.log(store.getState().commentsReducer.loading);
     });
   }, []);
 
