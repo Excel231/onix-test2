@@ -28,12 +28,10 @@ const CommentsSection = () => {
   };
 
   const getCommentSection = () => {
-    const api = axios.create({
-      baseURL: getCommentSectionAPI(localStorage.getItem('lng') ?? i18next.language)
-    });
-    api.get('/').then((res) => {
-      dispatch(setCommentsArr(res.data));
-    });
+    axios.get(getCommentSectionAPI(localStorage.getItem('lng') ?? i18next.language))
+      .then((res) => {
+        dispatch(setCommentsArr(res.data));
+      });
   };
 
   useEffect(() => {

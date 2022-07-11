@@ -5,6 +5,8 @@
   border: solid $primary-red;
   border-radius: 20px;
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   line-height: 0;
   margin: 50px 40px;
   padding: 0 30px;
@@ -17,8 +19,7 @@
 
 .comment-preview {
   text-align: center;
-  margin-top: 15px;
-  width: 20%;
+  margin: 15px 40px 10px;
 
   @media (max-width: $max-width-change) {
     width: 100%;
@@ -26,12 +27,12 @@
 }
 
 .comment-text {
+  max-width: 70%;
   line-height: normal;
-  align-items: center;
-  margin: 10px 20px;
 
   @media (max-width: $max-width-change) {
     font-size: 1rem;
+    margin-bottom: 20px;
   }
 }
 
