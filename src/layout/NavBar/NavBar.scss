@@ -1,8 +1,9 @@
 @import "../../constants/constants";
 
 .nav-bar {
+  display: flex;
   margin: auto 2%;
-  height: 100%;
+  align-items: center;
   z-index: 5;
 
   .cart-btn {

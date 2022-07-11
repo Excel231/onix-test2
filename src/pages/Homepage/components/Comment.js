@@ -25,7 +25,7 @@ const Comment = ({
           <h3 className="comment-name">{fullName}</h3>
         </li>
         <li className="comment-text">
-          <i>{text}</i>
+          <i>{`"${text}"`}</i>
         </li>
       </ul>
     </div>
