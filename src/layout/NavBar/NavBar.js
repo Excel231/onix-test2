@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PropType from 'prop-types';
+import { useSelector } from 'react-redux';
 import { useShoppingCartContext } from '../../context/ShoppingCartProvider';
 import NavBarView from './NavBarView';
 import './NavBar.scss';
-import store from '../../store/store';
 
 const NavBar = ({ darkThemeOn }) => {
   const [cartListDisplayed, setCartListDisplayed] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const loading = useSelector(({ commentsReducer }) => commentsReducer.loading);
 
   const shoppingCartItems = useShoppingCartContext() ?? [];
 
@@ -18,12 +18,6 @@ const NavBar = ({ darkThemeOn }) => {
   const hideCartList = () => {
     setCartListDisplayed(false);
   };
-
-  useEffect(() => {
-    return store.subscribe(() => {
-      setLoading(store.getState().commentsReducer.loading);
-    });
-  }, []);
 
   return (
     <NavBarView
