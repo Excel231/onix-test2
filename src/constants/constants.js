@@ -22,6 +22,8 @@ export const COMMENTS_API_LINK_ENG = 'https://62a1ede4cd2e8da9b0fec808.mockapi.i
 
 export const COMMENTS_API_LINK_RUS = 'https://62a1ede4cd2e8da9b0fec808.mockapi.io/api/comments/commentsRus';
 
+export const COMMENTS_API_LINK_UKR = 'https://62c557af134fa108c24f06c9.mockapi.io/comments';
+
 /* DraggableList API */
 
 export const BOXER_API_LINK = 'https://62a1ede4cd2e8da9b0fec808.mockapi.io/api/comments/boxers';

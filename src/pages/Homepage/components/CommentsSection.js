@@ -1,14 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import i18next from 'i18next';
 import axios from 'axios';
-import CommentsSectionView from './CommentsSectionView';
-import { COMMENTS_API_LINK_ENG, COMMENTS_API_LINK_RUS } from '../../../constants/constants';
+import { useDispatch, useSelector } from 'react-redux';
+import { COMMENTS_API_LINK_ENG, COMMENTS_API_LINK_RUS, COMMENTS_API_LINK_UKR } from '../../../constants/constants';
 import { useThemeColorContext } from '../../../context/ThemeColorProvider';
+import CommentsSectionView from './CommentsSectionView';
+import setCommentsArr from '../../../store/comments/commentsActions';
 
 const CommentsSection = () => {
-  const [comments, setComments] = useState([]);
-
   const darkThemeOn = useThemeColorContext() ?? true;
+
+  const commentsArr = useSelector(({ commentsReducer }) => commentsReducer.comments);
+
+  const dispatch = useDispatch();
 
   const getCommentSectionAPI = (lng) => {
     switch (lng) {
@@ -17,8 +21,7 @@ const CommentsSection = () => {
       case ('ru'):
         return COMMENTS_API_LINK_RUS;
       case ('ukr'):
-        // I've run out of free APIs :(
-        return COMMENTS_API_LINK_RUS;
+        return COMMENTS_API_LINK_UKR;
       default:
         return 'en';
     }
@@ -29,7 +32,7 @@ const CommentsSection = () => {
       baseURL: getCommentSectionAPI(localStorage.getItem('lng') ?? i18next.language)
     });
     api.get('/').then((res) => {
-      setComments(res.data);
+      dispatch(setCommentsArr(res.data));
     });
   };
 
@@ -40,7 +43,7 @@ const CommentsSection = () => {
   }, []);
 
   return (
-    <CommentsSectionView darkThemeOn={darkThemeOn} comments={comments} />
+    <CommentsSectionView darkThemeOn={darkThemeOn} comments={commentsArr} />
   );
 };
 
