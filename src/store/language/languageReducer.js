@@ -1,7 +1,7 @@
 import SET_LANGUAGE from './languageTypes';
 
 export const initialState = {
-  language: 'ru',
+  language: 'en',
 };
 
 // eslint-disable-next-line default-param-last
