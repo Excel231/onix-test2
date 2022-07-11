@@ -1,7 +1,8 @@
+import i18next from 'i18next';
 import SET_LANGUAGE from './languageTypes';
 
 export const initialState = {
-  language: 'en',
+  language: i18next.language,
 };
 
 // eslint-disable-next-line default-param-last
