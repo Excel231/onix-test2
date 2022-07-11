@@ -22,7 +22,6 @@ const NavBar = ({ darkThemeOn }) => {
   useEffect(() => {
     return store.subscribe(() => {
       setLoading(store.getState().commentsReducer.loading);
-      console.log(store.getState().commentsReducer.loading);
     });
   }, []);
 
