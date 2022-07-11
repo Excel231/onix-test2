@@ -23,7 +23,7 @@ const CommentsSection = () => {
       case ('ukr'):
         return COMMENTS_API_LINK_UKR;
       default:
-        return 'en';
+        return COMMENTS_API_LINK_ENG;
     }
   };
 
