@@ -9,9 +9,8 @@ import { setComments, loadingComments, stopLoadingComments } from '../../../stor
 
 const CommentsSection = () => {
   const darkThemeOn = useThemeColorContext() ?? true;
-
   const commentsArr = useSelector(({ commentsReducer }) => commentsReducer.comments);
-
+  const language = useSelector(({ languageReducer }) => languageReducer.language);
   const dispatch = useDispatch();
 
   const getCommentSectionAPI = (lng) => {
@@ -29,7 +28,7 @@ const CommentsSection = () => {
 
   const getCommentSection = () => {
     dispatch(loadingComments());
-    axios.get(getCommentSectionAPI(localStorage.getItem('lng') ?? i18next.language))
+    axios.get(getCommentSectionAPI(language) ?? i18next.language)
       .then((res) => {
         dispatch(setComments(res.data));
       })
@@ -38,9 +37,7 @@ const CommentsSection = () => {
 
   useEffect(() => {
     getCommentSection();
-    i18next.on('languageChanged', getCommentSection);
-    return () => i18next.off('languageChanged', getCommentSection);
-  }, []);
+  }, [language]);
 
   return (
     <CommentsSectionView darkThemeOn={darkThemeOn} comments={commentsArr} />

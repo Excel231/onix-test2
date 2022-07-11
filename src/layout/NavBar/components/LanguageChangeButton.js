@@ -1,11 +1,15 @@
 import React from 'react';
 import PropType from 'prop-types';
-import '../sass/LanguageChangeButton.scss';
+import { useDispatch } from 'react-redux';
 import i18n from '../../../i18n';
+import '../sass/LanguageChangeButton.scss';
+import changeLanguage from '../../../store/language/languageActions';
 
 const LanguageChangeButton = ({ children }) => {
+  const dispatch = useDispatch();
+
   const setLanguage = () => {
-    localStorage.setItem('lng', children.toLowerCase());
+    dispatch(changeLanguage(children.toLowerCase()));
     i18n.changeLanguage(children.toLowerCase());
   };
 
