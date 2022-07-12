@@ -29,6 +29,7 @@ const DiscountTimer = ({ finishSale }) => {
 
   return (
     <DiscountTimerView
+      saleIsFinished={saleIsFinished}
       discountEndTime={DISCOUNT_END_TIME}
       currentTime={fullDate}
     />
