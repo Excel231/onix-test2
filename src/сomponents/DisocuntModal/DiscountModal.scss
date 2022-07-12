@@ -1,0 +1,58 @@
+@import "../../constants/constants";
+
+@mixin modal-btn {
+  border: none;
+  border-radius: 20px;
+  background-color: inherit;
+  cursor: pointer;
+  font-size: 2rem;
+
+  &:hover {
+    color: $primary-red;
+  }
+}
+
+.modal-wrapper {
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+
+  &-content {
+    background-color: $primary-dark-gray;
+    border-radius: 20px;
+    border: $red-border;
+    color: $primary-white;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: fit-content;
+
+    @media (max-width: $max-width-change) {
+      width: 80%;
+    }
+
+    .closing-btn {
+      @include modal-btn;
+      align-self: flex-end;
+      margin-right: 3%;
+    }
+
+    .shop-btn {
+      @include modal-btn;
+      align-self: center;
+      margin-bottom: 40px;
+      width: fit-content;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}

@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from '../layout/Header/Header';
-import Footer from '../layout/Footer/Footer';
+import Header from '../../layout/Header/Header';
+import Footer from '../../layout/Footer/Footer';
 import './withLayout.scss';
-import { useThemeColorContext } from '../context/ThemeColorProvider';
+import { useThemeColorContext } from '../../context/ThemeColorProvider';
 
 const withLayout = (WrappedComponent) => {
   return (props) => {

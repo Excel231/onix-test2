@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import withLayout from '../../HOC/withLayout';
+import withLayout from '../../HOC/withLayout/withLayout';
 import ShopPageView from './ShopPageView';
 import { ITEMS_API_LINK } from '../../constants/constants';
 

@@ -55,13 +55,20 @@ const error = {
   pageNotFound: 'Page is not found'
 };
 
+const discountModal = {
+  discountEnd: 'Discount is coming to an end!',
+  hurryUpText: 'Hurry up and check our community shop!',
+  modalShopPageText: 'GO TO SHOP'
+};
+
 const en = {
   translation: {
     ...layout,
     ...homepage,
     ...biographyPage,
     ...shopPage,
-    ...error
+    ...error,
+    ...discountModal
   }
 };
 

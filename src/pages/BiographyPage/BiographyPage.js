@@ -3,7 +3,7 @@ import '../../styles.scss';
 import axios from 'axios';
 import sortPersons from '../../helper/sortPersons';
 import BiographyPageView from './BiographyPageView';
-import withLayout from '../../HOC/withLayout';
+import withLayout from '../../HOC/withLayout/withLayout';
 import { BOXER_API_LINK } from '../../constants/constants';
 
 const BiographyPage = () => {

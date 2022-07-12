@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import withLayout from '../../HOC/withLayout';
+import withLayout from '../../HOC/withLayout/withLayout';
 import './ErrorPage.scss';
 
 const ErrorPage = () => {

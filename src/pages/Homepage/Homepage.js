@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import '../../styles.scss';
 import HomepageView from './HomepageView';
-import withLayout from '../../HOC/withLayout';
+import withLayout from '../../HOC/withLayout/withLayout';
+import withDiscountModal from '../../HOC/withDiscountModal/withDiscountModal';
 
 const Homepage = () => {
   const [signUpButtonWasPressed, setSignUpButtonWasPressed] = useState(false);
@@ -18,4 +19,4 @@ const Homepage = () => {
   );
 };
 
-export default withLayout(Homepage);
+export default withDiscountModal(withLayout(Homepage));

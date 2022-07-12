@@ -55,13 +55,20 @@ const error = {
   pageNotFound: 'Сторінка не знайдена'
 };
 
+const discountModal = {
+  discountEnd: 'Розпродаж скоро закінчується!',
+  hurryUpText: 'Поквапся! Переходь на сторінку магазина!',
+  modalShopPageText: 'ПЕРЕЙТИ В МАГАЗИН'
+};
+
 const ukr = {
   translation: {
     ...layout,
     ...homepage,
     ...biographyPage,
     ...shopPage,
-    ...error
+    ...error,
+    ...discountModal
   }
 };
 
