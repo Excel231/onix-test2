@@ -4,13 +4,11 @@
   border: solid 4px $primary-red;
   border-radius: 50%;
   display: inline-block;
-  margin: 10px;
-  text-align: center;
-  vertical-align: auto;
+  margin: 15px 10px 10px;
   width: 70%;
 
   @media (max-width: $max-width-change) {
     border: solid 2px;
-    width: 60%;
+    width: 80%;
   }
 }

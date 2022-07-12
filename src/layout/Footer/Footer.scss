@@ -15,8 +15,8 @@
     display: flex;
     flex-flow: column;
     align-items: center;
-    max-width: 30%;
-    min-width: 12%;
+    max-width: 50%;
+    min-width: 20%;
 
     @media (max-width: $max-width-change) {
       justify-content: center;
