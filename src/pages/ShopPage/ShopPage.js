@@ -1,34 +1,40 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 import withLayout from '../../HOC/withLayout/withLayout';
 import ShopPageView from './ShopPageView';
 import { ITEMS_API_LINK } from '../../constants/constants';
+import endSale from '../../store/sale/saleActions';
 
 const ShopPage = () => {
-  const [items, setItems] = useState([]);
+  const [discountItems, setDiscountItems] = useState([]);
+  const [fullPriceItems, setFullPriceItems] = useState([]);
+  const saleIsFinished = useSelector(({ manageSale }) => manageSale.saleFinished);
+  const dispatch = useDispatch();
 
   const finishSale = () => {
-    setItems((prevState) => {
-      return prevState.map((item) => {
-        return { ...item, isOnDiscount: false };
-      });
-    });
+    dispatch(endSale());
+    setFullPriceItems((prevState) => [...prevState, ...discountItems]);
+    setDiscountItems([]);
   };
 
   useEffect(() => {
-    const api = axios.create({
-      baseURL: ITEMS_API_LINK
-    });
-    api.get('/').then((res) => {
-      setItems(res.data);
-    });
+    axios.get(ITEMS_API_LINK)
+      .then((res) => {
+        const items = res.data;
+        if (saleIsFinished) {
+          setFullPriceItems(items);
+        } else {
+          setFullPriceItems(items.filter((item) => !item.isOnDiscount));
+          setDiscountItems(items.filter((item) => item.isOnDiscount));
+        }
+      });
   }, []);
 
   return (
     <ShopPageView
-      normalPriceItems={items.filter((item) => !item.isOnDiscount)}
-      discountItems={items.filter((item) => item.isOnDiscount)}
-      setItems={setItems}
+      normalPriceItems={fullPriceItems}
+      discountItems={discountItems}
       finishSale={finishSale}
     />
   );

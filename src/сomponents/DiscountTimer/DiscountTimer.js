@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import PropType from 'prop-types';
 import DiscountTimerView from './DiscountTimerView';
 import { CURRENT_TIME, DISCOUNT_END_TIME } from '../../constants/constants';
 
 const DiscountTimer = ({ finishSale }) => {
   const [fullDate, setFullDate] = useState(CURRENT_TIME);
-  const [saleIsFinished, setSaleIsFinished] = useState(DISCOUNT_END_TIME < new Date());
+  const saleIsFinished = useSelector(({ manageSale }) => manageSale.saleFinished);
 
   const onSecondPass = () => {
     setFullDate(new Date());
@@ -13,12 +14,15 @@ const DiscountTimer = ({ finishSale }) => {
 
   useEffect(() => {
     if (DISCOUNT_END_TIME <= new Date() && !saleIsFinished) {
-      setSaleIsFinished(true);
       finishSale();
     }
   });
 
   useEffect(() => {
+    if (DISCOUNT_END_TIME <= new Date()) {
+      finishSale();
+    }
+
     const discountTimer = setInterval(() => onSecondPass(), 1000);
     return () => clearInterval(discountTimer);
   }, []);

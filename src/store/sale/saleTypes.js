@@ -1,0 +1,3 @@
+const SET_SALE_FINISHED = 'SET_SALE_FINISHED';
+
+export default SET_SALE_FINISHED;
