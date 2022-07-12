@@ -10,7 +10,7 @@ const ShopPageView = ({
   discountItems,
   finishSale
 }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('', { keyPrefix: 'shopPage' });
   return (
     <>
       <div className="discount-section">

@@ -22,7 +22,7 @@ const ItemPurchase = ({
         {`${item.price}$`}
       </h2>
     );
-  const { t } = useTranslation();
+  const { t } = useTranslation('', { keyPrefix: 'shopPage' });
   return (
     <div className="price-section">
       {priceText}

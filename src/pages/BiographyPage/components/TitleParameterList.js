@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import BoxerParameterButton from '../../../сomponents/buttons/BoxerParameterButton/BoxerParameterButton';
 
 const TitleParameterList = ({ sortOnClick }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('', { keyPrefix: 'biographyPage' });
   return (
     <ul className="biography-ul">
       <li className="biography-li">

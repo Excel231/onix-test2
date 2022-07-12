@@ -4,7 +4,7 @@ import withLayout from '../../HOC/withLayout/withLayout';
 import './ErrorPage.scss';
 
 const ErrorPage = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('', { keyPrefix: 'error' });
   return (
     <div className="error-page-main-section">
       <h1 className="error-msg">

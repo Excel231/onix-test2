@@ -13,7 +13,7 @@ const HomepageMainSection = ({
 }) => {
   const darkThemeOn = useThemeColorContext() ?? true;
 
-  const { t } = useTranslation();
+  const { t } = useTranslation('', { keyPrefix: 'homepage' });
 
   return (
     <div

@@ -17,7 +17,7 @@ const DiscountModal = () => {
     dispatch(hideDiscountModal());
   };
 
-  const { t } = useTranslation();
+  const { t } = useTranslation('', { keyPrefix: 'discountModal' });
 
   Aos.init();
 

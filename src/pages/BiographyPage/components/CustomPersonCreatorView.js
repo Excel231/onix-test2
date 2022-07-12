@@ -14,7 +14,7 @@ const CustomPersonCreatorView = ({
   setBirthYear,
   setBelt
 }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('', { keyPrefix: 'biographyPage' });
   return (
     <div className="custom-person-section">
       <h2>

@@ -7,13 +7,13 @@ const DiscountTimerView = ({
   discountEndTime,
   currentTime
 }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('', { keyPrefix: 'discountTimer' });
   return (
     <p>
       {
         discountEndTime <= currentTime
           ? t('discountFinished')
-          : t(`${t('discountText')} ${dateToTime(discountEndTime, currentTime)}`)
+          : (`${t('discountText')} ${dateToTime(discountEndTime, currentTime)}`)
       }
     </p>
   );

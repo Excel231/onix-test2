@@ -14,7 +14,7 @@ const FooterView = ({
   linkText,
   changeSignUpText,
 }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('', { keyPrefix: 'layout' });
 
   return (
     <footer id="footer-section">

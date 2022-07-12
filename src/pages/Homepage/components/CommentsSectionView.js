@@ -8,7 +8,7 @@ const CommentsSectionView = ({
   darkThemeOn,
   comments
 }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('', { keyPrefix: 'homepage' });
 
   return (
     <div id="comment-section" className={darkThemeOn ? 'dark-theme-comments' : 'light-theme-comments'}>

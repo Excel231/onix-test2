@@ -46,8 +46,6 @@ const biographyPage = {
 
 const shopPage = {
   dayOffer: 'Предложение дня',
-  discountText: 'Распродажа закончится через: ',
-  discountFinished: 'Распродажа окончена!',
   addToCartButton: 'Добавить в корзину'
 };
 
@@ -61,14 +59,20 @@ const discountModal = {
   modalShopPageText: 'ПЕРЕЙТИ В МАГАЗИН'
 };
 
+const discountTimer = {
+  discountText: 'Распродажа закончится через: ',
+  discountFinished: 'Распродажа окончена!'
+};
+
 const ru = {
   translation: {
-    ...layout,
-    ...homepage,
-    ...biographyPage,
-    ...shopPage,
-    ...error,
-    ...discountModal
+    layout,
+    homepage,
+    biographyPage,
+    shopPage,
+    error,
+    discountModal,
+    discountTimer
   }
 };
 

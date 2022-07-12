@@ -46,8 +46,6 @@ const biographyPage = {
 
 const shopPage = {
   dayOffer: 'Offer Of The Day:',
-  discountText: 'The discount will end in: ',
-  discountFinished: 'The sale is finished!',
   addToCartButton: 'Add to cart'
 };
 
@@ -61,14 +59,20 @@ const discountModal = {
   modalShopPageText: 'GO TO SHOP'
 };
 
+const discountTimer = {
+  discountText: 'The discount will end in: ',
+  discountFinished: 'The sale is finished!'
+};
+
 const en = {
   translation: {
-    ...layout,
-    ...homepage,
-    ...biographyPage,
-    ...shopPage,
-    ...error,
-    ...discountModal
+    layout,
+    homepage,
+    biographyPage,
+    shopPage,
+    error,
+    discountModal,
+    discountTimer
   }
 };
 

@@ -17,7 +17,7 @@ const BiographyPageView = ({
   onSaveChanges,
   changePersonsOnScreen
 }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('', { keyPrefix: 'biographyPage' });
   return (
     <div className="biography-section">
       <TitleListOfParameters sortOnClick={sortOnClick} />
