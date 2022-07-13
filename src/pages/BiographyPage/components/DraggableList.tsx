@@ -35,8 +35,8 @@ const DraggableList: React.FC<Props> = ({
   const dropHandler = (e: DragEvent, personToDropOn: Person) => {
     e.preventDefault();
     const newArr = personsOnScreen.map((currentPerson) => {
-      if (currentPerson.id === personToDropOn.id) return currentDraggedPerson;
       if (currentPerson.id === currentDraggedPerson?.id) return personToDropOn;
+      if (currentDraggedPerson && currentPerson.id === personToDropOn.id) return currentDraggedPerson;
       return currentPerson;
     });
     changePersonsOnScreen(newArr);
