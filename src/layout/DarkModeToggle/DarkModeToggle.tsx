@@ -5,7 +5,6 @@ import { useThemeColorChangeContext, useThemeColorContext } from '../../context/
 const DarkModeToggle = () => {
   const changeTheme = useThemeColorChangeContext();
   const toggleStyle = useThemeColorContext() ?? true ? 'toggle-off' : 'toggle-on';
-
   return (
     <ToggleSwitch handleClick={changeTheme} toggleStyle={toggleStyle} />
   );

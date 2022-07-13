@@ -1,11 +1,14 @@
 import React from 'react';
-import PropType from 'prop-types';
 import { useDispatch } from 'react-redux';
 import i18n from '../../../i18n';
 import '../sass/LanguageChangeButton.scss';
 import changeLanguage from '../../../store/language/languageActions';
 
-const LanguageChangeButton = ({ children }) => {
+interface Props {
+  children: string;
+}
+
+const LanguageChangeButton: React.FC<Props> = ({ children }) => {
   const dispatch = useDispatch();
 
   const setLanguage = () => {
@@ -22,10 +25,6 @@ const LanguageChangeButton = ({ children }) => {
       {children}
     </button>
   );
-};
-
-LanguageChangeButton.propTypes = {
-  children: PropType.node.isRequired
 };
 
 export default LanguageChangeButton;

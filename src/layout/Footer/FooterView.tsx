@@ -1,13 +1,20 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import PropType from 'prop-types';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faObjectGroup, faSchool } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import FooterLink from '../FooterLink/FooterLink';
 import './Footer.scss';
 
-const FooterView = ({
+interface Props {
+    gitHubLink: string;
+    designLink: string;
+    shLink: string;
+    linkText: string;
+    changeSignUpText: (linkTitle: string) => void;
+}
+
+const FooterView: React.FC<Props> = ({
   gitHubLink,
   designLink,
   shLink,
@@ -15,7 +22,6 @@ const FooterView = ({
   changeSignUpText,
 }) => {
   const { t } = useTranslation('', { keyPrefix: 'layout' });
-
   return (
     <footer id="footer-section">
       <div className="footer-info-menu">
@@ -25,19 +31,19 @@ const FooterView = ({
         </h3>
         <div>
           <FooterLink
-            onMouseEnter={changeSignUpText}
+            handleMouseEnter={changeSignUpText}
             linkTitle="GitHub"
             footerLink={gitHubLink}
             faIcon={<FontAwesomeIcon icon={faGithub} className="fa-2xl" />}
           />
           <FooterLink
-            onMouseEnter={changeSignUpText}
+            handleMouseEnter={changeSignUpText}
             linkTitle={t('design')}
             footerLink={designLink}
             faIcon={<FontAwesomeIcon icon={faObjectGroup} className="fa-2xl" />}
           />
           <FooterLink
-            onMouseEnter={changeSignUpText}
+            handleMouseEnter={changeSignUpText}
             linkTitle={t('sh')}
             footerLink={shLink}
             faIcon={<FontAwesomeIcon icon={faSchool} className="fa-2xl" />}
@@ -46,14 +52,6 @@ const FooterView = ({
       </div>
     </footer>
   );
-};
-
-FooterView.propTypes = {
-  gitHubLink: PropType.string.isRequired,
-  designLink: PropType.string.isRequired,
-  shLink: PropType.string.isRequired,
-  linkText: PropType.string.isRequired,
-  changeSignUpText: PropType.func.isRequired
 };
 
 export default FooterView;

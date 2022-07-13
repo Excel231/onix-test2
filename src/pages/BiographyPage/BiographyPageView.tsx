@@ -1,13 +1,24 @@
 import React from 'react';
-import PropType from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import TitleListOfParameters from './components/TitleParameterList';
 import DraggableList from './components/DraggableList';
 import BigRedButton from '../../сomponents/buttons/BigRedButton/BigRedButton';
 import './BiographyPage.scss';
 import CustomPersonCreator from './components/CustomPersonCreator';
+import { Person } from '../../types/Interfaces';
 
-const BiographyPageView = ({
+interface Props {
+    personsOnScreen: Person[];
+    emptyIdValue: number;
+    sortOnClick: (componentToCompare: string) => void;
+    addPerson: () => void;
+    addCustomPerson: (customPerson: Person) => void;
+    removePerson: () => void;
+    onSaveChanges: (field: string, value: string | number, id: string | number) => void;
+    changePersonsOnScreen: (newPersonsArray: Person[]) => void;
+}
+
+const BiographyPageView: React.FC<Props> = ({
   personsOnScreen,
   emptyIdValue,
   sortOnClick,
@@ -34,21 +45,6 @@ const BiographyPageView = ({
       <CustomPersonCreator addCustomPerson={addCustomPerson} emptyIdValue={emptyIdValue} />
     </div>
   );
-};
-
-BiographyPageView.propTypes = {
-  personsOnScreen: PropType.arrayOf(PropType.shape({})).isRequired,
-  emptyIdValue: PropType.node.isRequired,
-  sortOnClick: PropType.func.isRequired,
-  addPerson: PropType.func.isRequired,
-  addCustomPerson: PropType.func.isRequired,
-  removePerson: PropType.func.isRequired,
-  onSaveChanges: PropType.func.isRequired,
-  changePersonsOnScreen: PropType.func.isRequired
-};
-
-BiographyPageView.defaulProps = {
-  personsOnScreen: null
 };
 
 export default BiographyPageView;

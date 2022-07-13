@@ -1,7 +1,7 @@
-import PersonType from '../types/PersonType';
+import { Person } from '../types/Interfaces';
 
 const sortPersons = (
-  arrayToSort: PersonType[],
+  arrayToSort: Person[],
   componentToCompare: string,
   sortFromGreatest: boolean
 ) => {

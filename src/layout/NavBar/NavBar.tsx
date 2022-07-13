@@ -1,13 +1,22 @@
 import React, { useState } from 'react';
-import PropType from 'prop-types';
 import { useSelector } from 'react-redux';
 import { useShoppingCartContext } from '../../context/ShoppingCartProvider';
 import NavBarView from './NavBarView';
 import './NavBar.scss';
 
-const NavBar = ({ darkThemeOn }) => {
+interface Props {
+  darkThemeOn: boolean;
+}
+
+interface CommentsReducerType {
+  commentsReducer: {
+    loading: boolean;
+  }
+}
+
+const NavBar: React.FC<Props> = ({ darkThemeOn }) => {
   const [cartListDisplayed, setCartListDisplayed] = useState(false);
-  const loading = useSelector(({ commentsReducer }) => commentsReducer.loading);
+  const loading = useSelector(({ commentsReducer }: CommentsReducerType) => commentsReducer.loading);
 
   const shoppingCartItems = useShoppingCartContext() ?? [];
 
@@ -29,10 +38,6 @@ const NavBar = ({ darkThemeOn }) => {
       displayLoader={loading}
     />
   );
-};
-
-NavBar.propTypes = {
-  darkThemeOn: PropType.bool.isRequired
 };
 
 export default NavBar;

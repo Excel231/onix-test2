@@ -4,10 +4,11 @@
         "es2021": true
     },
     "extends": [
-        "plugin:@typescript-eslint/recommended",
-        "plugin:react/recommended",
         "airbnb",
-        "airbnb-base"
+        "airbnb-base",
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -22,6 +23,11 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "@typescript-eslint/no-non-null-assertion": "off",
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": [
+            "error"
+        ],
         "import/extensions": [
             "error",
             "ignorePackages",

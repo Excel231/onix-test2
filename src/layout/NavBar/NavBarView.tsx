@@ -1,13 +1,22 @@
 import React from 'react';
-import PropType from 'prop-types';
 import DarkModeToggle from '../DarkModeToggle/DarkModeToggle';
 import './NavBar.scss';
 import CartButton from './components/CartButton';
 import LanguageChangePanel from './components/LanguageChangePanel';
 import CartItemsList from './components/CartItemsList';
 import Loader from '../../сomponents/Loader/Loader';
+import { Product } from '../../types/Interfaces';
 
-const NavBarView = ({
+interface Props {
+    darkThemeOn: boolean;
+    cartListDisplayed: boolean;
+    shoppingCartItems: Product[];
+    toggleCartList: () => void;
+    hideCartList: () => void;
+    displayLoader: boolean
+}
+
+const NavBarView: React.FC<Props> = ({
   darkThemeOn,
   cartListDisplayed,
   shoppingCartItems,
@@ -30,15 +39,6 @@ const NavBarView = ({
       <DarkModeToggle />
     </nav>
   );
-};
-
-NavBarView.propTypes = {
-  darkThemeOn: PropType.bool.isRequired,
-  cartListDisplayed: PropType.bool.isRequired,
-  shoppingCartItems: PropType.arrayOf(PropType.shape({})).isRequired,
-  toggleCartList: PropType.func.isRequired,
-  hideCartList: PropType.func.isRequired,
-  displayLoader: PropType.bool.isRequired
 };
 
 export default NavBarView;

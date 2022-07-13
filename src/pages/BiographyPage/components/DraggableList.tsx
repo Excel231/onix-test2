@@ -1,42 +1,48 @@
 import React, { useEffect, useState } from 'react';
-import PropType from 'prop-types';
 import DraggableListView from './DraggableListView';
 import '../sass/DraggableList.scss';
 import { DEFAULT_INACTIVE_STYLE, DEFAULT_ACTIVE_STYLE } from '../../../constants/constants';
+import { Person } from '../../../types/Interfaces';
 
-const DraggableList = ({
+interface Props {
+  personsOnScreen: Person[];
+  changePersonsOnScreen: (newPersonsArray: Person[]) => void;
+  onSaveChanges: (field: string, value: string | number, id: string | number) => void;
+}
+
+const DraggableList: React.FC<Props> = ({
   personsOnScreen,
   changePersonsOnScreen,
   onSaveChanges
 }) => {
-  const [currentDraggedPerson, setCurrentDraggedPerson] = useState(null);
-  const [currentActivePerson, setCurrentActivePerson] = useState(null);
-  const [activeStyle, setActiveStyle] = useState(DEFAULT_ACTIVE_STYLE);
-  const [parameterIsEdited, setParameterIsEdited] = useState(false);
+  const [currentDraggedPerson, setCurrentDraggedPerson] = useState<Person | null>(null);
+  const [currentActivePerson, setCurrentActivePerson] = useState<Person | null>(null);
+  const [activeStyle, setActiveStyle] = useState<string>(DEFAULT_ACTIVE_STYLE);
+  const [parameterIsEdited, setParameterIsEdited] = useState<boolean>(false);
 
-  const getPersonIndex = (person) => {
+  const getPersonIndex = (person: Person) => {
     return personsOnScreen.indexOf(person);
   };
 
-  const dragStartHandler = (person) => {
+  const dragStartHandler = (person: Person) => {
     setCurrentDraggedPerson(person);
   };
 
-  const dragOverHandler = (e) => {
+  const dragOverHandler = (e: DragEvent) => {
     e.preventDefault();
   };
 
-  const dropHandler = (e, personToDropOn) => {
+  const dropHandler = (e: DragEvent, personToDropOn: Person) => {
     e.preventDefault();
     const newArr = personsOnScreen.map((currentPerson) => {
       if (currentPerson.id === personToDropOn.id) return currentDraggedPerson;
-      if (currentPerson.id === currentDraggedPerson.id) return personToDropOn;
+      if (currentPerson.id === currentDraggedPerson?.id) return personToDropOn;
       return currentPerson;
     });
     changePersonsOnScreen(newArr);
   };
 
-  const handleMouseClick = (person) => {
+  const handleMouseClick = (person: Person) => {
     setCurrentActivePerson(person);
   };
 
@@ -44,7 +50,7 @@ const DraggableList = ({
     setParameterIsEdited((prevState) => !prevState);
   };
 
-  const handleKeypress = (e) => {
+  const handleKeypress = (e: KeyboardEvent) => {
     const keyPressed = e.key;
     switch (keyPressed) {
       case ('1'):
@@ -61,12 +67,12 @@ const DraggableList = ({
 
       case ('ArrowUp'):
         e.preventDefault();
-        setCurrentActivePerson((prevState) => personsOnScreen[getPersonIndex(prevState) - 1]);
+        setCurrentActivePerson((prevState) => personsOnScreen[getPersonIndex(prevState!) - 1]);
         break;
 
       case ('ArrowDown'):
         e.preventDefault();
-        setCurrentActivePerson((prevState) => personsOnScreen[getPersonIndex(prevState) + 1]);
+        setCurrentActivePerson((prevState) => personsOnScreen[getPersonIndex(prevState!) + 1]);
         break;
 
       default:
@@ -75,7 +81,7 @@ const DraggableList = ({
     }
   };
 
-  const keyPress = (e) => {
+  const keyPress = (e: KeyboardEvent) => {
     if (!parameterIsEdited) handleKeypress(e);
   };
 
@@ -98,12 +104,6 @@ const DraggableList = ({
       handleParameterIsEdited={handleParameterIsEdited}
     />
   );
-};
-
-DraggableList.propTypes = {
-  personsOnScreen: PropType.arrayOf(PropType.shape({})).isRequired,
-  onSaveChanges: PropType.func.isRequired,
-  changePersonsOnScreen: PropType.func.isRequired
 };
 
 export default DraggableList;

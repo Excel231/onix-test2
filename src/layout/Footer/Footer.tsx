@@ -5,7 +5,7 @@ import { GITHUB_LINK, DESIGN_LINK, SH_LINK } from '../../constants/constants';
 const Footer = () => {
   const [linkText, setLinkText] = useState(':');
 
-  const changeSignUpText = (linkTitle) => {
+  const changeSignUpText = (linkTitle: string) => {
     setLinkText(linkTitle);
   };
 

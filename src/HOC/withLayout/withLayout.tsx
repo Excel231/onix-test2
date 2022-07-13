@@ -4,8 +4,8 @@ import Footer from '../../layout/Footer/Footer';
 import './withLayout.scss';
 import { useThemeColorContext } from '../../context/ThemeColorProvider';
 
-const withLayout = (WrappedComponent) => {
-  return (props) => {
+const withLayout = (WrappedComponent: React.FC) => {
+  return (props: any) => {
     const darkThemeOn = useThemeColorContext() ?? true;
     return (
       <div className={`wrapper ${darkThemeOn ? 'dark-theme' : 'light-theme'}`}>

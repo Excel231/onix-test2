@@ -1,10 +1,14 @@
 import React from 'react';
-import PropType from 'prop-types';
 import { Link } from 'react-router-dom';
 import pagesToDisplayList from '../../helper/pagesToDisplayList';
 import './SideBar.scss';
 
-const SideBarView = ({
+interface Props {
+    darkThemeOn: boolean;
+    sideBarDisplayed: boolean;
+}
+
+const SideBarView: React.FC<Props> = ({
   darkThemeOn,
   sideBarDisplayed
 }) => {
@@ -29,11 +33,6 @@ const SideBarView = ({
       })}
     </ul>
   );
-};
-
-SideBarView.propTypes = {
-  darkThemeOn: PropType.bool.isRequired,
-  sideBarDisplayed: PropType.bool.isRequired
 };
 
 export default SideBarView;

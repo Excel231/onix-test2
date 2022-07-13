@@ -1,12 +1,15 @@
 import React from 'react';
-import PropType from 'prop-types';
 import { Link } from 'react-router-dom';
 import icon from '../../images/icon/icon.png';
 import NavBar from '../NavBar/NavBar';
 import SideBar from '../SideBar/SideBar';
 import './Header.scss';
 
-const HeaderView = ({ darkThemeOn }) => {
+interface Props {
+    darkThemeOn: boolean;
+}
+
+const HeaderView: React.FC<Props> = ({ darkThemeOn }) => {
   return (
     <header id="header" className={darkThemeOn ? 'dark-theme' : 'light-theme'}>
       <div className="logo">
@@ -19,10 +22,6 @@ const HeaderView = ({ darkThemeOn }) => {
       <NavBar darkThemeOn={darkThemeOn} />
     </header>
   );
-};
-
-HeaderView.propTypes = {
-  darkThemeOn: PropType.bool.isRequired
 };
 
 export default HeaderView;
