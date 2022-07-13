@@ -1,37 +1,73 @@
 {
-  "env": {
-    "node": true,
-    "browser": true,
-    "es6": true,
-    "jest/globals": true
-  },
-  "parser": "@babel/eslint-parser",
-  "extends": ["airbnb", "plugin:import/typescript"],
-  "plugins": ["jest"],
-  "rules": {
-    "react/react-in-jsx-scope": 0,
-    "react/jsx-filename-extension": 0,
-    "arrow-body-style": 0,
-    "react/prefer-stateless-function": 0,
-    "no-trailing-spaces": 0,
-    "comma-dangle": 0,
-    "radix": 0,
-    "max-len": [
-      2,
-      {
-        "code": 120,
-        "ignorePattern": "^import"
-      }
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react/recommended",
+        "airbnb",
+        "airbnb-base"
     ],
-    "jsx-a11y/label-has-for": 0,
-    "class-methods-use-this": 0,
-    "jsx-a11y/no-autofocus": 0,
-    "react/function-component-definition": [
-      2,
-      {
-        "namedComponents": "arrow-function",
-        "unnamedComponents": "arrow-function"
-      }
-    ]
-  }
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint"
+    ],
+    "rules": {
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+                "js": "never",
+                "jsx": "never",
+                "ts": "never",
+                "tsx": "never"
+            }
+        ],
+        "react/react-in-jsx-scope": 0,
+        "react/jsx-filename-extension": 0,
+        "arrow-body-style": 0,
+        "react/prefer-stateless-function": 0,
+        "no-trailing-spaces": 0,
+        "comma-dangle": 0,
+        "radix": 0,
+        "max-len": [
+            2,
+            {
+                "code": 120,
+                "ignorePattern": "^import"
+            }
+        ],
+        "jsx-a11y/label-has-for": 0,
+        "class-methods-use-this": 0,
+        "jsx-a11y/no-autofocus": 0,
+        "react/function-component-definition": [
+            2,
+            {
+                "namedComponents": "arrow-function",
+                "unnamedComponents": "arrow-function"
+            }
+        ]
+    },
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [
+                    ".js",
+                    ".jsx",
+                    ".ts",
+                    ".tsx"
+                ]
+            },
+            "webpack": {}
+        }
+    }
 }

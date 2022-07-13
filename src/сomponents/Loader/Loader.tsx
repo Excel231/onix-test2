@@ -2,7 +2,11 @@ import React from 'react';
 import './Loader.scss';
 import PropType from 'prop-types';
 
-const Loader = ({ displayLoader }) => {
+interface Props {
+  displayLoader: boolean
+}
+
+const Loader: React.FC<Props> = ({ displayLoader }) => {
   return (
     <div className={displayLoader ? 'lds-hourglass' : ''} />
   );

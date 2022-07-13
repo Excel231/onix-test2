@@ -1,11 +1,12 @@
 import React from 'react';
-import PropType from 'prop-types';
 import './BigRedSubmitButton.scss';
 
-const BigRedButton = ({
-  children,
-  onClick
-}) => {
+interface Props {
+    children: number | string,
+    onClick: () => void
+}
+
+const BigRedButton: React.FC<Props> = ({ children, onClick }) => {
   return (
     <div className="input-container">
       <input
@@ -16,11 +17,6 @@ const BigRedButton = ({
       />
     </div>
   );
-};
-
-BigRedButton.propTypes = {
-  children: PropType.node.isRequired,
-  onClick: PropType.func.isRequired
 };
 
 export default BigRedButton;

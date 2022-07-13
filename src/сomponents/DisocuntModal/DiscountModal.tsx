@@ -1,14 +1,20 @@
 import React from 'react';
 import './DiscountModal.scss';
-import Aos from 'aos';
 import { useTranslation } from 'react-i18next';
+import Aos from 'aos';
 import { useDispatch, useSelector } from 'react-redux';
 import hideDiscountModal from '../../store/discountModal/discountModalActions';
 import BigRedLinkButton from '../buttons/BigRedLinkButton/BigRedLinkButton';
 
+interface SelectorProps {
+  discountModalReducer: {
+    discountModalVisible: boolean;
+  }
+}
+
 const DiscountModal = () => {
   const discountModalIsVisible = useSelector((
-    { discountModalReducer }
+    { discountModalReducer }: SelectorProps
   ) => discountModalReducer.discountModalVisible);
 
   const dispatch = useDispatch();

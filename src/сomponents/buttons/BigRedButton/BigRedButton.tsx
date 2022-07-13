@@ -2,7 +2,12 @@ import React from 'react';
 import PropType from 'prop-types';
 import '../Buttons.scss';
 
-const BigRedButton = ({ children, onClick }) => {
+interface Props {
+  children: React.ReactNode;
+  onClick: () => void;
+}
+
+const BigRedButton: React.FC<Props> = ({ children, onClick }) => {
   return (
     <button
       type="button"

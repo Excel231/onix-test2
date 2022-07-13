@@ -10,9 +10,7 @@ const TitleParameterList = ({ sortOnClick }) => {
   return (
     <ul className="biography-ul">
       <li className="biography-li">
-        <BoxerParameterButton handleClick={() => {}}>
-          <h3>{t('photo')}</h3>
-        </BoxerParameterButton>
+        <h3>{t('photo')}</h3>
       </li>
       <li className="biography-li">
         <BoxerParameterButton handleClick={() => sortOnClick('fullName')}>

@@ -2,7 +2,12 @@ import React from 'react';
 import PropType from 'prop-types';
 import './BoxerLink.scss';
 
-const BoxerLink = ({ boxerSite, boxerName }) => {
+interface Props {
+  boxerSite: string,
+  boxerName: string
+}
+
+const BoxerLink: React.FC<Props> = ({ boxerSite, boxerName }) => {
   return (
     <a
       className="boxer-link"

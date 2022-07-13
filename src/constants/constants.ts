@@ -13,7 +13,7 @@ export const DISCOUNT_END_TIME = new Date(
   CURRENT_TIME.getDate(),
   CURRENT_TIME.getHours(),
   CURRENT_TIME.getMinutes(),
-  CURRENT_TIME.getSeconds() + 30
+  CURRENT_TIME.getSeconds() + 3
 );
 
 /* CommentsSection API */

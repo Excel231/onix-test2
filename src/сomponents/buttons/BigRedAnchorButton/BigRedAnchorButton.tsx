@@ -1,8 +1,12 @@
 import React from 'react';
-import PropType from 'prop-types';
 import '../Buttons.scss';
 
-const BigRedAnchorButton = ({ children, changeText }) => {
+interface Props {
+    children: React.ReactNode;
+    changeText: () => void;
+}
+
+const BigRedAnchorButton: React.FC<Props> = ({ children, changeText }) => {
   return (
     <a
       className="big-red-btn"
@@ -14,11 +18,6 @@ const BigRedAnchorButton = ({ children, changeText }) => {
       {children}
     </a>
   );
-};
-
-BigRedAnchorButton.propTypes = {
-  children: PropType.node.isRequired,
-  changeText: PropType.func.isRequired
 };
 
 export default BigRedAnchorButton;

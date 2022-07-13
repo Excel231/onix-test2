@@ -1,8 +1,15 @@
 import React from 'react';
-import PropType from 'prop-types';
 import './BoxerParameterButton.scss';
 
-const BoxerParameterButton = ({ children, handleClick }) => {
+interface Props {
+    children: React.ReactNode;
+    handleClick: () => void;
+}
+
+const BoxerParameterButton: React.FC<Props> = ({
+  children,
+  handleClick
+}) => {
   return (
     <button
       className="boxer-parameter-btn"
@@ -12,11 +19,6 @@ const BoxerParameterButton = ({ children, handleClick }) => {
       {children}
     </button>
   );
-};
-
-BoxerParameterButton.propTypes = {
-  children: PropType.node.isRequired,
-  handleClick: PropType.func.isRequired
 };
 
 export default BoxerParameterButton;
