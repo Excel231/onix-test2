@@ -20,7 +20,7 @@ const manageLanguage = (state = initialState, action: ActionType): ReducerType =
     case SET_LANGUAGE:
       return {
         ...state,
-        language: action.type
+        language: action.language!
       };
     default:
       return state;
