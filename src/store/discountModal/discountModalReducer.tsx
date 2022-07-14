@@ -1,17 +1,19 @@
 import HIDE_DISCOUNT_MODAL from './discountModalTypes';
 
-export const initialState: {
+interface ReducerType {
   discountModalVisible: boolean;
-} = {
-  discountModalVisible: true
-};
+}
 
 interface ActionType {
   type: string;
 }
 
+export const initialState: ReducerType = {
+  discountModalVisible: true
+};
+
 // eslint-disable-next-line default-param-last
-const manageDiscountModal = (state = initialState, action: ActionType) => {
+const manageDiscountModal = (state = initialState, action: ActionType): ReducerType => {
   switch (action.type) {
     case HIDE_DISCOUNT_MODAL:
       return { ...state, discountModalVisible: false };
