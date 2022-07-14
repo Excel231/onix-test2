@@ -9,7 +9,7 @@ import endSale from '../../store/sale/saleActions';
 const ShopPage = () => {
   const [discountItems, setDiscountItems] = useState([]);
   const [fullPriceItems, setFullPriceItems] = useState([]);
-  const saleIsFinished = useSelector(({ manageSale }) => manageSale.saleFinished);
+  const saleIsFinished = useSelector(({ saleReducer }) => saleReducer.saleFinished);
   const dispatch = useDispatch();
 
   const finishSale = () => {
