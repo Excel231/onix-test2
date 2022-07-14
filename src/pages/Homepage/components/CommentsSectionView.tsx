@@ -1,10 +1,15 @@
 import React from 'react';
-import PropType from 'prop-types';
 import { useTranslation } from 'react-i18next';
-import Comment from './Comment';
+import CommentView from './CommentView';
 import '../sass/CommentsSection.scss';
+import { Comment } from '../../../types/Interfaces';
 
-const CommentsSectionView = ({
+interface Props {
+  comments: Comment[];
+  darkThemeOn: boolean;
+}
+
+const CommentsSectionView: React.FC<Props> = ({
   darkThemeOn,
   comments
 }) => {
@@ -20,13 +25,13 @@ const CommentsSectionView = ({
         text
       }) => {
         return (
-          <Comment
+          <CommentView
             key={id}
             fullName={fullName}
             photoName={photoName}
             text={text}
             styleType={
-            `${id % 2 === 0 ? 'left-aligned' : 'right-aligned'}
+            `${+id % 2 === 0 ? 'left-aligned' : 'right-aligned'}
              ${darkThemeOn ? '' : 'light-theme-comment'}`
             }
           />
@@ -34,11 +39,6 @@ const CommentsSectionView = ({
       })}
     </div>
   );
-};
-
-CommentsSectionView.propTypes = {
-  comments: PropType.arrayOf(PropType.shape({})).isRequired,
-  darkThemeOn: PropType.bool.isRequired
 };
 
 export default CommentsSectionView;

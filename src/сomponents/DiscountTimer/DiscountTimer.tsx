@@ -2,20 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import DiscountTimerView from './DiscountTimerView';
 import { CURRENT_TIME, DISCOUNT_END_TIME } from '../../constants/constants';
+import { SaleSelectorType } from '../../types/Interfaces';
 
 interface Props {
   finishSale: () => void;
 }
 
-interface SelectorProps {
-  manageSale: {
-    saleFinished: boolean;
-  }
-}
-
 const DiscountTimer: React.FC<Props> = ({ finishSale }) => {
   const [fullDate, setFullDate] = useState(CURRENT_TIME);
-  const saleIsFinished = useSelector(({ manageSale }: SelectorProps) => manageSale.saleFinished);
+  const saleIsFinished = useSelector(({ saleReducer }: SaleSelectorType) => saleReducer.saleFinished);
 
   const onSecondPass = () => {
     setFullDate(new Date());

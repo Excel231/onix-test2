@@ -25,3 +25,28 @@ export interface Person {
     },
     id: string | number
 }
+
+export interface Comment {
+    fullName: string;
+    photoName: string;
+    text: string;
+    id: string | number;
+}
+
+export interface SaleSelectorType {
+    saleReducer: {
+        saleFinished: boolean;
+    }
+}
+
+export interface CommentsSelectorType {
+    commentsReducer: {
+        comments: Comment[];
+    };
+}
+
+export interface LanguageSelectorType {
+    languageReducer: {
+        language: string
+    }
+}

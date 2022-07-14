@@ -6,14 +6,15 @@ import { COMMENTS_API_LINK_ENG, COMMENTS_API_LINK_RUS, COMMENTS_API_LINK_UKR } f
 import { useThemeColorContext } from '../../../context/ThemeColorProvider';
 import CommentsSectionView from './CommentsSectionView';
 import { setComments, loadingComments, stopLoadingComments } from '../../../store/comments/commentsActions';
+import { CommentsSelectorType, LanguageSelectorType } from '../../../types/Interfaces';
 
 const CommentsSection = () => {
   const darkThemeOn = useThemeColorContext() ?? true;
-  const commentsArr = useSelector(({ commentsReducer }) => commentsReducer.comments);
-  const language = useSelector(({ languageReducer }) => languageReducer.language);
+  const commentsArr = useSelector(({ commentsReducer }: CommentsSelectorType) => commentsReducer.comments);
+  const language = useSelector(({ languageReducer }: LanguageSelectorType) => languageReducer.language);
   const dispatch = useDispatch();
 
-  const getCommentSectionAPI = (lng) => {
+  const getCommentSectionAPI = (lng: string) => {
     switch (lng) {
       case ('en'):
         return COMMENTS_API_LINK_ENG;

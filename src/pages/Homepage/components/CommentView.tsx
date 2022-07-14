@@ -1,10 +1,16 @@
 import React, { useEffect } from 'react';
 import '../sass/Comment.scss';
-import PropType from 'prop-types';
 import Aos from 'aos';
 import commentsMapping from '../../../helper/commentsMapping';
 
-const Comment = ({
+interface Props {
+  fullName: string;
+  photoName: string;
+  text: string
+  styleType: string
+}
+
+const CommentView: React.FC<Props> = ({
   fullName,
   photoName,
   text,
@@ -19,7 +25,7 @@ const Comment = ({
         <li className="comment-preview">
           <img
             className="comment-photo"
-            src={commentsMapping[photoName]}
+            src={commentsMapping[photoName as keyof typeof commentsMapping]}
             alt={fullName}
           />
           <h3 className="comment-name">{fullName}</h3>
@@ -32,11 +38,4 @@ const Comment = ({
   );
 };
 
-Comment.propTypes = {
-  fullName: PropType.string.isRequired,
-  photoName: PropType.string.isRequired,
-  text: PropType.string.isRequired,
-  styleType: PropType.string.isRequired
-};
-
-export default Comment;
+export default CommentView;

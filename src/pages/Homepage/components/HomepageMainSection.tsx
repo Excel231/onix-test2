@@ -1,5 +1,4 @@
 import React from 'react';
-import PropType from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import BoxerLink from '../../../сomponents/BoxerLink/BoxerLink';
 import BigRedAnchorButton from '../../../сomponents/buttons/BigRedAnchorButton/BigRedAnchorButton';
@@ -7,7 +6,12 @@ import '../sass/HomepageMainSection.scss';
 import { BOXER_LINK_1, BOXER_LINK_2 } from '../../../constants/constants';
 import { useThemeColorContext } from '../../../context/ThemeColorProvider';
 
-const HomepageMainSection = ({
+interface Props {
+  signUpButtonWasPressed: boolean;
+  changeSignUpButtonWasPressed: () => void;
+}
+
+const HomepageMainSection: React.FC<Props> = ({
   signUpButtonWasPressed,
   changeSignUpButtonWasPressed
 }) => {
@@ -49,11 +53,6 @@ const HomepageMainSection = ({
       </BigRedAnchorButton>
     </div>
   );
-};
-
-HomepageMainSection.propTypes = {
-  signUpButtonWasPressed: PropType.bool.isRequired,
-  changeSignUpButtonWasPressed: PropType.func.isRequired
 };
 
 export default HomepageMainSection;

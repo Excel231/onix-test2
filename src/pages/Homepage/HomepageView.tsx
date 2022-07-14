@@ -1,9 +1,13 @@
 import React from 'react';
-import PropType from 'prop-types';
 import CommentsSection from './components/CommentsSection';
 import HomepageMainSection from './components/HomepageMainSection';
 
-const HomepageView = ({
+interface Props {
+    signUpButtonWasPressed: boolean;
+    changeSignUpButtonWasPressed: () => void;
+}
+
+const HomepageView: React.FC<Props> = ({
   signUpButtonWasPressed,
   changeSignUpButtonWasPressed
 }) => {
@@ -16,11 +20,6 @@ const HomepageView = ({
       <CommentsSection />
     </div>
   );
-};
-
-HomepageView.propTypes = {
-  signUpButtonWasPressed: PropType.bool.isRequired,
-  changeSignUpButtonWasPressed: PropType.func.isRequired,
 };
 
 export default HomepageView;
