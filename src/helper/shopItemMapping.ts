@@ -6,7 +6,14 @@ import saschaIsolate from '../images/products/sascha/isolate.jpg';
 import wheyGoldStandard from '../images/products/whey/goldStandard.jpg';
 
 const shopItemMapping = () => {
-  return {
+  const result: {
+    bodyFortressWheyProtein: string;
+    dymatizeIso100: string
+    isopureLowCarbProtein: string
+    isopureZeroCarbProtein: string
+    saschaIsolate: string
+    wheyGoldStandard: string
+  } = {
     bodyFortressWheyProtein,
     dymatizeIso100,
     isopureLowCarbProtein,
@@ -14,6 +21,7 @@ const shopItemMapping = () => {
     saschaIsolate,
     wheyGoldStandard
   };
+  return result;
 };
 
 export default shopItemMapping();

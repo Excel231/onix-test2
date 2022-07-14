@@ -1,8 +1,18 @@
-import React from 'react';
-import PropType from 'prop-types';
+import React, { ChangeEvent, ReactNode } from 'react';
 import '../sass/ChangeableParameterItem.scss';
 
-const ChangeableParameterItem = ({
+interface Props {
+  parameter: string | number;
+  parameterName: string;
+  currentEditedValue: string | number | null;
+  currentEditedField: ReactNode | null;
+  onEditClick: (field: string, value: string | number) => void;
+  onFieldChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  onFieldBlur: () => void;
+  onKeyPressed: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+}
+
+const ChangeableParameterItem: React.FC<Props> = ({
   parameter,
   parameterName,
   currentEditedValue,
@@ -23,7 +33,7 @@ const ChangeableParameterItem = ({
           <input
             className="biography-text-input"
             autoFocus
-            value={currentEditedValue}
+            value={currentEditedValue!}
             onChange={onFieldChange}
             onBlur={onFieldBlur}
             onKeyDown={onKeyPressed}
@@ -32,22 +42,6 @@ const ChangeableParameterItem = ({
       }
     </li>
   );
-};
-
-ChangeableParameterItem.propTypes = {
-  parameter: PropType.node.isRequired,
-  parameterName: PropType.node.isRequired,
-  currentEditedValue: PropType.node,
-  currentEditedField: PropType.node,
-  onEditClick: PropType.func.isRequired,
-  onFieldChange: PropType.func.isRequired,
-  onFieldBlur: PropType.func.isRequired,
-  onKeyPressed: PropType.func.isRequired
-};
-
-ChangeableParameterItem.defaultProps = {
-  currentEditedField: null,
-  currentEditedValue: null
 };
 
 export default ChangeableParameterItem;

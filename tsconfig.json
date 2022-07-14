@@ -7,10 +7,6 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "module": "esnext",
     "target": "es5",
-    "compilerOptions": {
-      "typeRoots" : ["node_modules/@types", "src/types"]
-    },
-
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,

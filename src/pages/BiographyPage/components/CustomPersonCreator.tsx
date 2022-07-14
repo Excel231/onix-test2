@@ -1,9 +1,14 @@
 import React from 'react';
-import PropType from 'prop-types';
 import CustomPersonCreatorView from './CustomPersonCreatorView';
+import { Person } from '../../../types/Interfaces';
 
-const CustomPersonCreator = ({ addCustomPerson, emptyIdValue }) => {
-  const customPerson = {
+interface Props {
+  addCustomPerson: (customPerson: Person) => void;
+  emptyIdValue: string | number;
+}
+
+const CustomPersonCreator: React.FC<Props> = ({ addCustomPerson, emptyIdValue }) => {
+  const customPerson: Person = {
     id: emptyIdValue,
     personInfo: {
       fullName: 'Full Name',
@@ -14,26 +19,24 @@ const CustomPersonCreator = ({ addCustomPerson, emptyIdValue }) => {
     }
   };
 
-  const setFullName = (fullName) => {
+  const setFullName = (fullName: string) => {
     customPerson.personInfo.fullName = fullName;
   };
 
-  const setBirthYear = (birthYear) => {
+  const setBirthYear = (birthYear: string | number) => {
     customPerson.personInfo.birthYear = birthYear;
   };
 
-  const setWeight = (weight) => {
+  const setWeight = (weight: string | number) => {
     customPerson.personInfo.weight = weight;
   };
 
-  const setBelt = (beltString) => {
+  const setBelt = (beltString: string) => {
     if (beltString === null) return;
-    let beltName = beltString.match(/[A-Z]/gi);
-    let year = beltString.match(/\d/gi);
+    const beltName: string[] | null = beltString.match(/[A-Z]/gi) ?? [];
+    const year: string[] | null = beltString.match(/\d/gi) ?? [];
 
-    beltName = beltName === null ? '' : beltName.join('');
-    year = year === null ? '' : year.join('');
-    customPerson.personInfo.belts[0] = { beltName, year };
+    customPerson.personInfo.belts[0] = { beltName: beltName.join(''), year: year.join('') };
   };
 
   return (
@@ -46,11 +49,6 @@ const CustomPersonCreator = ({ addCustomPerson, emptyIdValue }) => {
       setBelt={setBelt}
     />
   );
-};
-
-CustomPersonCreator.propTypes = {
-  addCustomPerson: PropType.func.isRequired,
-  emptyIdValue: PropType.node.isRequired
 };
 
 export default CustomPersonCreator;

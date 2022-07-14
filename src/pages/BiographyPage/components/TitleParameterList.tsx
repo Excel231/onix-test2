@@ -1,11 +1,14 @@
 import React from 'react';
 import '../../../styles.scss';
-import PropType from 'prop-types';
 import '../sass/TitleParameterList.scss';
 import { useTranslation } from 'react-i18next';
 import BoxerParameterButton from '../../../сomponents/buttons/BoxerParameterButton/BoxerParameterButton';
 
-const TitleParameterList = ({ sortOnClick }) => {
+interface Props {
+    sortOnClick: (componentToCompare: string) => void;
+}
+
+const TitleParameterList: React.FC<Props> = ({ sortOnClick }) => {
   const { t } = useTranslation('', { keyPrefix: 'biographyPage' });
   return (
     <ul className="biography-ul">
@@ -34,11 +37,6 @@ const TitleParameterList = ({ sortOnClick }) => {
       </li>
     </ul>
   );
-};
-
-TitleParameterList.propTypes = {
-  sortOnClick: PropType.func.isRequired,
-
 };
 
 export default TitleParameterList;

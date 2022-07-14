@@ -10,18 +10,18 @@ export interface Product {
     id: number | string
 }
 
+export interface Belt {
+    beltName: string,
+    year: string | number
+}
+
 export interface Person {
     personInfo: {
         fullName: string,
         photo: string,
         birthYear: string | number;
         weight: string | number;
-        belts: [
-            {
-                beltName: string,
-                year: string | number
-            }
-        ]
+        belts: Belt[]
     },
     id: string | number
 }

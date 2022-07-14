@@ -1,9 +1,22 @@
-import React, { useEffect } from 'react';
-import PropType from 'prop-types';
+import React, { useEffect, DragEvent } from 'react';
 import Aos from 'aos';
 import ParameterList from './ParameterList';
+import { Person } from '../../../types/Interfaces';
 
-const DraggableListView = ({
+interface Props {
+  personsOnScreen: Person[];
+  onSaveChanges: (field: string, value: string | number, id: string | number) => void;
+  inactiveStyle: string;
+  activeStyle: string;
+  dragStartHandler: (person: Person) => void;
+  dragOverHandler: (e: DragEvent<HTMLDivElement>) => void
+  dropHandler: (e: DragEvent<HTMLDivElement>, personToDropOn: Person) => void;
+  handleMouseClick: (person: Person) => void;
+  currentActivePerson: Person | null;
+  handleParameterIsEdited: () => void;
+}
+
+const DraggableListView: React.FC<Props> = ({
   personsOnScreen,
   onSaveChanges,
   inactiveStyle,
@@ -51,23 +64,6 @@ const DraggableListView = ({
       }
     </>
   );
-};
-
-DraggableListView.propTypes = {
-  personsOnScreen: PropType.arrayOf(PropType.shape({})).isRequired,
-  onSaveChanges: PropType.func.isRequired,
-  inactiveStyle: PropType.string.isRequired,
-  activeStyle: PropType.string.isRequired,
-  dragStartHandler: PropType.func.isRequired,
-  dragOverHandler: PropType.func.isRequired,
-  dropHandler: PropType.func.isRequired,
-  handleMouseClick: PropType.func.isRequired,
-  currentActivePerson: PropType.shape({}),
-  handleParameterIsEdited: PropType.func.isRequired
-};
-
-DraggableListView.defaultProps = {
-  currentActivePerson: null
 };
 
 export default DraggableListView;

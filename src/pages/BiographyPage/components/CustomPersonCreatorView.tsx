@@ -1,12 +1,21 @@
 import React from 'react';
-import PropType from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import BigRedSubmitButton from '../../../сomponents/buttons/BigRedSubmitButton/BigRedSubmitButton';
 import '../sass/CustomPersonCreator.scss';
 import BiographyImage from './BiographyImage';
 import CustomPersonParameter from './CustomPersonParameter';
+import { Person } from '../../../types/Interfaces';
 
-const CustomPersonCreatorView = ({
+interface Props {
+  addCustomPerson: (customPerson: Person) => void;
+  customPerson: Person;
+  setFullName: (fullName: string) => void;
+  setWeight: (birthYear: string | number) => void;
+  setBirthYear: (weight: string | number) => void;
+  setBelt: (beltString: string) => void;
+}
+
+const CustomPersonCreatorView: React.FC<Props> = ({
   addCustomPerson,
   customPerson,
   setFullName,
@@ -36,15 +45,6 @@ const CustomPersonCreatorView = ({
       </BigRedSubmitButton>
     </div>
   );
-};
-
-CustomPersonCreatorView.propTypes = {
-  addCustomPerson: PropType.func.isRequired,
-  customPerson: PropType.shape({}).isRequired,
-  setFullName: PropType.func.isRequired,
-  setWeight: PropType.func.isRequired,
-  setBirthYear: PropType.func.isRequired,
-  setBelt: PropType.func.isRequired
 };
 
 export default CustomPersonCreatorView;

@@ -7,7 +7,15 @@ import klitchko from '../images/boxer-photos/Klitschko.jpg';
 import defaultImage from '../images/boxer-photos/Default.jpg';
 
 const biographyMapping = () => {
-  return {
+  const result: {
+    bryan: string;
+    fury: string;
+    usyk: string;
+    briedis: string;
+    tyson: string;
+    klitchko: string;
+    defaultImage: string;
+  } = {
     bryan,
     fury,
     usyk,
@@ -16,6 +24,7 @@ const biographyMapping = () => {
     klitchko,
     defaultImage
   };
+  return result;
 };
 
 export default biographyMapping();

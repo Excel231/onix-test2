@@ -1,8 +1,20 @@
-import React, { useState } from 'react';
-import PropType from 'prop-types';
+import React, { ChangeEvent, useState } from 'react';
 import ParameterListView from './ParameterListView';
+import { Belt } from '../../../types/Interfaces';
 
-const ParameterList = ({
+interface Props {
+  id: string | number;
+  fullName: string;
+  photo: string;
+  birthYear: string | number;
+  weight: string | number;
+  belts: Belt[];
+  onSaveChanges: (field: string, value: string | number, id: string | number) => void;
+  listStyle: string
+  handleParameterIsEdited: () => void;
+}
+
+const ParameterList: React.FC<Props> = ({
   id,
   fullName,
   photo,
@@ -13,28 +25,28 @@ const ParameterList = ({
   listStyle,
   handleParameterIsEdited,
 }) => {
-  const [currentEditedField, setCurrentEditedField] = useState(null);
-  const [currentEditedValue, setCurrentEditedValue] = useState(null);
+  const [currentEditedField, setCurrentEditedField] = useState<string | null>(null);
+  const [currentEditedValue, setCurrentEditedValue] = useState<string | number | null>(null);
 
-  const onEditClick = (field, value) => {
+  const onEditClick = (field: string, value: string | number) => {
     setCurrentEditedField(field);
     setCurrentEditedValue(value);
     handleParameterIsEdited();
   };
 
-  const onFieldChange = (e) => {
+  const onFieldChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
     setCurrentEditedValue(value);
   };
 
   const onFieldBlur = () => {
-    onSaveChanges(currentEditedField, currentEditedValue, id);
+    onSaveChanges(currentEditedField!, currentEditedValue!, id);
     setCurrentEditedField(null);
     setCurrentEditedValue(null);
     handleParameterIsEdited();
   };
 
-  const onKeyPressed = (e) => {
+  const onKeyPressed = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       onFieldBlur();
     }
@@ -56,18 +68,6 @@ const ParameterList = ({
       listStyle={listStyle}
     />
   );
-};
-
-ParameterList.propTypes = {
-  id: PropType.node.isRequired,
-  fullName: PropType.node.isRequired,
-  photo: PropType.node.isRequired,
-  birthYear: PropType.node.isRequired,
-  weight: PropType.node.isRequired,
-  belts: PropType.arrayOf(PropType.shape({})).isRequired,
-  onSaveChanges: PropType.func.isRequired,
-  listStyle: PropType.node.isRequired,
-  handleParameterIsEdited: PropType.func.isRequired,
 };
 
 export default ParameterList;

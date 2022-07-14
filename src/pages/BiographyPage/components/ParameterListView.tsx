@@ -1,11 +1,26 @@
-import React from 'react';
-import * as PropType from 'prop-types';
+import React, { ChangeEvent } from 'react';
 import bubbleSort from '../../../helper/bubbleSort';
 import ChangeableParameterItem from './ChangeableParameterItem';
 import '../sass/ParameterList.scss';
 import BiographyImage from './BiographyImage';
+import { Belt } from '../../../types/Interfaces';
 
-const ParameterListView = ({
+interface Props {
+    fullName: string;
+    birthYear: string | number;
+    photo: string;
+    weight: string | number;
+    belts: Belt[];
+    currentEditedField: string | null;
+    currentEditedValue: string | number | null;
+    onEditClick: (field: string, value: string | number) => void;
+    onFieldChange: (e: ChangeEvent<HTMLInputElement>) => void;
+    onFieldBlur: () => void;
+    onKeyPressed: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+    listStyle: string;
+}
+
+const ParameterListView: React.FC<Props> = ({
   fullName,
   birthYear,
   photo,
@@ -73,26 +88,6 @@ const ParameterListView = ({
       </li>
     </ul>
   );
-};
-
-ParameterListView.propTypes = {
-  fullName: PropType.node.isRequired,
-  birthYear: PropType.node.isRequired,
-  photo: PropType.node.isRequired,
-  weight: PropType.node.isRequired,
-  belts: PropType.arrayOf(PropType.shape({})).isRequired,
-  currentEditedField: PropType.node,
-  currentEditedValue: PropType.node,
-  onEditClick: PropType.func.isRequired,
-  onFieldChange: PropType.func.isRequired,
-  onFieldBlur: PropType.func.isRequired,
-  onKeyPressed: PropType.func.isRequired,
-  listStyle: PropType.node.isRequired,
-};
-
-ParameterListView.defaultProps = {
-  currentEditedField: null,
-  currentEditedValue: null,
 };
 
 export default ParameterListView;

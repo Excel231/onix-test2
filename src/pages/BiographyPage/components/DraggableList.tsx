@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, DragEvent } from 'react';
 import DraggableListView from './DraggableListView';
 import '../sass/DraggableList.scss';
 import { DEFAULT_INACTIVE_STYLE, DEFAULT_ACTIVE_STYLE } from '../../../constants/constants';
@@ -28,7 +28,7 @@ const DraggableList: React.FC<Props> = ({
     setCurrentDraggedPerson(person);
   };
 
-  const dragOverHandler = (e: DragEvent) => {
+  const dragOverHandler = (e: DragEvent<HTMLDivElement>) => {
     e.preventDefault();
   };
 
