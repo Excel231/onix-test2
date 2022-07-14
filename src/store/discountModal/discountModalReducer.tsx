@@ -1,6 +1,8 @@
 import HIDE_DISCOUNT_MODAL from './discountModalTypes';
 
-export const initialState = {
+export const initialState: {
+  discountModalVisible: boolean;
+} = {
   discountModalVisible: true
 };
 

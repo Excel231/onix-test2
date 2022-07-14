@@ -5,13 +5,8 @@ export const initialState = {
   language: i18next.language,
 };
 
-interface ActionType {
-    type: string;
-    language: string;
-}
-
 // eslint-disable-next-line default-param-last
-const manageLanguage = (state = initialState, action: ActionType) => {
+const manageLanguage = (state = initialState, action) => {
   switch (action.type) {
     case SET_LANGUAGE:
       return {

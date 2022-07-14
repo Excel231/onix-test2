@@ -1,6 +1,8 @@
 import SET_SALE_FINISHED from './saleTypes';
 
-export const initialState = {
+export const initialState: {
+  saleFinished: boolean;
+} = {
   saleFinished: false
 };
 
