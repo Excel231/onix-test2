@@ -1,11 +1,17 @@
 import React from 'react';
-import PropType from 'prop-types';
 import './ShopPage.scss';
 import { useTranslation } from 'react-i18next';
 import DiscountTimer from '../../сomponents/DiscountTimer/DiscountTimer';
 import ItemList from './components/ItemList';
+import { ShopItemType } from '../../types/Interfaces';
 
-const ShopPageView = ({
+interface Props {
+  normalPriceItems: ShopItemType[];
+  discountItems: ShopItemType[];
+  finishSale: () => void;
+}
+
+const ShopPageView: React.FC<Props> = ({
   normalPriceItems,
   discountItems,
   finishSale
@@ -21,12 +27,6 @@ const ShopPageView = ({
       <ItemList items={normalPriceItems} />
     </>
   );
-};
-
-ShopPageView.propTypes = {
-  normalPriceItems: PropType.arrayOf(PropType.shape({})).isRequired,
-  discountItems: PropType.arrayOf(PropType.shape({})).isRequired,
-  finishSale: PropType.func.isRequired
 };
 
 export default ShopPageView;

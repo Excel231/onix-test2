@@ -3,13 +3,22 @@ import React, {
 } from 'react';
 import PropType from 'prop-types';
 
-const ThemeColorContext = React.createContext({});
+interface ContextType {
+  darkThemeOn: boolean;
+  changeTheme: () => void;
+}
 
-export const useThemeColorContext = () => useContext(ThemeColorContext).darkThemeOn;
+const ThemeColorContext = React.createContext<ContextType | null>(null);
 
-export const useThemeColorChangeContext = () => useContext(ThemeColorContext).changeTheme;
+export const useThemeColorContext = () => useContext(ThemeColorContext)!.darkThemeOn;
 
-const ThemeColorProvider = ({ children }) => {
+export const useThemeColorChangeContext = () => useContext(ThemeColorContext)!.changeTheme;
+
+interface Props {
+  children: React.ReactElement
+}
+
+const ThemeColorProvider: React.FC<Props> = ({ children }) => {
   const [darkThemeOn, setDarkThemeOn] = useState(true);
 
   const changeTheme = useCallback(() => {

@@ -1,22 +1,21 @@
 import React from 'react';
-import PropType from 'prop-types';
 import shopItemMapping from '../../../helper/shopItemMapping';
 import '../sass/ItemImage.scss';
 
-const ItemImage = ({
+interface Props {
+  name: string;
+  image: string;
+}
+
+const ItemImage: React.FC<Props> = ({
   image,
   name
 }) => {
   return (
     <div className="photo-wrapper">
-      <img className="item-photo" src={shopItemMapping[image]} alt={name} />
+      <img className="item-photo" src={shopItemMapping[image as keyof typeof shopItemMapping]} alt={name} />
     </div>
   );
-};
-
-ItemImage.propTypes = {
-  name: PropType.node.isRequired,
-  image: PropType.node.isRequired
 };
 
 export default ItemImage;

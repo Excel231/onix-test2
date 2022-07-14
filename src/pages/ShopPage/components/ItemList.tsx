@@ -1,10 +1,14 @@
 import React from 'react';
-import PropType from 'prop-types';
 import ShopItemCard from './ShopItemCard';
 import '../sass/ItemList.scss';
 import { useShoppingCartChangeContext } from '../../../context/ShoppingCartProvider';
+import { ShopItemType } from '../../../types/Interfaces';
 
-const ItemList = ({ items }) => {
+interface Props {
+  items: ShopItemType[];
+}
+
+const ItemList: React.FC<Props> = ({ items }) => {
   const changeShoppingCart = useShoppingCartChangeContext();
   return (
     <div className="cards-deck">
@@ -19,10 +23,6 @@ const ItemList = ({ items }) => {
       })}
     </div>
   );
-};
-
-ItemList.propTypes = {
-  items: PropType.arrayOf(PropType.shape({})).isRequired
 };
 
 export default ItemList;

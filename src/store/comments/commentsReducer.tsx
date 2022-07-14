@@ -5,8 +5,14 @@ export const initialState = {
   loading: false
 };
 
+interface ActionType {
+  type: string;
+  commentsArr: Comment[];
+  load: boolean
+}
+
 // eslint-disable-next-line default-param-last
-const manageComments = (state = initialState, action) => {
+const manageComments = (state = initialState, action: ActionType) => {
   switch (action.type) {
     case SET_COMMENTS:
       return { ...state, comments: action.commentsArr };

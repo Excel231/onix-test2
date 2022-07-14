@@ -5,11 +5,12 @@ import withLayout from '../../HOC/withLayout/withLayout';
 import ShopPageView from './ShopPageView';
 import { ITEMS_API_LINK } from '../../constants/constants';
 import endSale from '../../store/sale/saleActions';
+import { SaleSelectorType, ShopItemType } from '../../types/Interfaces';
 
 const ShopPage = () => {
-  const [discountItems, setDiscountItems] = useState([]);
-  const [fullPriceItems, setFullPriceItems] = useState([]);
-  const saleIsFinished = useSelector(({ saleReducer }) => saleReducer.saleFinished);
+  const [discountItems, setDiscountItems] = useState<ShopItemType[]>([]);
+  const [fullPriceItems, setFullPriceItems] = useState<ShopItemType[]>([]);
+  const saleIsFinished = useSelector(({ saleReducer }: SaleSelectorType) => saleReducer.saleFinished);
   const dispatch = useDispatch();
 
   const finishSale = () => {
@@ -25,8 +26,8 @@ const ShopPage = () => {
         if (saleIsFinished) {
           setFullPriceItems(items);
         } else {
-          setFullPriceItems(items.filter((item) => !item.isOnDiscount));
-          setDiscountItems(items.filter((item) => item.isOnDiscount));
+          setFullPriceItems(items.filter((item: ShopItemType) => !item.isOnDiscount));
+          setDiscountItems(items.filter((item: ShopItemType) => item.isOnDiscount));
         }
       });
   }, []);

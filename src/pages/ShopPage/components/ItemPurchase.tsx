@@ -1,10 +1,15 @@
 import React from 'react';
-import PropType from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import BigRedButton from '../../../сomponents/buttons/BigRedButton/BigRedButton';
 import '../sass/ItemPurchase.scss';
+import { ShopItemType } from '../../../types/Interfaces';
 
-const ItemPurchase = ({
+interface Props {
+    item: ShopItemType;
+    changeShoppingCart: (item: ShopItemType) => void;
+}
+
+const ItemPurchase: React.FC<Props> = ({
   item,
   changeShoppingCart
 }) => {
@@ -29,21 +34,6 @@ const ItemPurchase = ({
       <BigRedButton onClick={() => changeShoppingCart(item)}>{t('addToCartButton')}</BigRedButton>
     </div>
   );
-};
-
-ItemPurchase.propTypes = {
-  item: PropType.shape({
-    id: PropType.node.isRequired,
-    firmName: PropType.node.isRequired,
-    name: PropType.node.isRequired,
-    description: PropType.node.isRequired,
-    price: PropType.node.isRequired,
-    weight: PropType.node.isRequired,
-    isOnDiscount: PropType.bool.isRequired,
-    discountPrice: PropType.node.isRequired,
-    image: PropType.node.isRequired
-  }).isRequired,
-  changeShoppingCart: PropType.func.isRequired
 };
 
 export default ItemPurchase;

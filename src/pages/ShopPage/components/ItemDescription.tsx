@@ -1,8 +1,14 @@
 import React from 'react';
-import PropType from 'prop-types';
 import '../sass/ItemDescription.scss';
 
-const ItemDescription = ({
+interface Props {
+    firmName: string;
+    name: string;
+    description: string;
+    weight: string | number;
+}
+
+const ItemDescription: React.FC<Props> = ({
   firmName, name, description, weight
 }) => {
   return (
@@ -12,13 +18,6 @@ const ItemDescription = ({
       <p className="item-description">{description}</p>
     </div>
   );
-};
-
-ItemDescription.propTypes = {
-  firmName: PropType.node.isRequired,
-  name: PropType.node.isRequired,
-  description: PropType.node.isRequired,
-  weight: PropType.node.isRequired
 };
 
 export default ItemDescription;

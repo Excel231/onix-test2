@@ -33,6 +33,18 @@ export interface Comment {
     id: string | number;
 }
 
+export interface ShopItemType {
+    firmName: string;
+    name: string;
+    description: string;
+    price: string | number;
+    weight: string | number;
+    isOnDiscount: boolean;
+    discountPrice: string | number;
+    image: string;
+    id: string | number;
+}
+
 export interface SaleSelectorType {
     saleReducer: {
         saleFinished: boolean;

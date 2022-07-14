@@ -1,12 +1,17 @@
 import React, { useEffect } from 'react';
 import Aos from 'aos';
-import PropType from 'prop-types';
 import ItemImage from './ItemImage';
 import ItemDescription from './ItemDescription';
 import '../sass/ShopItemCard.scss';
 import ItemPurchase from './ItemPurchase';
+import { ShopItemType } from '../../../types/Interfaces';
 
-const ShopItemCard = ({ item, changeShoppingCart }) => {
+interface Props {
+  item: ShopItemType;
+  changeShoppingCart: (item: ShopItemType) => void;
+}
+
+const ShopItemCard: React.FC<Props> = ({ item, changeShoppingCart }) => {
   const {
     firmName,
     name,
@@ -29,21 +34,6 @@ const ShopItemCard = ({ item, changeShoppingCart }) => {
       />
     </div>
   );
-};
-
-ShopItemCard.propTypes = {
-  item: PropType.shape({
-    id: PropType.node.isRequired,
-    firmName: PropType.node.isRequired,
-    name: PropType.node.isRequired,
-    description: PropType.node.isRequired,
-    price: PropType.node.isRequired,
-    weight: PropType.node.isRequired,
-    isOnDiscount: PropType.bool.isRequired,
-    discountPrice: PropType.node.isRequired,
-    image: PropType.node.isRequired
-  }).isRequired,
-  changeShoppingCart: PropType.func.isRequired
 };
 
 export default ShopItemCard;
