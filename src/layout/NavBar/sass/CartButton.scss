@@ -1,12 +1,15 @@
 @import "../../../constants/constants";
 
+.cart-btn-wrapper {
+  height: 100%;
+}
+
 .cart-btn {
   background: none;
   border: none;
   color: inherit;
   cursor: pointer;
-  margin: 60% 10px 60% 0;
-  height: 100%;
+  margin: 80% 10px 50% 0;
 
   &:hover {
     color: $primary-red;

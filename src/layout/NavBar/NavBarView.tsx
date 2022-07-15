@@ -28,7 +28,7 @@ const NavBarView: React.FC<Props> = ({
     <nav className="nav-bar" onMouseLeave={() => hideCartList()}>
       <Loader displayLoader={displayLoader} />
       <LanguageChangePanel />
-      <div>
+      <div className="cart-wrapper">
         <CartButton toggleCartList={toggleCartList} />
         <CartItemsList
           darkThemeOn={darkThemeOn}

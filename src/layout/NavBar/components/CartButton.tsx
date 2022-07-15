@@ -9,9 +9,11 @@ interface Props {
 
 const CartButton: React.FC<Props> = ({ toggleCartList }) => {
   return (
-    <button className="cart-btn" type="button" onClick={() => toggleCartList()}>
-      <FontAwesomeIcon icon={faShoppingCart} className="fa-2xl" />
-    </button>
+    <div className="cart-btn-wrapper">
+      <button className="cart-btn" type="button" onClick={() => toggleCartList()}>
+        <FontAwesomeIcon icon={faShoppingCart} className="fa-2xl" />
+      </button> 
+    </div>
   );
 };
 
