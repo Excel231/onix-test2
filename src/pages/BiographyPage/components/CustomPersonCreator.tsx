@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CustomPersonCreatorView from './CustomPersonCreatorView';
 import { Person } from '../../../types/Interfaces';
 
@@ -8,7 +8,7 @@ interface Props {
 }
 
 const CustomPersonCreator: React.FC<Props> = ({ addCustomPerson, emptyIdValue }) => {
-  const customPerson: Person = {
+  const [customPerson, setCustomPerson] = useState<Person>({
     id: emptyIdValue,
     personInfo: {
       fullName: 'Full Name',
@@ -17,28 +17,38 @@ const CustomPersonCreator: React.FC<Props> = ({ addCustomPerson, emptyIdValue })
       weight: 'Weight',
       belts: []
     }
-  };
+  });
 
   const setFullName = (fullName: string) => {
-    customPerson.personInfo.fullName = fullName;
+    setCustomPerson((prevState) => {
+      return { id: emptyIdValue, personInfo: { ...prevState.personInfo, fullName } };
+    });
   };
 
   const setBirthYear = (birthYear: string | number) => {
-    customPerson.personInfo.birthYear = birthYear;
+    setCustomPerson((prevState) => {
+      return { id: emptyIdValue, personInfo: { ...prevState.personInfo, birthYear } };
+    });
   };
 
   const setWeight = (weight: string | number) => {
-    customPerson.personInfo.weight = weight;
+    setCustomPerson((prevState) => {
+      return { id: emptyIdValue, personInfo: { ...prevState.personInfo, weight } };
+    });
   };
 
   const setBelt = (beltString: string) => {
     if (beltString === null) return;
-    const beltName: string[] | null = beltString.match(/[A-Z]/gi) ?? [];
-    const year: string[] | null = beltString.match(/\d/gi) ?? [];
+    const beltNameArray: string[] | null = beltString.match(/[A-Z]/gi) ?? [];
+    const yearArray: string[] | null = beltString.match(/\d/gi) ?? [];
 
-    customPerson.personInfo.belts[0] = { beltName: beltName.join(''), year: year.join('') };
+    const beltName = beltNameArray.join('');
+    const year = yearArray.join('');
+
+    setCustomPerson((prevState) => {
+      return { id: emptyIdValue, personInfo: { ...prevState.personInfo, belts: [{ beltName, year }] } };
+    });
   };
-
   return (
     <CustomPersonCreatorView
       addCustomPerson={addCustomPerson}

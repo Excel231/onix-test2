@@ -13,6 +13,7 @@ const BiographyPage = () => {
   /* Boolean value that shows in which order parameters should be displayed
     (from greatest to lowest or vice versa) */
   const [sortFromGreatest, setSortFromGreatest] = useState<boolean>(false);
+  const [nextEmptyIdValue, setNextEmptyIdValue] = useState<number>(0);
 
   const sortOnClick = (componentToCompare: string) => {
     setSortFromGreatest((prevSortFromGreatest) => !prevSortFromGreatest);
@@ -28,6 +29,7 @@ const BiographyPage = () => {
   
   const addCustomPerson = (customPerson: Person) => {
     setAllPersons((prevState) => [...prevState, customPerson]);
+    setNextEmptyIdValue((prevState) => prevState + 1);
   };
 
   const removePerson = () => {
@@ -50,19 +52,17 @@ const BiographyPage = () => {
   };
 
   useEffect(() => {
-    const api = axios.create({
-      baseURL: BOXER_API_LINK
-    });
-    api.get('/').then((res) => {
+    axios.get(BOXER_API_LINK).then((res) => {
       setAllPersons(res.data);
       setDefaultPersonsOnScreen(res.data);
+      setNextEmptyIdValue(res.data.length + 1);
     });
   }, []);
 
   return (
     <BiographyPageView
       personsOnScreen={personsOnScreen}
-      emptyIdValue={allPersons.length + 1}
+      emptyIdValue={nextEmptyIdValue}
       sortOnClick={sortOnClick}
       addPerson={addPerson}
       addCustomPerson={addCustomPerson}

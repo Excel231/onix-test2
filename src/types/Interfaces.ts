@@ -59,6 +59,6 @@ export interface CommentsSelectorType {
 
 export interface LanguageSelectorType {
     languageReducer: {
-        language: string
+        language: string;
     }
 }
