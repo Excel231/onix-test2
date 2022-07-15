@@ -1,5 +1,6 @@
 import React from 'react';
 import '../sass/CartListItem.scss';
+import clsx from 'clsx';
 import { Product } from '../../../types/Interfaces';
 
 type Props = {
@@ -15,13 +16,11 @@ const CartItemsList: React.FC<Props> = ({
 }) => {
   return (
     <ul
-      className={
-                `cart-list ${
-                  darkThemeOn ? 'dark-theme' : 'light-theme'
-                } ${
-                  cartListDisplayed && shoppingCartItems.length !== 0 ? 'cart-list' : 'cart-list-hidden'
-                }`
-            }
+      className={clsx('cart-list', {
+        'dark-theme': darkThemeOn,
+        'light-theme': !darkThemeOn,
+        'cart-list-hidden': !(cartListDisplayed && shoppingCartItems.length)
+      })}
     >
       {shoppingCartItems.map((item) => {
         return (

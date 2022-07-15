@@ -1,4 +1,5 @@
 import React from 'react';
+import clsx from 'clsx';
 import { Link } from 'react-router-dom';
 import pagesToDisplayList from '../../helper/pagesToDisplayList';
 import './SideBar.scss';
@@ -14,10 +15,12 @@ const SideBarView: React.FC<Props> = ({
 }) => {
   return (
     <ul
-      className={
-        `${darkThemeOn ? 'dark-theme' : 'light-theme'} 
-         ${sideBarDisplayed ? 'side-bar-visible' : 'side-bar-hidden'}`
-      }
+      className={clsx({
+        'dark-theme': darkThemeOn,
+        'light-theme': !darkThemeOn,
+        'side-bar-visible': sideBarDisplayed,
+        'side-bar-hidden': !sideBarDisplayed
+      })}
     >
       {pagesToDisplayList.map(({
         name,
